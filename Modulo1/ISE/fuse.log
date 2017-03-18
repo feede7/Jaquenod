@@ -1,0 +1,22 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/fedeserver/Documents/Jaquenod/GIT/Modulo1/ISE/testbench_isim_beh.exe" -prj "/home/fedeserver/Documents/Jaquenod/GIT/Modulo1/ISE/testbench_beh.prj" "work.testbench" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/fedeserver/Documents/Jaquenod/GIT/Modulo1/ISE/Sources/Head_TB.vhd" into library work
+WARNING:HDLCompiler:1369 - "/home/fedeserver/Documents/Jaquenod/GIT/Modulo1/ISE/Sources/Head_TB.vhd" Line 24: Possible infinite loop; process does not have a wait statement
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 37932 KB
+Fuse CPU Usage: 3410 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture behavior of entity testbench
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 4 VHDL Units
+Built simulation executable /home/fedeserver/Documents/Jaquenod/GIT/Modulo1/ISE/testbench_isim_beh.exe
+Fuse Memory Usage: 86188 KB
+Fuse CPU Usage: 3830 ms
+GCC CPU Usage: 790 ms

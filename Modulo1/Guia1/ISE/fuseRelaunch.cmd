@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/fedeserver/Documents/Jaquenod/GIT/Guia_1/ISE/Sim_isim_beh.exe" -prj "/home/fedeserver/Documents/Jaquenod/GIT/Guia_1/ISE/Sim_beh.prj" "work.Sim" 
