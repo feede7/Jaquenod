@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/fedeserver/Documents/Jaquenod/GIT/Modulo1/ISE/testbench_isim_beh.exe" -prj "/home/fedeserver/Documents/Jaquenod/GIT/Modulo1/ISE/testbench_beh.prj" "work.testbench" 

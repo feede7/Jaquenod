@@ -1,0 +1,22 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/GIT/Jaquenod/Modulo1/ISE/Actividad_1_1_3/TB_SincroAndEdge_isim_beh.exe -prj /home/fede/GIT/Jaquenod/Modulo1/ISE/Actividad_1_1_3/TB_SincroAndEdge_beh.prj work.TB_SincroAndEdge 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo1/ISE/Actividad_1_1_3/Sources/SincroAndEdge.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo1/ISE/Actividad_1_1_3/Sources/TB_SincroAndEdge.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 95032 KB
+Fuse CPU Usage: 840 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture arq_sincroandedge of entity En_SincroAndEdge [en_sincroandedge_default]
+Compiling architecture behavior of entity tb_sincroandedge
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 5 VHDL Units
+Built simulation executable /home/fede/GIT/Jaquenod/Modulo1/ISE/Actividad_1_1_3/TB_SincroAndEdge_isim_beh.exe
+Fuse Memory Usage: 660736 KB
+Fuse CPU Usage: 860 ms
+GCC CPU Usage: 430 ms
