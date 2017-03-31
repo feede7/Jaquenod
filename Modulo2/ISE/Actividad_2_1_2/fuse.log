@@ -1,0 +1,25 @@
+Running: /opt/Xilinx/14.1/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/GIT/Jaquenod/Modulo2/ISE/Actividad_2_1_2/TB_Head_isim_beh.exe -prj /home/fede/GIT/Jaquenod/Modulo2/ISE/Actividad_2_1_2/TB_Head_beh.prj work.TB_Head 
+ISim P.15xf (signature 0x8ddf5b5d)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo2/ISE/Actividad_2_1_2/Sources/Stage.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo2/ISE/Actividad_2_1_2/Sources/Head.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo2/ISE/Actividad_2_1_2/Sources/TB_Head.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 96296 KB
+Fuse CPU Usage: 820 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture arq_stage of entity En_Stage [en_stage_default]
+Compiling architecture arq_head of entity En_Head [en_head_default]
+Compiling architecture behavior of entity tb_head
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable /home/fede/GIT/Jaquenod/Modulo2/ISE/Actividad_2_1_2/TB_Head_isim_beh.exe
+Fuse Memory Usage: 667860 KB
+Fuse CPU Usage: 880 ms
+GCC CPU Usage: 120 ms

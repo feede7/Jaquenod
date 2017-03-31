@@ -1,0 +1,3 @@
+vhdl work "Sources/Stage.vhd"
+vhdl work "Sources/Head.vhd"
+vhdl work "Sources/TB_Head.vhd"
