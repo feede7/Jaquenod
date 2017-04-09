@@ -1,0 +1,25 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/TB_LFSR_Mod_isim_beh.exe -prj /home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/TB_LFSR_Mod_beh.prj work.TB_LFSR_Mod 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/Sources/LFSR_Mod.vhd" into library work
+Parsing VHDL file "/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/Sources/TB_LFSR_Mod.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:746 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+WARNING:HDLCompiler:220 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+WARNING:HDLCompiler:981 - "/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/Sources/LFSR_Mod.vhd" Line 27: Non-static loop limit exceeded
+Completed static elaboration
+Fuse Memory Usage: 96556 KB
+Fuse CPU Usage: 778980 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture arq_lfsr_mod of entity En_LFSR_Mod [\En_LFSR_Mod(20)\]
+Compiling architecture behavior of entity tb_lfsr_mod
+Time Resolution for simulation is 1ps.
+Compiled 6 VHDL Units
+Built simulation executable /home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/TB_LFSR_Mod_isim_beh.exe
+Fuse Memory Usage: 668340 KB
+Fuse CPU Usage: 779110 ms
+GCC CPU Usage: 1870 ms

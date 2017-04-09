@@ -1,0 +1,3 @@
+vhdl work "Sources/Common_Types_Pck.vhd"
+vhdl work "Sources/LFSR.vhd"
+vhdl work "Sources/TB_LFSR.vhd"

@@ -14,22 +14,17 @@ architecture Arq_LFSR of En_LFSR is
 
    function LFSR ( FB, n_stages, n_counts : integer; init_value : STD_LOGIC_VECTOR(N downto 1); type_of_FB : std_ulogic) return salida is -- type_of_FB = '0' es XOR, '1' es XNOR
       variable Q 		: salida;
-		variable aux 	: STD_LOGIC;
    begin
 		Q 		:= init_value;
-		
+
 		loop1 :	for i in 1 to n_counts loop
-				aux := Q(FB) XOR Q(n_stages);
-				for i in 2 to N loop
-					Q(i) := Q(i-1);
-				end loop;
-				Q(1) 	:= type_of_FB XOR aux;
+				Q := Q(n_stages-1 downto 1) & (type_of_FB XOR Q(FB) XOR Q(n_stages));
 			end loop loop1;
 		return Q;
    end LFSR;
-	
+
 begin
 
-	cuentas <= LFSR(2,4,3,"0000001",'0');
+	cuentas <= LFSR(2,4,3,to_unsigned(0,N),'1');
 
 end Arq_LFSR;

@@ -1,0 +1,24 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/Desktop/Modulo2/ISE/Actividad_2_2_3/TB_LFSR_isim_beh.exe -prj /home/fede/Desktop/Modulo2/ISE/Actividad_2_2_3/TB_LFSR_beh.prj work.TB_LFSR 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/fede/Desktop/Modulo2/ISE/Actividad_2_2_3/Sources/Common_Types_Pck.vhd" into library work
+Parsing VHDL file "/home/fede/Desktop/Modulo2/ISE/Actividad_2_2_3/Sources/LFSR.vhd" into library work
+Parsing VHDL file "/home/fede/Desktop/Modulo2/ISE/Actividad_2_2_3/Sources/TB_LFSR.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 96564 KB
+Fuse CPU Usage: 58760 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package common_types_pck
+Compiling architecture arq_lfsr of entity En_LFSR [\En_LFSR(20)\]
+Compiling architecture behavior of entity tb_lfsr
+Time Resolution for simulation is 1ps.
+Compiled 7 VHDL Units
+Built simulation executable /home/fede/Desktop/Modulo2/ISE/Actividad_2_2_3/TB_LFSR_isim_beh.exe
+Fuse Memory Usage: 670448 KB
+Fuse CPU Usage: 58860 ms
+GCC CPU Usage: 2010 ms
