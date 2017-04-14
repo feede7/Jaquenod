@@ -1,0 +1,25 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Rate_Multiplier/TB_LFSR_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Rate_Multiplier/TB_LFSR_beh.prj" "work.TB_LFSR" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Rate_Multiplier/Sources/LFSR.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Rate_Multiplier/Sources/Rate_Multiplier.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Rate_Multiplier/Sources/TB_Rate_Multiplier.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 96752 KB
+Fuse CPU Usage: 1160 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture arq_lfsr of entity En_LFSR [\En_LFSR(5)\]
+Compiling architecture arq_rate_multiplier of entity En_Rate_Multiplier [\En_Rate_Multiplier(5,31)\]
+Compiling architecture behavior of entity tb_lfsr
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable /home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Rate_Multiplier/TB_LFSR_isim_beh.exe
+Fuse Memory Usage: 668328 KB
+Fuse CPU Usage: 1240 ms
+GCC CPU Usage: 120 ms

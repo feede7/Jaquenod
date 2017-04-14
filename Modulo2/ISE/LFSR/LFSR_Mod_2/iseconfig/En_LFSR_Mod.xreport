@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-04-08T23:02:40</DateModified>
+  <DateModified>2017-04-14T17:11:13</DateModified>
   <ModuleName>En_LFSR_Mod</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/iseconfig/En_LFSR_Mod.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/</ImplementationReportsDirectory>
+  <SavedFilePath>/home/fede/Documents/Jaquenod/Jaquenod/Modulo2/ISE/LFSR/LFSR_Mod_2/iseconfig/En_LFSR_Mod.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/fede/Documents/Jaquenod/Jaquenod/Modulo2/ISE/LFSR/LFSR_Mod_2/</ImplementationReportsDirectory>
   <DateInitialized>2017-04-06T19:17:24</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

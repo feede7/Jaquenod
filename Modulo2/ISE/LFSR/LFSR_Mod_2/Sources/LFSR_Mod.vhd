@@ -26,7 +26,7 @@ architecture Arq_LFSR_Mod of En_LFSR_Mod is
 				Q := Q(N - 1 downto 1) & (type_of_FB XOR Q(FB) XOR Q(N));
 				modulo := modulo + to_unsigned(1,N);
 			end loop loop2;
-			if modulo >= modulo_ant then
+			if modulo > modulo_ant then
 				modulo_ant := modulo;
 				best_FB := to_unsigned(2**(FB-1),N-1);
 			end if;
@@ -41,7 +41,7 @@ architecture Arq_LFSR_Mod of En_LFSR_Mod is
 
 	signal LFSR_Return : salida;
 
-	begin
+begin
 
 	LFSR_Return <= LFSR_Mod_2(48,'1');
 

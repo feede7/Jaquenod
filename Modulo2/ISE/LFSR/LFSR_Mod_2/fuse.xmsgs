@@ -5,13 +5,13 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1242" delta="unknown" >"/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3240: <arg fmt="%s" index="1">Warning</arg>: <arg fmt="%s" index="2">&quot;NUMERIC_STD.TO_UNSIGNED: vector truncated&quot;</arg>
+</msg>
+
 <msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="220" delta="unknown" >"/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="981" delta="unknown" >"/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_2/Sources/LFSR_Mod.vhd" Line 27: Non-static loop limit exceeded
 </msg>
 
 </messages>

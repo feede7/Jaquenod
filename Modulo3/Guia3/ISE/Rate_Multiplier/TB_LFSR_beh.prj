@@ -1,0 +1,3 @@
+vhdl work "Sources/LFSR.vhd"
+vhdl work "Sources/Rate_Multiplier.vhd"
+vhdl work "Sources/TB_Rate_Multiplier.vhd"

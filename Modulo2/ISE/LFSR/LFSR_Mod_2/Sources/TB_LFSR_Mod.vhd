@@ -33,7 +33,7 @@ USE ieee.std_logic_1164.ALL;
 --USE ieee.numeric_std.ALL;
  
 ENTITY TB_LFSR_Mod IS
-	generic ( H : NATURAL := 20);
+	generic ( H : NATURAL := 5);
 END TB_LFSR_Mod;
  
 ARCHITECTURE behavior OF TB_LFSR_Mod IS 

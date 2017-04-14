@@ -1,0 +1,19 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Map Application Log File for Design 'En_Rate_Multiplier'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc7a100t-fgg484-2 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off
+-power off -o En_Rate_Multiplier_map.ncd En_Rate_Multiplier.ngd
+En_Rate_Multiplier.pcf 
+Target Device  : xc7a100t
+Target Package : fgg484
+Target Speed   : -2
+Mapper Version : artix7 -- $Revision: 1.55 $
+Mapped Date    : Thu Apr 13 20:10:56 2017
+
+WARNING:LIT:701 - PAD symbol "CLK_IN" has an undefined IOSTANDARD.
+WARNING:LIT:702 - PAD symbol "CLK_IN" is not constrained (LOC) to a specific
+   location.
+Mapping design into LUTs...

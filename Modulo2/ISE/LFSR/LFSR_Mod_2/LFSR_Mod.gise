@@ -30,6 +30,7 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
   </files>
 
@@ -38,13 +39,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1491703499" xil_pn:in_ck="1046067993204861031" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1491703499">
+    <transform xil_pn:end_ts="1492121368" xil_pn:in_ck="1046067993204861031" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1492121367">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Sources/LFSR_Mod.vhd"/>
       <outfile xil_pn:name="Sources/TB_LFSR_Mod.vhd"/>
     </transform>
@@ -60,39 +57,32 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1491703499" xil_pn:in_ck="1046067993204861031" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1491703499">
+    <transform xil_pn:end_ts="1492121368" xil_pn:in_ck="1046067993204861031" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1492121368">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Sources/LFSR_Mod.vhd"/>
       <outfile xil_pn:name="Sources/TB_LFSR_Mod.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1491704280" xil_pn:in_ck="1046067993204861031" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6954200873448151378" xil_pn:start_ts="1491703499">
+    <transform xil_pn:end_ts="1492121372" xil_pn:in_ck="1046067993204861031" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6954200873448151378" xil_pn:start_ts="1492121368">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TB_LFSR_Mod_beh.prj"/>
       <outfile xil_pn:name="TB_LFSR_Mod_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1491704280" xil_pn:in_ck="6826691734495582193" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6704346047805083775" xil_pn:start_ts="1491704280">
+    <transform xil_pn:end_ts="1492121372" xil_pn:in_ck="6826691734495582193" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="6704346047805083775" xil_pn:start_ts="1492121372">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TB_LFSR_Mod_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
   </transforms>
 
