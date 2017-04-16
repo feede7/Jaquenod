@@ -1,0 +1,2 @@
+vhdl work "Sources/MC4044.vhd"
+vhdl work "Sources/TB_MC4044.vhd"

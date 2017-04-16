@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad_3_1_4/MC4044/TB_MC4044_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad_3_1_4/MC4044/TB_MC4044_beh.prj" "work.TB_MC4044" 

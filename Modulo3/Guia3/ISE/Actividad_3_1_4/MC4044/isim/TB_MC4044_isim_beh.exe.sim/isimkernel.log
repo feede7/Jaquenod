@@ -1,0 +1,28 @@
+Command line:
+   TB_MC4044_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  33235
+
+Sun Apr 16 19:08:35 2017
+
+
+ Elaboration Time: 0.03 sec
+
+ Current Memory Usage: 197.939 Meg
+
+ Total Signals          : 39
+ Total Nets             : 60
+ Total Signal Drivers   : 24
+ Total Blocks           : 5
+ Total Primitive Blocks : 4
+ Total Processes        : 24
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 420
+
+ Total Simulation Time: 0.14 sec
+
+ Current Memory Usage: 273.441 Meg
+
+Sun Apr 16 19:57:56 2017
+
