@@ -36,9 +36,10 @@ ARCHITECTURE behavior OF TB_Receptor IS
    signal Rel2_240 : std_logic;
 
    -- Clock period definitions
-   constant Clk72MHz_period : time := 1388 ps;
-   constant Rel2_048_period : time := 48828 ps;
-   constant Ref17_92_period : time := 5580 ps;
+   constant Clk72MHz_period : time :=  138889 ps;
+--   constant Rel2_048_period : time := 4882813 ps;
+   constant Rel2_048_period : time := 4880000 ps;
+   constant Ref17_92_period : time :=  558036 ps;
 	
 		
 	signal Counter_1		: unsigned(10 downto 0);

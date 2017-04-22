@@ -11,15 +11,17 @@ entity En_Receptor is
 				Clk72MHz	: in  STD_LOGIC;
 				Reset		: in  STD_LOGIC;
 				Rel17_92	: out STD_LOGIC;
+				R2048X	: out STD_LOGIC;
 				Rel2_240	: out STD_LOGIC);
 end En_Receptor;
 
 architecture Arq_Receptor of En_Receptor is
 	signal sRel17_92 		: STD_LOGIC;
-	signal R2048X 			: STD_LOGIC;
+	signal sR2048X			: STD_LOGIC;
 	signal sPFD_Slower 	: STD_LOGIC;
 	signal sPFD_Faster 	: STD_LOGIC;
 	signal DIV4_5 			: STD_LOGIC_VECTOR(7 downto 0);
+	signal Num4_5 			: STD_LOGIC_VECTOR(7 downto 0);
 	signal Rel2048edge 	: STD_LOGIC;
 	signal srel2_048 		: STD_LOGIC;
 
@@ -49,9 +51,10 @@ begin
 		N			=> STD_LOGIC_VECTOR(to_unsigned(8,8)),
 		Num		=> STD_LOGIC_VECTOR(to_unsigned(3,8)),
 		Den		=> STD_LOGIC_VECTOR(to_unsigned(4,8)),
-		Tick_Out => R2048X
+		Tick_Out => sR2048X
 		);
 	
+	R2048X		<= sR2048X;
 	Rel2048edge <= (not sRel2_048) and Rel2_048;
 	
 	process(Clk72MHz)
@@ -60,27 +63,26 @@ begin
 			sRel2_048 	<= Rel2_048;
 		end if;
 	end process;
-	
-	INS_PFD: entity work.En_PFD(Arq_PFD)
-   Port map ( 
-		RefCLK 	=> Rel2048edge,
-      VcoCLK 	=> R2048X,
-		Reset		=> Reset,
-      Slower 	=> sPFD_Slower,
-      Faster 	=> sPFD_Faster,
-      nClr 		=> open
-		);
 
-	DIV4_5 <= 	STD_LOGIC_VECTOR(to_unsigned(5,8)) when sPFD_Slower = '1' else
+	INS_MC4044: entity work.En_MC4044(Arq_MC4044)
+    Port map( 
+		R  		=> Rel2048edge,
+      V  		=> sR2048X,
+		U1 		=> sPFD_Faster,
+		D1 		=> sPFD_Slower,
+		State 	=> open
+	  );
+
+	DIV4_5 <= 	STD_LOGIC_VECTOR(to_unsigned(5,8)) when sPFD_Slower = '0' else -- sPFD_Slower funciona con lógica negada en el M4044
 					STD_LOGIC_VECTOR(to_unsigned(4,8));
-
+					
 	Ins_Rel17_92: entity work.En_Div_Bresenham(Arq_DIV_Bresenham)
 	port map(
 		CLK_IN	=> Clk72MHz,
 		Reset		=> Reset,
-		N			=> STD_LOGIC_VECTOR(to_unsigned(4,8)),--DIV4_5,
-		Num		=> STD_LOGIC_VECTOR(to_unsigned(0,8)),
-		Den		=> STD_LOGIC_VECTOR(to_unsigned(0,8)),
+		N			=> DIV4_5,
+		Num		=> STD_LOGIC_VECTOR(to_unsigned(0,8)), -- Se desactiva la división racional ya que será manejado por el detector de fase
+		Den		=> STD_LOGIC_VECTOR(to_unsigned(25,8)),
 		Tick_Out => sRel17_92
 		);
 

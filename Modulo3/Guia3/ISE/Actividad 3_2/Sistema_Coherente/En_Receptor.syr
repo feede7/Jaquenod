@@ -108,9 +108,9 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/PFD.vhd" into library work
-Parsing entity <En_PFD>.
-Parsing architecture <Arq_PFD> of entity <en_pfd>.
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/MC4044.vhd" into library work
+Parsing entity <En_MC4044>.
+Parsing architecture <Arq_MC4044> of entity <en_mc4044>.
 Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Div_Bresenham.vhd" into library work
 Parsing entity <En_Div_Bresenham>.
 Parsing architecture <Arq_Div_Bresenham> of entity <en_div_bresenham>.
@@ -125,8 +125,9 @@ Parsing architecture <Arq_Receptor> of entity <en_receptor>.
 Elaborating entity <En_Receptor> (architecture <Arq_Receptor>) from library <work>.
 
 Elaborating entity <En_Div_Bresenham> (architecture <Arq_Div_Bresenham>) from library <work>.
+WARNING:HDLCompiler:92 - "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Div_Bresenham.vhd" Line 38: num should be on the sensitivity list of the process
 
-Elaborating entity <En_PFD> (architecture <Arq_PFD>) from library <work>.
+Elaborating entity <En_MC4044> (architecture <Arq_MC4044>) from library <work>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -135,25 +136,32 @@ Elaborating entity <En_PFD> (architecture <Arq_PFD>) from library <work>.
 Synthesizing Unit <En_Receptor>.
     Related source file is "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd".
 WARNING:Xst:647 - Input <Dat2_048> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd" line 68: Output port <nClr> of the instance <INS_PFD> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd" line 67: Output port <State> of the instance <INS_MC4044> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd" line 67: Output port <U1> of the instance <INS_MC4044> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <srel2_048>.
-WARNING:Xst:737 - Found 1-bit latch for signal <DIV4_5<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred   1 D-type flip-flop(s).
-	inferred   1 Latch(s).
 Unit <En_Receptor> synthesized.
 
 Synthesizing Unit <En_Div_Bresenham>.
     Related source file is "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Div_Bresenham.vhd".
-    Found 8-bit register for signal <DownCount>.
     Found 9-bit register for signal <Counter>.
-    Found 9-bit register for signal <NextAdd>.
+    Found 8-bit register for signal <DownCount>.
     Found 1-bit register for signal <Tick_Out>.
+    Found 1-bit register for signal <NextAdd<8>>.
+    Found 1-bit register for signal <NextAdd<7>>.
+    Found 1-bit register for signal <NextAdd<6>>.
+    Found 1-bit register for signal <NextAdd<5>>.
+    Found 1-bit register for signal <NextAdd<4>>.
+    Found 1-bit register for signal <NextAdd<3>>.
+    Found 1-bit register for signal <NextAdd<2>>.
+    Found 1-bit register for signal <NextAdd<1>>.
+    Found 1-bit register for signal <NextAdd<0>>.
     Found 9-bit adder for signal <NextCounter> created at line 31.
-    Found 8-bit adder for signal <N[7]_GND_5_o_add_4_OUT> created at line 47.
-    Found 9-bit subtractor for signal <GND_5_o_GND_5_o_sub_4_OUT<8:0>> created at line 46.
-    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_8_OUT<7:0>> created at line 53.
-    Found 9-bit comparator greater for signal <NextCounter[8]_GND_5_o_LessThan_3_o> created at line 45
+    Found 9-bit subtractor for signal <GND_5_o_GND_5_o_sub_4_OUT<8:0>> created at line 45.
+    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_5_OUT<7:0>> created at line 49.
+    Found 8-bit subtractor for signal <GND_5_o_GND_5_o_sub_8_OUT<7:0>> created at line 52.
+    Found 9-bit comparator greater for signal <NextCounter[8]_GND_5_o_LessThan_3_o> created at line 44
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  27 D-type flip-flop(s).
@@ -161,28 +169,29 @@ Synthesizing Unit <En_Div_Bresenham>.
 	inferred   5 Multiplexer(s).
 Unit <En_Div_Bresenham> synthesized.
 
-Synthesizing Unit <En_PFD>.
-    Related source file is "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/PFD.vhd".
-    Found 1-bit register for signal <Qvco>.
-    Found 1-bit register for signal <Qref>.
+Synthesizing Unit <En_MC4044>.
+    Related source file is "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/MC4044.vhd".
+    Found 64x4-bit Read Only RAM for signal <Next_State>
+    Found 16x2-bit Read Only RAM for signal <Salida>
     Summary:
-	inferred   2 D-type flip-flop(s).
-Unit <En_PFD> synthesized.
+	inferred   2 RAM(s).
+Unit <En_MC4044> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 2
+ 16x2-bit single-port Read Only RAM                    : 1
+ 64x4-bit single-port Read Only RAM                    : 1
 # Adders/Subtractors                                   : 9
- 8-bit addsub                                          : 3
+ 8-bit subtractor                                      : 3
  9-bit adder                                           : 3
  9-bit subtractor                                      : 3
-# Registers                                            : 15
- 1-bit register                                        : 6
+# Registers                                            : 37
+ 1-bit register                                        : 31
  8-bit register                                        : 3
- 9-bit register                                        : 6
-# Latches                                              : 1
- 1-bit latch                                           : 1
+ 9-bit register                                        : 3
 # Comparators                                          : 3
  9-bit comparator greater                              : 3
 # Multiplexers                                         : 15
@@ -201,18 +210,46 @@ Synthesizing (advanced) Unit <En_Div_Bresenham>.
 The following registers are absorbed into accumulator <Counter>: 1 register on signal <Counter>.
 Unit <En_Div_Bresenham> synthesized (advanced).
 
+Synthesizing (advanced) Unit <En_MC4044>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Next_State> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 4-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <(Next_State,R,V)> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <Next_State>    |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Salida> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 2-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <Next_State>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <Salida>        |          |
+    -----------------------------------------------------------------------
+Unit <En_MC4044> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 2
+ 16x2-bit single-port distributed Read Only RAM        : 1
+ 64x4-bit single-port distributed Read Only RAM        : 1
 # Adders/Subtractors                                   : 9
- 8-bit addsub                                          : 3
+ 8-bit subtractor                                      : 3
  9-bit adder                                           : 3
  9-bit subtractor                                      : 3
 # Accumulators                                         : 3
  9-bit up accumulator                                  : 3
-# Registers                                            : 57
- Flip-Flops                                            : 57
+# Registers                                            : 55
+ Flip-Flops                                            : 55
 # Comparators                                          : 3
  9-bit comparator greater                              : 3
 # Multiplexers                                         : 36
@@ -225,34 +262,27 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <INS_Rel2_048/NextAdd_1> (without init value) has a constant value of 1 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <INS_Rel2_048/NextAdd_0> (without init value) has a constant value of 1 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <INS_Rel2_240/NextAdd_1> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <INS_Rel2_240/NextAdd_0> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/NextAdd_4> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_048/NextAdd_1> (without init value) has a constant value of 1 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_0> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_1> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_3> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_4> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_2> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_6> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_7> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_5> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/NextAdd_8> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/NextAdd_3> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <INS_Rel2_240/NextAdd_8> in Unit <En_Receptor> is equivalent to the following 6 FFs/Latches, which will be removed : <INS_Rel2_240/NextAdd_7> <INS_Rel2_240/NextAdd_6> <INS_Rel2_240/NextAdd_5> <INS_Rel2_240/NextAdd_4> <INS_Rel2_240/NextAdd_3> <INS_Rel2_240/NextAdd_2> 
-INFO:Xst:2261 - The FF/Latch <Ins_Rel17_92/NextAdd_8> in Unit <En_Receptor> is equivalent to the following 6 FFs/Latches, which will be removed : <Ins_Rel17_92/NextAdd_7> <Ins_Rel17_92/NextAdd_6> <Ins_Rel17_92/NextAdd_5> <Ins_Rel17_92/NextAdd_2> <Ins_Rel17_92/NextAdd_1> <Ins_Rel17_92/NextAdd_0> 
-INFO:Xst:2261 - The FF/Latch <INS_Rel2_048/NextAdd_8> in Unit <En_Receptor> is equivalent to the following 6 FFs/Latches, which will be removed : <INS_Rel2_048/NextAdd_7> <INS_Rel2_048/NextAdd_6> <INS_Rel2_048/NextAdd_5> <INS_Rel2_048/NextAdd_4> <INS_Rel2_048/NextAdd_3> <INS_Rel2_048/NextAdd_2> 
-WARNING:Xst:3001 - This design contains one or more registers or latches with an active
-   asynchronous set and asynchronous reset. While this circuit can be built,
-   it creates a sub-optimal implementation in terms of area, power and
-   performance. For a more optimal implementation Xilinx highly recommends
-   one of the following:
-
-          1) Remove either the set or reset from all registers and latches if
-             not needed for required functionality
-          2) Modify the code in order to produce a synchronous set
-             and/or reset (both is preferred)
-          3) Use the -async_to_sync option to transform the asynchronous
-             set/reset to synchronous operation
-             (timing simulation highly recommended when using this option)
-
-  Please refer to http://www.xilinx.com search string "Artix7 asynchronous set/reset" for more details.
-
-  List of register instances with asynchronous set and reset:
-    DIV4_5_0 in unit <En_Receptor>
-
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/NextAdd_4> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2170 - Unit MTP_ : the following signal(s) form a combinatorial loop: INS_MC4044/Mram_Next_State.
+WARNING:Xst:2170 - Unit MTP_ : the following signal(s) form a combinatorial loop: INS_MC4044/Mram_Next_State2.
+WARNING:Xst:2170 - Unit MTP_ : the following signal(s) form a combinatorial loop: INS_MC4044/Mram_Next_State1.
+WARNING:Xst:2170 - Unit MTP_ : the following signal(s) form a combinatorial loop: INS_MC4044/Mram_Next_State3.
+WARNING:Xst:2170 - Unit En_Receptor : the following signal(s) form a combinatorial loop: INS_MC4044/Mram_Next_State.
+WARNING:Xst:2170 - Unit En_Receptor : the following signal(s) form a combinatorial loop: INS_MC4044/Mram_Next_State2.
+WARNING:Xst:2170 - Unit En_Receptor : the following signal(s) form a combinatorial loop: INS_MC4044/Mram_Next_State1.
+WARNING:Xst:2170 - Unit En_Receptor : the following signal(s) form a combinatorial loop: INS_MC4044/Mram_Next_State3.
 
 Optimizing unit <En_Receptor> ...
 WARNING:Xst:1710 - FF/Latch <INS_Rel2_048/DownCount_7> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
@@ -268,17 +298,7 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCo
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCount_5> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCount_4> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCount_3> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <INS_Rel2_240/NextAdd_8> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_8> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_7> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_6> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_5> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_4> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_3> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_2> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_1> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/Counter_0> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/Counter_8> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <INS_Rel2_240/Counter_8> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/Counter_7> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/Counter_6> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/Counter_5> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
@@ -287,7 +307,22 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/Counte
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/Counter_2> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/Counter_1> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/Counter_0> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/NextAdd_8> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCount_3> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCount_4> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCount_5> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCount_6> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Ins_Rel17_92/DownCount_7> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/DownCount_3> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/DownCount_4> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/DownCount_5> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/DownCount_6> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_240/DownCount_7> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_048/DownCount_4> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_048/DownCount_5> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_048/DownCount_6> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_Rel2_048/DownCount_7> (without init value) has a constant value of 0 in block <En_Receptor>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <Ins_Rel17_92/NextAdd_0> in Unit <En_Receptor> is equivalent to the following 5 FFs/Latches, which will be removed : <Ins_Rel17_92/NextAdd_1> <Ins_Rel17_92/NextAdd_2> <Ins_Rel17_92/NextAdd_6> <Ins_Rel17_92/NextAdd_7> <Ins_Rel17_92/NextAdd_5> 
+INFO:Xst:2261 - The FF/Latch <INS_Rel2_048/NextAdd_2> in Unit <En_Receptor> is equivalent to the following 5 FFs/Latches, which will be removed : <INS_Rel2_048/NextAdd_3> <INS_Rel2_048/NextAdd_4> <INS_Rel2_048/NextAdd_6> <INS_Rel2_048/NextAdd_7> <INS_Rel2_048/NextAdd_5> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -299,8 +334,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 27
- Flip-Flops                                            : 27
+# Registers                                            : 36
+ Flip-Flops                                            : 36
 
 =========================================================================
 
@@ -323,29 +358,29 @@ Top Level Output File Name         : En_Receptor.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 77
+# BELS                             : 157
 #      GND                         : 1
-#      INV                         : 4
-#      LUT2                        : 16
-#      LUT3                        : 5
-#      LUT4                        : 11
-#      LUT5                        : 2
-#      LUT6                        : 3
-#      MUXCY                       : 16
-#      VCC                         : 1
-#      XORCY                       : 18
-# FlipFlops/Latches                : 28
-#      FD                          : 1
-#      FDC                         : 2
-#      FDE                         : 1
-#      FDR                         : 14
-#      FDRE                        : 9
-#      LD                          : 1
+#      INV                         : 6
+#      LUT1                        : 4
+#      LUT2                        : 33
+#      LUT3                        : 7
+#      LUT4                        : 5
+#      LUT5                        : 6
+#      LUT6                        : 25
+#      MUXCY                       : 32
+#      MUXF7                       : 2
+#      XORCY                       : 36
+# FlipFlops/Latches                : 36
+#      FD                          : 2
+#      FDC                         : 14
+#      FDCE                        : 18
+#      FDE                         : 2
 # Clock Buffers                    : 2
-#      BUFG                        : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
 # IO Buffers                       : 5
-#      IBUF                        : 3
-#      OBUF                        : 2
+#      IBUF                        : 2
+#      OBUF                        : 3
 
 Device utilization summary:
 ---------------------------
@@ -354,20 +389,20 @@ Selected Device : 7a100tfgg484-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              28  out of  126800     0%  
- Number of Slice LUTs:                   41  out of  63400     0%  
-    Number used as Logic:                41  out of  63400     0%  
+ Number of Slice Registers:              36  out of  126800     0%  
+ Number of Slice LUTs:                   86  out of  63400     0%  
+    Number used as Logic:                86  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     42
-   Number with an unused Flip Flop:      14  out of     42    33%  
-   Number with an unused LUT:             1  out of     42     2%  
-   Number of fully used LUT-FF pairs:    27  out of     42    64%  
-   Number of unique control sets:         8
+ Number of LUT Flip Flop pairs used:     87
+   Number with an unused Flip Flop:      51  out of     87    58%  
+   Number with an unused LUT:             1  out of     87     1%  
+   Number of fully used LUT-FF pairs:    35  out of     87    40%  
+   Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                           6
- Number of bonded IOBs:                   5  out of    285     1%  
+ Number of IOs:                           7
+ Number of bonded IOBs:                   6  out of    285     2%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
@@ -393,16 +428,9 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-Clk72MHz                           | IBUF+BUFG              | 5     |
+Clk72MHz                           | BUFGP                  | 16    |
 Ins_Rel17_92/Tick_Out              | BUFG                   | 20    |
-INS_Rel2_048/Tick_Out              | NONE(INS_PFD/Qvco)     | 1     |
-Rel2048edge(Rel2048edge1:O)        | NONE(*)(INS_PFD/Qref)  | 1     |
-DIV4_5_0_G(DIV4_5_0_G:O)           | NONE(*)(DIV4_5_0)      | 1     |
 -----------------------------------+------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -412,9 +440,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.980ns (Maximum Frequency: 335.610MHz)
-   Minimum input arrival time before clock: 1.041ns
-   Maximum output required time after clock: 0.737ns
+   Minimum period: 5.402ns (Maximum Frequency: 185.108MHz)
+   Minimum input arrival time before clock: 5.104ns
+   Maximum output required time after clock: 0.760ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -423,141 +451,114 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Ins_Rel17_92/Tick_Out'
-  Clock period: 2.980ns (frequency: 335.610MHz)
-  Total number of paths / destination ports: 410 / 30
+  Clock period: 3.126ns (frequency: 319.933MHz)
+  Total number of paths / destination ports: 916 / 29
 -------------------------------------------------------------------------
-Delay:               2.980ns (Levels of Logic = 6)
+Delay:               3.126ns (Levels of Logic = 10)
   Source:            INS_Rel2_048/Counter_2 (FF)
-  Destination:       INS_Rel2_048/DownCount_0 (FF)
+  Destination:       INS_Rel2_048/NextAdd_8 (FF)
   Source Clock:      Ins_Rel17_92/Tick_Out rising
   Destination Clock: Ins_Rel17_92/Tick_Out rising
 
-  Data Path: INS_Rel2_048/Counter_2 to INS_Rel2_048/DownCount_0
+  Data Path: INS_Rel2_048/Counter_2 to INS_Rel2_048/NextAdd_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             2   0.398   0.456  INS_Rel2_048/Counter_2 (INS_Rel2_048/Counter_2)
+     FDCE:C->Q             2   0.398   0.456  INS_Rel2_048/Counter_2 (INS_Rel2_048/Counter_2)
      LUT2:I0->O            1   0.105   0.000  INS_Rel2_048/Madd_NextCounter_lut<2> (INS_Rel2_048/Madd_NextCounter_lut<2>)
      MUXCY:S->O            1   0.392   0.000  INS_Rel2_048/Madd_NextCounter_cy<2> (INS_Rel2_048/Madd_NextCounter_cy<2>)
      MUXCY:CI->O           1   0.025   0.000  INS_Rel2_048/Madd_NextCounter_cy<3> (INS_Rel2_048/Madd_NextCounter_cy<3>)
-     XORCY:CI->O           2   0.417   0.604  INS_Rel2_048/Madd_NextCounter_xor<4> (INS_Rel2_048/NextCounter<4>)
-     LUT6:I3->O            1   0.105   0.357  INS_Rel2_048/GND_5_o_N[7]_mux_10_OUT<0>3_SW1 (N2)
-     LUT6:I5->O            1   0.105   0.000  INS_Rel2_048/GND_5_o_N[7]_mux_10_OUT<0>1 (INS_Rel2_048/GND_5_o_N[7]_mux_10_OUT<0>)
-     FDR:D                     0.015          INS_Rel2_048/DownCount_0
+     MUXCY:CI->O           1   0.025   0.000  INS_Rel2_048/Madd_NextCounter_cy<4> (INS_Rel2_048/Madd_NextCounter_cy<4>)
+     MUXCY:CI->O           1   0.025   0.000  INS_Rel2_048/Madd_NextCounter_cy<5> (INS_Rel2_048/Madd_NextCounter_cy<5>)
+     MUXCY:CI->O           1   0.025   0.000  INS_Rel2_048/Madd_NextCounter_cy<6> (INS_Rel2_048/Madd_NextCounter_cy<6>)
+     MUXCY:CI->O           0   0.025   0.000  INS_Rel2_048/Madd_NextCounter_cy<7> (INS_Rel2_048/Madd_NextCounter_cy<7>)
+     XORCY:CI->O           8   0.417   0.378  INS_Rel2_048/Madd_NextCounter_xor<8> (INS_Rel2_048/NextCounter<8>)
+     MUXF7:S->O            1   0.377   0.357  INS_Rel2_048/NextCounter[8]_GND_5_o_LessThan_3_o1_SW9 (N44)
+     LUT6:I5->O            1   0.105   0.000  INS_Rel2_048/Mmux_NextAdd[8]_GND_5_o_mux_9_OUT91 (INS_Rel2_048/NextAdd[8]_GND_5_o_mux_9_OUT<8>)
+     FDC:D                     0.015          INS_Rel2_048/NextAdd_8
     ----------------------------------------
-    Total                      2.980ns (1.562ns logic, 1.418ns route)
-                                       (52.4% logic, 47.6% route)
+    Total                      3.126ns (1.934ns logic, 1.192ns route)
+                                       (61.9% logic, 38.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk72MHz'
-  Clock period: 1.184ns (frequency: 844.488MHz)
-  Total number of paths / destination ports: 12 / 4
+  Clock period: 5.402ns (frequency: 185.108MHz)
+  Total number of paths / destination ports: 852 / 24
 -------------------------------------------------------------------------
-Delay:               1.184ns (Levels of Logic = 1)
-  Source:            Ins_Rel17_92/DownCount_0 (FF)
-  Destination:       Ins_Rel17_92/DownCount_0 (FF)
+Delay:               5.402ns (Levels of Logic = 7)
+  Source:            srel2_048 (FF)
+  Destination:       Ins_Rel17_92/DownCount_2 (FF)
   Source Clock:      Clk72MHz rising
   Destination Clock: Clk72MHz rising
 
-  Data Path: Ins_Rel17_92/DownCount_0 to Ins_Rel17_92/DownCount_0
+  Data Path: srel2_048 to Ins_Rel17_92/DownCount_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              4   0.398   0.666  Ins_Rel17_92/DownCount_0 (Ins_Rel17_92/DownCount_0)
-     LUT4:I0->O            1   0.105   0.000  Ins_Rel17_92/GND_5_o_N[7]_mux_10_OUT<0>1 (Ins_Rel17_92/GND_5_o_N[7]_mux_10_OUT<0>)
-     FDR:D                     0.015          Ins_Rel17_92/DownCount_0
+     FD:C->Q               1   0.398   0.357  srel2_048 (srel2_048)
+     LUT2:I1->O            3   0.105   0.369  Rel2048edge1 (Rel2048edge)
+     LUT6:I5->O            8   0.105   0.688  INS_MC4044/Mram_Next_State12 (INS_MC4044/Next_State<0>)
+     LUT6:I2->O            8   0.105   0.819  INS_MC4044/Mram_Next_State21 (INS_MC4044/Next_State<2>)
+     LUT6:I1->O            7   0.105   0.683  INS_MC4044/Mram_Next_State31 (INS_MC4044/Next_State<3>)
+     LUT5:I1->O            8   0.105   0.688  INS_MC4044/Mram_Next_State111 (INS_MC4044/Next_State<1>)
+     LUT4:I0->O            1   0.105   0.649  Ins_Rel17_92/mux121_SW4 (N24)
+     LUT6:I2->O            1   0.105   0.000  Ins_Rel17_92/Mmux_GND_5_o_GND_5_o_mux_10_OUT_rs_xor<2>11 (Ins_Rel17_92/GND_5_o_GND_5_o_mux_10_OUT<2>)
+     FDC:D                     0.015          Ins_Rel17_92/DownCount_2
     ----------------------------------------
-    Total                      1.184ns (0.518ns logic, 0.666ns route)
-                                       (43.7% logic, 56.3% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'INS_Rel2_048/Tick_Out'
-  Clock period: 1.607ns (frequency: 622.471MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.607ns (Levels of Logic = 1)
-  Source:            INS_PFD/Qvco (FF)
-  Destination:       INS_PFD/Qvco (FF)
-  Source Clock:      INS_Rel2_048/Tick_Out rising
-  Destination Clock: INS_Rel2_048/Tick_Out rising
-
-  Data Path: INS_PFD/Qvco to INS_PFD/Qvco
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q              2   0.398   0.362  INS_PFD/Qvco (INS_PFD/Qvco)
-     LUT2:I1->O            2   0.105   0.344  INS_PFD/snClr_INV_29_o1 (INS_PFD/snClr_INV_29_o)
-     FDC:CLR                   0.397          INS_PFD/Qvco
-    ----------------------------------------
-    Total                      1.607ns (0.900ns logic, 0.707ns route)
-                                       (56.0% logic, 44.0% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'Rel2048edge'
-  Clock period: 1.707ns (frequency: 585.720MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               1.707ns (Levels of Logic = 1)
-  Source:            INS_PFD/Qref (FF)
-  Destination:       INS_PFD/Qref (FF)
-  Source Clock:      Rel2048edge rising
-  Destination Clock: Rel2048edge rising
-
-  Data Path: INS_PFD/Qref to INS_PFD/Qref
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q              3   0.398   0.463  INS_PFD/Qref (INS_PFD/Qref)
-     LUT2:I0->O            2   0.105   0.344  INS_PFD/snClr_INV_29_o1 (INS_PFD/snClr_INV_29_o)
-     FDC:CLR                   0.397          INS_PFD/Qref
-    ----------------------------------------
-    Total                      1.707ns (0.900ns logic, 0.807ns route)
-                                       (52.7% logic, 47.3% route)
+    Total                      5.402ns (1.148ns logic, 4.254ns route)
+                                       (21.3% logic, 78.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk72MHz'
-  Total number of paths / destination ports: 5 / 5
+  Total number of paths / destination ports: 68 / 19
 -------------------------------------------------------------------------
-Offset:              0.866ns (Levels of Logic = 1)
-  Source:            Reset (PAD)
+Offset:              5.104ns (Levels of Logic = 8)
+  Source:            Rel2_048 (PAD)
   Destination:       Ins_Rel17_92/DownCount_2 (FF)
   Destination Clock: Clk72MHz rising
 
-  Data Path: Reset to Ins_Rel17_92/DownCount_2
+  Data Path: Rel2_048 to Ins_Rel17_92/DownCount_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            25   0.001   0.468  Reset_IBUF (Reset_IBUF)
-     FDR:R                     0.397          Ins_Rel17_92/Tick_Out
+     IBUF:I->O             2   0.001   0.456  Rel2_048_IBUF (Rel2_048_IBUF)
+     LUT2:I0->O            3   0.105   0.369  Rel2048edge1 (Rel2048edge)
+     LUT6:I5->O            8   0.105   0.688  INS_MC4044/Mram_Next_State12 (INS_MC4044/Next_State<0>)
+     LUT6:I2->O            8   0.105   0.819  INS_MC4044/Mram_Next_State21 (INS_MC4044/Next_State<2>)
+     LUT6:I1->O            7   0.105   0.683  INS_MC4044/Mram_Next_State31 (INS_MC4044/Next_State<3>)
+     LUT5:I1->O            8   0.105   0.688  INS_MC4044/Mram_Next_State111 (INS_MC4044/Next_State<1>)
+     LUT4:I0->O            1   0.105   0.649  Ins_Rel17_92/mux121_SW4 (N24)
+     LUT6:I2->O            1   0.105   0.000  Ins_Rel17_92/Mmux_GND_5_o_GND_5_o_mux_10_OUT_rs_xor<2>11 (Ins_Rel17_92/GND_5_o_GND_5_o_mux_10_OUT<2>)
+     FDC:D                     0.015          Ins_Rel17_92/DownCount_2
     ----------------------------------------
-    Total                      0.866ns (0.398ns logic, 0.468ns route)
-                                       (46.0% logic, 54.0% route)
+    Total                      5.104ns (0.751ns logic, 4.353ns route)
+                                       (14.7% logic, 85.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Rel17_92/Tick_Out'
-  Total number of paths / destination ports: 21 / 21
+  Total number of paths / destination ports: 20 / 20
 -------------------------------------------------------------------------
-Offset:              1.041ns (Levels of Logic = 2)
+Offset:              1.047ns (Levels of Logic = 2)
   Source:            Reset (PAD)
-  Destination:       INS_Rel2_048/NextAdd_8 (FF)
+  Destination:       INS_Rel2_048/Tick_Out (FF)
   Destination Clock: Ins_Rel17_92/Tick_Out rising
 
-  Data Path: Reset to INS_Rel2_048/NextAdd_8
+  Data Path: Reset to INS_Rel2_048/Tick_Out
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            25   0.001   0.486  Reset_IBUF (Reset_IBUF)
-     LUT5:I4->O            1   0.105   0.339  INS_Rel2_048/_n0056_inv11 (INS_Rel2_048/_n0056_inv)
-     FDE:CE                    0.110          INS_Rel2_048/NextAdd_8
+     IBUF:I->O            34   0.001   0.469  Reset_IBUF (Reset_IBUF)
+     INV:I->O              2   0.123   0.344  INS_Rel2_048/Reset_inv1_INV_0 (INS_Rel2_048/Reset_inv)
+     FDE:CE                    0.110          INS_Rel2_048/Tick_Out
     ----------------------------------------
-    Total                      1.041ns (0.216ns logic, 0.825ns route)
-                                       (20.8% logic, 79.2% route)
+    Total                      1.047ns (0.234ns logic, 0.813ns route)
+                                       (22.3% logic, 77.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk72MHz'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              0.737ns (Levels of Logic = 1)
+Offset:              0.742ns (Levels of Logic = 1)
   Source:            Ins_Rel17_92/Tick_Out (FF)
   Destination:       Rel17_92 (PAD)
   Source Clock:      Clk72MHz rising
@@ -566,30 +567,30 @@ Offset:              0.737ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.398   0.339  Ins_Rel17_92/Tick_Out (Ins_Rel17_92/Tick_Out)
+     FD:C->Q               2   0.398   0.344  Ins_Rel17_92/Tick_Out (Ins_Rel17_92/Tick_Out)
      OBUF:I->O                 0.000          Rel17_92_OBUF (Rel17_92)
     ----------------------------------------
-    Total                      0.737ns (0.398ns logic, 0.339ns route)
-                                       (54.0% logic, 46.0% route)
+    Total                      0.742ns (0.398ns logic, 0.344ns route)
+                                       (53.6% logic, 46.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Ins_Rel17_92/Tick_Out'
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              0.737ns (Levels of Logic = 1)
-  Source:            INS_Rel2_240/Tick_Out (FF)
-  Destination:       Rel2_240 (PAD)
+Offset:              0.760ns (Levels of Logic = 1)
+  Source:            INS_Rel2_048/Tick_Out (FF)
+  Destination:       R2048X (PAD)
   Source Clock:      Ins_Rel17_92/Tick_Out rising
 
-  Data Path: INS_Rel2_240/Tick_Out to Rel2_240
+  Data Path: INS_Rel2_048/Tick_Out to R2048X
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.398   0.339  INS_Rel2_240/Tick_Out (INS_Rel2_240/Tick_Out)
-     OBUF:I->O                 0.000          Rel2_240_OBUF (Rel2_240)
+     FDE:C->Q              5   0.398   0.362  INS_Rel2_048/Tick_Out (INS_Rel2_048/Tick_Out)
+     OBUF:I->O                 0.000          R2048X_OBUF (R2048X)
     ----------------------------------------
-    Total                      0.737ns (0.398ns logic, 0.339ns route)
-                                       (54.0% logic, 46.0% route)
+    Total                      0.760ns (0.398ns logic, 0.362ns route)
+                                       (52.4% logic, 47.6% route)
 
 =========================================================================
 
@@ -597,29 +598,12 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock Clk72MHz
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-Clk72MHz       |    1.184|         |         |         |
-DIV4_5_0_G     |         |    0.998|         |         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock DIV4_5_0_G
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-Rel2048edge    |         |         |    0.749|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock INS_Rel2_048/Tick_Out
 ---------------------+---------+---------+---------+---------+
                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------+---------+---------+---------+---------+
-INS_Rel2_048/Tick_Out|    1.607|         |         |         |
-Rel2048edge          |    1.707|         |         |         |
+Clk72MHz             |    5.402|         |         |         |
+Ins_Rel17_92/Tick_Out|    5.045|         |         |         |
 ---------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Ins_Rel17_92/Tick_Out
@@ -627,30 +611,21 @@ Clock to Setup on destination clock Ins_Rel17_92/Tick_Out
                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------+---------+---------+---------+---------+
-Ins_Rel17_92/Tick_Out|    2.980|         |         |         |
----------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock Rel2048edge
----------------------+---------+---------+---------+---------+
-                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------------+---------+---------+---------+---------+
-INS_Rel2_048/Tick_Out|    1.607|         |         |         |
-Rel2048edge          |    1.707|         |         |         |
+Ins_Rel17_92/Tick_Out|    3.126|         |         |         |
 ---------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 8.96 secs
+Total CPU time to Xst completion: 8.68 secs
  
 --> 
 
 
-Total memory usage is 511424 kilobytes
+Total memory usage is 511532 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   42 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of warnings :   59 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
 
