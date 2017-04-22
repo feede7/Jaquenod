@@ -1,8 +1,5 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
- 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 USE ieee.numeric_std.ALL;
  
 ENTITY TB_Receptor IS
@@ -19,6 +16,7 @@ ARCHITECTURE behavior OF TB_Receptor IS
          Clk72MHz : IN  std_logic;
          Reset 	: IN  std_logic;
          Rel17_92 : OUT  std_logic;
+			R2048X	: OUT STD_LOGIC;
          Rel2_240 : OUT  std_logic
         );
     END COMPONENT;
@@ -33,6 +31,7 @@ ARCHITECTURE behavior OF TB_Receptor IS
  	--Outputs
    signal Rel17_92 : std_logic;
    signal Ref17_92 : std_logic;
+   signal R2048X   : std_logic;
    signal Rel2_240 : std_logic;
 
    -- Clock period definitions
@@ -54,6 +53,7 @@ BEGIN
           Clk72MHz => Clk72MHz,
           Reset => Reset,
           Rel17_92 => Rel17_92,
+          R2048X 	 => R2048X,
           Rel2_240 => Rel2_240
         );
 
@@ -102,5 +102,5 @@ BEGIN
 		end if;
 	end process;
 	
-	Reset <= '1', '0' after 168 ns;
+	Reset <= '1', '0' after 112 ns;
 END;
