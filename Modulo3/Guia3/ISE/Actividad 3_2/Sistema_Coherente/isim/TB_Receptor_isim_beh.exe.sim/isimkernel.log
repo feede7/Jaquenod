@@ -1,0 +1,10 @@
+Command line:
+   TB_Receptor_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  34956
+
+Sat Apr 22 15:30:59 2017
+
+
+ Elaboration Time: 0.03 sec

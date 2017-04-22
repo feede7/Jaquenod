@@ -1,0 +1,11 @@
+Release 14.7 par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+fede::  Sat Apr 22 13:56:22 2017
+
+par -w -intstyle ise -ol high -mt off En_Receptor_map.ncd En_Receptor.ncd
+En_Receptor.pcf 
+
+
+Constraints file: En_Receptor.pcf.
+Loading device for application Rf_Device from file '7a100t.nph' in environment /opt/Xilinx/14.7/ISE_DS/ISE/.

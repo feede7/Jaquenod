@@ -1,0 +1,27 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_beh.prj" "work.TB_Receptor" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/PFD.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Div_Bresenham.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/TB_Receptor.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 96568 KB
+Fuse CPU Usage: 1220 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture arq_div_bresenham of entity En_Div_Bresenham [en_div_bresenham_default]
+Compiling architecture arq_pfd of entity En_PFD [en_pfd_default]
+Compiling architecture arq_receptor of entity En_Receptor [en_receptor_default]
+Compiling architecture behavior of entity tb_receptor
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 10 VHDL Units
+Built simulation executable /home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_isim_beh.exe
+Fuse Memory Usage: 668416 KB
+Fuse CPU Usage: 1320 ms
+GCC CPU Usage: 100 ms

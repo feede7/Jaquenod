@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_beh.prj" "work.TB_Receptor" 

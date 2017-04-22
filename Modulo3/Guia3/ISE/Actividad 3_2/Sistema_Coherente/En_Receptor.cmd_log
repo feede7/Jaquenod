@@ -11,3 +11,6 @@ xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE
 xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/En_Receptor.xst" -ofn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/En_Receptor.syr" 
 xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/En_Receptor.xst" -ofn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/En_Receptor.syr" 
 xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/En_Receptor.xst" -ofn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/En_Receptor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-fgg484-2 "En_Receptor.ngc" En_Receptor.ngd  
+map -intstyle ise -p xc7a100t-fgg484-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o En_Receptor_map.ncd En_Receptor.ngd En_Receptor.pcf 
+par -w -intstyle ise -ol high -mt off En_Receptor_map.ncd En_Receptor.ncd En_Receptor.pcf 

@@ -13,9 +13,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity En_PFD is
     Port ( RefCLK : in  STD_LOGIC;
            VcoCLK : in  STD_LOGIC;
+			  Reset	: in  STD_LOGIC;
            Slower : out  STD_LOGIC;
            Faster : out  STD_LOGIC;
-           nClr : out  STD_LOGIC);
+           nClr 	: out  STD_LOGIC);
 end En_PFD;
 
 architecture Arq_PFD of En_PFD is
@@ -24,18 +25,18 @@ begin
 
 	snClr <= Qref NAND Qvco;
 	
-	process(RefCLK,snClr)
+	process(RefCLK,snClr,Reset)
 	begin
-		if snClr = '0' then
+		if snClr = '0' or Reset = '1' then
 			Qref <= '0';
 		elsif rising_edge(RefCLK) then
 			Qref <= '1';
 		end if;
 	end process;
 		
-	process(VcoCLK,snClr)
+	process(VcoCLK,snClr,Reset)
 	begin
-		if snClr = '0' then
+		if snClr = '0' or Reset = '1' then
 			Qvco <= '0';
 		elsif rising_edge(VcoCLK) then
 			Qvco <= '1';

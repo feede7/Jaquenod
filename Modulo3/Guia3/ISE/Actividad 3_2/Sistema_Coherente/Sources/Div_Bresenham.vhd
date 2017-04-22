@@ -30,28 +30,26 @@ begin
 
 	NextCounter <= Counter + NextAdd;
 
-	process(CLK_In)
+	process(CLK_In,Reset)
 	begin
-		if rising_edge(CLK_In) then
+		if Reset = '1' then
+			DownCount <= to_unsigned(0,DownCount'length);
+			Counter	 <= to_signed(0,Counter'length);
+			NextAdd	 <= signed('0' & Num);
+		elsif rising_edge(CLK_In) then
 			Tick_Out <= '0';
-			if Reset = '1' then
-				DownCount <= to_unsigned(0,DownCount'length);
-				Counter	 <= to_signed(0,Counter'length);
-				NextAdd	 <= signed('0' & Num);
-			else
-				if DownCount = to_unsigned(0,DownCount'length) then
-					Tick_Out <= '1';
-					Counter 	<= NextCounter;
-					if NextCounter > to_signed(0,NextCounter'length) then -- Tiene que ser Mayor, ya que contempla el caso que Num = 0, y la división se haga siempre por N. En caso que Num = Den, siempre dividirá por N+1
-						NextAdd	 <= signed('0' & Num) - signed('0' & Den);
-						DownCount <= unsigned(N) + to_unsigned(1,DownCount'length);
-					else
-						NextAdd	 <= signed('0' & Num);
-						DownCount <= unsigned(N);
-					end if;
+			if DownCount = to_unsigned(0,DownCount'length) then
+				Tick_Out <= '1';
+				Counter 	<= NextCounter;
+				if NextCounter > to_signed(0,NextCounter'length) then -- Tiene que ser Mayor, ya que contempla el caso que Num = 0, y la división se haga siempre por N. En caso que Num = Den, siempre dividirá por N+1
+					NextAdd	 <= signed('0' & Num) - signed('0' & Den);
+					DownCount <= unsigned(N);
 				else
-					DownCount <= DownCount - to_unsigned(1,DownCount'length);
+					NextAdd	 <= signed('0' & Num);
+					DownCount <= unsigned(N) - to_unsigned(1,DownCount'length);
 				end if;
+			else
+				DownCount <= DownCount - to_unsigned(1,DownCount'length);
 			end if;
 		end if;
 	end process;
