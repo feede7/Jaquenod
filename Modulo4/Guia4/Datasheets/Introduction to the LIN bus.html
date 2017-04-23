@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba no-hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js_active vc_desktop vc_transform vc_transform vc_transform skrollr skrollr-desktop" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/11560aa552"></script><script src="Introduction%20to%20the%20LIN%20bus_files/nr-1026.js"></script><script type="text/javascript" async="" src="Introduction%20to%20the%20LIN%20bus_files/recaptcha__en.js"></script><script async="" src="Introduction%20to%20the%20LIN%20bus_files/analytics.js" style=""></script><script type="text/javascript" async="" src="Introduction%20to%20the%20LIN%20bus_files/sm.js"></script><script src="Introduction%20to%20the%20LIN%20bus_files/813299535407399" async=""></script><script async="" src="Introduction%20to%20the%20LIN%20bus_files/fbevents.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	<title>Introduction to the LIN bus</title>
+	<meta name="fragment" content="!">
+	<!-- Mobile viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-site-verification" content="JGQ7yg1RDq1uHwQtOyhFxoBxWADx-DweOYNGR-wUhww">
+	<!-- Favicon-->
+	<link rel="shortcut icon" type="image/x-icon" href="https://www.kvaser.com/wp-content/themes/kvaser/assets/images/favicon.ico">
+
+	<meta name="HandheldFriendly" content="true">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://www.kvaser.com/xmlrpc.php">
+
+	<title>Introduction to the LIN bus</title>
+<script>(window.gaDevIds=window.gaDevIds||[]).push('5CDcaG');</script>
+<!-- This site is optimized with the Yoast SEO plugin v4.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Kvaser provides an introduction to local interconnect network (LIN), the cost-effective alternative to CAN bus designed for non-critical areas.">
+<meta name="robots" content="noodp">
+<meta name="keywords" content="Local Interconnect Network">
+<link rel="canonical" href="https://www.kvaser.com/about-can/can-standards/linbus/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction to the LIN bus">
+<meta property="og:description" content="Kvaser provides an introduction to local interconnect network (LIN), the cost-effective alternative to CAN bus designed for non-critical areas.">
+<meta property="og:url" content="https://www.kvaser.com/about-can/can-standards/linbus/">
+<meta property="og:site_name" content="Kvaser">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/fig1-lin-voltage-supply1.jpg">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/fig2-lin-signal1.jpg">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/fig3-lin-frame-example1.jpg">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/fig4-lin-byte-field1.jpg">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/fig5-lin-break1.jpg">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/fig6-lin-synch1.jpg">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/lin7-lin-id-field1.jpg">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/fig9-lin-id-table1.jpg">
+<meta property="og:image" content="http://www.kvaser.com/wp-content/uploads/2014/02/fig8-lin-data-field1.jpg">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://maps.googleapis.com/">
+<link rel="dns-prefetch" href="https://www.google.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="stylesheet" id="theme-min-css" href="Introduction%20to%20the%20LIN%20bus_files/theme-min.css" type="text/css" media="all">
+<link rel="stylesheet" id="js_composer_front-css" href="Introduction%20to%20the%20LIN%20bus_files/js_composer.css" type="text/css" media="all">
+<link rel="stylesheet" id="module-frontend-css" href="Introduction%20to%20the%20LIN%20bus_files/modules-frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="woothemes-sensei-frontend-css" href="Introduction%20to%20the%20LIN%20bus_files/sensei.css" type="text/css" media="screen">
+<script type="text/javascript">
+/* <![CDATA[ */
+var eventdata = [{"title":"NAFA Institute & Expo","url":"","start":"2017-4-24","end":"2017-4-29"},{"title":"ACT Expo","url":"","start":"2017-5-1","end":"2017-5-4"},{"title":"Xponential 2017","url":"","start":"2017-5-8","end":"2017-5-11"},{"title":"Automotive Engineering Exposition Japan","url":"","start":"2017-5-24","end":"2017-5-26"},{"title":"BUSCON 2017","url":"","start":"2017-9-11","end":"2017-9-13"},{"title":"Elec & Hybrid Vehicle Tech Expo 2017","url":"","start":"2017-9-12","end":"2017-9-14"},{"title":"NMEA Conference & Expo 2017","url":"","start":"2017-9-26","end":"2017-9-28"},{"title":"Bauma China 2018","url":"","start":"2018-11-27","end":"2018-11-30"}];
+/* ]]> */
+</script>
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/jquery.js"></script>
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/jquery-migrate.js" defer="defer" onload=""></script>
+<link rel="https://api.w.org/" href="https://www.kvaser.com/wp-json/">
+<link rel="alternate" type="application/json+oembed" href="https://www.kvaser.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.kvaser.com%2Fabout-can%2Fcan-standards%2Flinbus%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.kvaser.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.kvaser.com%2Fabout-can%2Fcan-standards%2Flinbus%2F&amp;format=xml">
+<script type="text/javascript" defer="defer">
+                  jQuery(document).ready(function(){
+                     jQuery("#billing_email").on("keyup keypress change",function() {
+                         var fp_rac_mail = this . value;
+                         var atpos=fp_rac_mail.indexOf("@");
+                         var dotpos=fp_rac_mail.lastIndexOf(".");
+                if (atpos<1 || dotpos<atpos+2 || dotpos+2>=fp_rac_mail.length)
+                        {
+                            console.log("Not a valid e-mail address");
+                            //return false;
+                       }
+                    else{
+                         console . log(fp_rac_mail);
+                             var fp_rac_first_name = jQuery("#billing_first_name").val();
+                             var fp_rac_last_name = jQuery("#billing_last_name").val();
+                             var fp_rac_phone = jQuery("#billing_phone").val();
+                              var fp_rac_county = jQuery("#billing_country").val();
+                      var data = {
+              action:"rac_preadd_guest",
+              rac_email:fp_rac_mail,
+              rac_first_name:fp_rac_first_name,
+              rac_last_name:fp_rac_last_name,
+              rac_phone:fp_rac_phone,
+              rac_country:fp_rac_county
+              }
+     jQuery.post("https://www.kvaser.com/wp-admin/admin-ajax.php", data,
+                            function(response) {
+                                //alert(response);
+                                console.log(response);
+
+                            });
+                          }
+
+        });
+        });
+                </script><link rel="alternate" href="https://www.kvaser.com/about-can/can-standards/linbus/" hreflang="en">
+<link rel="alternate" href="https://www.kvaser.com/cn/%e5%85%b3%e4%ba%8ecan%e6%80%bb%e7%ba%bf/can%e6%a0%87%e5%87%86/lin%e6%80%bb%e7%ba%bf%e7%ae%80%e4%bb%8b/" hreflang="zh">
+<meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress.">
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://www.kvaser.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><!--[if IE  8]><link rel="stylesheet" type="text/css" href="https://www.kvaser.com/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]--><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript>	<!--[if IE]>
+	<script src="https://www.kvaser.com/wp-content/themes/kvaser/assets/js/html5.js"></script>
+	<![endif]-->
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window,document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	 fbq('init', '813299535407399'); 
+	fbq('track', 'PageView');
+	</script>
+	<noscript>
+	 <img height="1" width="1" 
+	src="https://www.facebook.com/tr?id=813299535407399&ev=PageView
+	&noscript=1"/>
+	</noscript>
+	<!-- End Facebook Pixel Code -->
+<script async="" src="Introduction%20to%20the%20LIN%20bus_files/hotjar-31798.js"></script><script async="" src="Introduction%20to%20the%20LIN%20bus_files/modules-fa2b48a238bb646d8cc1b2e82176a64f.js"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style><style type="text/css">.fancybox-margin{margin-right:0px;}</style><script type="text/javascript" charset="UTF-8" src="Introduction%20to%20the%20LIN%20bus_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="Introduction%20to%20the%20LIN%20bus_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="Introduction%20to%20the%20LIN%20bus_files/stats.js"></script></head>
+<body class="page-template-default page page-id-5113 page-child parent-pageid-581 desktop gecko role- wpb-js-composer js-comp-ver-4.12 vc_responsive ng-scope" id="ng-app" ng-app="kvaser" ng-controller="AppCtrl">
+	<input id="requrl" value="https://www.kvaser.com/wp-admin/admin-ajax.php" type="hidden">
+		<div id="wrapper">
+	<!--header -->
+	<header id="header" class="topheader_stop">
+		<!--topheader start-->
+		<div class="topnav">
+			<div class="container">
+				<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <ul>
+
+    <li class="landrop">
+      <div class="dropdown drop">
+        <a data-toggle="dropdown" href="javascript:%20void(0);">About Us        </a>
+        <ul id="menu-top-navigation" class="dropdown-menu"><li id="menu-item-7832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7832"><a href="https://www.kvaser.com/about-us/">About Kvaser</a></li>
+<li id="menu-item-7653" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7653"><a href="https://www.kvaser.com/about-us/why-choose-kvaser/">Why choose Kvaser?</a></li>
+<li id="menu-item-7655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7655"><a href="https://www.kvaser.com/about-us/applications/">Applications</a></li>
+<li id="menu-item-7654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7654"><a href="https://www.kvaser.com/about-us/references/">References</a></li>
+<li id="menu-item-7656" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7656"><a href="https://www.kvaser.com/products-services/technical-associates/">Technical Associates</a></li>
+<li id="menu-item-8133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8133"><a href="https://www.kvaser.com/about-us/university-sponsorships/">University Sponsorships</a></li>
+<li id="menu-item-7657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7657"><a href="https://www.kvaser.com/about-us/news/">News</a></li>
+<li id="menu-item-7658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7658"><a href="https://www.kvaser.com/contact-us/">Contact us</a></li>
+</ul>
+   </div>
+
+  </li>
+  <li class="landrop">
+  <div class="dropdown drop">
+    <a data-toggle="dropdown" href="javascript:%20void(0);">English</a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+
+          <!--li role="presentation" class="dropdown-header">Current language</li>
+          <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">English</a></li>-->
+
+          <li role="presentation" class="dropdown-header">Avaliable</li>
+
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.kvaser.cn/">中文 (中国)</a></li>
+
+    </ul>
+  </div>
+
+</li>
+
+  
+
+
+    	  	<li class="headcart" id="top_add_to_cart_reftresh">
+		    <a class="cart-contents" href="https://www.kvaser.com/checkout/" title="View your shopping cart">
+					0 <span class="total"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">USD </span>0.00</span></span>				 </a>
+		    </li>
+				 <li class="login"><a href="https://www.kvaser.com/account/"><i class="fa fa-unlock-alt"></i> Log In</a></li>    <li class="find-search">
+      <form role="search" method="get" class="search-form ng-pristine ng-valid" action="https://www.kvaser.com/">
+        <input id="top_global_search" class="serch-text" placeholder="Search …" name="s" type="search">
+        <!--input type="submit" class="seacth-btn" value="Search" /--->
+      </form>
+      <a class="search_icon" id="search_input_show" href="">
+        <i class="fa fa-search"></i>
+      </a>
+    </li>
+  </ul>
+  <div class="clear"></div>
+</div>
+				</div>
+			</div>
+		</div>
+		<!--topheader close-->
+		<!--mainheader start-->
+		<div class="mainheader">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+						<div class="logo">
+							<a href="https://www.kvaser.com/">
+								<img src="Introduction%20to%20the%20LIN%20bus_files/logo.png" alt="" width="140" height="67">
+							</a>
+							<div class="menu_tog">
+
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	<!--<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>-->
+</button>
+							</div>
+						</div>
+					</div>
+							<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+
+
+	<div id="myNavbar" class="navi-mainmenu"><ul id="menu-main-menu" class="mainmenu"><li class="nav-search"><input placeholder="Search" type="text"></li>	<li class="headcart " id="top_add_to_cart_reftresh"><a class="cart-contents" href="https://www.kvaser.com/checkout/"><i class="fa fa-shopping-cart" aria-hidden="true"></i>0<span class="total"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">USD </span>0.00</span></span></a></li><li class="nav-myac"><a href="https://www.kvaser.com/account/" title="login">Login</a></li><li id="menu-item-12613" class="hard menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12613"><a href="https://www.kvaser.com/products-services/our-products/">CAN Hardware<span class="menusectitle">By Kvaser</span></a><span class="submenutoggle"></span>
+<ul class="sub-menu">
+	<li id="menu-item-12614" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12614"><a href="https://www.kvaser.com/products-services/our-products/#/">CAN Interfaces</a></li>
+	<li id="menu-item-12616" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12616"><a href="https://www.kvaser.com/products-services/our-products/#/?descriptors=product_groups&amp;product_groups=can-loggers">CAN Loggers</a></li>
+	<li id="menu-item-12617" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12617"><a href="https://www.kvaser.com/products-services/our-products/#/?filter=Leaf%20Professional%20LIN">LIN Interfaces</a></li>
+	<li id="menu-item-12618" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12618"><a href="https://www.kvaser.com/products-services/our-products/#/?descriptors=product_groups&amp;product_groups=accessory">Accessories</a></li>
+	<li id="menu-item-12619" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12619"><a href="https://www.kvaser.com/products-services/oem/">OEM/ODM</a></li>
+	<li id="menu-item-12620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12620"><a href="https://www.kvaser.com/products-services/where-to-buy/">Where to buy</a></li>
+</ul>
+</li>
+<li id="menu-item-12623" class="soft menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12623"><a href="https://www.kvaser.com/products-services/associate-software/">CAN Software<span class="menusectitle">Partner Directory</span></a><span class="submenutoggle"></span>
+<ul class="sub-menu">
+	<li id="menu-item-13755" class="menu-item menu-item-type-taxonomy menu-item-object-software_application menu-item-13755"><a href="https://www.kvaser.com/software_application/bus-analysis/">Bus Analysis</a></li>
+	<li id="menu-item-13760" class="menu-item menu-item-type-taxonomy menu-item-object-software_application menu-item-13760"><a href="https://www.kvaser.com/software_application/calibration/">Calibration</a></li>
+	<li id="menu-item-13756" class="menu-item menu-item-type-taxonomy menu-item-object-software_application menu-item-13756"><a href="https://www.kvaser.com/software_application/canopen/">CANopen</a></li>
+	<li id="menu-item-13759" class="menu-item menu-item-type-taxonomy menu-item-object-software_application menu-item-13759"><a href="https://www.kvaser.com/software_application/diagnostics/">Diagnostics</a></li>
+	<li id="menu-item-13761" class="menu-item menu-item-type-taxonomy menu-item-object-software_application menu-item-13761"><a href="https://www.kvaser.com/software_application/ecu-development/">ECU Development</a></li>
+	<li id="menu-item-13757" class="menu-item menu-item-type-taxonomy menu-item-object-software_application menu-item-13757"><a href="https://www.kvaser.com/software_application/protocol-stack/">Protocol Stack</a></li>
+	<li id="menu-item-13758" class="menu-item menu-item-type-taxonomy menu-item-object-software_application menu-item-13758"><a href="https://www.kvaser.com/software_application/system-development/">System Development</a></li>
+</ul>
+</li>
+<li id="menu-item-12643" class="abou menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-12643"><a title="&nbsp;" href="https://www.kvaser.com/about-can/">About CAN<span class="menusectitle">&nbsp;</span></a><span class="submenutoggle"></span>
+<ul class="sub-menu">
+	<li id="menu-item-12644" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12644"><a href="https://www.kvaser.com/can-protocol-tutorial/">CAN Protocol Tutorial</a></li>
+	<li id="menu-item-12806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12806"><a href="https://www.kvaser.com/about-can/can-fd/">CAN FD</a></li>
+	<li id="menu-item-12646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12646"><a href="https://www.kvaser.com/about-can/higher-layer-protocols/">Higher Layer Protocols</a></li>
+	<li id="menu-item-12880" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12880"><a href="https://www.kvaser.com/training-materials/">Training Materials</a></li>
+	<li id="menu-item-12647" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12647"><a href="https://www.kvaser.com/about-can/can-education/">More Resources</a></li>
+</ul>
+</li>
+<li id="menu-item-12648" class="supp menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12648"><a href="https://www.kvaser.com/support/">Support<span class="menusectitle">Kvaser Help Support</span></a><span class="submenutoggle"></span>
+<ul class="sub-menu">
+	<li id="menu-item-12649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12649"><a href="https://www.kvaser.com/getting-started/">Getting Started</a></li>
+	<li id="menu-item-12650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12650"><a href="https://www.kvaser.com/downloads-kvaser/">Kvaser Downloads</a></li>
+	<li id="menu-item-12651" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12651"><a href="https://www.kvaser.com/support/knowledge-base/">Knowledge Base</a></li>
+	<li id="menu-item-12652" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12652"><a href="https://www.kvaser.com/support/calculators/">Tools</a></li>
+	<li id="menu-item-13866" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13866"><a href="https://www.kvaser.com/support/videos/">Videos</a></li>
+	<li id="menu-item-12655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12655"><a href="https://www.kvaser.com/developer/">Developer</a><span class="submenutoggle"></span>
+	<ul class="sub-menu">
+		<li id="menu-item-12657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12657"><a href="https://www.kvaser.com/developer/canlib-sdk/">CANlib SDK</a></li>
+		<li id="menu-item-12658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12658"><a href="https://www.kvaser.com/canking/">CanKing</a></li>
+		<li id="menu-item-12659" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12659"><a href="https://www.kvaser.com/linux-drivers-and-sdk/">Linux Drivers and SDK</a></li>
+		<li id="menu-item-12660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12660"><a href="https://www.kvaser.com/rest-api/">REST API</a></li>
+	</ul>
+</li>
+	<li id="menu-item-12662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12662"><a href="https://www.kvaser.com/developer/developer-blog/">CAN Systems Developer Blog</a></li>
+</ul>
+</li>
+</ul></div>		</div>
+				</div>
+			</div>
+		</div>
+		<!--mainheader close-->
+	</header>
+	<!--header -->
+	<div class="topmarginsection">
+<section id="section">
+
+<div class="ft  with_slider   ">
+	<article class="post-5113 page type-page status-publish hentry wordpress-content" id="post-5113">
+			<div data-vc-parallax="1.5" data-vc-parallax-image="https://www.kvaser.com/wp-content/uploads/2013/11/sliderimg2x.jpg" class="vc_row wpb_row vc_row-fluid full_width vc_row-has-fill vc_row-o-full-height vc_row-o-columns-middle vc_row-o-equal-height vc_row-flex vc_general vc_parallax vc_parallax-content-moving" style="min-height: 62.1782vh;"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"></div></div></div><div class="vc_parallax-inner skrollable skrollable-after" style="height: 150%; background-image: url(&quot;https://www.kvaser.com/wp-content/uploads/2013/11/sliderimg2x.jpg&quot;); top: 0%;" data-bottom-top="top: -50%;" data-top-bottom="top: 0%;"></div></div><div class="vc_row wpb_row vc_row-fluid indented"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><h1 class="vc-header-block vc-header-block-h2" align="">Introduction to the LIN bus</h1>
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<h2>Background</h2>
+<p>The protocol for the Local Interconnect Network (LIN) is based on the
+ Volcano-Lite technology developed by the Volvo spin-out company Volcano
+ Communications Technology (VCT). Since other car corporations also were
+ interested in a more cost effective alternative to CAN, the LIN 
+syndicate was created. In the middle of 1999 the first LIN protocol 
+(1.0) was released by this syndicate. The protocol was updated twice in 
+2000. In November 2002 LIN 1.3 was released with changes mainly made in 
+the physical layer. The latest version LIN 2.0 was released in 2003. 
+With LIN 2.0 came some major changes and also some new features like 
+diagnostics. The changes were mainly aimed at simplifying use of 
+off-the-shelves slave nodes.</p>
+
+		</div>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<h2></h2>
+<h2>Areas of use</h2>
+<p>The LIN protocol is a compliment to the CAN and the SAE J1850 
+protocols for applications that are not time critical or does not need 
+extreme fault tolerance, since LIN is not quite as reliable as CAN. The 
+aim of LIN is to be easy to use and a more cost effective alternative to
+ CAN. Examples of areas where LIN is and can be used in a car: window 
+lift, mirrors, wiper and rain sensors.</p>
+
+		</div>
+	</div>
+
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<h2></h2>
+<h2>Quick facts</h2>
+<p>LIN is an all-embracing concept according to the OSI-model, where the
+ physical-, data link- , network- and application layers are covered by 
+the specification.</p>
+<ul>
+<li>The LIN physical layer is based on ISO 9141 (the K-line).</li>
+<li>Master/slave organization</li>
+<li>Single wire plus ground</li>
+<li>Time triggered scheduling</li>
+<li>1-20 kbit/s</li>
+<li>Dominant/recessive bits</li>
+<li>Serial, byte oriented communication</li>
+<li>Max 40 m wire length</li>
+<li>Standard defined by the LIN organization: <a href="http://www.kvaser.com/external-link?url=http://www.lin-subbus.org/&amp;back_url=https://www.kvaser.com/about-can/can-standards/linbus/" target="_blank">http://www.lin-subbus.org</a></li>
+</ul>
+<h3></h3>
+
+		</div>
+	</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid default indented"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper"><article class="well eq-target"><a title="Find LIN Software" class="float" href="http://www.kvaser.com/products-services/associate-software/#?protocols=lin"><img alt="Find LIN Software" data-images="" src="Introduction%20to%20the%20LIN%20bus_files/software2x.jpg" class="random-image-target float"></a><hgroup class="h3"><a title="Find LIN Software" href="http://www.kvaser.com/products-services/associate-software/#?protocols=lin"><h6 class="preheader"></h6><h4>Find LIN Software</h4></a></hgroup><p>Get Software compatible with <span style="color: #545454;">the LIN bus</span>.</p><a class="btn" href="http://www.kvaser.com/products-services/associate-software/#?protocols=lin" title="">Search Software</a></article></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner "><div class="wpb_wrapper"><article class="well eq-target"><a title="Find a LIN Expert" class="float" href="http://www.kvaser.com/products-services/technical-associates/"><img alt="Find a LIN Expert" data-images="" src="Introduction%20to%20the%20LIN%20bus_files/quality-sales-representatives-1.png" class="random-image-target float"></a><hgroup class="h3"><a title="Find a LIN Expert" href="http://www.kvaser.com/products-services/technical-associates/"><h6 class="preheader"></h6><h4>Find a LIN Expert</h4></a></hgroup><p>Contact one of Kvaser’s Technical Associates who specialize in LIN bus applications.</p><a class="btn" href="http://www.kvaser.com/products-services/technical-associates/" title="">Search Associates</a></article></div></div></div></div><div class="vc_row wpb_row vc_row-fluid indented"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_sep_color_grey vc_separator-has-text"><span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span><h4>In Depth</h4><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span>
+</div>
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<h2>Physical Properties</h2>
+<p>The LIN-bus transceiver is a modified version of the transceiver used
+ by the ISO 9141 standard. The bus is bidirectional and connected to the
+ node transceiver, and also via a termination resistor and a diode to 
+Vbat of the node (Figure 1).</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/fig1-lin-voltage-supply1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/fig1-lin-voltage-supply1.jpg" alt="fig1-lin-voltage-supply1"></a></figure>
+<p>Figure 1: Description of a transceiver. (from the LIN 2.0 spec)</p>
+<p>On the bus a logical low level (0) is dominant and a logical high level (1) is recessive.</p>
+<p>Voltage supply (Vsup) for an ECU should be between 7 V and 18 V. The 
+limits for how the level of the bus is interpreted are shown in figure 
+2.</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/fig2-lin-signal1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/fig2-lin-signal1.jpg" alt="fig2-lin-signal1"></a></figure>
+<p>Figure 2: Determination of the logical level on the bus.</p>
+<h2>Data Transmission</h2>
+
+		</div>
+	</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid indented"><div class="wpb_column vc_column_container vc_col-sm-8"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<p>The LIN network is described by a LDF (LIN Description File) which
+ contains information about frames and signals. This file is used for 
+creation of software in both master and slave.</p>
+<p>The master node controls and make sure that the data frames are sent 
+with the right interval and periodicity and that every frame gets enough
+ time space on the bus. This scheduling is based on a LCF (LIN 
+Configuration File) which is downloaded to the master node software.</p>
+<p>All data is sent in a frame which contains a header, a response and 
+some response space so the slave will have time to answer. Every frame 
+is sent in a frame slot determined by the LCF.</p>
+
+		</div>
+	</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner "><div class="wpb_wrapper"><div class="product vc_block grid">
+    <div class="wrapper">
+        <a href="https://www.kvaser.com/product/kvaser-leaf-professional-lin/">
+            <img ng-src="https://www.kvaser.com/wp-content/uploads/canland/product/4575-leaf_pro_lin_269-2_h300-ORIGINAL--137x73.jpg" src="Introduction%20to%20the%20LIN%20bus_files/4575-leaf_pro_lin_269-2_h300-ORIGINAL--137x73.jpg">
+            <hgroup class="h4">
+                <h6 class="preheader">PC INTERFACES</h6>
+                <h4>Kvaser Leaf Professional LIN</h4>
+            </hgroup>
+        </a>
+        <!--a ng-if="!globalIsMobile" class="compare" ng-click="addToCompare(70)" ng-switch on="inCompare(70)">
+            <div title="Remove from compare" ng-switch-when="true"><i class="fa fa-minus-circle"><span>Remove from compare</span></i></div>
+            <div title="Add to compare" ng-switch-when="false"><i class="fa fa-search-plus"></i><span>Add to compare</span></div>
+        </a-->
+    </div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid indented"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner "><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<p>Messages are created when the master node sends a frame containing
+ a header. The slave node(s) then fills the frame with data depending on
+ the header sent from the master.</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/fig3-lin-frame-example1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/fig3-lin-frame-example1.jpg" alt="fig3-lin-frame-example1"></a></figure>
+<p>Figure 3: Example of LIN frame.</p>
+<p>There are three different ways of transmitting frames on the bus: unconditional, event triggered, and sporadic frames.</p>
+<h4>Unconditional Frames</h4>
+<p>This is the “normal” type of LIN communication. The master sends a 
+frame header in a scheduled frame slot and the designated slave node 
+fills the frame with data.</p>
+<h4>Event Triggered Frames</h4>
+<p>The purpose of this method is to receive as much information from 
+slave nodes without overloading the bus with frames. An event triggered 
+frame can be filled with data from more than one slave node. A slave 
+only updates the data in an event triggered frame when the value has 
+changed. If more than one slave wants to update data in the frame a 
+collision occurs. The master should then send unconditional frames to 
+each of the slaves starting with the one with the highest priority.</p>
+<h4>Sporadic Frames</h4>
+<p>This method provides some dynamic behavior to the otherwise static 
+LIN protocol. The header of a sporadic frame is only sent from the 
+master when it knows that a signal has been updated in a slave node. 
+Usually the master fills the data bytes of the frame itself and the 
+slave nodes will be the receivers of the information.</p>
+<h3>Definition of a Byte Field</h3>
+<p>The protocol is byte oriented which means that data is sent one byte 
+at a time. One byte field contains a start bit (dominant), 8 data bits 
+and a stop bit (recessive). The data bits are sent LSB first (least 
+significant bit first). Data transmission can be divided into a master 
+task and a slave task.</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/fig4-lin-byte-field1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/fig4-lin-byte-field1.jpg" alt="fig4-lin-byte-field1"></a></figure>
+<p>Figure 4: Structure of a byte field.</p>
+<h3>The Master Task</h3>
+<p>The frame (header) that is sent by the master contains three parts; 
+synch break, synch byte and an ID-field. Each part begins with a start 
+bit and ends with a stop bit.</p>
+<p>Synch break marks the start of a message and has to be at least 13 
+dominant bits long including start bit. Synch break ends with a “break 
+delimiter” which should be at least one recessive bit.</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/fig5-lin-break1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/fig5-lin-break1.jpg" alt="fig5-lin-break1"></a></figure>
+<p>Figure 5: Break field.</p>
+<p>Synch byte is sent to decide the time between two falling edges and 
+thereby determine the transmission rate which the master uses. The bit 
+pattern is 0x55 (01010101, max number of edges). This is especially 
+usable for compatibility with off-the-shelves slave nodes.</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/fig6-lin-synch1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/fig6-lin-synch1.jpg" alt="fig6-lin-synch1"></a></figure>
+<p>Figure 6: Synch byte field.</p>
+<p>The ID field contains a 6 bits long identifier and two parity bits. 
+The 6 bit identifier contains information about sender and receiver and 
+the number of bytes which is expected in the response. The parity bits 
+are calculated as followed: parity P0 is the result of logic “or” 
+between ID0, ID1, ID2 and ID4. Parity P1 is the inverted result of logic
+ “or” between ID1, ID3, ID4 and ID5.</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/lin7-lin-id-field1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/lin7-lin-id-field1.jpg" alt="lin7-lin-id-field1"></a></figure>
+<p>Figure 7: ID field.</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/fig9-lin-id-table1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/fig9-lin-id-table1.jpg" alt="fig9-lin-id-table1"></a></figure>
+<p>Figure 9: Frame length depending on ID.</p>
+<p>The response (data field) from the slave can be 2, 4 or 8 bytes long 
+depending on the two MSB (Most Significant Byte) of the identifier sent 
+by the master. This ability came with LIN 2.0, older versions have a 
+static length of 8 bytes.</p>
+<figure><a href="http://www.kvaser.com/wp-content/uploads/2014/02/fig8-lin-data-field1.jpg"><img class="alignnone" src="Introduction%20to%20the%20LIN%20bus_files/fig8-lin-data-field1.jpg" alt="fig8-lin-data-field1"></a></figure>
+<p>Figure 8: The response data field.</p>
+<h3>The Slave Task</h3>
+<p>The slave waits for synch break and then the synchronization between 
+master and slave begins on synch byte. Depending on the identifier sent 
+from the master the slave will either receive or transmit or do nothing 
+at all. A slave that should transmit sends the number of bytes which the
+ master has requested and then ends the transmission with a checksum 
+field.</p>
+<p>There are two different kinds of checksum. The classic checksum is 
+used in LIN 1.3 and consists of the inverted eight bit sum of all (8) 
+data bytes in a message. The new checksum used in LIN 2.0 also 
+incorporates the protected identifier in the checksum calculation. The 
+inverted eight bit sum is not the same as modulo-256. Every time the sum
+ is greater than 256, then 255 is subtracted. Ex: 240+32=272 à 
+272-255=17 and so on…</p>
+<p>To save power the slave nodes will be put in a sleep mode after 4 
+seconds of bus inactivity or if the master has sent a sleep command. 
+Wakeup from sleep mode is done by a dominant level on the bus which all 
+nodes can create.</p>
+<h2>Diagnostics</h2>
+<p>A new function in LIN 2.0 is the possibility of reading out 
+diagnostic information from master and slave nodes. For this purpose two
+ frame identifiers are used which both expect 8 data bytes: master 
+request frame with id 60 (0x3c) and slave response with id 61 (0x3d). 
+The first byte of a diagnostic frame is a NAD (Node Address for 
+Diagnostic) which is a one byte long diagnostic node address. The value 
+ranges from 1-127, while 0 is reserved and 128-255 are for free usage. 
+There are three methods for diagnostics: signal based diagnostic, user 
+defined diagnostic or use of a diagnostic transport layer.</p>
+<h3>Signal Based Diagnostic</h3>
+<p>The signal based diagnostics is the simplest method and uses standard signals in ordinary frames which represent:</p>
+<ul>
+<li>Low overhead in slave nodes.</li>
+<li>A standardized concept.</li>
+<li>Static with no flexibility.</li>
+</ul>
+<h3>User Defined Diagnostic</h3>
+<p>The user defined diagnostic can be designed to fit the needs for a 
+specific device but this also means that it will not be useful for 
+general purposes. This method uses NADs in the range 128-255.</p>
+<h3>Diagnostic Transport Layer</h3>
+<p>This method is useful for a LIN network which is built on a CAN-based
+ system where ISO diagnostics is used. NADs 1-127 are used. This method 
+represents:</p>
+<ul>
+<li>Low load on the master device.</li>
+<li>Provides ISO diagnostics for LIN slaves.</li>
+<li>Intended for more complex and powerful LIN nodes.</li>
+</ul>
+<p>A diagnostic frame is called a PDU (Packet Data Unit) and starts with
+ a NAD which addresses a certain node. Thereafter follows a PCI 
+(Protocol Control Information) which handles the flow control. If the 
+PCI-type is a Single Frame (SF) the whole diagnostic request command 
+will fit into a single PDU. If the PCI-type is First Frame (FF) the next
+ byte (LEN) will describe the number of bytes to come. The data bytes 
+that do not fit into the first frame will be sent in the following 
+frames with the PCI-type of Continuation Frames (CF). A Service 
+Identifier (SID) specifies the request and which data bytes to follow.</p>
+<table width="590" cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td width="55" valign="top">
+<p align="center">NAD</p>
+</td>
+<td width="48" valign="top">
+<p align="center">PCI</p>
+</td>
+<td width="60" valign="top">
+<p align="center">SID</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data1</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data2</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data3</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data4</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data5</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 10: Request frame PCI-type = SF</p>
+<table width="590" cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td width="55" valign="top">
+<p align="center">NAD</p>
+</td>
+<td width="48" valign="top">
+<p align="center">PCI</p>
+</td>
+<td width="60" valign="top">
+<p align="center">LEN</p>
+</td>
+<td width="60" valign="top">
+<p align="center">SID</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data1</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data2</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data3</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data4</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 11: Request frame PCI-type = FF</p>
+<table width="590" cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td width="55" valign="top">
+<p align="center">NAD</p>
+</td>
+<td width="48" valign="top">
+<p align="center">PCI</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data2</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data3</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data4</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data5</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data6</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 12: Request frame PCI-type = CF</p>
+<p>The diagnostic response frame is constructed in similar way. The 
+Response Service Identifier (RSID) specifies the content of the 
+response.</p>
+<table width="590" cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td width="55" valign="top">
+<p align="center">NAD</p>
+</td>
+<td width="48" valign="top">
+<p align="center">PCI</p>
+</td>
+<td width="60" valign="top">
+<p align="center">RSID</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data1</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data2</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data3</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data4</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data5</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 13: Response frame PCI-type = SF</p>
+<table width="590" cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td width="55" valign="top">
+<p align="center">NAD</p>
+</td>
+<td width="48" valign="top">
+<p align="center">PCI</p>
+</td>
+<td width="60" valign="top">
+<p align="center">LEN</p>
+</td>
+<td width="60" valign="top">
+<p align="center">RSID</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data1</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data2</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data3</p>
+</td>
+<td width="60" valign="top">
+<p align="center">Data4</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 14: Response frame PCI-type = FF</p>
+<p>&nbsp;</p>
+<h2>Compatibility with older versions (LIN 1.3)</h2>
+<p>A LIN 2.0 master is backward compatible with a LIN 1.3 slave (with 
+limitations). Both LIN 2.0 and LIN 1.3 slaves can coexist in a network 
+but some new features like the improved checksum and automatic baud rate
+ detection have to be avoided.</p>
+
+		</div>
+	</div>
+<p class="align_right"><a class="btn btn-brand-default" href="https://www.kvaser.com/about-can/higher-layer-protocols/" title="">Go Back To <small>Higher Layer Protocols</small></a></p></div></div></div></div>
+	</article>
+	 			 </div>
+	 
+</section>
+</div>
+<!--footer -->
+    <!-- ngIf: appAssociates.length -->
+<footer id="footer">
+  <!--topfooter-->
+  <!--topfooter-->
+<div class="topfooter">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="footlogo">
+          <a href="https://www.kvaser.com/"><img src="Introduction%20to%20the%20LIN%20bus_files/logo.png" alt="" width="140" height="67"></a>
+        </div>
+        <div class="selectfooter">
+          <select ng-model="select_changeRegion" id="ddlCategoryHome" class="select_drop ng-pristine ng-untouched ng-valid ng-empty" style="display: none;"><option value="? undefined:undefined ?" selected="selected"></option>
+            <option value="europe"> Europe </option>
+            <option value="unitedstates">United States</option>
+            <option value="china">China</option>
+            <option value="international">International</option>
+            <option value="ch-usd">China USD</option>
+          </select><div class="newListSelected" tabindex="0" style="position: static;"><div class="selectedTxt">United States</div><ul class="newList newListHeight" style="visibility: visible; top: -120px; height: 120px; left: 0px; display: none;"><li><a href="javascript:void(0);"> Europe </a></li><li><a href="javascript:void(0);" class="hiLite">United States</a></li><li><a href="javascript:void(0);">China</a></li><li><a href="javascript:void(0);">International</a></li><li><a href="javascript:void(0);">China USD</a></li></ul></div>
+        </div>
+        <div class="condetail">
+          <div class="phone">
+            <span class="phtext">PHONE</span>
+            <span class="phnum"><a href="tel:+1%20%28949%29%20236-4620" class="ng-binding">+1 (949) 236-4620</a></span>
+          </div>
+          <div class="email">
+            <span class="phtext">EMAIL</span>
+            <span class="phnum"><a href="mailto:sales.us@kvaser.com" class="ng-binding">sales.us@kvaser.com</a></span>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--topfooter-->
+  <!--topfooter-->
+  
+<div class="bootomfooter">
+  <div class="container">
+    <div class="row">
+      <div class="footernavi">
+
+        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+          <label>COMPANY LINKS</label>
+          <ul class="onlynavi">
+                            <li><a href="https://www.kvaser.com/about-us/" title="About Kvaser">About Kvaser</a></li>
+                            <li><a href="https://www.kvaser.com/about-us/why-choose-kvaser/" title="Why Choose Kvaser?">Why Choose Kvaser?</a></li>
+                            <li><a href="https://www.kvaser.com/about-us/applications/" title="Applications">Applications</a></li>
+                            <li><a href="https://www.kvaser.com/about-us/references/" title="References">References</a></li>
+                            <li><a href="https://www.kvaser.com/products-services/technical-associates/" title="Technical Associates">Technical Associates</a></li>
+                      </ul>
+        </div>
+                  <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+          <label>About Us</label>
+          <ul class="onlynavi">
+                            <li><a href="https://www.kvaser.com/about-us/university-sponsorships/" title="University Sponsorships">University Sponsorships</a></li>
+                            <li><a href="https://www.kvaser.com/about-us/career-at-kvaser/" title="Career">Career</a></li>
+                            <li><a href="https://www.kvaser.com/about-us/news/" title="News">News</a></li>
+                            <li><a href="https://www.kvaser.com/contact-us/" title="Contact Us">Contact Us</a></li>
+                      </ul>
+        </div>
+          
+
+                        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 cl">
+                  <label>Policies</label>
+                  <ul class="onlynavi">
+<li><a href="https://www.kvaser.com/about-us/policies/general-conditions-for-us-market/">Warranty (US)</a></li>
+<li><a href="https://www.kvaser.com/about-us/policies/general-conditions-for-rest-of-world/">Warranty (Global)</a></li>
+<li><a href="https://www.kvaser.com/about-us/policies/recycling-policy/">Recycling</a></li>
+<li><a href="https://www.kvaser.com/privacy-policy/">Privacy</a></li>
+</ul>
+              </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 cl">
+                  <label>Social</label>
+                  <div class="socialpart">
+<ul>
+<li><a href="https://www.linkedin.com/company/kvaser-ab"><i class="fa fa-linkedin-square"></i>linkedin</a></li>
+<li><a href="https://twitter.com/kvaserab"><i class="fa fa-twitter-square"></i>twitter</a></li>
+<li><a href="https://www.youtube.com/user/KvaserChannel"><i class="fa fa-youtube-square"></i>youtube</a></li>
+<li><a href="http://i.youku.com/i/UMTMwNjAwNDAyMA=="><img src="Introduction%20to%20the%20LIN%20bus_files/youku-icon.png" width="34" height="34">youku</a></li>
+<li><a href="http://weixin.qq.com/r/3kPYwPzEJKFbrbij9xbM"><i class="fa fa-weixin"></i>weixin</a></li>
+</ul>
+</div>
+              </div>
+          
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+        <div class="separate-line"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12">
+        <div class="reserved">
+          <p>© 2017 Kvaser</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+<!--footer -->
+<!--back to top BUTTON start-->
+<div id="fixed-bar" class="backtotopbtn">
+  <div id="bar-inner">
+    <a class="go-top" href="#page-wrapper" title="back to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</div>
+<!--back to top BUTTON close-->
+
+</div>
+
+    <div id="feed_back_Modal" class="modal fade animated" tabindex="-1" role="dialog">
+      <div class="feedbackform-box">
+        <form action="#" id="feed_back_form" method="post" class="ng-pristine ng-valid">
+          <a class="closebtn" data-dismiss="modal" type="button"></a>
+          <div class="feedhead">
+            <h2>Ideas &amp; Feedback</h2>
+          </div>
+          <textarea placeholder="Write Message" name="feed_back_idea" action="#" required=""></textarea>
+
+          <div class="feedback_msg">
+
+          </div>
+          <h2>Contact Info</h2>
+          <span>(Optional)</span>
+          <h4>Write your contact information if you wish to receive a reply from the Kvaser team.</h4>
+          <input name="feed_back_name" placeholder="Full Name" type="text">
+          <input name="feed_back_email" placeholder="Email" type="email">
+          <input name="feed_back_phone" placeholder="Phone" type="text">
+          <div class="submitpart">
+            <div class="g-recaptcha" data-sitekey="6Ldhpg8TAAAAAHYaRylvilB4AqMEhju5gI98Ovmi" style="display: inline-block;float: left;width: 50%;;transform:scale(0.8);transform-origin:0;-webkit-transform:scale(0.8);transform:scale(0.8);-webkit-transform-origin:0 0px;transform-origin:0 0px; 0"><div style="width: 304px; height: 78px;"><div><iframe src="Introduction%20to%20the%20LIN%20bus_files/anchor.html" title="recaptcha widget" scrolling="no" name="undefined" width="304" frameborder="0" height="78"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div>
+
+            <button class="cancel" data-dismiss="modal" type="reset">Cancel</button>
+            <button class="blue6" type="submit">Send</button>
+            <div class="clear"></div>
+          </div>
+             <input style="display:none;" name="security" type="text">
+             <input style="display:none;" value="_feed_back_form_submit" name="action" type="text">
+        </form>
+      </div>
+    </div>
+
+    <div class="feedbacksent modal fade in" id="feedsent">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <a class="closebtn" data-dismiss="modal" type="button"></a>
+          <div class="modal-body">
+            <h3><span>Feedback Sent</span></h3>
+            <p>Thank you very much for your feedback!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+<span class="feedback-btnnew"><a data-toggle="modal" data-target="#feed_back_Modal" href="javascript:void(0);">Feedback</a></span><div class="hide ng-scope" id="checkout_popup_main" role="dialog" ng-controller="save_order_in_my_account">
+  <div class="checkout_main_box clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="save_order_strip clearfix">
+            <div class="order_strip_main">
+              <div class="alert alert-info alert-dismissible" role="alert">
+                <strong>  order saved!</strong> You can continue shopping whenever you want              </div>
+            </div>
+
+          </div>
+
+        <div class="alert alert-info save_order_login_required hide alert-dismissible" role="alert">
+           You Have Not Login Please Login First.        </div>
+
+
+          <div class="checkout_inner clearfix">
+            <a class="close_part close_checkout_bar" href="javascript:void(0);">X
+            </a>
+            <div class="main_part_first">
+              <h1>
+                Just checking?              </h1>
+              <p>
+                Request more information before you complete the purchase.              </p>
+            </div>
+            <div class="support_part">
+              <div class="support_box">
+                <p>
+                <i></i><a href="mailto:sales.us@kvaser.com" class="ng-binding">sales.us@kvaser.com</a>
+                	<a href="tel:+1%20%28949%29%20236-4620">
+                        <span class="ng-binding">
+                        +1 (949) 236-4620
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="callme_box">
+              <div class="call_me_part">
+                <a id="new_contact_modal" class="grey6" href="javascript:void(0);" data-dismiss="modal" data-toggle="modal" data-target="#contact_me_popup">
+                  Contact me                </a>
+
+              </div>
+            </div>
+            <div class="right_save_part">
+                        		<a id="save_order_box" class="save_order" href="https://www.kvaser.com/account/">
+                Save order              </a>
+          		              <a class="checkout_order blue6" href="https://www.kvaser.com/checkout/">
+                Checkout              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade in ng-scope" id="contact_me_popup" role="dialog" ng-init="init()" ng-controller="save_order_in_my_account">
+  <div class="contact_me_outerbox clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="cancalposition">
+            <a class="cancalbtn" data-dismiss="modal" href="javascript:void(0);">
+                          </a>
+          </div>
+          <div class="save_order_strip clearfix clear">
+            <div class="order_strip_main">
+
+              <div class="alert alert-info alert-dismissible" role="alert">
+                <span class="req-erre"></span>
+              </div>
+            </div>
+          </div>
+          <div class="contact_part_new clearfix clear">
+            <div class="top_contact_heading">
+              <h1>
+                Contact me              </h1>
+              <p>
+                We will save the products and a Kvaser representive will contact you as soon as possible.              </p>
+            </div>
+            <form class="contact_main_form clearfix clear ng-pristine ng-invalid ng-invalid-required ng-valid-email" id="hardware_request_info_form" ng-submit="submitData(hardware,hardware_rfi_form.$valid)" name="hardware_rfi_form" method="post" novalidate="">
+              <div class="call-me-left">
+                <ul class="main_contact_form clearfix" ng-init="hardware.email= ''">
+                  <li>
+                    <span class="form_input">
+                      <input ng-focus="focus_name=true" ng-model="hardware.Name" class="input_text required ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="Name" placeholder="Name" required="required" type="text">
+                      <div class="help-block">
+                        <label ng-show="hardware_rfi_form.Name.$error.required &amp;&amp; submitted" class="error required_error ng-hide" for="Name">
+                          Please enter a Name.                        </label>
+                      </div>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="form_input">
+                      <input ng-focus="focus_email=true" class="input_text required ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required" name="email" ng-model="hardware.email" placeholder="Email" required="required" type="email">
+                      <div class="help-block">
+                        <label ng-show="hardware_rfi_form.email.$error.required &amp;&amp; submitted" class="error required_error ng-hide" for="email" style="display: inline-block;">
+                          Tell us your email.                        </label>
+                        <label ng-show="hardware_rfi_form.email.$error.email &amp;&amp; submitted" class="error required_error ng-hide" for="email" style="display: inline-block;">
+                          This is not a valid email.                        </label>
+                      </div>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="form_input">
+                      <input ng-focus="focus_phone=true" ng-model="hardware.Phone" class="input_text required ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="Phone" placeholder="Phone" required="required" type="tel">
+                      <div class="help-block">
+                        <label ng-show="hardware_rfi_form.Phone.$error.required &amp;&amp; submitted" class="error required_error ng-hide" for="Phone" style="display: inline-block;">
+                          Tell us your Phone                        </label>
+                      </div>
+                    </span>
+                  </li>
+                  <li class="clear">
+                    <span class="form_select select">
+                                            <select ng-model="hardware.country" name="country" class="select_drop ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="required" style="display: none;"><option value="" selected="selected">select Country</option>
+                        <option value="Åland Islands">Åland Islands</option><option value="Afghanistan">Afghanistan</option><option value="Albania">Albania</option><option value="Algeria">Algeria</option><option value="American Samoa">American Samoa</option><option value="Andorra">Andorra</option><option value="Angola">Angola</option><option value="Anguilla">Anguilla</option><option value="Antarctica">Antarctica</option><option value="Antigua and Barbuda">Antigua and Barbuda</option><option value="Argentina">Argentina</option><option value="Armenia">Armenia</option><option value="Aruba">Aruba</option><option value="Australia">Australia</option><option value="Austria">Austria</option><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas">Bahamas</option><option value="Bahrain">Bahrain</option><option value="Bangladesh">Bangladesh</option><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option><option value="Belau">Belau</option><option value="Belgium">Belgium</option><option value="Belize">Belize</option><option value="Benin">Benin</option><option value="Bermuda">Bermuda</option><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option><option value="Bonaire, Saint Eustatius and Saba">Bonaire, Saint Eustatius and Saba</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Botswana">Botswana</option><option value="Bouvet Island">Bouvet Island</option><option value="Brazil">Brazil</option><option value="British Indian Ocean Territory">British Indian Ocean Territory</option><option value="British Virgin Islands">British Virgin Islands</option><option value="Brunei">Brunei</option><option value="Bulgaria">Bulgaria</option><option value="Burkina Faso">Burkina Faso</option><option value="Burundi">Burundi</option><option value="Cambodia">Cambodia</option><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option><option value="Cape Verde">Cape Verde</option><option value="Cayman Islands">Cayman Islands</option><option value="Central African Republic">Central African Republic</option><option value="Chad">Chad</option><option value="Chile">Chile</option><option value="China">China</option><option value="Christmas Island">Christmas Island</option><option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option><option value="Colombia">Colombia</option><option value="Comoros">Comoros</option><option value="Congo (Brazzaville)">Congo (Brazzaville)</option><option value="Congo (Kinshasa)">Congo (Kinshasa)</option><option value="Cook Islands">Cook Islands</option><option value="Costa Rica">Costa Rica</option><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option><option value="Curaçao">Curaçao</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Denmark">Denmark</option><option value="Djibouti">Djibouti</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option><option value="El Salvador">El Salvador</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option><option value="Ethiopia">Ethiopia</option><option value="Falkland Islands">Falkland Islands</option><option value="Faroe Islands">Faroe Islands</option><option value="Fiji">Fiji</option><option value="Finland">Finland</option><option value="France">France</option><option value="French Guiana">French Guiana</option><option value="French Polynesia">French Polynesia</option><option value="French Southern Territories">French Southern Territories</option><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option value="Georgia">Georgia</option><option value="Germany">Germany</option><option value="Ghana">Ghana</option><option value="Gibraltar">Gibraltar</option><option value="Greece">Greece</option><option value="Greenland">Greenland</option><option value="Grenada">Grenada</option><option value="Guadeloupe">Guadeloupe</option><option value="Guam">Guam</option><option value="Guatemala">Guatemala</option><option value="Guernsey">Guernsey</option><option value="Guinea">Guinea</option><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option><option value="Honduras">Honduras</option><option value="Hong Kong">Hong Kong</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="India">India</option><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option><option value="Iraq">Iraq</option><option value="Isle of Man">Isle of Man</option><option value="Israel">Israel</option><option value="Italy">Italy</option><option value="Ivory Coast">Ivory Coast</option><option value="Jamaica">Jamaica</option><option value="Japan">Japan</option><option value="Jersey">Jersey</option><option value="Jordan">Jordan</option><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option><option value="Kiribati">Kiribati</option><option value="Kuwait">Kuwait</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Laos">Laos</option><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option><option value="Libya">Libya</option><option value="Liechtenstein">Liechtenstein</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Macao S.A.R., China">Macao S.A.R., China</option><option value="Macedonia">Macedonia</option><option value="Madagascar">Madagascar</option><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option><option value="Maldives">Maldives</option><option value="Mali">Mali</option><option value="Malta">Malta</option><option value="Marshall Islands">Marshall Islands</option><option value="Martinique">Martinique</option><option value="Mauritania">Mauritania</option><option value="Mauritius">Mauritius</option><option value="Mayotte">Mayotte</option><option value="Mexico">Mexico</option><option value="Micronesia">Micronesia</option><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option><option value="Mongolia">Mongolia</option><option value="Montenegro">Montenegro</option><option value="Montserrat">Montserrat</option><option value="Morocco">Morocco</option><option value="Mozambique">Mozambique</option><option value="Myanmar">Myanmar</option><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option><option value="Nepal">Nepal</option><option value="Netherlands">Netherlands</option><option value="Netherlands Antilles">Netherlands Antilles</option><option value="New Caledonia">New Caledonia</option><option value="New Zealand">New Zealand</option><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option><option value="Nigeria">Nigeria</option><option value="Niue">Niue</option><option value="Norfolk Island">Norfolk Island</option><option value="North Korea">North Korea</option><option value="Northern Mariana Islands">Northern Mariana Islands</option><option value="Norway">Norway</option><option value="Oman">Oman</option><option value="Pakistan">Pakistan</option><option value="Palestinian Territory">Palestinian Territory</option><option value="Panama">Panama</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option><option value="Philippines">Philippines</option><option value="Pitcairn">Pitcairn</option><option value="Poland">Poland</option><option value="Portugal">Portugal</option><option value="Puerto Rico">Puerto Rico</option><option value="Qatar">Qatar</option><option value="Republic of Ireland">Republic of Ireland</option><option value="Reunion">Reunion</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="São Tomé and Príncipe">São Tomé and Príncipe</option><option value="Saint Barthélemy">Saint Barthélemy</option><option value="Saint Helena">Saint Helena</option><option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option value="Saint Lucia">Saint Lucia</option><option value="Saint Martin (Dutch part)">Saint Martin (Dutch part)</option><option value="Saint Martin (French part)">Saint Martin (French part)</option><option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option><option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option><option value="Samoa">Samoa</option><option value="San Marino">San Marino</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Senegal">Senegal</option><option value="Serbia">Serbia</option><option value="Seychelles">Seychelles</option><option value="Sierra Leone">Sierra Leone</option><option value="Singapore">Singapore</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Solomon Islands">Solomon Islands</option><option value="Somalia">Somalia</option><option value="South Africa">South Africa</option><option value="South Georgia/Sandwich Islands">South Georgia/Sandwich Islands</option><option value="South Korea">South Korea</option><option value="South Sudan">South Sudan</option><option value="Spain">Spain</option><option value="Sri Lanka">Sri Lanka</option><option value="Sudan">Sudan</option><option value="Suriname">Suriname</option><option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option><option value="Swaziland">Swaziland</option><option value="Sweden">Sweden</option><option value="Switzerland">Switzerland</option><option value="Syria">Syria</option><option value="Taiwan">Taiwan</option><option value="Tajikistan">Tajikistan</option><option value="Tanzania">Tanzania</option><option value="Thailand">Thailand</option><option value="Timor-Leste">Timor-Leste</option><option value="Togo">Togo</option><option value="Tokelau">Tokelau</option><option value="Tonga">Tonga</option><option value="Trinidad and Tobago">Trinidad and Tobago</option><option value="Tunisia">Tunisia</option><option value="Turkey">Turkey</option><option value="Turkmenistan">Turkmenistan</option><option value="Turks and Caicos Islands">Turks and Caicos Islands</option><option value="Tuvalu">Tuvalu</option><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option><option value="United Arab Emirates">United Arab Emirates</option><option value="United Kingdom (UK)">United Kingdom (UK)</option><option value="United States (US)">United States (US)</option><option value="United States (US) Minor Outlying Islands">United States (US) Minor Outlying Islands</option><option value="United States (US) Virgin Islands">United States (US) Virgin Islands</option><option value="Uruguay">Uruguay</option><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu">Vanuatu</option><option value="Vatican">Vatican</option><option value="Venezuela">Venezuela</option><option value="Vietnam">Vietnam</option><option value="Wallis and Futuna">Wallis and Futuna</option><option value="Western Sahara">Western Sahara</option><option value="Yemen">Yemen</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option>                      </select><div class="newListSelected" tabindex="0" style="position: static;"><div class="selectedTxt">select Country</div><ul class="newList newListHeight" style="visibility: visible; top: 42px; height: 0px; left: 0px; display: none;"><li><a href="javascript:void(0);">select Country</a></li><li><a href="javascript:void(0);">Åland Islands</a></li><li><a href="javascript:void(0);">Afghanistan</a></li><li><a href="javascript:void(0);">Albania</a></li><li><a href="javascript:void(0);">Algeria</a></li><li><a href="javascript:void(0);">American Samoa</a></li><li><a href="javascript:void(0);">Andorra</a></li><li><a href="javascript:void(0);">Angola</a></li><li><a href="javascript:void(0);">Anguilla</a></li><li><a href="javascript:void(0);">Antarctica</a></li><li><a href="javascript:void(0);">Antigua and Barbuda</a></li><li><a href="javascript:void(0);">Argentina</a></li><li><a href="javascript:void(0);">Armenia</a></li><li><a href="javascript:void(0);">Aruba</a></li><li><a href="javascript:void(0);">Australia</a></li><li><a href="javascript:void(0);">Austria</a></li><li><a href="javascript:void(0);">Azerbaijan</a></li><li><a href="javascript:void(0);">Bahamas</a></li><li><a href="javascript:void(0);">Bahrain</a></li><li><a href="javascript:void(0);">Bangladesh</a></li><li><a href="javascript:void(0);">Barbados</a></li><li><a href="javascript:void(0);">Belarus</a></li><li><a href="javascript:void(0);">Belau</a></li><li><a href="javascript:void(0);">Belgium</a></li><li><a href="javascript:void(0);">Belize</a></li><li><a href="javascript:void(0);">Benin</a></li><li><a href="javascript:void(0);">Bermuda</a></li><li><a href="javascript:void(0);">Bhutan</a></li><li><a href="javascript:void(0);">Bolivia</a></li><li><a href="javascript:void(0);">Bonaire, Saint Eustatius and Saba</a></li><li><a href="javascript:void(0);">Bosnia and Herzegovina</a></li><li><a href="javascript:void(0);">Botswana</a></li><li><a href="javascript:void(0);">Bouvet Island</a></li><li><a href="javascript:void(0);">Brazil</a></li><li><a href="javascript:void(0);">British Indian Ocean Territory</a></li><li><a href="javascript:void(0);">British Virgin Islands</a></li><li><a href="javascript:void(0);">Brunei</a></li><li><a href="javascript:void(0);">Bulgaria</a></li><li><a href="javascript:void(0);">Burkina Faso</a></li><li><a href="javascript:void(0);">Burundi</a></li><li><a href="javascript:void(0);">Cambodia</a></li><li><a href="javascript:void(0);">Cameroon</a></li><li><a href="javascript:void(0);">Canada</a></li><li><a href="javascript:void(0);">Cape Verde</a></li><li><a href="javascript:void(0);">Cayman Islands</a></li><li><a href="javascript:void(0);">Central African Republic</a></li><li><a href="javascript:void(0);">Chad</a></li><li><a href="javascript:void(0);">Chile</a></li><li><a href="javascript:void(0);">China</a></li><li><a href="javascript:void(0);">Christmas Island</a></li><li><a href="javascript:void(0);">Cocos (Keeling) Islands</a></li><li><a href="javascript:void(0);">Colombia</a></li><li><a href="javascript:void(0);">Comoros</a></li><li><a href="javascript:void(0);">Congo (Brazzaville)</a></li><li><a href="javascript:void(0);">Congo (Kinshasa)</a></li><li><a href="javascript:void(0);">Cook Islands</a></li><li><a href="javascript:void(0);">Costa Rica</a></li><li><a href="javascript:void(0);">Croatia</a></li><li><a href="javascript:void(0);">Cuba</a></li><li><a href="javascript:void(0);">Curaçao</a></li><li><a href="javascript:void(0);">Cyprus</a></li><li><a href="javascript:void(0);">Czech Republic</a></li><li><a href="javascript:void(0);">Denmark</a></li><li><a href="javascript:void(0);">Djibouti</a></li><li><a href="javascript:void(0);">Dominica</a></li><li><a href="javascript:void(0);">Dominican Republic</a></li><li><a href="javascript:void(0);">Ecuador</a></li><li><a href="javascript:void(0);">Egypt</a></li><li><a href="javascript:void(0);">El Salvador</a></li><li><a href="javascript:void(0);">Equatorial Guinea</a></li><li><a href="javascript:void(0);">Eritrea</a></li><li><a href="javascript:void(0);">Estonia</a></li><li><a href="javascript:void(0);">Ethiopia</a></li><li><a href="javascript:void(0);">Falkland Islands</a></li><li><a href="javascript:void(0);">Faroe Islands</a></li><li><a href="javascript:void(0);">Fiji</a></li><li><a href="javascript:void(0);">Finland</a></li><li><a href="javascript:void(0);">France</a></li><li><a href="javascript:void(0);">French Guiana</a></li><li><a href="javascript:void(0);">French Polynesia</a></li><li><a href="javascript:void(0);">French Southern Territories</a></li><li><a href="javascript:void(0);">Gabon</a></li><li><a href="javascript:void(0);">Gambia</a></li><li><a href="javascript:void(0);">Georgia</a></li><li><a href="javascript:void(0);">Germany</a></li><li><a href="javascript:void(0);">Ghana</a></li><li><a href="javascript:void(0);">Gibraltar</a></li><li><a href="javascript:void(0);">Greece</a></li><li><a href="javascript:void(0);">Greenland</a></li><li><a href="javascript:void(0);">Grenada</a></li><li><a href="javascript:void(0);">Guadeloupe</a></li><li><a href="javascript:void(0);">Guam</a></li><li><a href="javascript:void(0);">Guatemala</a></li><li><a href="javascript:void(0);">Guernsey</a></li><li><a href="javascript:void(0);">Guinea</a></li><li><a href="javascript:void(0);">Guinea-Bissau</a></li><li><a href="javascript:void(0);">Guyana</a></li><li><a href="javascript:void(0);">Haiti</a></li><li><a href="javascript:void(0);">Heard Island and McDonald Islands</a></li><li><a href="javascript:void(0);">Honduras</a></li><li><a href="javascript:void(0);">Hong Kong</a></li><li><a href="javascript:void(0);">Hungary</a></li><li><a href="javascript:void(0);">Iceland</a></li><li><a href="javascript:void(0);">India</a></li><li><a href="javascript:void(0);">Indonesia</a></li><li><a href="javascript:void(0);">Iran</a></li><li><a href="javascript:void(0);">Iraq</a></li><li><a href="javascript:void(0);">Isle of Man</a></li><li><a href="javascript:void(0);">Israel</a></li><li><a href="javascript:void(0);">Italy</a></li><li><a href="javascript:void(0);">Ivory Coast</a></li><li><a href="javascript:void(0);">Jamaica</a></li><li><a href="javascript:void(0);">Japan</a></li><li><a href="javascript:void(0);">Jersey</a></li><li><a href="javascript:void(0);">Jordan</a></li><li><a href="javascript:void(0);">Kazakhstan</a></li><li><a href="javascript:void(0);">Kenya</a></li><li><a href="javascript:void(0);">Kiribati</a></li><li><a href="javascript:void(0);">Kuwait</a></li><li><a href="javascript:void(0);">Kyrgyzstan</a></li><li><a href="javascript:void(0);">Laos</a></li><li><a href="javascript:void(0);">Latvia</a></li><li><a href="javascript:void(0);">Lebanon</a></li><li><a href="javascript:void(0);">Lesotho</a></li><li><a href="javascript:void(0);">Liberia</a></li><li><a href="javascript:void(0);">Libya</a></li><li><a href="javascript:void(0);">Liechtenstein</a></li><li><a href="javascript:void(0);">Lithuania</a></li><li><a href="javascript:void(0);">Luxembourg</a></li><li><a href="javascript:void(0);">Macao S.A.R., China</a></li><li><a href="javascript:void(0);">Macedonia</a></li><li><a href="javascript:void(0);">Madagascar</a></li><li><a href="javascript:void(0);">Malawi</a></li><li><a href="javascript:void(0);">Malaysia</a></li><li><a href="javascript:void(0);">Maldives</a></li><li><a href="javascript:void(0);">Mali</a></li><li><a href="javascript:void(0);">Malta</a></li><li><a href="javascript:void(0);">Marshall Islands</a></li><li><a href="javascript:void(0);">Martinique</a></li><li><a href="javascript:void(0);">Mauritania</a></li><li><a href="javascript:void(0);">Mauritius</a></li><li><a href="javascript:void(0);">Mayotte</a></li><li><a href="javascript:void(0);">Mexico</a></li><li><a href="javascript:void(0);">Micronesia</a></li><li><a href="javascript:void(0);">Moldova</a></li><li><a href="javascript:void(0);">Monaco</a></li><li><a href="javascript:void(0);">Mongolia</a></li><li><a href="javascript:void(0);">Montenegro</a></li><li><a href="javascript:void(0);">Montserrat</a></li><li><a href="javascript:void(0);">Morocco</a></li><li><a href="javascript:void(0);">Mozambique</a></li><li><a href="javascript:void(0);">Myanmar</a></li><li><a href="javascript:void(0);">Namibia</a></li><li><a href="javascript:void(0);">Nauru</a></li><li><a href="javascript:void(0);">Nepal</a></li><li><a href="javascript:void(0);">Netherlands</a></li><li><a href="javascript:void(0);">Netherlands Antilles</a></li><li><a href="javascript:void(0);">New Caledonia</a></li><li><a href="javascript:void(0);">New Zealand</a></li><li><a href="javascript:void(0);">Nicaragua</a></li><li><a href="javascript:void(0);">Niger</a></li><li><a href="javascript:void(0);">Nigeria</a></li><li><a href="javascript:void(0);">Niue</a></li><li><a href="javascript:void(0);">Norfolk Island</a></li><li><a href="javascript:void(0);">North Korea</a></li><li><a href="javascript:void(0);">Northern Mariana Islands</a></li><li><a href="javascript:void(0);">Norway</a></li><li><a href="javascript:void(0);">Oman</a></li><li><a href="javascript:void(0);">Pakistan</a></li><li><a href="javascript:void(0);">Palestinian Territory</a></li><li><a href="javascript:void(0);">Panama</a></li><li><a href="javascript:void(0);">Papua New Guinea</a></li><li><a href="javascript:void(0);">Paraguay</a></li><li><a href="javascript:void(0);">Peru</a></li><li><a href="javascript:void(0);">Philippines</a></li><li><a href="javascript:void(0);">Pitcairn</a></li><li><a href="javascript:void(0);">Poland</a></li><li><a href="javascript:void(0);">Portugal</a></li><li><a href="javascript:void(0);">Puerto Rico</a></li><li><a href="javascript:void(0);">Qatar</a></li><li><a href="javascript:void(0);">Republic of Ireland</a></li><li><a href="javascript:void(0);">Reunion</a></li><li><a href="javascript:void(0);">Romania</a></li><li><a href="javascript:void(0);">Russia</a></li><li><a href="javascript:void(0);">Rwanda</a></li><li><a href="javascript:void(0);">São Tomé and Príncipe</a></li><li><a href="javascript:void(0);">Saint Barthélemy</a></li><li><a href="javascript:void(0);">Saint Helena</a></li><li><a href="javascript:void(0);">Saint Kitts and Nevis</a></li><li><a href="javascript:void(0);">Saint Lucia</a></li><li><a href="javascript:void(0);">Saint Martin (Dutch part)</a></li><li><a href="javascript:void(0);">Saint Martin (French part)</a></li><li><a href="javascript:void(0);">Saint Pierre and Miquelon</a></li><li><a href="javascript:void(0);">Saint Vincent and the Grenadines</a></li><li><a href="javascript:void(0);">Samoa</a></li><li><a href="javascript:void(0);">San Marino</a></li><li><a href="javascript:void(0);">Saudi Arabia</a></li><li><a href="javascript:void(0);">Senegal</a></li><li><a href="javascript:void(0);">Serbia</a></li><li><a href="javascript:void(0);">Seychelles</a></li><li><a href="javascript:void(0);">Sierra Leone</a></li><li><a href="javascript:void(0);">Singapore</a></li><li><a href="javascript:void(0);">Slovakia</a></li><li><a href="javascript:void(0);">Slovenia</a></li><li><a href="javascript:void(0);">Solomon Islands</a></li><li><a href="javascript:void(0);">Somalia</a></li><li><a href="javascript:void(0);">South Africa</a></li><li><a href="javascript:void(0);">South Georgia/Sandwich Islands</a></li><li><a href="javascript:void(0);">South Korea</a></li><li><a href="javascript:void(0);">South Sudan</a></li><li><a href="javascript:void(0);">Spain</a></li><li><a href="javascript:void(0);">Sri Lanka</a></li><li><a href="javascript:void(0);">Sudan</a></li><li><a href="javascript:void(0);">Suriname</a></li><li><a href="javascript:void(0);">Svalbard and Jan Mayen</a></li><li><a href="javascript:void(0);">Swaziland</a></li><li><a href="javascript:void(0);">Sweden</a></li><li><a href="javascript:void(0);">Switzerland</a></li><li><a href="javascript:void(0);">Syria</a></li><li><a href="javascript:void(0);">Taiwan</a></li><li><a href="javascript:void(0);">Tajikistan</a></li><li><a href="javascript:void(0);">Tanzania</a></li><li><a href="javascript:void(0);">Thailand</a></li><li><a href="javascript:void(0);">Timor-Leste</a></li><li><a href="javascript:void(0);">Togo</a></li><li><a href="javascript:void(0);">Tokelau</a></li><li><a href="javascript:void(0);">Tonga</a></li><li><a href="javascript:void(0);">Trinidad and Tobago</a></li><li><a href="javascript:void(0);">Tunisia</a></li><li><a href="javascript:void(0);">Turkey</a></li><li><a href="javascript:void(0);">Turkmenistan</a></li><li><a href="javascript:void(0);">Turks and Caicos Islands</a></li><li><a href="javascript:void(0);">Tuvalu</a></li><li><a href="javascript:void(0);">Uganda</a></li><li><a href="javascript:void(0);">Ukraine</a></li><li><a href="javascript:void(0);">United Arab Emirates</a></li><li><a href="javascript:void(0);">United Kingdom (UK)</a></li><li><a href="javascript:void(0);">United States (US)</a></li><li><a href="javascript:void(0);">United States (US) Minor Outlying Islands</a></li><li><a href="javascript:void(0);">United States (US) Virgin Islands</a></li><li><a href="javascript:void(0);">Uruguay</a></li><li><a href="javascript:void(0);">Uzbekistan</a></li><li><a href="javascript:void(0);">Vanuatu</a></li><li><a href="javascript:void(0);">Vatican</a></li><li><a href="javascript:void(0);">Venezuela</a></li><li><a href="javascript:void(0);">Vietnam</a></li><li><a href="javascript:void(0);">Wallis and Futuna</a></li><li><a href="javascript:void(0);">Western Sahara</a></li><li><a href="javascript:void(0);">Yemen</a></li><li><a href="javascript:void(0);">Zambia</a></li><li><a href="javascript:void(0);">Zimbabwe</a></li></ul></div>
+                    <div class="help-block">
+                      <label ng-show="hardware_rfi_form.country.$error.required &amp;&amp; submitted" class="error required_error ng-hide" for="country">
+                        Please enter a country Name.                      </label>
+                    </div>
+                  </span>
+                </li>
+              <li>
+                <span class="form_input">
+                  <input ng-focus="focus_company=true" ng-model="hardware.company" class="input_text required ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="company" placeholder="Company" required="required" type="text">
+                  <div class="help-block">
+                    <label ng-show="hardware_rfi_form.company.$error.required &amp;&amp; submitted" class="error required_error ng-hide" for="Name">
+                      Please enter a company Name.                    </label>
+                  </div>
+                </span>
+              </li>
+              </ul>
+          </div>
+          <div class="call-me-right">
+            <input class="send_btn" ng-click="submitted=true" value="Send" type="submit">
+            <a class="continue_btn" data-dismiss="modal" href="javascript:void(0);">
+              Cancel            </a>
+          </div>
+          <div class="clear">
+          </div>
+          <input id="add_request_information_nonce_field" name="add_request_information_nonce_field" value="532aacafdf" type="hidden"><input name="_wp_http_referer" value="/about-can/can-standards/linbus/" type="hidden">          </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<script>
+		try {
+			jQuery(document).ready(function() {
+				jQuery(".topnav .search_icon").click(function() {
+					jQuery(this).parents().closest(".find-search").find("#top_global_search").val("");
+				});
+			});
+		}
+		catch(err) {}
+	</script><!--Enhanced Ecommerce Google Analytics Plugin for Woocommerce by Tatvic Plugin Version:1.0.19--><script type="text/javascript">
+/* <![CDATA[ */
+var site_info = 
+{"home_url":"https:\/\/www.kvaser.com","site_url":"https:\/\/www.kvaser.com","theme_url":"https:\/\/www.kvaser.com\/wp-content\/themes\/kvaser","post_id":"5113","currentLang":"en","ajax_url":"https:\/\/www.kvaser.com\/wp-admin\/admin-ajax.php","is_checkout":"","is_myaccount":"","myaccount_url":"https:\/\/www.kvaser.com\/account\/","product_listing_url":"https:\/\/www.kvaser.com\/products-services\/our-products","user_login":"0","ajax_nonce":"bd8d3768d2","show_tour":"","message_alert":{"myproduct_delete":"Are
+ you sure you want to delete this item?","saveproduct_delete":"Are you 
+sure you want to delete this item?","input_field_required":"This field 
+is required.","remote_field_fix":"Please fix this 
+field.","valid_email":"Please enter a valid email 
+address.","valid_url":"Please enter a valid URL.","valid_date":"Please 
+enter a valid date.","valid_date_iso":"Please enter a valid date ( ISO 
+).","valid_number":"Please enter a valid number.","only_digits":"Please 
+enter only digits.","valid_credit_card_no":"Please enter a valid credit 
+card number.","enter_same_value":"Please enter the same value 
+again.","limit_chars":"Please enter no more than {0} 
+characters.","least_chars":"Please enter at least {0} 
+characters.","rangelength_chars":"Please enter a value between {0} and 
+{1} characters long.","range_chars":"Please enter a value between {0} 
+and {1}.","max_value":"Please enter a value less than or equal to 
+{0}.","min_value":"Please enter a value greater than or equal to 
+{0}."},"my_save_resaler":"","captcha_site_key":"6Ldhpg8TAAAAAHYaRylvilB4AqMEhju5gI98Ovmi","my_company":null,"save_resalser_for_tecnical_associated":"","pre_product_send_req":[],"pre_product_send_req_file_type":"https:\/\/www.kvaser.com\/wp-content\/themes\/kvaser\/woocommerce\/images\/blank-file.jpg","pre_production_send_evalution_request":[],"pre_product_evaluction_cat":[],"qsr_data":{"127":"https:\/\/www.kvaser.com\/qsr\/vetes-muhendislik\/","126":"https:\/\/www.kvaser.com\/qsr\/undheim-systems\/","56":"https:\/\/www.kvaser.com\/qsr\/globallogic\/","16":"https:\/\/www.kvaser.com\/qsr\/csm\/","115":"https:\/\/www.kvaser.com\/qsr\/%e5%b9%bf%e5%b7%9e%e5%87%af%e8%92%82%e8%af%ba%e4%bf%a1%e6%81%af%e7%a7%91%e6%8a%80%e6%9c%89%e9%99%90%e5%85%ac%e5%8f%b8-cadioo-information\/","107":"https:\/\/www.kvaser.com\/qsr\/ean-technologies-co-ltd\/","54":"https:\/\/www.kvaser.com\/qsr\/westpac-technology-limited\/","55":"https:\/\/www.kvaser.com\/qsr\/wind-hill-technologies-co-ltd\/","40":"https:\/\/www.kvaser.com\/qsr\/tk-engineering-oy\/","41":"https:\/\/www.kvaser.com\/qsr\/warwick-control-technologies-limited\/","78":"https:\/\/www.kvaser.com\/qsr\/system-access\/","39":"https:\/\/www.kvaser.com\/qsr\/texys-international\/","63":"https:\/\/www.kvaser.com\/qsr\/sightsys-ltd\/","13":"https:\/\/www.kvaser.com\/qsr\/schaeffler-engineering-gmbh\/","88":"https:\/\/www.kvaser.com\/qsr\/sewell-direct\/","46":"https:\/\/www.kvaser.com\/qsr\/shanghai-barutu-construction-machinery-technology-co\/","87":"https:\/\/www.kvaser.com\/qsr\/rotalec\/","37":"https:\/\/www.kvaser.com\/qsr\/s4-integration\/","50":"https:\/\/www.kvaser.com\/qsr\/polelink-information-technology-co-ltd-2\/","86":"https:\/\/www.kvaser.com\/qsr\/phytools\/","34":"https:\/\/www.kvaser.com\/qsr\/pi-innovo-vehicle-electronics-innovators\/","75":"https:\/\/www.kvaser.com\/qsr\/plattform\/","85":"https:\/\/www.kvaser.com\/qsr\/olympus-controls\/","65":"https:\/\/www.kvaser.com\/qsr\/opsoc\/","71":"https:\/\/www.kvaser.com\/qsr\/philon\/","77":"https:\/\/www.kvaser.com\/qsr\/microport-computer-electronics-inc\/","58":"https:\/\/www.kvaser.com\/qsr\/neomore\/","32":"https:\/\/www.kvaser.com\/qsr\/new-eagle\/","103":"https:\/\/www.kvaser.com\/qsr\/mach-systems-s-r-o\/","105":"https:\/\/www.kvaser.com\/qsr\/measurement-instruments\/","70":"https:\/\/www.kvaser.com\/qsr\/micromax\/","94":"https:\/\/www.kvaser.com\/qsr\/ltn-precision-products-gmbh\/","62":"https:\/\/www.kvaser.com\/qsr\/logican\/","60":"https:\/\/www.kvaser.com\/qsr\/maccon\/","68":"https:\/\/www.kvaser.com\/qsr\/jonat-automation-b-v\/","30":"https:\/\/www.kvaser.com\/qsr\/lgm\/","69":"https:\/\/www.kvaser.com\/qsr\/nuno-rodrigues\/","113":"https:\/\/www.kvaser.com\/qsr\/indizio-solutions-ab\/","114":"https:\/\/www.kvaser.com\/qsr\/interworld-electronics\/","110":"https:\/\/www.kvaser.com\/qsr\/g-pulse-technology\/","52":"https:\/\/www.kvaser.com\/qsr\/guangzhou-triv-technologies\/","84":"https:\/\/www.kvaser.com\/qsr\/hydraquip-distribution\/","27":"https:\/\/www.kvaser.com\/qsr\/idx\/","73":"https:\/\/www.kvaser.com\/qsr\/embedded-systems-korea\/","47":"https:\/\/www.kvaser.com\/qsr\/eontronix-co-ltd\/","23":"https:\/\/www.kvaser.com\/qsr\/faar-industry\/","76":"https:\/\/www.kvaser.com\/qsr\/elektronix-hitech\/","19":"https:\/\/www.kvaser.com\/qsr\/elmo-motion-control\/","74":"https:\/\/www.kvaser.com\/qsr\/data-respons\/","44":"https:\/\/www.kvaser.com\/qsr\/digican-motion-controls-inc\/","17":"https:\/\/www.kvaser.com\/qsr\/dunasys-sas\/","97":"https:\/\/www.kvaser.com\/qsr\/dt-engineering\/","64":"https:\/\/www.kvaser.com\/qsr\/data-job\/","96":"https:\/\/www.kvaser.com\/qsr\/bias-muhendislik-ltd-sti\/","66":"https:\/\/www.kvaser.com\/qsr\/controller-area-network-solutions-m-sdn-bhd-cans\/","83":"https:\/\/www.kvaser.com\/qsr\/axis-new-england\/","51":"https:\/\/www.kvaser.com\/qsr\/beijing-rc-technologies-co-ltd\/","53":"https:\/\/www.kvaser.com\/qsr\/beijing-watertek-information-technology-co\/","80":"https:\/\/www.kvaser.com\/qsr\/amplicon-liveline-limited\/","82":"https:\/\/www.kvaser.com\/qsr\/applied-machine-motion-control\/","91":"https:\/\/www.kvaser.com\/qsr\/autonomoustuff\/","57":"https:\/\/www.kvaser.com\/qsr\/accurate-technologies\/","81":"https:\/\/www.kvaser.com\/qsr\/advantec-computer-systems\/","59":"https:\/\/www.kvaser.com\/qsr\/agostec-gmbh-co-kg\/","79":"https:\/\/www.kvaser.com\/qsr\/2-adam-software-technology\/","12":"https:\/\/www.kvaser.com\/qsr\/abtronix-bv\/","61":"https:\/\/www.kvaser.com\/qsr\/amc-europe\/"},"external_links":["github.io","github.com","twitter.com","facebook.com","linkedin.com","kvaser.cn","www.kvaser.cn","kvaser.com","i.youku.com","youku.com","youtube.com","weixin.qq.com","qq.com","www.ipetronik.com","https:\/\/www.ipetronik.com","ipetronik.com","www.ipetronik.com","www.auvsifoundation.org","auvsifoundation.org","gm.com","energy.gov","ltn.ch","www.ltn.ch","www.etas.com","etas.com","elfa.se","www.elfa.se","canbrowser.com","google.se","google.st","www.eetimes.com","eetimes.com","philoninc.com","advanteconline.com","schaeffler-engineering.com","amplicon.com","maps.google.com","google.com"]};
+var
+ lang = {"serial_number":"Serial 
+number","description":"Description","tech_specs":"Tech 
+Specs","media":"Media","bundled_solutions":"Bundled 
+Solutions","download":"Downloads","software":"Software","faq":"FAQ","knowledge_base":"Knowledge
+ Base"};
+var wc_add_to_cart = 
+{"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/about-can\/can-standards\/linbus\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View
+ 
+Cart","cart_url":"https:\/\/www.kvaser.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+var
+ _smid = "s03altqrht3naa4f";
+/* ]]> */
+</script>
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/app.js" defer="defer" onload=""></script>
+<script type="text/javascript">
+(function() {var sm = document.createElement('script'); sm.type = 
+'text/javascript'; sm.async = true;sm.src = ('https:' == 
+document.location.protocol ? 'https://' : 'http://') + 
+'www.salesmanago.pl/static/sm.js';var s = 
+document.getElementsByTagName('script')[0]; 
+s.parentNode.insertBefore(sm, 
+s);})();(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+ 
+Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create',
+ 'UA-3048325-2', {'cookieDomain': 'kvaser.com','siteSpeedSampleRate': 
+100});ga('require', 'displayfeatures');ga('send', 'pageview'); 
+(function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:31798,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+      /*jQuery(function(){ setInterval(function(){ 
+jQuery("a[href*='http://']:not([href*='"+location.hostname+"']),a[href*='https://']:not([href*='"+location.hostname+"'])").each(function(){var
+ _link=this.href;var uri=new URI(_link);var 
+domain=uri.domain();if(domain=='youtube.com'){var 
+properlink=_link;uri.protocol("https");jQuery(this).attr('href',uri.protocol("https"));}else{var
+ 
+array=jQuery.map(site_info.external_links,function(value,index){return[value];});if(jQuery.inArray(uri.domain(),array)!=-1){var
+ 
+properlink=uri.protocol()+'://'+location.hostname+'/external-link?redirect=true&url='+_link;jQuery(this).attr('href',properlink).attr('target','_blank');}else{var
+ 
+properlink=uri.protocol()+'://'+location.hostname+'/external-link?url='+_link;jQuery(this).attr('href',properlink).attr('target','_blank');}}});},300);jQuery(window).ready(function(){jQuery('.training-popup-close-btn
+ 
+a').click(function(){jQuery('.training-popup-section').addClass('training-popup-section-hide')})})});*/
+
+      /*jQuery(function(){ 
+setInterval(function(){jQuery("a[href*='http://']:not([href*='"+location.hostname+"']),a[href*='https://']:not([href*='"+location.hostname+"'])").each(function(){var
+ _link=this.href;var uri=new URI(_link);var 
+domain=uri.domain();if(domain=='youtube.com'){var 
+properlink=_link;uri.protocol("https");jQuery(this).attr('href',uri.protocol("https"));}else{var
+ 
+array=jQuery.map(site_info.external_links,function(value,index){return[value];});if(jQuery.inArray(uri.domain(),array)!=-1){var
+ properlink = _link;jQuery(this).attr('href',properlink);}else{var 
+properlink=uri.protocol()+'://'+location.hostname+'/external-link?url='+_link;jQuery(this).attr('href',properlink);}}});},300);jQuery(window).ready(function(){jQuery('.training-popup-close-btn
+ 
+a').click(function(){jQuery('.training-popup-section').addClass('training-popup-section-hide')})})});*/
+
+      
+jQuery(function(){setInterval(function(){jQuery("a[href*='http://']:not([href*='"+location.hostname+"']),a[href*='https://']:not([href*='"+location.hostname+"'])").each(function(){var
+ t=this.href,n=new URI(t),r=n.domain();if("youtube.com"==r){var 
+e=t;n.protocol("https"),jQuery(this).attr("href",n.protocol("https"))}else{var
+ 
+o=jQuery.map(site_info.external_links,function(t,n){return[t]});if(-1!=jQuery.inArray(n.domain(),o)){var
+ e=t;jQuery(this).attr("href",e)}else{var 
+i=window.location.href,e=n.protocol()+"://"+location.hostname+"/external-link?url="+t+"&back_url="+i;jQuery(this).attr("href",e)}}})},300),jQuery(window).ready(function(){jQuery(".training-popup-close-btn
+ 
+a").click(function(){jQuery(".training-popup-section").addClass("training-popup-section-hide")})})});
+
+
+
+
+
+  
+</script>
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/js"></script>
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/api.js" defer="defer" onload=""></script>
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/wp-embed.js" defer="defer" onload=""></script>
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/js_composer_front.js" defer="defer" onload=""></script>
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/skrollr.js" defer="defer" onload=""></script>
+<!-- WooCommerce JavaScript -->
+<script type="text/javascript">
+jQuery(function($) { 
+tvc_lc="SEK";
+
+homepage_json_ATC_link=[];
+
+tvc_fp=[];
+
+tvc_rcp=[];
+
+tvc_rdp=[];
+
+prodpage_json_ATC_link=[];
+
+tvc_pgc=[];
+
+catpage_json_ATC_link=[];
+
+tvc_smd={"tvc_wcv":"2.6","tvc_wpv":"4.7.2","tvc_eev":"1.0.19","tvc_cnf":{"t_ee":"yes","t_df":false,"t_gUser":true,"t_UAen":"no","t_thr":"6"}};
+
+ });
+</script>
+<!-- Google Code for Remarketing Tag -->
+
+<!--
+
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+
+-->
+
+<script type="text/javascript">
+
+/* <![CDATA[ */
+
+var google_conversion_id = 1071935697;
+
+var google_custom_params = window.google_tag_params;
+
+var google_remarketing_only = true;
+
+/* ]]> */
+
+</script>
+
+<script type="text/javascript" src="Introduction%20to%20the%20LIN%20bus_files/conversion.js">
+
+</script><iframe name="google_conversion_frame" title="Google conversion frame" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1071935697/?random=1492910664932&amp;cv=8&amp;fst=1492910664932&amp;num=1&amp;fmt=1&amp;guid=ON&amp;u_h=600&amp;u_w=1024&amp;u_ah=600&amp;u_aw=1024&amp;u_cd=24&amp;u_his=2&amp;u_tz=-180&amp;u_java=false&amp;u_nplug=1&amp;u_nmime=2&amp;frm=0&amp;url=https%3A%2F%2Fwww.kvaser.com%2Fabout-can%2Fcan-standards%2Flinbus%2F&amp;ref=https%3A%2F%2Fwww.google.com.ar%2F&amp;tiba=Introduction%20to%20the%20LIN%20bus" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" width="300" frameborder="0" height="13"></iframe>
+
+<noscript>
+
+<div style="display:inline;">
+
+<img height="1" width="1" style="border-style:none;" alt="" 
+src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1071935697/?guid=ON&amp;script=0"/>
+
+</div>
+
+</noscript>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"11560aa552","applicationID":"6042595","transactionName":"ZFQAYUFUDEJXAU0LDV0eI1ZHXA1fGRJYBQc=","queueTime":0,"applicationTime":919,"atts":"SBMDFwlOH0w=","errorBeacon":"bam.nr-data.net","agent":""}</script><script>/*
+ <![CDATA[ 
+*/(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/*
+ ]]> */</script>
+
+<iframe style="display: none ! important; width: 1px ! important; height: 1px ! important; opacity: 0 ! important; pointer-events: none ! important;" name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="Introduction%20to%20the%20LIN%20bus_files/rcj-99d43ead6bdf30da8ed5ffcb4f17100c.html"></iframe><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div id="ads"></div><div style="background-color: #fff; border: 1px solid #ccc; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2); position: absolute; left: 0px; top: -10000px; transition: visibility 0s linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: #fff; opacity: 0.05;  filter: alpha(opacity=5)"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0; height: 0; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0; height: 0; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe src="Introduction%20to%20the%20LIN%20bus_files/bframe.html" title="recaptcha challenge" style="width: 100%; height: 100%;" scrolling="no" name="jz8yo0u7i6tc" frameborder="0"></iframe></div></div></body></html>
