@@ -38,7 +38,7 @@ ARCHITECTURE behavior OF TB_Receptor IS
    -- Clock period definitions
    constant Clk72MHz_period : time :=  138889 ps;
 --   constant Rel2_048_period : time := 4882813 ps;
-   constant Rel2_048_period : time := 4883000 ps;
+   constant Rel2_048_period : time := 4900000 ps;
    constant Ref17_92_period : time :=  558036 ps;
 	
 		
@@ -104,5 +104,5 @@ BEGIN
 	end process;
 	
 	Reset <= '1', '0' after 112 ns;
-	Reset_Counts <= '1', '0' after 2000 ns;
+	Reset_Counts <= '1', '0' after 3000 ns;
 END;

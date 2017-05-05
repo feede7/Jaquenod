@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd";
+static const char *ng0 = "/home/fede/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -207,20 +207,20 @@ static void work_a_0994196461_0674468315_p_4(char *t0)
 LAB0:    xsi_set_current_line(85, ng0);
     t1 = (t0 + 1880U);
     t2 = *((char **)t1);
-    t1 = (t0 + 10444U);
+    t1 = (t0 + 10220U);
     t3 = (t0 + 1788U);
     t4 = *((char **)t3);
-    t3 = (t0 + 10428U);
+    t3 = (t0 + 10204U);
     t5 = ieee_p_1242562249_sub_2110411308_1035706684(IEEE_P_1242562249, t2, t1, t4, t3);
     if (t5 != 0)
         goto LAB3;
 
 LAB4:    t13 = (t0 + 1788U);
     t14 = *((char **)t13);
-    t13 = (t0 + 10428U);
+    t13 = (t0 + 10204U);
     t15 = (t0 + 1880U);
     t16 = *((char **)t15);
-    t15 = (t0 + 10444U);
+    t15 = (t0 + 10220U);
     t17 = ieee_p_1242562249_sub_2110411308_1035706684(IEEE_P_1242562249, t14, t13, t16, t15);
     if (t17 != 0)
         goto LAB5;
@@ -369,8 +369,8 @@ LAB15:    xsi_set_current_line(94, ng0);
     t17 = *((char **)t16);
     *((unsigned char *)t17) = t4;
     xsi_driver_first_trans_fast(t3);
-    xsi_set_current_line(96, ng0);
-    t2 = (t0 + 1512U);
+    xsi_set_current_line(97, ng0);
+    t2 = (t0 + 1604U);
     t3 = *((char **)t2);
     t1 = *((unsigned char *)t3);
     t4 = (t1 == (unsigned char)3);
@@ -378,21 +378,21 @@ LAB15:    xsi_set_current_line(94, ng0);
         goto LAB17;
 
 LAB19:
-LAB18:    xsi_set_current_line(100, ng0);
+LAB18:    xsi_set_current_line(101, ng0);
     t2 = (t0 + 1604U);
     t3 = *((char **)t2);
     t1 = *((unsigned char *)t3);
-    t4 = (t1 == (unsigned char)3);
+    t4 = (t1 == (unsigned char)2);
     if (t4 != 0)
         goto LAB22;
 
 LAB24:
 LAB23:    goto LAB3;
 
-LAB17:    xsi_set_current_line(97, ng0);
+LAB17:    xsi_set_current_line(98, ng0);
     t2 = (t0 + 1788U);
     t7 = *((char **)t2);
-    t2 = (t0 + 10428U);
+    t2 = (t0 + 10204U);
     t10 = ieee_p_1242562249_sub_180853171_1035706684(IEEE_P_1242562249, t21, 1, 10);
     t15 = ieee_p_1242562249_sub_1547198987_1035706684(IEEE_P_1242562249, t13, t7, t2, t10, t21);
     t16 = (t13 + 12U);
@@ -414,10 +414,10 @@ LAB21:    t17 = (t0 + 4608);
 LAB20:    xsi_size_not_matching(10U, t22, 0);
     goto LAB21;
 
-LAB22:    xsi_set_current_line(101, ng0);
+LAB22:    xsi_set_current_line(103, ng0);
     t2 = (t0 + 1880U);
     t7 = *((char **)t2);
-    t2 = (t0 + 10444U);
+    t2 = (t0 + 10220U);
     t10 = ieee_p_1242562249_sub_180853171_1035706684(IEEE_P_1242562249, t21, 1, 10);
     t15 = ieee_p_1242562249_sub_1547198987_1035706684(IEEE_P_1242562249, t13, t7, t2, t10, t21);
     t16 = (t13 + 12U);

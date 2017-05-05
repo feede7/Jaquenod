@@ -16,7 +16,6 @@ architecture Arq_Receptor of En_Receptor is
 	signal sRel17_92 		: STD_LOGIC;
 	signal sRel17_92_Ant	: STD_LOGIC;
 	signal sR2048X			: STD_LOGIC;
-	signal sPFD_Faster 	: STD_LOGIC;
 	signal sPFD_Slower 	: STD_LOGIC;
 	signal DIV4_5 			: STD_LOGIC_VECTOR(7 downto 0) := STD_LOGIC_VECTOR(to_unsigned(4,8));
 	signal Count_Fast		: unsigned(9 downto 0);
@@ -77,7 +76,7 @@ begin
     Port map(
 		R  		=> Rel2048edge,
 		V  		=> sR2048X,
-		U1 		=> sPFD_Faster,
+		U1 		=> open,
 		D1 		=> sPFD_Slower,
 		State => open
 	  );
@@ -93,11 +92,11 @@ begin
 		elsif rising_edge(Clk72MHz) then
 			sRel17_92_Ant <= sRel17_92;
 		
-			if sPFD_Faster = '1' then
+			if sPFD_Slower = '1' then
 				Count_Fast <= Count_Fast + to_unsigned(1,Count_Fast'length);
 			end if;
 			
-			if sPFD_Slower = '1' then
+			if sPFD_Slower = '0' then
 				Count_Slow <= Count_Slow + to_unsigned(1,Count_Slow'length);
 			end if;
 		end if;

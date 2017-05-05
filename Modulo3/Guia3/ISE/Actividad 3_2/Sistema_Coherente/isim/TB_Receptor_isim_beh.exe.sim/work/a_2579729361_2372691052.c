@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/TB_Receptor.vhd";
+static const char *ng0 = "/home/fede/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/TB_Receptor.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -310,7 +310,7 @@ LAB5:    xsi_size_not_matching(11U, 11U, 0);
 LAB7:    xsi_set_current_line(93, ng0);
     t2 = (t0 + 1420U);
     t7 = *((char **)t2);
-    t2 = (t0 + 7564U);
+    t2 = (t0 + 7420U);
     t8 = ieee_p_1242562249_sub_180853171_1035706684(IEEE_P_1242562249, t12, 1, 11);
     t9 = ieee_p_1242562249_sub_1547198987_1035706684(IEEE_P_1242562249, t5, t7, t2, t8, t12);
     t10 = (t5 + 12U);
@@ -394,7 +394,7 @@ LAB5:    xsi_size_not_matching(11U, 11U, 0);
 LAB7:    xsi_set_current_line(102, ng0);
     t2 = (t0 + 1512U);
     t7 = *((char **)t2);
-    t2 = (t0 + 7580U);
+    t2 = (t0 + 7436U);
     t8 = ieee_p_1242562249_sub_180853171_1035706684(IEEE_P_1242562249, t12, 1, 11);
     t9 = ieee_p_1242562249_sub_1547198987_1035706684(IEEE_P_1242562249, t5, t7, t2, t8, t12);
     t10 = (t5 + 12U);
@@ -479,7 +479,7 @@ LAB3:    t1 = (t0 + 3628);
     t5 = *((char **)t4);
     *((unsigned char *)t5) = (unsigned char)3;
     xsi_driver_first_trans_delta(t1, 0U, 1, 0LL);
-    t6 = (2000 * 1000LL);
+    t6 = (3000 * 1000LL);
     t7 = (t0 + 3628);
     t8 = (t7 + 32U);
     t9 = *((char **)t8);
