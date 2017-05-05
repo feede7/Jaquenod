@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-04-22T16:58:50</DateModified>
+  <DateModified>2017-05-05T08:13:57</DateModified>
   <ModuleName>En_Receptor</ModuleName>
   <SummaryTimeStamp>2017-04-22T16:32:32</SummaryTimeStamp>
-  <SavedFilePath>/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/iseconfig/En_Receptor.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente</ImplementationReportsDirectory>
+  <SavedFilePath>/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/iseconfig/En_Receptor.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/</ImplementationReportsDirectory>
   <DateInitialized>2017-04-22T13:54:04</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

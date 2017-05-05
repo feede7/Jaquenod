@@ -27,6 +27,7 @@ ARCHITECTURE behavior OF TB_Receptor IS
    signal Dat2_048 : std_logic := '0';
    signal Clk72MHz : std_logic := '0';
    signal Reset : std_logic := '0';
+   signal Reset_Counts : std_logic := '0';
 
  	--Outputs
    signal Rel17_92 : std_logic;
@@ -37,7 +38,7 @@ ARCHITECTURE behavior OF TB_Receptor IS
    -- Clock period definitions
    constant Clk72MHz_period : time :=  138889 ps;
 --   constant Rel2_048_period : time := 4882813 ps;
-   constant Rel2_048_period : time := 4880000 ps;
+   constant Rel2_048_period : time := 4883000 ps;
    constant Ref17_92_period : time :=  558036 ps;
 	
 		
@@ -86,7 +87,7 @@ BEGIN
  
  	process(Ref17_92,Reset)
 	begin
-		if Reset = '1' then
+		if Reset_Counts = '1' then
 			Counter_1 <= to_unsigned(0,Counter_1'length);
 		elsif rising_edge(Ref17_92) then
 			Counter_1 <= Counter_1 + to_unsigned(1,Counter_1'length);
@@ -95,7 +96,7 @@ BEGIN
 	
 	process(Rel17_92,Reset)
 	begin
-		if Reset = '1' then
+		if Reset_Counts = '1' then
 			Counter_2 <= to_unsigned(0,Counter_2'length);
 		elsif rising_edge(Rel17_92) then
 			Counter_2 <= Counter_2 + to_unsigned(1,Counter_2'length);
@@ -103,4 +104,5 @@ BEGIN
 	end process;
 	
 	Reset <= '1', '0' after 112 ns;
+	Reset_Counts <= '1', '0' after 2000 ns;
 END;

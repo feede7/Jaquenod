@@ -1,16 +1,16 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_isim_beh.exe -prj /home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_beh.prj work.TB_Receptor 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_isim_beh.exe" -prj "/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_beh.prj" "work.TB_Receptor" 
 ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/MC4044.vhd" into library work
-Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Div_Bresenham.vhd" into library work
-Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd" into library work
-Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/TB_Receptor.vhd" into library work
+Parsing VHDL file "/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/MC4044.vhd" into library work
+Parsing VHDL file "/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Div_Bresenham.vhd" into library work
+Parsing VHDL file "/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/Receptor.vhd" into library work
+Parsing VHDL file "/home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/Sources/TB_Receptor.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 96600 KB
-Fuse CPU Usage: 1050 ms
+Fuse Memory Usage: 37968 KB
+Fuse CPU Usage: 4190 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -19,8 +19,9 @@ Compiling architecture arq_mc4044 of entity En_MC4044 [en_mc4044_default]
 Compiling architecture arq_receptor of entity En_Receptor [en_receptor_default]
 Compiling architecture behavior of entity tb_receptor
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 10 VHDL Units
-Built simulation executable /home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_isim_beh.exe
-Fuse Memory Usage: 668632 KB
-Fuse CPU Usage: 1150 ms
-GCC CPU Usage: 480 ms
+Built simulation executable /home/fedeserver/Documents/Jaquenod/GIT/Modulo3/Guia3/ISE/Actividad 3_2/Sistema_Coherente/TB_Receptor_isim_beh.exe
+Fuse Memory Usage: 86456 KB
+Fuse CPU Usage: 4980 ms
+GCC CPU Usage: 820 ms

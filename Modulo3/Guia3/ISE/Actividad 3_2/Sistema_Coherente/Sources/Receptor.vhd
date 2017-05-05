@@ -14,10 +14,13 @@ end En_Receptor;
 
 architecture Arq_Receptor of En_Receptor is
 	signal sRel17_92 		: STD_LOGIC;
+	signal sRel17_92_Ant	: STD_LOGIC;
 	signal sR2048X			: STD_LOGIC;
+	signal sPFD_Faster 	: STD_LOGIC;
 	signal sPFD_Slower 	: STD_LOGIC;
-	signal DIV4_5 			: STD_LOGIC_VECTOR(7 downto 0);
-	signal Num4_5 			: STD_LOGIC_VECTOR(7 downto 0);
+	signal DIV4_5 			: STD_LOGIC_VECTOR(7 downto 0) := STD_LOGIC_VECTOR(to_unsigned(4,8));
+	signal Count_Fast		: unsigned(9 downto 0);
+	signal Count_Slow		: unsigned(9 downto 0);
 	signal Rel2048edge 	: STD_LOGIC;
 	signal srel2_048 		: STD_LOGIC;
 begin
@@ -73,13 +76,31 @@ begin
 	INS_MC4044: entity work.En_MC4044(Arq_MC4044)
     Port map(
 		R  		=> Rel2048edge,
-    V  		=> sR2048X,
-		U1 		=> open,
+		V  		=> sR2048X,
+		U1 		=> sPFD_Faster,
 		D1 		=> sPFD_Slower,
 		State => open
 	  );
 
-	DIV4_5 <= 	STD_LOGIC_VECTOR(to_unsigned(5,8)) when sPFD_Slower = '0' else -- sPFD_Slower funciona con lógica negada en el M4044
-					    STD_LOGIC_VECTOR(to_unsigned(4,8));
+	DIV4_5 <= 	STD_LOGIC_VECTOR(to_unsigned(5,8)) when Count_Slow > Count_Fast else -- sPFD_Slower funciona con lógica negada en el M4044
+					STD_LOGIC_VECTOR(to_unsigned(4,8)) when Count_Fast > Count_Slow;
+						 
+	process(Clk72MHz, Reset)
+	begin
+		if Reset = '1' or (sRel17_92_Ant = '1' and sRel17_92 = '0') then
+			Count_Slow <= to_unsigned(0,Count_Slow'length);
+			Count_Fast <= to_unsigned(0,Count_Fast'length);
+		elsif rising_edge(Clk72MHz) then
+			sRel17_92_Ant <= sRel17_92;
+		
+			if sPFD_Faster = '1' then
+				Count_Fast <= Count_Fast + to_unsigned(1,Count_Fast'length);
+			end if;
+			
+			if sPFD_Slower = '1' then
+				Count_Slow <= Count_Slow + to_unsigned(1,Count_Slow'length);
+			end if;
+		end if;
+	end process;
 
 end Arq_Receptor;
