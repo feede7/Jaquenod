@@ -1,0 +1,4 @@
+vhdl work "Sources/MC4044.vhd"
+vhdl work "Sources/Div_Bresenham.vhd"
+vhdl work "Sources/Receptor.vhd"
+vhdl work "Sources/TB_Receptor.vhd"
