@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/TB_Recup_CLK_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/TB_Recup_CLK_beh.prj" "work.TB_Recup_CLK" 
