@@ -1,0 +1,5 @@
+work	"../Codificador/Sources/Cod_Stuffing.vhd"
+work	"../Decodificador/Sources/Deco_Stuffing.vhd"
+work	"../Decodificador/Sources/Div_Bresenham.vhd"
+work	"../Decodificador/Sources/Recupera_CLK.vhd"
+work	"Sources/System.vhd"

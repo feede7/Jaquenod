@@ -1,0 +1,4 @@
+. /opt/Xilinx/14.7/ISE_DS/common/.settings32.sh /opt/Xilinx/14.7/ISE_DS/common
+. /opt/Xilinx/14.7/ISE_DS/EDK/.settings32.sh /opt/Xilinx/14.7/ISE_DS/EDK
+. /opt/Xilinx/14.7/ISE_DS/PlanAhead/.settings32.sh /opt/Xilinx/14.7/ISE_DS/PlanAhead
+. /opt/Xilinx/14.7/ISE_DS/ISE/.settings32.sh /opt/Xilinx/14.7/ISE_DS/ISE
