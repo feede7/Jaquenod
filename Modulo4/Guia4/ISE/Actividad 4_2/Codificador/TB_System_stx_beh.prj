@@ -1,0 +1,2 @@
+vhdl isim_temp "Sources/Cod_Stuffing.vhd"
+vhdl isim_temp "Sources/TB_Codificador.vhd"

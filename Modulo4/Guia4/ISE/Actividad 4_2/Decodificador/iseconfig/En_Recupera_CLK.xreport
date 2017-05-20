@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-05-08T09:10:24</DateModified>
+  <DateModified>2017-05-13T10:58:27</DateModified>
   <ModuleName>En_Recupera_CLK</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/iseconfig/En_Recupera_CLK.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/</ImplementationReportsDirectory>
-  <DateInitialized>2017-05-08T08:58:35</DateInitialized>
+  <SavedFilePath>/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/iseconfig/En_Recupera_CLK.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador</ImplementationReportsDirectory>
+  <DateInitialized>2017-05-13T10:58:27</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

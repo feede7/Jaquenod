@@ -1,5 +1,3 @@
-vhdl work "../Decodificador/Sources/Div_Bresenham.vhd"
-vhdl work "../Decodificador/Sources/Recupera_CLK.vhd"
 vhdl work "../Decodificador/Sources/Deco_Stuffing.vhd"
 vhdl work "../Codificador/Sources/Cod_Stuffing.vhd"
 vhdl work "Sources/System.vhd"

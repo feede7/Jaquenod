@@ -9,13 +9,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>En_LFSR_Mod - Arq_LFSR_Mod (/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_4/Sources/LFSR_Mod.vhd)</SelectedItem>
+         <SelectedItem>En_LFSR_Mod - Arq_LFSR_Mod (/home/fede/Documents/Jaquenod/Jaquenod/Modulo2/ISE/LFSR/LFSR_Mod_4/Sources/LFSR_Mod.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000013e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000013e0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>En_LFSR_Mod - Arq_LFSR_Mod (/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_4/Sources/LFSR_Mod.vhd)</CurrentItem>
+      <CurrentItem>En_LFSR_Mod - Arq_LFSR_Mod (/home/fede/Documents/Jaquenod/Jaquenod/Modulo2/ISE/LFSR/LFSR_Mod_4/Sources/LFSR_Mod.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -77,13 +77,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>TB_LFSR_Mod - behavior (/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_4/Sources/TB_LFSR_Mod.vhd)</SelectedItem>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000015c000000020000000000000000000000000200000064ffffffff0000008100000003000000020000015c0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>TB_LFSR_Mod - behavior (/home/fede/Desktop/Modulo2/ISE/LFSR/LFSR_Mod_4/Sources/TB_LFSR_Mod.vhd)</CurrentItem>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>

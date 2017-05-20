@@ -1,0 +1,2 @@
+vhdl work "Sources/Cod_Stuffing.vhd"
+vhdl work "Sources/TB_Codificador.vhd"

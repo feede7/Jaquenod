@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-05-07T16:12:55</DateModified>
+  <DateModified>2017-05-20T10:19:03</DateModified>
   <ModuleName>En_Cod_Stuffing</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/Codificador/iseconfig/En_Cod_Stuffing.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/Codificador</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/Codificador/</ImplementationReportsDirectory>
   <DateInitialized>2017-05-07T16:12:55</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

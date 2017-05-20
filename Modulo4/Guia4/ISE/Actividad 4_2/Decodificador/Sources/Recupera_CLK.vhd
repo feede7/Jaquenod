@@ -12,12 +12,12 @@ entity En_Recupera_CLK is
 end En_Recupera_CLK;
 
 architecture Arq_Recupera_CLK of En_Recupera_CLK is
-	signal sReloj8x 		: STD_LOGIC := '0';
-	signal sReloj8x_edge	: STD_LOGIC := '0';
-	signal sReloj			: STD_LOGIC := '0';
-	signal sReloj_edge	: STD_LOGIC := '0';
-	signal sDataIn			: STD_LOGIC := '0';
-	signal DataIn_edge	: STD_LOGIC := '0';
+	signal sReloj8x 		: STD_LOGIC;
+	signal sReloj8x_edge	: STD_LOGIC;
+	signal sReloj			: STD_LOGIC;
+	signal sReloj_edge	: STD_LOGIC;
+	signal sDataIn			: STD_LOGIC;
+	signal DataIn_edge	: STD_LOGIC;
 	signal DIV 				: unsigned(7 downto 0) := to_unsigned(8,8);
 	signal DIV_Next		: unsigned(7 downto 0) := to_unsigned(8,8);
 	signal NUM	 			: unsigned(7 downto 0) := to_unsigned(10,8);
@@ -26,7 +26,7 @@ architecture Arq_Recupera_CLK of En_Recupera_CLK is
 	signal NUM_Next		: unsigned(7 downto 0) := to_unsigned(10,8);
 	signal Count_Fast		: unsigned(9 downto 0);
 	signal Count_Slow		: unsigned(9 downto 0);
-	signal BeforeEdge 	: STD_LOGIC := '0';
+	signal BeforeEdge 	: STD_LOGIC;
 	
 	constant MAX_DEN		: unsigned(7 downto 0) := to_unsigned(20,8);
 	constant PASO			: unsigned(7 downto 0) := to_unsigned(1,8);
@@ -57,8 +57,8 @@ begin
 	
    DataIn_edge <= DataIN XOR sDataIn;
 
-	NUM_AUX	<=	NUM_AUX_LAST + PASO when Count_Slow > Count_Fast and NUM_AUX_LAST < MAX_DEN - PASO + to_unsigned(1,NUM_AUX_LAST'length) else
-					NUM_AUX_LAST - PASO when Count_Fast > Count_Slow and NUM_AUX_LAST > PASO - to_unsigned(1,NUM_AUX_LAST'length) else
+	NUM_AUX	<=	NUM_AUX_LAST + PASO when Count_Slow > Count_Fast and NUM_AUX_LAST < MAX_DEN else
+					NUM_AUX_LAST - PASO when Count_Fast > Count_Slow and NUM_AUX_LAST > to_unsigned(0,NUM_AUX_LAST'length) else
 					NUM_AUX_LAST;
 	
 	DIV_Next <= to_unsigned(7,NUM'length) when NUM_AUX < to_unsigned(10,NUM'length) else
