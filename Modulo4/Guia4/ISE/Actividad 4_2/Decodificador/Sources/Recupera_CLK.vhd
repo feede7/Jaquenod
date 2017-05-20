@@ -29,7 +29,7 @@ architecture Arq_Recupera_CLK of En_Recupera_CLK is
 	signal BeforeEdge 	: STD_LOGIC := '0';
 	
 	constant MAX_DEN		: unsigned(7 downto 0) := to_unsigned(20,8);
-	constant PASO			: unsigned(7 downto 0) := to_unsigned(2,8);
+	constant PASO			: unsigned(7 downto 0) := to_unsigned(1,8);
 begin
 
 	---------------- Generación de relojes ----------------

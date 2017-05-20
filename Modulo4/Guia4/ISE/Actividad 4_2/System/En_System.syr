@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
  
 --> 
 Reading design: En_System.prj
@@ -142,7 +142,7 @@ WARNING:HDLCompiler:92 - "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Ac
 WARNING:HDLCompiler:92 - "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/Sources/Recupera_CLK.vhd" Line 75: num_next should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/Sources/Recupera_CLK.vhd" Line 76: div_next should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/Sources/Recupera_CLK.vhd" Line 77: num_aux should be on the sensitivity list of the process
-WARNING:HDLCompiler:1127 - "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/Sources/Deco_Stuffing.vhd" Line 44: Assignment to one6 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/Sources/Deco_Stuffing.vhd" Line 44: Assignment to ssync ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -177,35 +177,32 @@ Synthesizing Unit <En_Cod_Stuffing>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <Count_Ones[3]_GND_6_o_add_0_OUT> created at line 39.
-    Found 4-bit adder for signal <index[3]_GND_6_o_add_8_OUT> created at line 62.
+    Found 4-bit adder for signal <Count_Ones[3]_GND_6_o_add_1_OUT> created at line 43.
+    Found 4-bit adder for signal <index[3]_GND_6_o_add_8_OUT> created at line 61.
     Found 16x1-bit Read Only RAM for signal <index[3]_X_6_o_Mux_7_o>
     Summary:
 	inferred   1 RAM(s).
 	inferred   2 Adder/Subtractor(s).
 	inferred  11 D-type flip-flop(s).
-	inferred  10 Multiplexer(s).
+	inferred   9 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <En_Cod_Stuffing> synthesized.
 
 Synthesizing Unit <En_Deco_Stuffing>.
     Related source file is "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/Decodificador/Sources/Deco_Stuffing.vhd".
     Found 1-bit register for signal <Sync>.
-    Found 1-bit register for signal <sSync>.
     Found 1-bit register for signal <EnaRx>.
     Found 1-bit register for signal <Datos>.
     Found 1-bit register for signal <Error>.
     Found 1-bit register for signal <DataSync_Ant>.
-    Found 4-bit register for signal <index>.
-    Found 4-bit register for signal <count_ones>.
     Found 13-bit register for signal <Register_Temp>.
+    Found 4-bit register for signal <count_ones>.
     Found 1-bit register for signal <Data>.
-    Found 4-bit adder for signal <index[3]_GND_7_o_add_9_OUT> created at line 90.
-    Found 4-bit adder for signal <count_ones[3]_GND_7_o_add_11_OUT> created at line 99.
+    Found 4-bit adder for signal <count_ones[3]_GND_7_o_add_2_OUT> created at line 78.
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  28 D-type flip-flop(s).
-	inferred  13 Multiplexer(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   7 Multiplexer(s).
 Unit <En_Deco_Stuffing> synthesized.
 
 Synthesizing Unit <En_Recupera_CLK>.
@@ -290,18 +287,18 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  16x1-bit single-port Read Only RAM                    : 1
-# Adders/Subtractors                                   : 11
+# Adders/Subtractors                                   : 10
  10-bit adder                                          : 2
- 4-bit adder                                           : 4
+ 4-bit adder                                           : 3
  8-bit addsub                                          : 2
  8-bit subtractor                                      : 1
  9-bit adder                                           : 1
  9-bit subtractor                                      : 1
-# Registers                                            : 32
- 1-bit register                                        : 23
+# Registers                                            : 30
+ 1-bit register                                        : 22
  10-bit register                                       : 2
  13-bit register                                       : 1
- 4-bit register                                        : 4
+ 4-bit register                                        : 3
  8-bit register                                        : 1
  9-bit register                                        : 1
 # Latches                                              : 24
@@ -310,10 +307,10 @@ Macro Statistics
  10-bit comparator greater                             : 2
  8-bit comparator greater                              : 3
  9-bit comparator greater                              : 1
-# Multiplexers                                         : 30
- 1-bit 2-to-1 multiplexer                              : 12
- 13-bit 2-to-1 multiplexer                             : 2
- 4-bit 2-to-1 multiplexer                              : 9
+# Multiplexers                                         : 23
+ 1-bit 2-to-1 multiplexer                              : 8
+ 13-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 7
  8-bit 2-to-1 multiplexer                              : 5
  9-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 1
@@ -347,10 +344,6 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_index[3]_X_6_o_Mux_7_o> will be impl
     -----------------------------------------------------------------------
 Unit <En_Cod_Stuffing> synthesized (advanced).
 
-Synthesizing (advanced) Unit <En_Deco_Stuffing>.
-The following registers are absorbed into counter <index>: 1 register on signal <index>.
-Unit <En_Deco_Stuffing> synthesized (advanced).
-
 Synthesizing (advanced) Unit <En_Div_Bresenham>.
 The following registers are absorbed into accumulator <Counter>: 1 register on signal <Counter>.
 Unit <En_Div_Bresenham> synthesized (advanced).
@@ -372,21 +365,21 @@ Macro Statistics
  8-bit subtractor                                      : 1
  9-bit adder                                           : 1
  9-bit subtractor                                      : 1
-# Counters                                             : 4
+# Counters                                             : 3
  10-bit up counter                                     : 2
- 4-bit up counter                                      : 2
+ 4-bit up counter                                      : 1
 # Accumulators                                         : 1
  9-bit up accumulator                                  : 1
-# Registers                                            : 52
- Flip-Flops                                            : 52
+# Registers                                            : 51
+ Flip-Flops                                            : 51
 # Comparators                                          : 6
  10-bit comparator greater                             : 2
  8-bit comparator greater                              : 3
  9-bit comparator greater                              : 1
-# Multiplexers                                         : 35
- 1-bit 2-to-1 multiplexer                              : 20
- 13-bit 2-to-1 multiplexer                             : 2
- 4-bit 2-to-1 multiplexer                              : 7
+# Multiplexers                                         : 29
+ 1-bit 2-to-1 multiplexer                              : 16
+ 13-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 6
  8-bit 2-to-1 multiplexer                              : 4
  9-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 1
@@ -473,8 +466,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 86
- Flip-Flops                                            : 86
+# Registers                                            : 81
+ Flip-Flops                                            : 81
 
 =========================================================================
 
@@ -497,25 +490,25 @@ Top Level Output File Name         : En_System.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 266
+# BELS                             : 257
 #      GND                         : 1
 #      INV                         : 5
 #      LUT1                        : 18
-#      LUT2                        : 29
+#      LUT2                        : 20
 #      LUT3                        : 20
-#      LUT4                        : 31
+#      LUT4                        : 29
 #      LUT5                        : 24
-#      LUT6                        : 57
+#      LUT6                        : 58
 #      MUXCY                       : 40
-#      MUXF7                       : 4
+#      MUXF7                       : 5
 #      VCC                         : 1
 #      XORCY                       : 36
-# FlipFlops/Latches                : 100
+# FlipFlops/Latches                : 95
 #      FD                          : 1
 #      FDC                         : 25
-#      FDCE                        : 49
+#      FDCE                        : 45
 #      FDE                         : 5
-#      FDP                         : 6
+#      FDP                         : 5
 #      LD                          : 10
 #      LDC                         : 4
 # Clock Buffers                    : 3
@@ -532,16 +525,16 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             100  out of  126800     0%  
- Number of Slice LUTs:                  184  out of  63400     0%  
-    Number used as Logic:               184  out of  63400     0%  
+ Number of Slice Registers:              95  out of  126800     0%  
+ Number of Slice LUTs:                  174  out of  63400     0%  
+    Number used as Logic:               174  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    198
-   Number with an unused Flip Flop:      98  out of    198    49%  
-   Number with an unused LUT:            14  out of    198     7%  
-   Number of fully used LUT-FF pairs:    86  out of    198    43%  
-   Number of unique control sets:        26
+ Number of LUT Flip Flop pairs used:    189
+   Number with an unused Flip Flop:      94  out of    189    49%  
+   Number with an unused LUT:            15  out of    189     7%  
+   Number of fully used LUT-FF pairs:    80  out of    189    42%  
+   Number of unique control sets:        25
 
 IO Utilization: 
  Number of IOs:                          10
@@ -572,13 +565,13 @@ Clock Information:
 Clock Signal                                                                                                   | Clock buffer(FF name)                                 | Load  |
 ---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+-------+
 Reloj                                                                                                          | BUFGP                                                 | 11    |
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out                                                                       | BUFG                                                  | 26    |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out                                                                       | BUFG                                                  | 21    |
 Reloj8x                                                                                                        | BUFGP                                                 | 49    |
 Ins_Deco/Ins_Recu_CLK/Reset_DataIn_edge_OR_11_o(Ins_Deco/Ins_Recu_CLK/Reset_DataIn_edge_OR_11_o1:O)            | NONE(*)(Ins_Deco/Ins_Recu_CLK/NUM_2)                  | 10    |
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_16_o(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_16_o1:O)| NONE(*)(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_1_LDC)| 1     |
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_14_o(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_14_o1:O)| NONE(*)(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_2_LDC)| 1     |
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_10_o(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_10_o1:O)| NONE(*)(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_4_LDC)| 1     |
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_12_o(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_12_o1:O)| NONE(*)(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_3_LDC)| 1     |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_15_o(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_15_o1:O)| NONE(*)(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_1_LDC)| 1     |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_13_o(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_13_o1:O)| NONE(*)(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_2_LDC)| 1     |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_9_o(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_9_o1:O)  | NONE(*)(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_4_LDC)| 1     |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_11_o(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_11_o1:O)| NONE(*)(Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_3_LDC)| 1     |
 ---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+-------+
 (*) These 5 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
@@ -594,7 +587,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 3.084ns (Maximum Frequency: 324.202MHz)
-   Minimum input arrival time before clock: 1.514ns
+   Minimum input arrival time before clock: 1.455ns
    Maximum output required time after clock: 0.645ns
    Maximum combinational path delay: No path found
 
@@ -604,50 +597,49 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Reloj'
-  Clock period: 1.814ns (frequency: 551.329MHz)
-  Total number of paths / destination ports: 54 / 18
+  Clock period: 1.446ns (frequency: 691.515MHz)
+  Total number of paths / destination ports: 50 / 18
 -------------------------------------------------------------------------
-Delay:               1.814ns (Levels of Logic = 2)
-  Source:            Ins_Cod/State_FSM_FFd1 (FF)
+Delay:               1.446ns (Levels of Logic = 2)
+  Source:            Ins_Cod/sDataOut (FF)
   Destination:       Ins_Cod/sDataOut (FF)
   Source Clock:      Reloj rising
   Destination Clock: Reloj rising
 
-  Data Path: Ins_Cod/State_FSM_FFd1 to Ins_Cod/sDataOut
+  Data Path: Ins_Cod/sDataOut to Ins_Cod/sDataOut
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             11   0.361   0.740  Ins_Cod/State_FSM_FFd1 (Ins_Cod/State_FSM_FFd1)
-     LUT6:I0->O            1   0.097   0.511  Ins_Cod/Mmux_State[1]_sDataOut_Mux_13_o11 (Ins_Cod/Mmux_State[1]_sDataOut_Mux_13_o11)
-     LUT5:I2->O            1   0.097   0.000  Ins_Cod/sDataOut_rstpot (Ins_Cod/sDataOut_rstpot)
+     FDC:C->Q              3   0.361   0.703  Ins_Cod/sDataOut (Ins_Cod/sDataOut)
+     LUT6:I0->O            1   0.097   0.000  Ins_Cod/State[1]_sDataOut_Mux_11_o_F (N113)
+     MUXF7:I0->O           1   0.277   0.000  Ins_Cod/State[1]_sDataOut_Mux_11_o (Ins_Cod/State[1]_sDataOut_Mux_11_o)
      FDC:D                     0.008          Ins_Cod/sDataOut
     ----------------------------------------
-    Total                      1.814ns (0.563ns logic, 1.251ns route)
-                                       (31.0% logic, 69.0% route)
+    Total                      1.446ns (0.743ns logic, 0.703ns route)
+                                       (51.4% logic, 48.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out'
-  Clock period: 2.468ns (frequency: 405.154MHz)
-  Total number of paths / destination ports: 556 / 42
+  Clock period: 2.417ns (frequency: 413.668MHz)
+  Total number of paths / destination ports: 435 / 33
 -------------------------------------------------------------------------
-Delay:               2.468ns (Levels of Logic = 3)
-  Source:            Ins_Deco/Register_Temp_3 (FF)
+Delay:               2.417ns (Levels of Logic = 2)
+  Source:            Ins_Deco/Register_Temp_7 (FF)
   Destination:       Ins_Deco/Register_Temp_12 (FF)
   Source Clock:      Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out rising
   Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out rising
 
-  Data Path: Ins_Deco/Register_Temp_3 to Ins_Deco/Register_Temp_12
+  Data Path: Ins_Deco/Register_Temp_7 to Ins_Deco/Register_Temp_12
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.361   0.688  Ins_Deco/Register_Temp_3 (Ins_Deco/Register_Temp_3)
-     LUT5:I0->O            4   0.097   0.393  Ins_Deco/Data_GND_7_o_AND_25_o1 (Ins_Deco/Data_GND_7_o_AND_25_o1)
-     LUT5:I3->O            3   0.097   0.305  Ins_Deco/Data_GND_7_o_AND_25_o3 (Ins_Deco/Data_GND_7_o_AND_25_o)
-     LUT5:I4->O           13   0.097   0.335  Ins_Deco/_n0088_inv1 (Ins_Deco/_n0088_inv)
+     FDCE:C->Q             2   0.361   0.697  Ins_Deco/Register_Temp_7 (Ins_Deco/Register_Temp_7)
+     LUT6:I0->O           10   0.097   0.735  Ins_Deco/Data_GND_7_o_AND_24_o2 (Ins_Deco/Data_GND_7_o_AND_24_o2)
+     LUT6:I0->O           13   0.097   0.335  Ins_Deco/_n0042_inv1 (Ins_Deco/_n0042_inv)
      FDCE:CE                   0.095          Ins_Deco/Register_Temp_0
     ----------------------------------------
-    Total                      2.468ns (0.747ns logic, 1.721ns route)
-                                       (30.3% logic, 69.7% route)
+    Total                      2.417ns (0.650ns logic, 1.767ns route)
+                                       (26.9% logic, 73.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Reloj8x'
@@ -700,31 +692,29 @@ Delay:               1.774ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Reloj'
-  Total number of paths / destination ports: 29 / 18
+  Total number of paths / destination ports: 25 / 17
 -------------------------------------------------------------------------
-Offset:              1.514ns (Levels of Logic = 4)
-  Source:            Data_In (PAD)
-  Destination:       Ins_Cod/sDataOut (FF)
+Offset:              1.108ns (Levels of Logic = 2)
+  Source:            Reset (PAD)
+  Destination:       Ins_Cod/index_3 (FF)
   Destination Clock: Reloj rising
 
-  Data Path: Data_In to Ins_Cod/sDataOut
+  Data Path: Reset to Ins_Cod/index_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             7   0.001   0.407  Data_In_IBUF (Data_In_IBUF)
-     LUT2:I0->O            1   0.097   0.295  Ins_Cod/Mmux_State[1]_sDataOut_Mux_13_o11_SW0 (N2)
-     LUT6:I5->O            1   0.097   0.511  Ins_Cod/Mmux_State[1]_sDataOut_Mux_13_o11 (Ins_Cod/Mmux_State[1]_sDataOut_Mux_13_o11)
-     LUT5:I2->O            1   0.097   0.000  Ins_Cod/sDataOut_rstpot (Ins_Cod/sDataOut_rstpot)
-     FDC:D                     0.008          Ins_Cod/sDataOut
+     IBUF:I->O            57   0.001   0.622  Reset_IBUF (Reset_IBUF)
+     LUT3:I0->O            4   0.097   0.293  Ins_Cod/_n0073_inv1 (Ins_Cod/_n0073_inv)
+     FDE:CE                    0.095          Ins_Cod/index_0
     ----------------------------------------
-    Total                      1.514ns (0.300ns logic, 1.214ns route)
-                                       (19.8% logic, 80.2% route)
+    Total                      1.108ns (0.193ns logic, 0.915ns route)
+                                       (17.4% logic, 82.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out'
-  Total number of paths / destination ports: 26 / 26
+  Total number of paths / destination ports: 21 / 21
 -------------------------------------------------------------------------
-Offset:              0.879ns (Levels of Logic = 2)
+Offset:              0.878ns (Levels of Logic = 2)
   Source:            Reset (PAD)
   Destination:       Ins_Deco/Data (FF)
   Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out rising
@@ -733,18 +723,18 @@ Offset:              0.879ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            62   0.001   0.391  Reset_IBUF (Reset_IBUF)
+     IBUF:I->O            57   0.001   0.390  Reset_IBUF (Reset_IBUF)
      INV:I->O              1   0.113   0.279  Ins_Deco/Reset_inv1_INV_0 (Ins_Deco/Reset_inv)
      FDE:CE                    0.095          Ins_Deco/Data
     ----------------------------------------
-    Total                      0.879ns (0.209ns logic, 0.670ns route)
+    Total                      0.878ns (0.209ns logic, 0.669ns route)
                                        (23.8% logic, 76.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Reloj8x'
   Total number of paths / destination ports: 48 / 48
 -------------------------------------------------------------------------
-Offset:              1.456ns (Levels of Logic = 2)
+Offset:              1.455ns (Levels of Logic = 2)
   Source:            Reset (PAD)
   Destination:       Ins_Deco/Ins_Recu_CLK/Count_Slow_9 (FF)
   Destination Clock: Reloj8x rising
@@ -753,91 +743,91 @@ Offset:              1.456ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            62   0.001   0.623  Reset_IBUF (Reset_IBUF)
+     IBUF:I->O            57   0.001   0.622  Reset_IBUF (Reset_IBUF)
      LUT3:I0->O           31   0.097   0.386  Ins_Deco/Ins_Recu_CLK/Reset_DataIn_edge_OR_11_o1 (Ins_Deco/Ins_Recu_CLK/Reset_DataIn_edge_OR_11_o)
      FDCE:CLR                  0.349          Ins_Deco/Ins_Recu_CLK/BeforeEdge
     ----------------------------------------
-    Total                      1.456ns (0.447ns logic, 1.009ns route)
+    Total                      1.455ns (0.447ns logic, 1.008ns route)
                                        (30.7% logic, 69.3% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_16_o'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_15_o'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              1.137ns (Levels of Logic = 2)
+Offset:              1.136ns (Levels of Logic = 2)
   Source:            Reset (PAD)
   Destination:       Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_1_LDC (LATCH)
-  Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_16_o falling
+  Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_15_o falling
 
   Data Path: Reset to Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_1_LDC
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            62   0.001   0.407  Reset_IBUF (Reset_IBUF)
-     LUT2:I1->O            2   0.097   0.283  Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_17_o1 (Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_17_o)
+     IBUF:I->O            57   0.001   0.406  Reset_IBUF (Reset_IBUF)
+     LUT2:I1->O            2   0.097   0.283  Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_16_o1 (Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_16_o)
      LDC:CLR                   0.349          Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_1_LDC
     ----------------------------------------
-    Total                      1.137ns (0.447ns logic, 0.690ns route)
+    Total                      1.136ns (0.447ns logic, 0.689ns route)
                                        (39.3% logic, 60.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_14_o'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_13_o'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              1.137ns (Levels of Logic = 2)
+Offset:              1.136ns (Levels of Logic = 2)
   Source:            Reset (PAD)
   Destination:       Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_2_LDC (LATCH)
-  Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_14_o falling
+  Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_13_o falling
 
   Data Path: Reset to Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_2_LDC
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            62   0.001   0.407  Reset_IBUF (Reset_IBUF)
-     LUT2:I1->O            2   0.097   0.283  Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_15_o1 (Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_15_o)
+     IBUF:I->O            57   0.001   0.406  Reset_IBUF (Reset_IBUF)
+     LUT2:I1->O            2   0.097   0.283  Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_14_o1 (Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_14_o)
      LDC:CLR                   0.349          Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_2_LDC
     ----------------------------------------
-    Total                      1.137ns (0.447ns logic, 0.690ns route)
+    Total                      1.136ns (0.447ns logic, 0.689ns route)
                                        (39.3% logic, 60.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_10_o'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_9_o'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              1.137ns (Levels of Logic = 2)
+Offset:              1.136ns (Levels of Logic = 2)
   Source:            Reset (PAD)
   Destination:       Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_4_LDC (LATCH)
-  Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_10_o falling
+  Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_9_o falling
 
   Data Path: Reset to Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_4_LDC
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            62   0.001   0.407  Reset_IBUF (Reset_IBUF)
-     LUT2:I1->O            2   0.097   0.283  Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_11_o1 (Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_11_o)
+     IBUF:I->O            57   0.001   0.406  Reset_IBUF (Reset_IBUF)
+     LUT2:I1->O            2   0.097   0.283  Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_10_o1 (Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_10_o)
      LDC:CLR                   0.349          Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_4_LDC
     ----------------------------------------
-    Total                      1.137ns (0.447ns logic, 0.690ns route)
+    Total                      1.136ns (0.447ns logic, 0.689ns route)
                                        (39.3% logic, 60.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_12_o'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_11_o'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              1.137ns (Levels of Logic = 2)
+Offset:              1.136ns (Levels of Logic = 2)
   Source:            Reset (PAD)
   Destination:       Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_3_LDC (LATCH)
-  Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_12_o falling
+  Destination Clock: Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_11_o falling
 
   Data Path: Reset to Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_3_LDC
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            62   0.001   0.407  Reset_IBUF (Reset_IBUF)
-     LUT2:I1->O            2   0.097   0.283  Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_13_o1 (Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_13_o)
+     IBUF:I->O            57   0.001   0.406  Reset_IBUF (Reset_IBUF)
+     LUT2:I1->O            2   0.097   0.283  Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_12_o1 (Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_12_o)
      LDC:CLR                   0.349          Ins_Deco/Ins_Recu_CLK/Ins_Reloj/NextAdd_3_LDC
     ----------------------------------------
-    Total                      1.137ns (0.447ns logic, 0.690ns route)
+    Total                      1.136ns (0.447ns logic, 0.689ns route)
                                        (39.3% logic, 60.7% route)
 
 =========================================================================
@@ -902,7 +892,7 @@ Offset:              0.645ns (Levels of Logic = 1)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_16_o
+Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_15_o
 -----------------------------------------------+---------+---------+---------+---------+
                                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -910,7 +900,7 @@ Source Clock                                   |Dest:Rise|Dest:Rise|Dest:Fall|De
 Ins_Deco/Ins_Recu_CLK/Reset_DataIn_edge_OR_11_o|         |         |    1.591|         |
 -----------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_14_o
+Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_13_o
 -----------------------------------------------+---------+---------+---------+---------+
                                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -918,7 +908,7 @@ Source Clock                                   |Dest:Rise|Dest:Rise|Dest:Fall|De
 Ins_Deco/Ins_Recu_CLK/Reset_DataIn_edge_OR_11_o|         |         |    1.618|         |
 -----------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_12_o
+Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_11_o
 -----------------------------------------------+---------+---------+---------+---------+
                                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -926,7 +916,7 @@ Source Clock                                   |Dest:Rise|Dest:Rise|Dest:Fall|De
 Ins_Deco/Ins_Recu_CLK/Reset_DataIn_edge_OR_11_o|         |         |    1.613|         |
 -----------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_10_o
+Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_9_o
 -----------------------------------------------+---------+---------+---------+---------+
                                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -939,7 +929,7 @@ Clock to Setup on destination clock Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out
                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------------+---------+---------+---------+---------+
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out|    2.468|         |         |         |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Tick_Out|    2.417|         |         |         |
 Reloj8x                                 |    0.855|         |         |         |
 ----------------------------------------+---------+---------+---------+---------+
 
@@ -957,7 +947,7 @@ Clock to Setup on destination clock Reloj
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Reloj          |    1.814|         |         |         |
+Reloj          |    1.446|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Reloj8x
@@ -965,10 +955,10 @@ Clock to Setup on destination clock Reloj8x
                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------------------------+---------+---------+---------+---------+
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_16_o|         |    3.236|         |         |
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_14_o|         |    3.213|         |         |
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_12_o|         |    3.190|         |         |
-Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_10_o|         |    3.064|         |         |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[1]_AND_15_o|         |    3.236|         |         |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[2]_AND_13_o|         |    3.213|         |         |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[3]_AND_11_o|         |    3.190|         |         |
+Ins_Deco/Ins_Recu_CLK/Ins_Reloj/Reset_Num[4]_AND_9_o |         |    3.064|         |         |
 Ins_Deco/Ins_Recu_CLK/Reset_DataIn_edge_OR_11_o      |         |    3.214|         |         |
 Reloj                                                |    1.576|         |         |         |
 Reloj8x                                              |    3.084|         |         |         |
@@ -978,12 +968,12 @@ Reloj8x                                              |    3.084|         |      
 
 
 Total REAL time to Xst completion: 60.00 secs
-Total CPU time to Xst completion: 56.24 secs
+Total CPU time to Xst completion: 55.27 secs
  
 --> 
 
 
-Total memory usage is 209980 kilobytes
+Total memory usage is 209940 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   49 (   0 filtered)

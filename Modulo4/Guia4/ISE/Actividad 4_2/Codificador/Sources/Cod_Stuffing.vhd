@@ -35,16 +35,15 @@ begin
 
 			case State is 
 				when "00" =>
-					if Datos = '1' then
-						Count_Ones	<= Count_Ones + to_unsigned(1,Count_Ones'length);
-					else
-						Count_Ones <= to_unsigned(0,Count_Ones'length);				
-					end if;
-
-					if Datos = '1' and Count_Ones = to_unsigned(6,Count_Ones'length) then
-						DataOut <= not sDataOut;
+					if Count_Ones = to_unsigned(6,Count_Ones'length) then
+						sDataOut <= not sDataOut;
 						Count_Ones <= to_unsigned(0,Count_Ones'length);				
 					else
+						if Datos = '1' then
+							Count_Ones	<= Count_Ones + to_unsigned(1,Count_Ones'length);
+						else
+							Count_Ones <= to_unsigned(0,Count_Ones'length);					
+						end if;
 						sDataOut <= sDataOut XNOR Datos;
 						EnaTx		<= '1';
 					end if;
@@ -60,6 +59,7 @@ begin
 				when "01" =>
 					sDataOut <= sDataOut XNOR SyncFrame(to_integer(index));
 					index 	<= index + to_unsigned(1,Count_Ones'length);
+					Count_Ones 	<= to_unsigned(0,Count_Ones'length);
 					if index = to_unsigned(12,Count_Ones'length) then
 						State <= "00";
 					end if;

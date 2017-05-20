@@ -62,33 +62,12 @@ begin
 			Sync	<= '0';
 			Error	<= '0';
 
-			if sSync = '0' then
-				if Data = '1' and Register_Temp = SyncFrame then
-					sSync	<= '1';
-					Sync	<= '1';
-					index	<= to_unsigned(0,index'length);
-					Register_Temp <= (others => '0');
-					count_ones <= to_unsigned(0,count_ones'length);
-				else
-					if count_ones = to_unsigned(6,count_ones'length) then
-						count_ones <= to_unsigned(0,count_ones'length);
-						if Data = '1' then
-							Error <= '1';
-						end if;
-					else
-						if Data = '1' then
-							count_ones <= count_ones + to_unsigned(1,count_ones'length);
-						else
-							count_ones <= to_unsigned(0,count_ones'length);
-						end if;
-						EnaRx <= '1';
-						Datos <= Register_Temp(Register_Temp'high);
-						Register_Temp <= Register_Temp(Register_Temp'high-1 downto 0) & Data;
-					end if;
-				end if;
+			if Data = '1' and Register_Temp = SyncFrame then
+				Sync	<= '1';
+				index	<= to_unsigned(0,index'length);
+				Register_Temp <= (others => '0');
+				count_ones <= to_unsigned(0,count_ones'length);
 			else
-				index	<= index + to_unsigned(1,index'length);
-			
 				if count_ones = to_unsigned(6,count_ones'length) then
 					count_ones <= to_unsigned(0,count_ones'length);
 					if Data = '1' then
@@ -100,15 +79,11 @@ begin
 					else
 						count_ones <= to_unsigned(0,count_ones'length);
 					end if;
-					Datos <= Register_Temp(Register_Temp'high);
+					EnaRx <= '1';
+					Datos <= Data;--Register_Temp(Register_Temp'high);
 					Register_Temp <= Register_Temp(Register_Temp'high-1 downto 0) & Data;
 				end if;
-				
-				if index = to_unsigned(12,index'length) then
-					sSync	<= '0';
-				end if;
 			end if;
-						
 		end if;
 	end process;
 	

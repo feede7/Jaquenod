@@ -16,7 +16,8 @@ entity En_System is
 		EnaRx		: out STD_LOGIC;
 		SyncRx	: out STD_LOGIC;
       Data_Out : out  STD_LOGIC;
-		Reloj_Rec: out  STD_LOGIC);
+		Reloj_Rec: out  STD_LOGIC;
+		Error		: out  STD_LOGIC);
 end En_System;
 
 architecture Arq_System of En_System is
@@ -41,6 +42,6 @@ begin
       EnaRx 	=> EnaRx,
       Sync	 	=> SyncRx,
 		Reloj_Rec=> Reloj_Rec,
-		Error		=> open);
+		Error		=> Error);
 		
 end Arq_System;

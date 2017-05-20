@@ -24,18 +24,23 @@ ARCHITECTURE behavior OF TB_System IS
    -- No clocks detected in port list. Replace Reloj below with 
    -- appropriate port name 
  
-   constant Reloj_period : time := 1000 ps;
-   constant Reloj8x_period : time := 120 ps;
+   constant Reloj_period 	: time := 1000 ps;
+   constant Reloj8x_period : time := 125 ps;
 	
-	constant Send: STD_LOGIC_VECTOR(99 downto 0) := "0000000000000000000100111111000000011111111111111100000000000111110000000000000001110111111100000000";
+--	constant Send: STD_LOGIC_VECTOR(29 downto 0) := "000000000000000000010011111100";--0000011111111111111100000000000111110000000000000001110111111100000000";
+--	constant Send: STD_LOGIC_VECTOR(29 downto 0) := "000000000000000000010011111100";--0000011111111111111100000000000111110000000000000001110111111100000000";
+	constant Send: STD_LOGIC_VECTOR(14 downto 0) := "010111111010010";
 	signal DataToSend : STD_LOGIC_VECTOR(Send'high downto 0) := Send;--"0000000000000000000100111111000000011111111111111100000000000111110000000000000001110111111100000000";
 	signal Data_Rec	: STD_LOGIC_VECTOR(Send'high downto 0) := (others => '0');
 --	signal DataToSend : STD_LOGIC_VECTOR(11 downto 0) := "010111111010";
 --	signal Data_Rec	: STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
 	signal Reloj_Rec	: STD_LOGIC;
 	signal Found		: STD_LOGIC;
+	signal AUX			: STD_LOGIC;
+	signal Error			: STD_LOGIC;
 	
 	signal count_data : unsigned(7 downto 0) := to_unsigned(0,8);
+	signal TimeInit : NATURAL := 20;
 --	signal Reset_Reg : STD_LOGIC := '0';
  
 BEGIN
@@ -52,7 +57,8 @@ BEGIN
           EnaRx 		=> EnaRx,
           SyncRx 		=> SyncRx,
           Data_Out 	=> Data_Out,
-			 Reloj_Rec	=> Reloj_Rec
+			 Reloj_Rec	=> Reloj_Rec,
+			 Error		=> Error
         );
 
    -- Clock process definitions
@@ -64,29 +70,29 @@ BEGIN
 		wait for Reloj_period/2;
    end process;
 
---	process(Reloj)
---	begin
---		if rising_edge(Reloj) then
---			Reset_Reg <= Reset;
---		end if;	
---	end process;
-
---	process(Reloj,Reset_Reg)
 	process(Reloj,Reset)
 	begin
---		if Reset_Reg = '1' then
 		if Reset = '1' then
-			SndSync <= '1';
+			SndSync <= '0';
+			AUX <= '0';
 			count_data <= to_unsigned(0,count_data'length);
 		elsif rising_edge(Reloj) then
 			SndSync <= '0';
 			
 			if EnaTx = '1' then
-				Data_In <= DataToSend(DataToSend'high);
-				DataToSend <= DataToSend(DataToSend'high-1 downto 0) & '1';
-				count_data <= to_unsigned(0,count_data'length);
-				if count_data = to_unsigned(DataToSend'length,count_data'length) then
+				Data_In <= AUX and DataToSend(DataToSend'high);
+				if AUX = '0' and count_data = to_unsigned(TimeInit,count_data'length) then
+					count_data <= to_unsigned(0,count_data'length);
+					AUX <= '1';
 					SndSync <= '1';
+				elsif AUX = '1' then
+					if count_data = to_unsigned(DataToSend'length,count_data'length) then
+						count_data <= to_unsigned(0,count_data'length);
+						SndSync <= '1';
+					else
+						DataToSend <= DataToSend(DataToSend'high-1 downto 0) & '1';
+						count_data <= count_data + to_unsigned(1,count_data'length);
+					end if;
 				else
 					count_data <= count_data + to_unsigned(1,count_data'length);
 				end if;
@@ -97,7 +103,9 @@ BEGIN
 	process(Reloj_Rec)
 	begin
 		if rising_edge(Reloj_Rec) then
-			if EnaRx = '1' then
+			if SyncRx = '1' then
+				Data_Rec <= "0000000000000" & Data_Rec(DataToSend'high downto 13);
+			elsif EnaRx = '1' then
 				Data_Rec <= Data_Rec(DataToSend'high-1 downto 0) & Data_Out;
 			end if;
 		end if;
@@ -108,9 +116,9 @@ BEGIN
    -- Clock process definitions
    Reloj8x_process :process
    begin
-			Reloj8x <= '0';
-		wait for Reloj8x_period/2;
 			Reloj8x <= '1';
+		wait for Reloj8x_period/2;
+			Reloj8x <= '0';
 		wait for Reloj8x_period/2;
    end process;
  
