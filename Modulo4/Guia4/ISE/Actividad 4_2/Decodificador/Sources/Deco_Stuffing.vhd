@@ -17,27 +17,39 @@ end En_Deco_Stuffing;
 architecture Arq_Deco_Stuffing of En_Deco_Stuffing is
 	signal Register_Temp : STD_LOGIC_VECTOR(12 downto 0) := (others => '0');
 	signal Data : STD_LOGIC;
+	signal sReloj_Rec : STD_LOGIC;
+	signal DataSync : STD_LOGIC;
 	signal sDataIn : STD_LOGIC := '0';
 	signal Count_Ones : unsigned(3 downto 0);
 
 	constant SyncFrame : STD_LOGIC_VECTOR(12 downto 0) := "0000000111111";
 begin
+	
+	Ins_Recu_CLK : entity work.En_Recupera_CLK(Arq_Recupera_CLK)
+	PORT MAP(
+			Reloj8x 	=> Reloj8x,
+			Reset		=> Reset,
+			DataIn	=> DataIn,
+			Reloj		=> sReloj_Rec,
+			DataSync	=> DataSync
+	);
+	
+	Reloj_Rec <= sReloj_Rec;
+	Data <= DataSync XNOR sDataIn; -- Si hay cambio es un '0', si son iguales es un '1'
 
-	Data <= DataIn XNOR sDataIn; -- Si hay cambio es un '0', si son iguales es un '1'
-
-	process(Reloj8x, Reset)
+	process(sReloj_Rec, Reset)
 	begin
 		if Reset = '1' then
 			EnaRx 	<= '0';
-			Sync	<= '0';
-			sDataIn <= DataIn;
+			Sync		<= '0';
+			sDataIn 	<= DataSync;
 			sDataIn	<= '0';
-			Register_Temp <= (others => '0');
-			Error	<= '0';
-			Datos	<= '0';
+			Error		<= '0';
+			Datos		<= '0';
 			Count_Ones <= to_unsigned(0,Count_Ones'length);		
-		elsif rising_edge(Reloj8x) then
-			sDataIn <= DataIn;
+			Register_Temp <= (others => '0');
+		elsif rising_edge(sReloj_Rec) then
+			sDataIn <= DataSync;
 			Sync	<= '0';
 			EnaRx <= '0';
 			Error <= '0';

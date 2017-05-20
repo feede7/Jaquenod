@@ -12,10 +12,10 @@ entity En_Div_Bresenham is
 end En_Div_Bresenham;
 
 architecture Arq_Div_Bresenham of En_Div_Bresenham is
-	signal DownCount 			: unsigned(7 downto 0);
-	signal Counter				: signed(8 downto 0);
-	signal NextAdd				: signed(8 downto 0);
-	signal NextCounter 		: signed(8 downto 0);
+	signal DownCount 			: unsigned(7 downto 0) := (others => '0');
+	signal Counter				: signed(8 downto 0) := to_signed(0,9);
+	signal NextAdd				: signed(8 downto 0) := signed('0' & Num);
+	signal NextCounter 		: signed(8 downto 0) := to_signed(0,9);
 begin
 
 	-- Para un divisor donde DIV = N + Num/Den, sería que cada N o N+1 veces incrementa en Num o decrementa en (Den-Num)  el contador que dependiendo el signo define el inicio del DownCounter

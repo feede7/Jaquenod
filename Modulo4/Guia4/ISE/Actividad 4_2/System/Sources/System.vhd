@@ -35,7 +35,7 @@ begin
 
 	Ins_Deco: entity work.En_Deco_Stuffing(Arq_Deco_Stuffing)
 	PORT MAP(
-		Reloj8x 	=> Reloj,
+		Reloj8x 	=> Reloj8x,
       Reset 	=> Reset,
       DataIn 	=> DataCoded,
       Datos	 	=> Data_Out,

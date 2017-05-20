@@ -30,6 +30,8 @@ int main(int argc, char **argv)
     ieee_p_1242562249_init();
     unisim_p_0947159679_init();
     work_a_0172677930_1775212831_init();
+    work_a_2821066845_2627797878_init();
+    work_a_1247714319_3001619241_init();
     work_a_3140484568_3460709091_init();
     work_a_0184070324_0985312428_init();
     work_a_1043376690_2372691052_init();

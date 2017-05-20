@@ -3,26 +3,32 @@ ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Div_Bresenham.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Recupera_CLK.vhd" into library work
 Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Deco_Stuffing.vhd" into library work
 Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Codificador/Sources/Cod_Stuffing.vhd" into library work
 Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/Sources/System.vhd" into library work
 Parsing VHDL file "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/Sources/TB_System.vhd" into library work
 Starting static elaboration
+WARNING:HDLCompiler:746 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+WARNING:HDLCompiler:220 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
 Completed static elaboration
-Fuse Memory Usage: 112680 KB
-Fuse CPU Usage: 1300 ms
+Fuse Memory Usage: 112760 KB
+Fuse CPU Usage: 1220 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
 Compiling package vcomponents
 Compiling architecture arq_cod_stuffing of entity En_Cod_Stuffing [en_cod_stuffing_default]
+Compiling architecture arq_div_bresenham of entity En_Div_Bresenham [en_div_bresenham_default]
+Compiling architecture arq_recupera_clk of entity En_Recupera_CLK [en_recupera_clk_default]
 Compiling architecture arq_deco_stuffing of entity En_Deco_Stuffing [en_deco_stuffing_default]
 Compiling architecture arq_system of entity En_System [en_system_default]
 Compiling architecture behavior of entity tb_system
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 11 VHDL Units
+Compiled 15 VHDL Units
 Built simulation executable /home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/TB_System_isim_beh.exe
-Fuse Memory Usage: 685704 KB
-Fuse CPU Usage: 1390 ms
-GCC CPU Usage: 140 ms
+Fuse Memory Usage: 685268 KB
+Fuse CPU Usage: 1320 ms
+GCC CPU Usage: 90 ms

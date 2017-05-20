@@ -24,12 +24,13 @@ ARCHITECTURE behavior OF TB_System IS
    -- No clocks detected in port list. Replace Reloj below with
    -- appropriate port name
 
-   constant Reloj_period 	: time := 1000 ps;
-   constant Reloj8x_period : time := 125 ps;
+   constant Reloj_period 	: time := 2000 ps;
+   constant Reloj8x_period : time := 250 ps;
 
 --	constant Send: STD_LOGIC_VECTOR(29 downto 0) := "000000000000000000010011111100";--0000011111111111111100000000000111110000000000000001110111111100000000";
 --	constant Send: STD_LOGIC_VECTOR(29 downto 0) := "000000000000000000010011111100";--0000011111111111111100000000000111110000000000000001110111111100000000";
-	constant Send: STD_LOGIC_VECTOR(29 downto 0) := "010111111010010010111111010010";
+--	constant Send: STD_LOGIC_VECTOR(29 downto 0) := "010111111010010010111111010010";
+	constant Send: STD_LOGIC_VECTOR(59 downto 0) := "010111111010010010111111010010010111111010010011111111010010";
 	signal DataToSend : STD_LOGIC_VECTOR(Send'high downto 0) := Send;--"0000000000000000000100111111000000011111111111111100000000000111110000000000000001110111111100000000";
 	signal Data_Rec	: STD_LOGIC_VECTOR(Send'high downto 0) := (others => '0');
 --	signal DataToSend : STD_LOGIC_VECTOR(11 downto 0) := "010111111010";
@@ -70,6 +71,15 @@ BEGIN
 		wait for Reloj_period/2;
    end process;
 
+   -- Clock process definitions
+   Reloj8x_process :process
+   begin
+		Reloj8x <= '1';
+		wait for Reloj8x_period/2;
+		Reloj8x <= '0';
+		wait for Reloj8x_period/2;
+   end process;
+	
    Data_In <= DataToSend(DataToSend'high);
 
  	process(Reloj,Reset)
@@ -85,8 +95,9 @@ BEGIN
  				if count_data = to_unsigned(DataToSend'length-1,count_data'length) then
  					count_data <= to_unsigned(0,count_data'length);
  					SndSync <= '1';
+					DataToSend <= Send;
  				else
- 					DataToSend <= DataToSend(DataToSend'high-1 downto 0) & '1';
+ 					DataToSend <= DataToSend(DataToSend'high-1 downto 0) & '0';
  					count_data <= count_data + to_unsigned(1,count_data'length);
  				end if;
  			end if;
@@ -107,15 +118,6 @@ BEGIN
 	end process;
 
 	Found <= '1' when  Data_Rec = Send else '0';
-
-   -- Clock process definitions
-   Reloj8x_process :process
-   begin
-			Reloj8x <= '1';
-		wait for Reloj8x_period/2;
-			Reloj8x <= '0';
-		wait for Reloj8x_period/2;
-   end process;
 
 	Reset <= '1', '0' after 12500 ps;
 

@@ -28,8 +28,8 @@ architecture Arq_Recupera_CLK of En_Recupera_CLK is
 	signal Count_Slow		: unsigned(9 downto 0);
 	signal BeforeEdge 	: STD_LOGIC;
 	
-	constant MAX_DEN		: unsigned(7 downto 0) := to_unsigned(20,8);
-	constant PASO			: unsigned(7 downto 0) := to_unsigned(1,8);
+	constant MAX_DEN		: unsigned(7 downto 0) := to_unsigned(30,8);
+	constant PASO			: unsigned(7 downto 0) := to_unsigned(15,8);
 begin
 
 	---------------- Generación de relojes ----------------
@@ -57,19 +57,21 @@ begin
 	
    DataIn_edge <= DataIN XOR sDataIn;
 
-	NUM_AUX	<=	NUM_AUX_LAST + PASO when Count_Slow > Count_Fast and NUM_AUX_LAST < MAX_DEN else
-					NUM_AUX_LAST - PASO when Count_Fast > Count_Slow and NUM_AUX_LAST > to_unsigned(0,NUM_AUX_LAST'length) else
+	NUM_AUX	<=	NUM_AUX_LAST 			when Count_Slow + Count_Fast > to_unsigned(10,Count_Fast'length) else
+					NUM_AUX_LAST + PASO when Count_Slow > Count_Fast and NUM_AUX_LAST < MAX_DEN-PASO+to_unsigned(1,Count_Fast'length) else
+					NUM_AUX_LAST - PASO when Count_Fast > Count_Slow and NUM_AUX_LAST > PASO-to_unsigned(1,NUM_AUX_LAST'length) else
 					NUM_AUX_LAST;
 	
-	DIV_Next <= to_unsigned(7,NUM'length) when NUM_AUX < to_unsigned(10,NUM'length) else
+	DIV_Next <= to_unsigned(7,NUM'length) when NUM_AUX < to_unsigned(to_integer(MAX_DEN)/2,NUM'length) else
 					to_unsigned(8,NUM'length);
 	
-	NUM_Next <= NUM_AUX + to_unsigned(10,NUM'length) when DIV_Next = to_unsigned(7,NUM'length) else
-					NUM_AUX - to_unsigned(10,NUM'length);
+	NUM_Next <= NUM_AUX + to_unsigned(to_integer(MAX_DEN)/2,NUM'length) when DIV_Next = to_unsigned(7,NUM'length) else
+					NUM_AUX - to_unsigned(to_integer(MAX_DEN)/2,NUM'length);
 	
-	process(Reloj8x, Reset)
+	process(Reloj8x)
 	begin
 		if Reset = '1' or DataIn_edge = '1' then
+--		if DataIn_edge = '1' then
 			Count_Slow 	<= to_unsigned(0,Count_Slow'length);
 			Count_Fast 	<= to_unsigned(0,Count_Fast'length);
 			NUM	      <= NUM_Next;
