@@ -12,26 +12,25 @@ entity En_Recupera_CLK is
 end En_Recupera_CLK;
 
 architecture Arq_Recupera_CLK of En_Recupera_CLK is
-	signal sReloj8x 		: STD_LOGIC;
-	signal sReloj8x_edge	: STD_LOGIC;
 	signal sReloj			: STD_LOGIC;
 	signal sReloj_edge	: STD_LOGIC;
 	signal sDataIn			: STD_LOGIC;
 	signal DataIn_edge	: STD_LOGIC;
 	signal DIV 				: unsigned(7 downto 0) := to_unsigned(8,8);
 	signal DIV_Next		: unsigned(7 downto 0) := to_unsigned(8,8);
-	signal NUM	 			: unsigned(7 downto 0) := to_unsigned(10,8);
-	signal NUM_AUX			: unsigned(7 downto 0) := to_unsigned(10,8);
-	signal NUM_AUX_LAST	: unsigned(7 downto 0) := to_unsigned(10,8);
-	signal NUM_Next		: unsigned(7 downto 0) := to_unsigned(10,8);
+	signal NUM	 			: unsigned(7 downto 0) := to_unsigned(5,8);
+	signal NUM_AUX			: unsigned(7 downto 0) := to_unsigned(5,8);
+	signal NUM_AUX_LAST	: unsigned(7 downto 0) := to_unsigned(5,8);
+	signal NUM_Next		: unsigned(7 downto 0) := to_unsigned(5,8);
 	signal Count_Fast		: unsigned(9 downto 0);
 	signal Count_Slow		: unsigned(9 downto 0);
-	signal BeforeEdge 	: STD_LOGIC;
+	signal Mean				: signed(7 downto 0);
+	signal Count_Before_Data: unsigned(9 downto 0);
+	signal sPFD_Slower 	: STD_LOGIC;
 	
-	constant MAX_DEN		: unsigned(7 downto 0) := to_unsigned(30,8);
-	constant PASO			: unsigned(7 downto 0) := to_unsigned(15,8);
+	constant MAX_DEN		: unsigned(7 downto 0) := to_unsigned(20,8);
+	constant PASO			: unsigned(7 downto 0) := to_unsigned(5,8);
 begin
-
 	---------------- Generación de relojes ----------------
 	-- Reloj8x = Reloj * 8
 
@@ -46,49 +45,122 @@ begin
 		Den		 => STD_LOGIC_VECTOR(MAX_DEN),
 		Tick_Out  => sReloj
 		);
-		
+
+--	DataSync <= sDataIn;
+
 	process(Reloj8x)
 	begin
 		if rising_edge(Reloj8x) then
 			sDataIn	<= DataIn;
-			DataSync <= DataIn;
+		end if;
+	end process;
+
+	process(Reloj8x)
+	begin
+		if rising_edge(Reloj8x) then
+			if sReloj = '1' then
+				DataSync	<= DataIn;
+			end if;
 		end if;
 	end process;
 	
    DataIn_edge <= DataIN XOR sDataIn;
 
 	NUM_AUX	<=	NUM_AUX_LAST 			when Count_Slow + Count_Fast > to_unsigned(10,Count_Fast'length) else
-					NUM_AUX_LAST + PASO when Count_Slow > Count_Fast and NUM_AUX_LAST < MAX_DEN-PASO+to_unsigned(1,Count_Fast'length) else
-					NUM_AUX_LAST - PASO when Count_Fast > Count_Slow and NUM_AUX_LAST > PASO-to_unsigned(1,NUM_AUX_LAST'length) else
+					NUM_AUX_LAST + PASO	when Count_Slow > Count_Fast and NUM_AUX_LAST < MAX_DEN-PASO+to_unsigned(1,Count_Fast'length) else
+					NUM_AUX_LAST - PASO 	when Count_Fast > Count_Slow and NUM_AUX_LAST > PASO-to_unsigned(1,NUM_AUX_LAST'length) else
 					NUM_AUX_LAST;
-	
-	DIV_Next <= to_unsigned(7,NUM'length) when NUM_AUX < to_unsigned(to_integer(MAX_DEN)/2,NUM'length) else
-					to_unsigned(8,NUM'length);
+
+--	DIV_Next <= to_unsigned(7,NUM'length) when sPFD_Slower = '1' else
+--					to_unsigned(8,NUM'length);
+					
+--	DIV_Next <= DIV when to_integer(Count_Slow + Count_Fast) > 14 else
+--					to_unsigned(9,NUM'length) when Count_Slow = to_unsigned(0,Count_Slow'length) else
+--					to_unsigned(7,NUM'length) when Count_Slow < Count_Fast else
+--					to_unsigned(8,NUM'length);
+					
 	
 	NUM_Next <= NUM_AUX + to_unsigned(to_integer(MAX_DEN)/2,NUM'length) when DIV_Next = to_unsigned(7,NUM'length) else
 					NUM_AUX - to_unsigned(to_integer(MAX_DEN)/2,NUM'length);
-	
-	process(Reloj8x)
+
+	INS_MC4044: entity work.En_MC4044(Arq_MC4044)
+    Port map(
+		R 		=> DataIn_edge,
+		V 		=> sReloj,
+		U1		=> open,
+		D1		=> sPFD_Slower,
+		State => open
+	  );
+
+	process(Reloj8x,Reset)
 	begin
-		if Reset = '1' or DataIn_edge = '1' then
---		if DataIn_edge = '1' then
+		if Reset = '1' then
 			Count_Slow 	<= to_unsigned(0,Count_Slow'length);
 			Count_Fast 	<= to_unsigned(0,Count_Fast'length);
-			NUM	      <= NUM_Next;
-			DIV	      <= DIV_Next;
-			NUM_AUX_LAST<= NUM_AUX;
-			BeforeEdge	<= '0';
+			DIV	      <= to_unsigned(8,NUM'length);
+			NUM	      <= to_unsigned(0,NUM'length);
+			Mean	      <= to_signed(0,NUM'length);
 		elsif rising_edge(Reloj8x) then
-			if sReloj = '1' then
-				BeforeEdge	<= '1'; 	-- Con el Duty de esta señal se puede controlar el punto de muestreo de los datos de entrada
-			end if;						      -- En este caso está en 50%, pero con la comparaci
-			
-			if BeforeEdge = '0' then
-				Count_Fast <= Count_Fast + to_unsigned(1,Count_Fast'length);
-			end if;
-			
-			if BeforeEdge = '1' then
-				Count_Slow <= Count_Slow + to_unsigned(1,Count_Slow'length);
+			if DataIn_edge = '1' then
+				Count_Slow 	<= to_unsigned(0,Count_Slow'length);
+				Count_Fast 	<= to_unsigned(0,Count_Fast'length);
+				NUM	      <= to_unsigned(0,NUM'length);
+				if to_integer(Count_Slow + Count_Fast) > 10 then
+					if Count_Before_Data < to_unsigned(3,Count_Before_Data'length) then
+						DIV <= to_unsigned(7,DIV'length);
+						NUM	<= to_unsigned(to_integer(MAX_DEN)/2,NUM'length);
+					elsif Count_Before_Data > to_unsigned(5,Count_Before_Data'length) and Count_Before_Data < to_unsigned(8,Count_Before_Data'length) then
+						DIV <= to_unsigned(8,DIV'length);
+						NUM	<= to_unsigned(to_integer(MAX_DEN)/2,NUM'length);
+					else
+						DIV <= to_unsigned(8,DIV'length);
+						NUM	<= to_unsigned(0,NUM'length);
+					end if;
+				else
+					if Count_Fast = to_unsigned(0,Count_Slow'length) then
+						DIV 	<= to_unsigned(8,DIV'length);
+						NUM	<= to_unsigned(0,NUM'length);
+					elsif Count_Slow = to_unsigned(0,Count_Slow'length) or Count_Slow > Count_Fast then
+						DIV 	<= to_unsigned(8,DIV'length);
+						NUM	<= to_unsigned(to_integer(MAX_DEN)/3,NUM'length);
+						if Mean < to_signed(to_integer(MAX_DEN)/5,Mean'length) then
+							Mean	<= Mean + to_signed(1,Mean'length);
+						end if;
+					elsif Count_Slow < Count_Fast then
+						DIV 	<= to_unsigned(7,DIV'length);
+						NUM	<= to_unsigned(to_integer(MAX_DEN)*2/3,NUM'length);
+						if Mean > to_signed(0 - to_integer(MAX_DEN)/5,Mean'length) then
+							Mean	<= Mean - to_signed(1,Mean'length);
+						end if;
+					else
+						DIV 	<= to_unsigned(8,DIV'length);
+						NUM	<= to_unsigned(0,NUM'length);
+					end if;
+				end if;
+			else
+				if to_integer(Count_Slow + Count_Fast) > 10 then
+					if Mean < to_signed(0,Mean'length) then
+						DIV 	<= to_unsigned(7,DIV'length);
+						NUM	<= to_unsigned(to_integer(MAX_DEN)+to_integer(Mean),NUM'length);
+					else
+						DIV 	<= to_unsigned(8,DIV'length);
+						NUM	<= to_unsigned(to_integer(Mean),NUM'length);
+					end if;
+				end if;
+
+				if sPFD_Slower = '1' then
+					Count_Fast <= Count_Fast + to_unsigned(1,Count_Fast'length);
+				end if;
+				
+				if sPFD_Slower = '0' then
+					Count_Slow <= Count_Slow + to_unsigned(1,Count_Slow'length);
+				end if;
+
+				Count_Before_Data <= Count_Before_Data + to_unsigned(1,Count_Before_Data'length);
+
+				if sReloj = '1' then
+					Count_Before_Data <= to_unsigned(0,Count_Before_Data'length);
+				end if;
 			end if;
 		end if;
 	end process;

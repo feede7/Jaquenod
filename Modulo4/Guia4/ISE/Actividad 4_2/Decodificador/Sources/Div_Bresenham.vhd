@@ -17,7 +17,6 @@ architecture Arq_Div_Bresenham of En_Div_Bresenham is
 	signal NextAdd				: signed(8 downto 0) := signed('0' & Num);
 	signal NextCounter 		: signed(8 downto 0) := to_signed(0,9);
 begin
-
 	-- Para un divisor donde DIV = N + Num/Den, sería que cada N o N+1 veces incrementa en Num o decrementa en (Den-Num)  el contador que dependiendo el signo define el inicio del DownCounter
 
 	NextCounter <= Counter + NextAdd;

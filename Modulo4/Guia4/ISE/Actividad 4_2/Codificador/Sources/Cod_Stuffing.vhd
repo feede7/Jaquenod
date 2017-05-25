@@ -42,14 +42,14 @@ begin
 				case State is 
 					when "00" =>
 						if Count_Ceros = to_unsigned(CerosBeforSync,Count_Ceros'length) then
-							State 		<= "10";
+							State	<= "10";
 						else
 							Count_Ceros	<= Count_Ceros + to_unsigned(1,Count_Ceros'length);
 						end if;
 						
 					when "01" =>
-						sDataIn 		<= Datos;
-						EnaTx			<= '1';
+						sDataIn	<= Datos;
+						EnaTx		<= '1';
 						
 						if Datos = '1' then
 							if Count_Ones = to_unsigned(5,Count_Ones'length) then

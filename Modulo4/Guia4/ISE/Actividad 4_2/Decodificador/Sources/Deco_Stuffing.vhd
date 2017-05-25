@@ -4,14 +4,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity En_Deco_Stuffing is
-    Port ( Reloj8x : in  STD_LOGIC;
-           Reset : in  STD_LOGIC;
-           DataIn : in  STD_LOGIC;
-           Datos : out  STD_LOGIC;
-           EnaRx : out  STD_LOGIC;
-           Sync : out  STD_LOGIC;
-           Reloj_Rec : out  STD_LOGIC;
-           Error : out  STD_LOGIC);
+    Port ( Reloj8x 	: in  STD_LOGIC;
+           Reset 		: in  STD_LOGIC;
+           DataIn 	: in  STD_LOGIC;
+           Datos 		: out STD_LOGIC;
+           EnaRx 		: out STD_LOGIC;
+           Sync 		: out STD_LOGIC;
+           Reloj_Rec : out STD_LOGIC;
+           Error 		: out STD_LOGIC);
 end En_Deco_Stuffing;
 
 architecture Arq_Deco_Stuffing of En_Deco_Stuffing is
@@ -62,8 +62,8 @@ begin
 			else
 				if Data = '1' and Count_Ones = to_unsigned(5,Count_Ones'length) then
 					Count_Ones 	<= to_unsigned(6,Count_Ones'length); -- Mantiene EnaRx = '0'
-				elsif Count_Ones = to_unsigned(6,Count_Ones'length) then
 					EnaRx <= '1';
+				elsif Count_Ones = to_unsigned(6,Count_Ones'length) then
 					if Data = '1' then
 						Error <= '1';
 					end if;
@@ -75,8 +75,8 @@ begin
 						Count_Ones 	<= to_unsigned(0,Count_Ones'length);
 					end if;
 					EnaRx <= '1';
-					Datos <= Data;--Register_Temp(Register_Temp'high);
 				end if;
+				Datos <= Data;--Register_Temp(Register_Temp'high);
 			end if;
 		end if;
 	end process;
