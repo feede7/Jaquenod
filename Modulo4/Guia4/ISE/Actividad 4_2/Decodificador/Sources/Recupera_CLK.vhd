@@ -14,16 +14,11 @@ end En_Recupera_CLK;
 architecture Arq_Recupera_CLK of En_Recupera_CLK is
 	signal sReloj			: STD_LOGIC;
 	signal sReloj1			: STD_LOGIC;
-	signal sReloj2			: STD_LOGIC;
 	signal sReloj_edge	: STD_LOGIC;
 	signal sDataIn			: STD_LOGIC;
 	signal DataIn_edge	: STD_LOGIC;
 	signal DIV 				: unsigned(7 downto 0) := to_unsigned(8,8);
-	signal DIV_Next		: unsigned(7 downto 0) := to_unsigned(8,8);
 	signal NUM	 			: unsigned(7 downto 0) := to_unsigned(5,8);
-	signal NUM_AUX			: unsigned(7 downto 0) := to_unsigned(5,8);
-	signal NUM_AUX_LAST	: unsigned(7 downto 0) := to_unsigned(5,8);
-	signal NUM_Next		: unsigned(7 downto 0) := to_unsigned(5,8);
 	signal Count_Fast		: unsigned(9 downto 0);
 	signal Count_Slow		: unsigned(9 downto 0);
 	signal Mean				: signed(7 downto 0);
@@ -31,7 +26,6 @@ architecture Arq_Recupera_CLK of En_Recupera_CLK is
 	signal sPFD_Slower 	: STD_LOGIC;
 	
 	constant MAX_DEN		: unsigned(7 downto 0) := to_unsigned(20,8);
-	constant PASO			: unsigned(7 downto 0) := to_unsigned(5,8);
 	constant DIV_MEAN		: NATURAL := 3;
 begin
 	---------------- Generación de relojes ----------------
@@ -42,50 +36,21 @@ begin
 		CLK_IN	 => Reloj8x,
 		Reset		 => Reset,
 		N			 => STD_LOGIC_VECTOR(DIV),
-		Num		 => STD_LOGIC_VECTOR(NUM), -- Se desactiva la división racional ya que será manejado por el detector de fase
+		Num		 => STD_LOGIC_VECTOR(NUM),
 		Den		 => STD_LOGIC_VECTOR(MAX_DEN),
 		Tick_Out  => sReloj
 		);
 
---	DataSync <= sDataIn;
-
 	process(Reloj8x)
 	begin
 		if rising_edge(Reloj8x) then	
-			Reloj		<= sReloj2;
---			sReloj2	<= sReloj1;
-			sReloj2	<= sReloj;
-			sDataIn	<= DataIn;
-		end if;
-	end process;
-
-	process(Reloj8x)
-	begin
-		if rising_edge(Reloj8x) then
-			if sReloj = '1' then
-				DataSync	<= DataIn;
-			end if;
+			Reloj		<= sReloj1;	-- Retraso el reloj recuperado
+			sReloj1	<= sReloj;
+			sDataIn	<= DataIn;	-- Registro el último dato de entrada
 		end if;
 	end process;
 	
-   DataIn_edge <= DataIN XOR sDataIn;
-
-	NUM_AUX	<=	NUM_AUX_LAST 			when Count_Slow + Count_Fast > to_unsigned(10,Count_Fast'length) else
-					NUM_AUX_LAST + PASO	when Count_Slow > Count_Fast and NUM_AUX_LAST < MAX_DEN-PASO+to_unsigned(1,Count_Fast'length) else
-					NUM_AUX_LAST - PASO 	when Count_Fast > Count_Slow and NUM_AUX_LAST > PASO-to_unsigned(1,NUM_AUX_LAST'length) else
-					NUM_AUX_LAST;
-
---	DIV_Next <= to_unsigned(7,NUM'length) when sPFD_Slower = '1' else
---					to_unsigned(8,NUM'length);
-					
---	DIV_Next <= DIV when to_integer(Count_Slow + Count_Fast) > 14 else
---					to_unsigned(9,NUM'length) when Count_Slow = to_unsigned(0,Count_Slow'length) else
---					to_unsigned(7,NUM'length) when Count_Slow < Count_Fast else
---					to_unsigned(8,NUM'length);
-					
-	
-	NUM_Next <= NUM_AUX + to_unsigned(to_integer(MAX_DEN)/2,NUM'length) when DIV_Next = to_unsigned(7,NUM'length) else
-					NUM_AUX - to_unsigned(to_integer(MAX_DEN)/2,NUM'length);
+   DataIn_edge <= DataIN XOR sDataIn;	-- Detector de flancos señal de entrada
 
 	INS_MC4044: entity work.En_MC4044(Arq_MC4044)
     Port map(
@@ -105,11 +70,13 @@ begin
 			NUM	      <= to_unsigned(0,NUM'length);
 			Mean	      <= to_signed(0,NUM'length);
 		elsif rising_edge(Reloj8x) then
+			-- Toda la sincronización es controlada por los cambios en la señal de entrada
 			if DataIn_edge = '1' then
 				Count_Slow 	<= to_unsigned(0,Count_Slow'length);
 				Count_Fast 	<= to_unsigned(0,Count_Fast'length);
-				NUM	      <= to_unsigned(0,NUM'length);
 				if to_integer(Count_Slow + Count_Fast) > 10 then
+					-- En caso de no llegar flancos consecutivos (teniendo en cuenta que se sabe que el divisor es por 8) se analiza la distancia del último pulso de reloj recuperado con el último flanco de señal de datos.
+					-- Esto se hace porque si hay muchos '1's en el canal, la ausencia de datos hace que el reloj tenga que ser estimado sin feedback, teniendo que aprovechar al máximo cada flanco recuperado de la entrada.
 					if Count_Before_Data < to_unsigned(3,Count_Before_Data'length) then
 						DIV <= to_unsigned(7,DIV'length);
 						NUM	<= to_unsigned(to_integer(MAX_DEN)/2,NUM'length);
@@ -121,6 +88,8 @@ begin
 						NUM	<= to_unsigned(0,NUM'length);
 					end if;
 				else
+					-- En caso de flancos sucesivos se busca un Duty del 50% en la señal entregada por el MC4044, lo que indicaría que se matiene sincronizado tanto en frecuencia y fase altrdedor del flanco descendente
+					-- del reloj original.
 					if Count_Fast = to_unsigned(0,Count_Slow'length) then
 						DIV 	<= to_unsigned(8,DIV'length);
 						NUM	<= to_unsigned(0,NUM'length);
@@ -128,6 +97,8 @@ begin
 						DIV 	<= to_unsigned(8,DIV'length);
 						NUM	<= to_unsigned(to_integer(MAX_DEN)/3,NUM'length);
 						if Mean < to_signed(to_integer(MAX_DEN)/DIV_MEAN,Mean'length) then
+						-- Este parámetro es utilizado para tomar una decisión a la hora de tener que estimar el reloj en ausencia de flancos.
+						-- Se acumula la tendencia del reloj local respecto al de los datos.
 							Mean	<= Mean + to_signed(1,Mean'length);
 						end if;
 					elsif Count_Slow < Count_Fast then
@@ -143,6 +114,7 @@ begin
 				end if;
 			else
 				if to_integer(Count_Slow + Count_Fast) > 10 then
+				-- En caso de detectar ausencia de flancos de entrada se aplica el divisor estimado por tendencia del sistema
 					if Mean < to_signed(0,Mean'length) then
 						DIV 	<= to_unsigned(7,DIV'length);
 						NUM	<= to_unsigned(to_integer(MAX_DEN)+to_integer(Mean),NUM'length);
@@ -152,6 +124,7 @@ begin
 					end if;
 				end if;
 
+				-- Análisis del Duty de la señal entregada por el MC4044
 				if sPFD_Slower = '1' then
 					Count_Fast <= Count_Fast + to_unsigned(1,Count_Fast'length);
 				end if;
@@ -160,6 +133,7 @@ begin
 					Count_Slow <= Count_Slow + to_unsigned(1,Count_Slow'length);
 				end if;
 
+				-- Contador utilizado para medir la distancia del reloj recuperado al flanco de dato de entrada
 				Count_Before_Data <= Count_Before_Data + to_unsigned(1,Count_Before_Data'length);
 
 				if sReloj = '1' then

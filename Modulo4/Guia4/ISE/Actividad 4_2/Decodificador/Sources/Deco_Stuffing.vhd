@@ -16,11 +16,10 @@ end En_Deco_Stuffing;
 
 architecture Arq_Deco_Stuffing of En_Deco_Stuffing is
 	signal Register_Temp : STD_LOGIC_VECTOR(12 downto 0) := (others => '0');
-	signal Data : STD_LOGIC;
-	signal sReloj_Rec : STD_LOGIC;
-	signal DataSync : STD_LOGIC;
-	signal sDataIn : STD_LOGIC := '0';
-	signal Count_Ones : unsigned(3 downto 0);
+	signal Data 			: STD_LOGIC;
+	signal sReloj_Rec 	: STD_LOGIC;
+	signal sDataIn 		: STD_LOGIC := '0';
+	signal Count_Ones 	: unsigned(3 downto 0);
 
 	constant SyncFrame : STD_LOGIC_VECTOR(12 downto 0) := "0000000111111";
 begin
@@ -31,7 +30,7 @@ begin
 			Reset		=> Reset,
 			DataIn	=> DataIn,
 			Reloj		=> sReloj_Rec,
-			DataSync	=> open--DataSync
+			DataSync	=> open
 	);
 	
 	Reloj_Rec <= sReloj_Rec;
@@ -42,15 +41,13 @@ begin
 		if Reset = '1' then
 			EnaRx 	<= '0';
 			Sync		<= '0';
---			DataSync <= DataIn;
 			sDataIn <= DataIn;
-			sDataIn	<= '0';
+--			sDataIn	<= '0';
 			Error		<= '0';
 			Datos		<= '0';
 			Count_Ones <= to_unsigned(0,Count_Ones'length);		
 			Register_Temp <= (others => '0');
 		elsif rising_edge(sReloj_Rec) then
---			DataSync <= DataIn;
 			sDataIn <= DataIn;
 			Sync	<= '0';
 			EnaRx <= '0';
@@ -78,7 +75,7 @@ begin
 					end if;
 					EnaRx <= '1';
 				end if;
-				Datos <= Data;--Register_Temp(Register_Temp'high);
+				Datos <= Data;
 			end if;
 		end if;
 	end process;

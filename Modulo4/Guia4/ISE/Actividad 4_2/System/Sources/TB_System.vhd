@@ -22,8 +22,8 @@ ARCHITECTURE behavior OF TB_System IS
    -- No clocks detected in port list. Replace Reloj below with
    -- appropriate port name
 
-   constant Reloj_period 	: time := 2000 ps;
-   constant Reloj8x_period : time := 263 ps;
+   constant Reloj_period 	: time := 1000 ps;
+   constant Reloj8x_period : time := 125 ps;
 
 	constant Send: STD_LOGIC_VECTOR(59 downto 0) := "010111111010010010111111010010010111111010010011111111010110";
 	signal DataToSend : STD_LOGIC_VECTOR(Send'high downto 0) := Send;--"0000000000000000000100111111000000011111111111111100000000000111110000000000000001110111111100000000";
