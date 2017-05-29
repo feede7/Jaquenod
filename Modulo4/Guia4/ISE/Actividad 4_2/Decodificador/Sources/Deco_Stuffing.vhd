@@ -31,25 +31,27 @@ begin
 			Reset		=> Reset,
 			DataIn	=> DataIn,
 			Reloj		=> sReloj_Rec,
-			DataSync	=> DataSync
+			DataSync	=> open--DataSync
 	);
 	
 	Reloj_Rec <= sReloj_Rec;
-	Data <= DataSync XNOR sDataIn; -- Si hay cambio es un '0', si son iguales es un '1'
+	Data <= '0' when Reset = '1' else DataIn XNOR sDataIn; -- Si hay cambio es un '0', si son iguales es un '1'
 
 	process(sReloj_Rec, Reset)
 	begin
 		if Reset = '1' then
 			EnaRx 	<= '0';
 			Sync		<= '0';
-			sDataIn 	<= DataSync;
+--			DataSync <= DataIn;
+			sDataIn <= DataIn;
 			sDataIn	<= '0';
 			Error		<= '0';
 			Datos		<= '0';
 			Count_Ones <= to_unsigned(0,Count_Ones'length);		
 			Register_Temp <= (others => '0');
 		elsif rising_edge(sReloj_Rec) then
-			sDataIn <= DataSync;
+--			DataSync <= DataIn;
+			sDataIn <= DataIn;
 			Sync	<= '0';
 			EnaRx <= '0';
 			Error <= '0';

@@ -13,6 +13,8 @@ end En_Recupera_CLK;
 
 architecture Arq_Recupera_CLK of En_Recupera_CLK is
 	signal sReloj			: STD_LOGIC;
+	signal sReloj1			: STD_LOGIC;
+	signal sReloj2			: STD_LOGIC;
 	signal sReloj_edge	: STD_LOGIC;
 	signal sDataIn			: STD_LOGIC;
 	signal DataIn_edge	: STD_LOGIC;
@@ -30,11 +32,10 @@ architecture Arq_Recupera_CLK of En_Recupera_CLK is
 	
 	constant MAX_DEN		: unsigned(7 downto 0) := to_unsigned(20,8);
 	constant PASO			: unsigned(7 downto 0) := to_unsigned(5,8);
+	constant DIV_MEAN		: NATURAL := 3;
 begin
 	---------------- Generación de relojes ----------------
 	-- Reloj8x = Reloj * 8
-
-	Reloj	<= sReloj;
 
 	Ins_Reloj: entity work.En_Div_Bresenham(Arq_DIV_Bresenham)
 	port map(
@@ -50,7 +51,10 @@ begin
 
 	process(Reloj8x)
 	begin
-		if rising_edge(Reloj8x) then
+		if rising_edge(Reloj8x) then	
+			Reloj		<= sReloj2;
+--			sReloj2	<= sReloj1;
+			sReloj2	<= sReloj;
 			sDataIn	<= DataIn;
 		end if;
 	end process;
@@ -123,13 +127,13 @@ begin
 					elsif Count_Slow = to_unsigned(0,Count_Slow'length) or Count_Slow > Count_Fast then
 						DIV 	<= to_unsigned(8,DIV'length);
 						NUM	<= to_unsigned(to_integer(MAX_DEN)/3,NUM'length);
-						if Mean < to_signed(to_integer(MAX_DEN)/5,Mean'length) then
+						if Mean < to_signed(to_integer(MAX_DEN)/DIV_MEAN,Mean'length) then
 							Mean	<= Mean + to_signed(1,Mean'length);
 						end if;
 					elsif Count_Slow < Count_Fast then
 						DIV 	<= to_unsigned(7,DIV'length);
 						NUM	<= to_unsigned(to_integer(MAX_DEN)*2/3,NUM'length);
-						if Mean > to_signed(0 - to_integer(MAX_DEN)/5,Mean'length) then
+						if Mean > to_signed(0 - to_integer(MAX_DEN)/DIV_MEAN,Mean'length) then
 							Mean	<= Mean - to_signed(1,Mean'length);
 						end if;
 					else

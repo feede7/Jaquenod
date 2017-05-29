@@ -1,0 +1,28 @@
+Command line:
+   En_Div_Bresenham_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  41402
+
+Sun May 28 18:52:06 2017
+
+
+ Elaboration Time: 0.04 sec
+
+ Current Memory Usage: 198.066 Meg
+
+ Total Signals          : 10
+ Total Nets             : 62
+ Total Signal Drivers   : 5
+ Total Blocks           : 3
+ Total Primitive Blocks : 3
+ Total Processes        : 2
+ Total Traceable Variables  : 13
+ Total Scalar Nets and Variables : 545
+
+ Total Simulation Time: 0.04 sec
+
+ Current Memory Usage: 273.568 Meg
+
+Sun May 28 18:52:15 2017
+
