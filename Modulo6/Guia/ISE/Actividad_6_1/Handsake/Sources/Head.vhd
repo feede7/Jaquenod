@@ -13,13 +13,20 @@ entity En_Head is
            RSTB : in  STD_LOGIC;
            SNDA : in  STD_LOGIC;
            SNDB : in  STD_LOGIC;
-           RDYA : in  STD_LOGIC;
-           RDYB : in  STD_LOGIC
+           RDYA : out  STD_LOGIC;
+           RDYB : out  STD_LOGIC
 			  );
 end En_Head;
 
 architecture Arq_Head of En_Head is
 
+	signal RDA, RDB : STD_LOGIC; -- Clear To Send. Si está en alto es porque está habilitado para enviar
+	signal TDA, TDB : STD_LOGIC; -- Clear To Send. Si está en alto es porque está habilitado para enviar
+	signal RTSA, RTSB : STD_LOGIC; -- Clear To Send. Si está en alto es porque está habilitado para enviar
+	signal CTSA, CTSB : STD_LOGIC; -- Clear To Send. Si está en alto es porque está habilitado para enviar
+	signal DSRA, DSRB : STD_LOGIC; -- Data Terminal Ready. En estado alto significa que es estableció el link de sistemas
+	signal DTRA, DTRB : STD_LOGIC; -- Data Terminal Ready. En estado alto significa que es estableció el link de sistemas
+		
 begin
 
 --	Handshaking por hardware: El segundo método de handshaking utiliza líneas de 
@@ -57,7 +64,9 @@ begin
 		CLK => CLKA,
 		RST => RSTA,
 		SND => SNDA,
+		Data_In => (others => '0'),
 		RDY => RDYA,
+		Data_Out => open,
 		TD  => RDB, -- Pin de transmisión
 		RD  => TDB, -- Pin de recepción
 		RTS => CTSB, -- Request To Send. Avisa que está listo para recibir
@@ -71,7 +80,9 @@ begin
 		CLK => CLKB,
 		RST => RSTB,
 		SND => SNDB,
+		Data_In => (others => '0'),
 		RDY => RDYB,
+		Data_Out => open,
 		TD  => RDA, -- Pin de transmisión
 		RD  => TDA, -- Pin de recepción
 		RTS => CTSA, -- Request To Send. Avisa que está listo para recibir

@@ -1,0 +1,5 @@
+vhdl work "Sources/ClockE.vhd"
+vhdl work "Sources/UART_TX.vhd"
+vhdl work "Sources/UART_RX.vhd"
+vhdl work "Sources/System.vhd"
+vhdl work "Sources/Head.vhd"

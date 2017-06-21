@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -18,7 +18,6 @@ entity En_System is
 		Data_In : in STD_LOGIC_VECTOR(7 downto 0);
 		RDY : out STD_LOGIC;
 		Data_Out : out STD_LOGIC_VECTOR(7 downto 0);
-		New_Data : out STD_LOGIC;
 		TD  : out STD_LOGIC;
 		RD  : in  STD_LOGIC;
 		RTS : out STD_LOGIC;
@@ -33,10 +32,16 @@ architecture Arq_System of En_System is
 	signal Data_To_Send : STD_LOGIC_VECTOR(7 downto 0);
 	signal Received_Data : STD_LOGIC_VECTOR(7 downto 0);
 	
+	signal Receive : STD_LOGIC;
+	signal Send 	: STD_LOGIC;
 	signal Ready_Send : STD_LOGIC;
 	signal Ready_Receive : STD_LOGIC;
 	
+	signal counter : unsigned(6 downto 0);
 	constant TIMEOUT : NATURAL := 10;
+	
+	type   States	is	(Waiting_For_Link,Idle_Mode,Check_Link,Waiting_Send,Waiting_Confirmation,Waiting_Receive);
+	signal State	    : States := Waiting_For_Link;
 begin
 
 	process(CLK,RST)
@@ -46,8 +51,10 @@ begin
 			DTR <= '0';
 			RDY <= '0';
 		elsif rising_edge(CLK) then
-			DTR <= '1';
-			New_Data <= '0';
+			DTR 		<= '1';
+			RDY 		<= '0';
+			Receive 	<= '0';
+			Send	 	<= '0';
 			
 			case State is
 				when Waiting_For_Link =>
@@ -69,13 +76,13 @@ begin
 					elsif CTS = '1' then
 						RDY <= '0';
 						RTS <= '1';
-						Recibe <= '1';
-						State <= Waiting_Recibe;
+						Receive <= '1';
+						State <= Waiting_Receive;
 					end if;
 				
 				when Check_Link =>
 					if CTS = '1' then
-						Send <= '1';
+						Send 	<= '1';
 						State <= Waiting_Send;
 					else
 						if counter > to_unsigned(TIMEOUT,counter'length) then
@@ -87,6 +94,7 @@ begin
 				
 				when Waiting_Send =>
 					if Ready_Send = '1' then
+						RDY 		<= '1';
 						State <= Waiting_Confirmation;
 					end if;
 				
@@ -99,7 +107,7 @@ begin
 				when Waiting_Receive =>
 					if Ready_Receive = '1' then
 						Data_Out <= Received_Data;
-						New_Data <= '1';
+						RDY 		<= '1';
 						RTS <= '0';
 						State <= Waiting_For_Link;
 					end if;
@@ -116,10 +124,11 @@ begin
 			Frecuency_CLK => 40_000_000,
 			Frecuency_Baudrate => 921_600)
 		PORT MAP(
-			CLK => CLK,
-			RST => RST,
-			Data => Data_To_Send,
-			Send => Send,
+			CLK 	=> CLK,
+			RST 	=> RST,
+			Data 	=> Data_To_Send,
+			Send 	=> Send,
+			TD		=> TD,
 			Ready => Ready_Send
 		);
 
@@ -128,9 +137,10 @@ begin
 			Frecuency_CLK => 40_000_000,
 			Frecuency_Baudrate => 921_600)
 		PORT MAP(
-			CLK => CLK,
-			RST => RST,
-			Data => Received_Data,
+			CLK 	=> CLK,
+			Ena 	=> Receive,
+			RD		=> RD,
+			Data 	=> Received_Data,
 			Ready => Ready_Receive
 		);
 end Arq_System;
