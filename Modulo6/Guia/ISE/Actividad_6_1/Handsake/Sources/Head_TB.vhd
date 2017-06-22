@@ -48,7 +48,7 @@ ARCHITECTURE behavior OF Head_TB IS
 
    -- Clock period definitions
    constant CLKA_period : time := 1 ns;
-   constant CLKB_period : time := 1 ns;
+   constant CLKB_period : time := 2 ns;
  
 BEGIN
  
