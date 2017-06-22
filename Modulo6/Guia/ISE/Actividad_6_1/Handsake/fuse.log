@@ -1,0 +1,30 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Head_TB_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Head_TB_beh.prj" "work.Head_TB" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/ClockE.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/UART_TX.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/UART_RX.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/System.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head_TB.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 37316 KB
+Fuse CPU Usage: 3050 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture arq_clocke of entity En_ClockE [\En_ClockE(1843200,40000000,15)\]
+Compiling architecture arq_uart_tx of entity En_UART_TX [\En_UART_TX(921600,40000000)\]
+Compiling architecture arq_uart_rx of entity En_UART_RX [\En_UART_RX(921600,40000000)\]
+Compiling architecture arq_system of entity En_System [en_system_default]
+Compiling architecture arq_head of entity En_Head [en_head_default]
+Compiling architecture behavior of entity head_tb
+Time Resolution for simulation is 1ps.
+Compiled 14 VHDL Units
+Built simulation executable /home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Head_TB_isim_beh.exe
+Fuse Memory Usage: 83776 KB
+Fuse CPU Usage: 3510 ms
+GCC CPU Usage: 840 ms

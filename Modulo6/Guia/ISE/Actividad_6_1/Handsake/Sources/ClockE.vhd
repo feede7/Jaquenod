@@ -31,21 +31,20 @@ begin
 
     Number  <= LFSR(1,N_LFSR,Frecuencia_de_Entrada/Frecuency - 1,std_logic_vector(to_unsigned(0,N_LFSR)),'1');
 
-    process(CLK)
+    process(CLK,Enabled)
     begin
-        if rising_edge(CLK) then
-            if Enabled = '0' then
-					Q <= (others => '0');
-            else
-				   ClkOut    <= '0';
-					if Q = Number then
-					   ClkOut    <= '1';
-						Q <= (others => '0');
-					else
-						Q <= Q(N_LFSR-1 downto 1) & (Q(1) XNOR Q(N_LFSR));
-					end if;
-            end if;
-        end if;
-    end process;
+		if Enabled = '0' then
+			Q <= (others => '0');
+			ClkOut    <= '0';
+		elsif rising_edge(CLK) then
+			ClkOut    <= '0';
+			if Q = Number then
+				ClkOut    <= '1';
+				Q <= (others => '0');
+			else
+				Q <= Q(N_LFSR-1 downto 1) & (Q(1) XNOR Q(N_LFSR));
+			end if;
+		end if;
+	end process;
 
 end Arq_ClockE;

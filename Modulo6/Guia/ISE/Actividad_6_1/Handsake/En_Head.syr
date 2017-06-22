@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.25 secs
  
 --> 
 Reading design: En_Head.prj
@@ -139,9 +139,9 @@ Elaborating entity <En_ClockE> (architecture <Arq_ClockE>) with generics from li
 INFO:HDLCompiler:679 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/UART_TX.vhd" Line 83. Case statement is complete. others clause is never selected
 
 Elaborating entity <En_UART_RX> (architecture <Arq_UART_RX>) with generics from library <work>.
-WARNING:HDLCompiler:634 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" Line 24: Net <TDA> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" Line 25: Net <RTSA> does not have a driver.
-WARNING:HDLCompiler:634 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" Line 28: Net <DTRA> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" Line 28: Net <TDA> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" Line 29: Net <RTSA> does not have a driver.
+WARNING:HDLCompiler:634 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" Line 32: Net <DTRA> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -149,14 +149,12 @@ WARNING:HDLCompiler:634 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Ac
 
 Synthesizing Unit <En_Head>.
     Related source file is "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd".
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 62: Output port <Data_Out> of the instance <INS_SYS_A> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 62: Output port <TD> of the instance <INS_SYS_A> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 62: Output port <RTS> of the instance <INS_SYS_A> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 62: Output port <DTR> of the instance <INS_SYS_A> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 78: Output port <Data_Out> of the instance <INS_SYS_B> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 78: Output port <TD> of the instance <INS_SYS_B> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 78: Output port <RTS> of the instance <INS_SYS_B> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 78: Output port <DTR> of the instance <INS_SYS_B> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 66: Output port <TD> of the instance <INS_SYS_A> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 66: Output port <RTS> of the instance <INS_SYS_A> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 66: Output port <DTR> of the instance <INS_SYS_A> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 82: Output port <TD> of the instance <INS_SYS_B> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 82: Output port <RTS> of the instance <INS_SYS_B> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd" line 82: Output port <DTR> of the instance <INS_SYS_B> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <TDA> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <TDB> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <RTSA> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -317,24 +315,58 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <Send> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <SDataInBack> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ClkOut> (without init value) has a constant value of 0 in block <CClockUart>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Enabled> (without init value) has a constant value of 0 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Ready> (without init value) has a constant value of 1 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ClkOut> (without init value) has a constant value of 0 in block <CClockUart>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Send> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <SDataInBack> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ClkOut> (without init value) has a constant value of 0 in block <CClockUart>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <Enabled> (without init value) has a constant value of 0 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Ready> (without init value) has a constant value of 1 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Enabled> (without init value) has a constant value of 0 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ClkOut> (without init value) has a constant value of 0 in block <CClockUart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <SDataInBack> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_0> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_1> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_2> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_3> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_4> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_5> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_6> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_7> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_0> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_1> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_2> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_3> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_4> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_5> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_6> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_7> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Send> (without init value) has a constant value of 0 in block <INS_SYS_B>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ClkOut> (without init value) has a constant value of 0 in block <CClockUart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Ready> (without init value) has a constant value of 1 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Enabled> (without init value) has a constant value of 0 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ClkOut> (without init value) has a constant value of 0 in block <CClockUart>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <SDataInBack> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_0> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_1> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_2> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_3> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_4> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_5> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_6> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_7> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_0> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_1> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_2> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_3> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_4> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_5> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_6> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <Data_Out_7> (without init value) has a constant value of 0 in block <INS_SYS_A>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SDataInBack1> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SDataInBack1> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SDataInBack2> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <SDataInBack2> (without init value) has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Enabled> has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Enabled> has a constant value of 0 in block <INS_RX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <sShiftReg_0> is unconnected in block <INS_RX>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <sShiftReg_0> is unconnected in block <INS_RX>.
 WARNING:Xst:1710 - FF/Latch <vbit_0> (without init value) has a constant value of 0 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <vbit_1> (without init value) has a constant value of 0 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <vbit_2> (without init value) has a constant value of 0 in block <INS_TX>. This FF/Latch will be trimmed during the optimization process.
@@ -429,49 +461,87 @@ Optimizing unit <En_System> ...
 Optimizing unit <En_UART_TX> ...
 
 Optimizing unit <En_UART_RX> ...
-WARNING:Xst:1710 - FF/Latch <INS_SYS_A/INS_RX/snBit_0> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sState_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/Ready> (without init value) has a constant value of 1 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sState_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/sState_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/sState_FSM_FFd1> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_TX/Ready> (without init value) has a constant value of 1 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/snBit_0> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_TX/sState_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_TX/sState_FSM_FFd1> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <INS_SYS_A/Receive> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Send> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Receive> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_TX/sState_FSM_FFd1> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_TX/sState_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/snBit_0> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_TX/Ready> (without init value) has a constant value of 1 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/sState_FSM_FFd1> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/sState_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sState_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/Ready> (without init value) has a constant value of 1 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sState_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/snBit_0> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sShiftReg_0> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sShiftReg_1> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sShiftReg_2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sShiftReg_3> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sShiftReg_4> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sShiftReg_5> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sShiftReg_6> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/sShiftReg_7> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/State_FSM_FFd3> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/RDY> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sShiftReg_0> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sShiftReg_1> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sShiftReg_2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sShiftReg_3> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sShiftReg_4> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sShiftReg_7> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/RDY> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/State_FSM_FFd3> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/State_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Send> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sShiftReg_5> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Receive> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/RDY> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/State_FSM_FFd3> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/State_FSM_FFd2> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/sShiftReg_6> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/SDataInBack> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/SDataInBack> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Data_0> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Data_7> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Data_1> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Data_2> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Data_3> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Data_4> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Data_6> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Data_5> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Data_0> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Data_1> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Data_2> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Data_3> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Data_4> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Data_5> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Data_6> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Data_7> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/Enabled> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_TX/Enabled> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/SDataInBack1> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/CClockUart/ClkOut> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Data_Out_5> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Data_Out_6> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Data_Out_7> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Data_Out_0> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Data_Out_1> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Data_Out_2> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Data_Out_3> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Data_Out_4> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Data_Out_5> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Data_Out_6> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/SDataInBack1> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/Data_Out_7> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Data_Out_4> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Data_Out_3> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Data_Out_2> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Data_Out_1> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/Data_Out_0> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_TX/CClockUart/ClkOut> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/SDataInBack2> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_TX/CClockUart/ClkOut> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/SDataInBack1> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/SDataInBack2> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/SDataInBack2> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/Enabled> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/Enabled> has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/CClockUart/ClkOut> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_B/INS_RX/CClockUart/ClkOut> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <INS_SYS_A/INS_RX/CClockUart/ClkOut> (without init value) has a constant value of 0 in block <En_Head>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <INS_SYS_B/RTS> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/Data_Out_7> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/Data_Out_6> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/Data_Out_5> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/Data_Out_4> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/Data_Out_3> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/Data_Out_2> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/Data_Out_1> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/Data_Out_0> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/DTR> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/Data_To_Send_7> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/Data_To_Send_6> of sequential type is unconnected in block <En_Head>.
@@ -482,14 +552,6 @@ WARNING:Xst:2677 - Node <INS_SYS_B/Data_To_Send_2> of sequential type is unconne
 WARNING:Xst:2677 - Node <INS_SYS_B/Data_To_Send_1> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/Data_To_Send_0> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/RTS> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/Data_Out_7> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/Data_Out_6> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/Data_Out_5> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/Data_Out_4> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/Data_Out_3> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/Data_Out_2> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/Data_Out_1> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/Data_Out_0> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/DTR> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/Data_To_Send_7> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/Data_To_Send_6> of sequential type is unconnected in block <En_Head>.
@@ -501,39 +563,8 @@ WARNING:Xst:2677 - Node <INS_SYS_A/Data_To_Send_1> of sequential type is unconne
 WARNING:Xst:2677 - Node <INS_SYS_A/Data_To_Send_0> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/INS_TX/TD> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/INS_TX/TD> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/Data_7> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/Data_6> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/Data_5> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/Data_4> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/Data_3> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/Data_2> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/Data_1> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/Data_0> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/sShiftReg_7> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/sShiftReg_6> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/sShiftReg_5> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/sShiftReg_4> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/sShiftReg_3> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/sShiftReg_2> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/sShiftReg_1> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_A/INS_RX/sShiftReg_0> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/Data_7> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/Data_6> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/Data_5> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/Data_4> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/Data_3> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/Data_2> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/Data_1> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/Data_0> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/sShiftReg_7> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/sShiftReg_6> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/sShiftReg_5> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/sShiftReg_4> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/sShiftReg_3> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/sShiftReg_2> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/sShiftReg_1> of sequential type is unconnected in block <En_Head>.
-WARNING:Xst:2677 - Node <INS_SYS_B/INS_RX/sShiftReg_0> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/State_FSM_FFd1> of sequential type is unconnected in block <En_Head>.
+WARNING:Xst:2677 - Node <INS_SYS_B/State_FSM_FFd2> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/counter_6> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/counter_5> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/counter_4> of sequential type is unconnected in block <En_Head>.
@@ -542,6 +573,7 @@ WARNING:Xst:2677 - Node <INS_SYS_B/counter_2> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <INS_SYS_B/counter_1> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_B/counter_0> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/State_FSM_FFd1> of sequential type is unconnected in block <En_Head>.
+WARNING:Xst:2677 - Node <INS_SYS_A/State_FSM_FFd2> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/counter_6> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/counter_5> of sequential type is unconnected in block <En_Head>.
 WARNING:Xst:2677 - Node <INS_SYS_A/counter_4> of sequential type is unconnected in block <En_Head>.
@@ -661,8 +693,8 @@ Primitive and Black Box Usage:
 ------------------------------
 # BELS                             : 1
 #      GND                         : 1
-# IO Buffers                       : 2
-#      OBUF                        : 2
+# IO Buffers                       : 18
+#      OBUF                        : 18
 
 Device utilization summary:
 ---------------------------
@@ -680,8 +712,8 @@ Slice Logic Distribution:
    Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                           8
- Number of bonded IOBs:                   2  out of    210     0%  
+ Number of IOs:                          40
+ Number of bonded IOBs:                  18  out of    210     8%  
 
 Specific Feature Utilization:
 
@@ -731,14 +763,14 @@ Cross Clock Domains Report:
 
 
 Total REAL time to Xst completion: 53.00 secs
-Total CPU time to Xst completion: 50.59 secs
+Total CPU time to Xst completion: 50.84 secs
  
 --> 
 
 
-Total memory usage is 201836 kilobytes
+Total memory usage is 201948 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  233 (   0 filtered)
-Number of infos    :   12 (   0 filtered)
+Number of warnings :  267 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 

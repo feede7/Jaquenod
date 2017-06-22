@@ -50,31 +50,29 @@ begin
 			RTS <= '0';
 			DTR <= '0';
 			RDY <= '0';
+			Data_Out <= (others=>'0');
+			State <= Waiting_For_Link;
 		elsif rising_edge(CLK) then
 			DTR 		<= '1';
 			RDY 		<= '0';
-			Receive 	<= '0';
 			Send	 	<= '0';
 			
 			case State is
 				when Waiting_For_Link =>
+					Receive 	<= '0';
 					if DSR = '1' then
-						RDY <= '1';
 						counter <= to_unsigned(1,counter'length);
 						State <= Idle_Mode;
 					else
-						RDY <= '0';
 						RTS <= '0';
 					end if;
 				
 				when Idle_Mode =>
 					if SND = '1' and CTS = '0' then
 						RTS <= '1';
-						RDY <= '0';
 						Data_To_Send <= Data_In;
 						State <= Check_Link;
 					elsif CTS = '1' then
-						RDY <= '0';
 						RTS <= '1';
 						Receive <= '1';
 						State <= Waiting_Receive;
@@ -84,6 +82,7 @@ begin
 					if CTS = '1' then
 						Send 	<= '1';
 						State <= Waiting_Send;
+						counter <= to_unsigned(1,counter'length);
 					else
 						if counter > to_unsigned(TIMEOUT,counter'length) then
 							State <= Waiting_For_Link;
@@ -93,23 +92,24 @@ begin
 					end if;
 				
 				when Waiting_Send =>
-					if Ready_Send = '1' then
+					if Ready_Send = '1' and Send = '0' then
 						RDY 		<= '1';
+						RTS <= '0';
 						State <= Waiting_Confirmation;
 					end if;
 				
 				when Waiting_Confirmation =>
 					if CTS = '0' then
-						RTS <= '0';
 						State <= Waiting_For_Link;
+						RTS <= '0';
 					end if;
 
 				when Waiting_Receive =>
 					if Ready_Receive = '1' then
 						Data_Out <= Received_Data;
+						Receive 	<= '0';
 						RDY 		<= '1';
-						RTS <= '0';
-						State <= Waiting_For_Link;
+						State <= Waiting_Confirmation;
 					end if;
 
 				when others =>

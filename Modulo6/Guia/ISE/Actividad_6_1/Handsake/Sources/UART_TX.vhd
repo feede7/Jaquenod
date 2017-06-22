@@ -32,59 +32,59 @@ begin
 pSerOut:
     process(RST, Clk)
     begin
-    if rising_edge (Clk) then
-        if RST = '1' then
-            sState <= IDLE;
-            Enabled <= '0';
-        else
-            case sState is
-            when IDLE =>
-            	TD <= '1';
-                Ready <= '1';
-                Enabled <= '0';
-                if Send = '1' then
-                    Ready <= '0';
-                    Enabled <= '1';
-                    vbit    <= to_unsigned(0,vbit'length);
-                    sState  <= Bits1;
-                end if;
-                								
-            when Bits1 =>
-            	case vbit is
-                    when "0000" => TD <= '0';
-                    when "0001" => TD <= Data (0);
-                    when "0010" => TD <= Data (1);
-                    when "0011" => TD <= Data (2);
-                    when "0100" => TD <= Data (3);
-                    when "0101" => TD <= Data (4);
-                    when "0110" => TD <= Data (5);
-                    when "0111" => TD <= Data (6);
-                    when "1000" => TD <= Data (7);
-                    when "1001" => TD <= '1';
-                    when OTHERS => TD <= '1';
-                end case;
-                sState <= Bits2;
-                
-            when Bits2 =>
-            	if sUartClock = '1' then
-                   vbit <= vbit + to_unsigned(1,vbit'length);
-                   sState <= Bits3;
-                end if;
-                            
-            when Bits3 =>
-            	if sUartClock = '1' then 
-                    if vbit < to_unsigned(10,vbit'length) then
-                        sState <= Bits1;
-                    else
-                        sState <= IDLE;
-                    end if;
-                end if;
-                
-            when others =>
-            	sState <= IDLE;
-            	
-            end case;				
-        end if;
-    end if;
-    end process;	
+	 if RST = '1' then
+		sState <= IDLE;
+		Enabled <= '0';
+		TD <= '1';		
+		Ready <= '0';
+    elsif rising_edge (Clk) then
+		case sState is
+			when IDLE =>
+				TD <= '1';
+				 Ready <= '1';
+				 Enabled <= '0';
+				 if Send = '1' then
+					  Ready <= '0';
+					  Enabled <= '1';
+					  vbit    <= to_unsigned(0,vbit'length);
+					  sState  <= Bits1;
+				 end if;
+												
+			when Bits1 =>
+				case vbit is
+					  when "0000" => TD <= '0';
+					  when "0001" => TD <= Data (0);
+					  when "0010" => TD <= Data (1);
+					  when "0011" => TD <= Data (2);
+					  when "0100" => TD <= Data (3);
+					  when "0101" => TD <= Data (4);
+					  when "0110" => TD <= Data (5);
+					  when "0111" => TD <= Data (6);
+					  when "1000" => TD <= Data (7);
+					  when "1001" => TD <= '1';
+					  when OTHERS => TD <= '1';
+				 end case;
+				 sState <= Bits2;
+				 
+			when Bits2 =>
+				if sUartClock = '1' then
+					 vbit <= vbit + to_unsigned(1,vbit'length);
+					 sState <= Bits3;
+				 end if;
+								 
+			when Bits3 =>
+				if sUartClock = '1' then 
+					  if vbit < to_unsigned(10,vbit'length) then
+							sState <= Bits1;
+					  else
+							sState <= IDLE;
+					  end if;
+				 end if;
+				 
+			when others =>
+				sState <= IDLE;
+				
+			end case;				
+		end if;
+	end process;	
 end Arq_UART_TX;

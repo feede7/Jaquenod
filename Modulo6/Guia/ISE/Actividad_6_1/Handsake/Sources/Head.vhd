@@ -7,14 +7,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity En_Head is
-    Port ( CLKA : in  STD_LOGIC;
-           CLKB : in  STD_LOGIC;
-           RSTA : in  STD_LOGIC;
-           RSTB : in  STD_LOGIC;
-           SNDA : in  STD_LOGIC;
-           SNDB : in  STD_LOGIC;
+    Port ( CLKA : in   STD_LOGIC;
+           CLKB : in   STD_LOGIC;
+           RSTA : in   STD_LOGIC;
+           RSTB : in   STD_LOGIC;
+           SNDA : in   STD_LOGIC;
+           SNDB : in   STD_LOGIC;
            RDYA : out  STD_LOGIC;
-           RDYB : out  STD_LOGIC
+           RDYB : out  STD_LOGIC;
+			  D2SNDA: in  STD_LOGIC_VECTOR(7 downto 0);
+			  D2SNDB: in  STD_LOGIC_VECTOR(7 downto 0);
+			  DRCVDA: out STD_LOGIC_VECTOR(7 downto 0);
+			  DRCVDB: out STD_LOGIC_VECTOR(7 downto 0)
 			  );
 end En_Head;
 
@@ -64,15 +68,15 @@ begin
 		CLK => CLKA,
 		RST => RSTA,
 		SND => SNDA,
-		Data_In => (others => '0'),
+		Data_In => D2SNDA,
 		RDY => RDYA,
-		Data_Out => open,
-		TD  => RDB, -- Pin de transmisión
-		RD  => TDB, -- Pin de recepción
-		RTS => CTSB, -- Request To Send. Avisa que está listo para recibir
-		CTS => RTSB, -- Clear To Send. Si está en alto es porque está habilitado para enviar
-		DTR => DSRB, -- Data Terminal Ready. En estado alto significa que es estableció el link de sistemas
-		DSR => DTRB -- Data Set Ready
+		Data_Out => DRCVDA,
+		TD  => TDA, -- Pin de transmisión
+		RD  => RDA, -- Pin de recepción
+		RTS => RTSA, -- Request To Send. Avisa que está listo para recibir
+		CTS => CTSA, -- Clear To Send. Si está en alto es porque está habilitado para enviar
+		DTR => DTRA, -- Data Terminal Ready. En estado alto significa que es estableció el link de sistemas
+		DSR => DSRA -- Data Set Ready
 	);
 
 	INS_SYS_B: entity work.En_System(Arq_System)
@@ -80,15 +84,21 @@ begin
 		CLK => CLKB,
 		RST => RSTB,
 		SND => SNDB,
-		Data_In => (others => '0'),
+		Data_In => D2SNDB,
 		RDY => RDYB,
-		Data_Out => open,
-		TD  => RDA, -- Pin de transmisión
-		RD  => TDA, -- Pin de recepción
-		RTS => CTSA, -- Request To Send. Avisa que está listo para recibir
-		CTS => RTSA, -- Clear To Send. Si está en alto es porque está habilitado para enviar
-		DTR => DSRA, -- Data Terminal Ready. En estado alto significa que es estableció el link de sistemas
-		DSR => DTRA -- Data Set Ready
+		Data_Out => DRCVDB,
+		TD  => TDB, -- Pin de transmisión
+		RD  => RDB, -- Pin de recepción
+		RTS => RTSB, -- Request To Send. Avisa que está listo para recibir
+		CTS => CTSB, -- Clear To Send. Si está en alto es porque está habilitado para enviar
+		DTR => DTRB, -- Data Terminal Ready. En estado alto significa que es estableció el link de sistemas
+		DSR => DSRB -- Data Set Ready
 	);
 
+	RDB <= TDA;
+	RDA <= TDB;
+	CTSB <= RTSA;
+	CTSA <= RTSB;
+	DSRB <= DTRA;
+	DSRA <= DTRB;
 end Arq_Head;

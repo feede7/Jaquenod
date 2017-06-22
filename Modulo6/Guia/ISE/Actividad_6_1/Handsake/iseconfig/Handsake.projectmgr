@@ -10,13 +10,13 @@
          <ClosedNode>/En_Head - Arq_Head |home|fede|Documents|Jaquenod|GIT|Modulo6|Guia|ISE|Actividad_6_1|Handsake|Sources|Head.vhd/INS_SYS_B - En_System - Arq_System</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>En_Head - Arq_Head (/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd)</SelectedItem>
+         <SelectedItem>INS_SYS_A - En_System - Arq_System (/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/System.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001bc000000020000000000000000000000000200000064ffffffff000000810000000300000002000001bc0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>En_Head - Arq_Head (/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head.vhd)</CurrentItem>
+      <CurrentItem>INS_SYS_A - En_System - Arq_System (/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/System.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -24,13 +24,13 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000000ef0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -64,14 +64,58 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Synthesize - XST</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000df000000010000000100000000000000000000000064ffffffff000000810000000000000001000000df0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000000ef0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Synthesize - XST</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff0000000000000002000001490000012001000000060100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <CurrentView>Behavioral Simulation</CurrentView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Head_TB - behavior |home|fede|Documents|Jaquenod|GIT|Modulo6|Guia|ISE|Actividad_6_1|Handsake|Sources|Head_TB.vhd</ClosedNode>
+         <ClosedNode>/Head_TB - behavior |home|fede|Documents|Jaquenod|GIT|Modulo6|Guia|ISE|Actividad_6_1|Handsake|Sources|Head_TB.vhd/uut - En_Head - Arq_Head/INS_SYS_A - En_System - Arq_System/INS_RX - En_UART_RX - Arq_UART_RX</ClosedNode>
+         <ClosedNode>/Head_TB - behavior |home|fede|Documents|Jaquenod|GIT|Modulo6|Guia|ISE|Actividad_6_1|Handsake|Sources|Head_TB.vhd/uut - En_Head - Arq_Head/INS_SYS_A - En_System - Arq_System/INS_TX - En_UART_TX - Arq_UART_TX</ClosedNode>
+         <ClosedNode>/Head_TB - behavior |home|fede|Documents|Jaquenod|GIT|Modulo6|Guia|ISE|Actividad_6_1|Handsake|Sources|Head_TB.vhd/uut - En_Head - Arq_Head/INS_SYS_B - En_System - Arq_System/INS_TX - En_UART_TX - Arq_UART_TX</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Head_TB - behavior (/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head_TB.vhd)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000123000000020000000000000000000000000200000064ffffffff000000810000000300000002000001230000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>Head_TB - behavior (/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_1/Handsake/Sources/Head_TB.vhd)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000000ef0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000000ef0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
 </Project>
