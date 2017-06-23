@@ -1,0 +1,129 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml En_Head.twx En_Head.ncd -o En_Head.twr En_Head.pcf
+
+Design file:              En_Head.ncd
+Physical constraint file: En_Head.pcf
+Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock CLKA
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+D2SNDA<0>   |   -0.510(R)|      FAST  |    2.454(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+D2SNDA<1>   |   -0.366(R)|      FAST  |    2.208(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+D2SNDA<2>   |   -0.332(R)|      FAST  |    2.194(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+D2SNDA<3>   |   -0.386(R)|      FAST  |    2.279(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+D2SNDA<4>   |   -0.378(R)|      FAST  |    2.249(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+D2SNDA<5>   |   -0.331(R)|      FAST  |    2.148(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+D2SNDA<6>   |   -0.319(R)|      FAST  |    2.153(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+D2SNDA<7>   |   -0.294(R)|      FAST  |    2.141(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+RSTA        |    0.822(R)|      FAST  |    1.766(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+SNDA        |    0.355(R)|      FAST  |    1.802(R)|      SLOW  |CLKA_BUFGP        |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Setup/Hold to clock CLKB
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+D2SNDB<0>   |   -0.323(R)|      FAST  |    2.184(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+D2SNDB<1>   |   -0.287(R)|      FAST  |    2.203(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+D2SNDB<2>   |   -0.295(R)|      FAST  |    2.205(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+D2SNDB<3>   |   -0.381(R)|      FAST  |    2.317(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+D2SNDB<4>   |   -0.238(R)|      FAST  |    2.041(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+D2SNDB<5>   |   -0.322(R)|      FAST  |    2.191(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+D2SNDB<6>   |   -0.396(R)|      FAST  |    2.288(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+D2SNDB<7>   |   -0.388(R)|      FAST  |    2.338(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+RSTB        |    1.243(R)|      FAST  |    1.636(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+SNDB        |    0.577(R)|      FAST  |    1.571(R)|      SLOW  |CLKB_BUFGP        |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock CLKA to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+DRCVDA<0>   |         7.838(R)|      SLOW  |         3.312(R)|      FAST  |CLKA_BUFGP        |   0.000|
+DRCVDA<1>   |         7.933(R)|      SLOW  |         3.349(R)|      FAST  |CLKA_BUFGP        |   0.000|
+DRCVDA<2>   |         8.057(R)|      SLOW  |         3.425(R)|      FAST  |CLKA_BUFGP        |   0.000|
+DRCVDA<3>   |         7.791(R)|      SLOW  |         3.279(R)|      FAST  |CLKA_BUFGP        |   0.000|
+DRCVDA<4>   |         7.839(R)|      SLOW  |         3.299(R)|      FAST  |CLKA_BUFGP        |   0.000|
+DRCVDA<5>   |         7.849(R)|      SLOW  |         3.301(R)|      FAST  |CLKA_BUFGP        |   0.000|
+DRCVDA<6>   |         8.158(R)|      SLOW  |         3.483(R)|      FAST  |CLKA_BUFGP        |   0.000|
+DRCVDA<7>   |         8.199(R)|      SLOW  |         3.544(R)|      FAST  |CLKA_BUFGP        |   0.000|
+RDYA        |         8.049(R)|      SLOW  |         3.416(R)|      FAST  |CLKA_BUFGP        |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock CLKB to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+DRCVDB<0>   |         8.110(R)|      SLOW  |         3.434(R)|      FAST  |CLKB_BUFGP        |   0.000|
+DRCVDB<1>   |         7.856(R)|      SLOW  |         3.303(R)|      FAST  |CLKB_BUFGP        |   0.000|
+DRCVDB<2>   |         8.018(R)|      SLOW  |         3.402(R)|      FAST  |CLKB_BUFGP        |   0.000|
+DRCVDB<3>   |         8.002(R)|      SLOW  |         3.372(R)|      FAST  |CLKB_BUFGP        |   0.000|
+DRCVDB<4>   |         7.993(R)|      SLOW  |         3.362(R)|      FAST  |CLKB_BUFGP        |   0.000|
+DRCVDB<5>   |         8.111(R)|      SLOW  |         3.439(R)|      FAST  |CLKB_BUFGP        |   0.000|
+DRCVDB<6>   |         7.835(R)|      SLOW  |         3.272(R)|      FAST  |CLKB_BUFGP        |   0.000|
+DRCVDB<7>   |         7.742(R)|      SLOW  |         3.240(R)|      FAST  |CLKB_BUFGP        |   0.000|
+RDYB        |         8.116(R)|      SLOW  |         3.439(R)|      FAST  |CLKB_BUFGP        |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLKA
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLKA           |    2.038|         |         |         |
+CLKB           |    3.195|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock CLKB
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLKA           |    3.213|         |         |         |
+CLKB           |    1.918|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Thu Jun 22 23:16:11 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 768 MB
+
+
+
