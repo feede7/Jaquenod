@@ -1,19 +1,19 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/TB_System_isim_beh.exe -prj /home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/TB_System_beh.prj work.TB_System 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/TB_System_isim_beh.exe -prj /home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/TB_System_beh.prj work.TB_System 
 ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/MC4044.vhd" into library work
-Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Div_Bresenham.vhd" into library work
-Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Recupera_CLK.vhd" into library work
-Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Deco_Stuffing.vhd" into library work
-Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/../Codificador/Sources/Cod_Stuffing.vhd" into library work
-Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/Sources/System.vhd" into library work
-Parsing VHDL file "/home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/Sources/TB_System.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/MC4044.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Div_Bresenham.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Recupera_CLK.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/../Decodificador/Sources/Deco_Stuffing.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/../Codificador/Sources/Cod_Stuffing.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/Sources/System.vhd" into library work
+Parsing VHDL file "/home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/Sources/TB_System.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 112796 KB
-Fuse CPU Usage: 990 ms
+Fuse Memory Usage: 45604 KB
+Fuse CPU Usage: 3460 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -26,9 +26,9 @@ Compiling architecture arq_deco_stuffing of entity En_Deco_Stuffing [en_deco_stu
 Compiling architecture arq_system of entity En_System [en_system_default]
 Compiling architecture behavior of entity tb_system
 Time Resolution for simulation is 1ps.
-Waiting for 3 sub-compilation(s) to finish...
+Waiting for 7 sub-compilation(s) to finish...
 Compiled 17 VHDL Units
-Built simulation executable /home/fede/GIT/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_2/System/TB_System_isim_beh.exe
-Fuse Memory Usage: 685360 KB
-Fuse CPU Usage: 1070 ms
-GCC CPU Usage: 1520 ms
+Built simulation executable /home/fede/Documents/Jaquenod/GIT/Modulo4/Guia4/ISE/Actividad 4_2/System/TB_System_isim_beh.exe
+Fuse Memory Usage: 93248 KB
+Fuse CPU Usage: 4120 ms
+GCC CPU Usage: 14600 ms

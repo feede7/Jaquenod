@@ -48,7 +48,7 @@ ARCHITECTURE behavior OF Head_TB IS
 
    -- Clock period definitions
    constant CLKA_period : time := 1 ns;
-   constant CLKB_period : time := 2 ns;
+   constant CLKB_period : time := 1 ns;
  
 BEGIN
  
@@ -96,15 +96,19 @@ BEGIN
 		RSTA <= '0';
 		RSTB <= '0';
 		wait for CLKA_period;
-		D2SNDB 	<= x"CC";
+		D2SNDA 	<= x"55";
+		D2SNDB 	<= x"AA";
+		SNDA		<= '1';
+--		SNDB		<= '1';
+		wait for CLKA_period*10;
+		SNDA		<= '0';	
+--		SNDB		<= '0';	
+		wait for 500 ns;
+--		SNDA		<= '1';
 		SNDB		<= '1';
 		wait for CLKA_period*10;
-		SNDB		<= '0';	
-		wait for 500 ns;
-		D2SNDA 	<= x"AA";
-		SNDA		<= '1';
-		wait for CLKA_period*10;
-		SNDA		<= '0';
+--		SNDA		<= '0';
+		SNDB		<= '0';
 	
       
 		-- insert stimulus here 

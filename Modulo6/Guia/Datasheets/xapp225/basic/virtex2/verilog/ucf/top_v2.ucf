@@ -1,0 +1,25 @@
+net clkin period = 210 MHz ;
+
+net clk tnm = clk ;
+net clk90 tnm = clk90 ;
+
+net master/datain* maxskew = 500 pS ;
+net master/datain* maxdelay = 1000 pS ;
+net slave?/datain* maxskew = 500 pS ;
+net slave?/datain* maxdelay = 1000 pS ;
+
+timespec ts_02 = from ffs(*bz(0):*cz(0):*cz(1):*dz(0):*dz(1):*dz(2)) to ffs = 420 MHz;
+
+inst "master" rloc_origin = "X0Y0" ;
+inst "slave1" rloc_origin = "X0Y2" ;
+inst "slave2" rloc_origin = "X0Y4" ;
+inst "slave3" rloc_origin = "X0Y6" ;
+
+#net "datainx(0)" loc = P1 ;
+#net "datainx(1)" loc = N1 ;
+#net "datainx(2)" loc = M4 ;
+#net "datainx(3)" loc = M3 ;
+#net "datainx(4)" loc = M2 ;
+#net "datainx(5)" loc = M1 ;
+#net "datainx(6)" loc = L4 ;
+#net "datainx(7)" loc = L3 ;

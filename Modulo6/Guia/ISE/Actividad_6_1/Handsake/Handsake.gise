@@ -59,6 +59,7 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="En_System_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Head_TB_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Head_TB_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Head_TB_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Head_TB_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
@@ -85,6 +86,10 @@
     <transform xil_pn:end_ts="1498130080" xil_pn:in_ck="7430149211510411629" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1498130080">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Sources/ClockE.vhd"/>
       <outfile xil_pn:name="Sources/Head.vhd"/>
       <outfile xil_pn:name="Sources/Head_TB.vhd"/>
@@ -107,6 +112,11 @@
     <transform xil_pn:end_ts="1498130080" xil_pn:in_ck="7430149211510411629" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1498130080">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Sources/ClockE.vhd"/>
       <outfile xil_pn:name="Sources/Head.vhd"/>
       <outfile xil_pn:name="Sources/Head_TB.vhd"/>
@@ -117,7 +127,11 @@
     <transform xil_pn:end_ts="1498130089" xil_pn:in_ck="7430149211510411629" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7682522388772611988" xil_pn:start_ts="1498130080">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Head_TB_beh.prj"/>
       <outfile xil_pn:name="Head_TB_isim_beh.exe"/>
@@ -126,9 +140,16 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1498185072" xil_pn:in_ck="-4987987904983470884" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7039394288772817897" xil_pn:start_ts="1498185071">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1498476246" xil_pn:in_ck="-4987987904983470884" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5224844305800679112" xil_pn:start_ts="1498476245">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Head_TB_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1498001354" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1498001353">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -162,7 +183,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="En_Head.lso"/>
       <outfile xil_pn:name="En_Head.ngc"/>

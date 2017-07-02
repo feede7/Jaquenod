@@ -121,7 +121,7 @@ begin
 
 	INS_TX: entity work.En_UART_Tx(Arq_UART_Tx)
 		GENERIC MAP( 	
-			Frecuency_CLK => 80_000_000,
+			Frecuency_CLK => 40_000_000,
 			Frecuency_Baudrate => 921_600)
 		PORT MAP(
 			CLK 	=> CLK,
@@ -134,7 +134,7 @@ begin
 
 	INS_RX: entity work.En_UART_Rx(Arq_UART_Rx)
 		GENERIC MAP( 	
-			Frecuency_CLK => 80_000_000,
+			Frecuency_CLK => 40_000_000,
 			Frecuency_Baudrate => 921_600)
 		PORT MAP(
 			CLK 	=> CLK,
