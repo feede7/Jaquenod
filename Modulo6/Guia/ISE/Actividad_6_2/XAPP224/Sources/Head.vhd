@@ -141,12 +141,16 @@ begin
 	BBN <= (not BZ(2)) and (BZ(2) XOR BZ(3));
 	CCN <= (not CZ(2)) and (CZ(2) XOR CZ(3));
 	DDN <= (not DZ(2)) and (DZ(2) XOR DZ(3));
-			
+
 	-- Detección de flancos
 	process(CLK0,RST)
 	begin
 		if RST = '1' then
 			CTRL <= "10";
+			USEA <= '0';
+			USEB <= '0';
+			USEC <= '0';
+			USED <= '0';
 		elsif rising_edge(CLK0) then
 			USEA <= '0';
 			USEB <= '0';
@@ -179,59 +183,61 @@ begin
 		end if;
 	end process;
 
-	-- Implementación basada en XAPP225
-   SRL16_A : SRL16
-   generic map (
-      INIT => X"0000")
-   port map (
-      Q => AA0,       -- SRL data output
-      A0 => CTRL(0),     -- Select[0] input
-      A1 => CTRL(1),     -- Select[1] input
-      A2 => '0',     -- Select[2] input
-      A3 => '0',     -- Select[3] input
-      CLK => CLK0,   -- Clock input
-      D => AZ(2)        -- SRL data input
-   );
+--	-- Implementación basada en XAPP225
+--   SRL16_A : SRL16
+--   generic map (
+--      INIT => X"0000")
+--   port map (
+--      Q => AA0,       -- SRL data output
+--      A0 => CTRL(0),     -- Select[0] input
+--      A1 => CTRL(1),     -- Select[1] input
+--      A2 => '0',     -- Select[2] input
+--      A3 => '0',     -- Select[3] input
+--      CLK => CLK0,   -- Clock input
+--      D => AZ(2)        -- SRL data input
+--   );
+--	
+--   SRL16_B : SRL16
+--   generic map (
+--      INIT => X"0000")
+--   port map (
+--      Q => BB0,       -- SRL data output
+--      A0 => CTRL(0),     -- Select[0] input
+--      A1 => CTRL(1),     -- Select[1] input
+--      A2 => '0',     -- Select[2] input
+--      A3 => '0',     -- Select[3] input
+--      CLK => CLK0,   -- Clock input
+--      D => BZ(2)        -- SRL data input
+--   );
+--	
+--   SRL16_C : SRL16
+--   generic map (
+--      INIT => X"0000")
+--   port map (
+--      Q => CC0,       -- SRL data output
+--      A0 => CTRL(0),     -- Select[0] input
+--      A1 => CTRL(1),     -- Select[1] input
+--      A2 => '0',     -- Select[2] input
+--      A3 => '0',     -- Select[3] input
+--      CLK => CLK0,   -- Clock input
+--      D => CZ(2)        -- SRL data input
+--   );
+--	
+--   SRL16_D : SRL16
+--   generic map (
+--      INIT => X"0000")
+--   port map (
+--      Q 	=> DD0,		-- SRL data output
+--      A0 => CTRL(0),	-- Select[0] input
+--      A1 => CTRL(1),	-- Select[1] input
+--      A2 => '0',     -- Select[2] input
+--      A3 => '0',     -- Select[3] input
+--      CLK => CLK0,   	-- Clock input
+--      D => DZ(2)		-- SRL data input
+--   );
 	
-   SRL16_B : SRL16
-   generic map (
-      INIT => X"0000")
-   port map (
-      Q => BB0,       -- SRL data output
-      A0 => CTRL(0),     -- Select[0] input
-      A1 => CTRL(1),     -- Select[1] input
-      A2 => '0',     -- Select[2] input
-      A3 => '0',     -- Select[3] input
-      CLK => CLK0,   -- Clock input
-      D => BZ(2)        -- SRL data input
-   );
-	
-   SRL16_C : SRL16
-   generic map (
-      INIT => X"0000")
-   port map (
-      Q => CC0,       -- SRL data output
-      A0 => CTRL(0),     -- Select[0] input
-      A1 => CTRL(1),     -- Select[1] input
-      A2 => '0',     -- Select[2] input
-      A3 => '0',     -- Select[3] input
-      CLK => CLK0,   -- Clock input
-      D => CZ(2)        -- SRL data input
-   );
-	
-   SRL16_D : SRL16
-   generic map (
-      INIT => X"0000")
-   port map (
-      Q 	=> DD0,		-- SRL data output
-      A0 => CTRL(0),	-- Select[0] input
-      A1 => CTRL(1),	-- Select[1] input
-      A2 => '0',     -- Select[2] input
-      A3 => '0',     -- Select[3] input
-      CLK => CLK0,   	-- Clock input
-      D => DZ(2)		-- SRL data input
-   );
-	
+--	Data_Out <= CZ(3) when (USEA or USEB or USEC or USED) = '1' else '0' when RST = '1';
+
 	-- Acción según dominio detectado
 	process(CLK0,RST)
 	begin
@@ -239,7 +245,9 @@ begin
 			Data_Out <= '0';
 		elsif rising_edge(CLK0) then		
 			if (USEA or USEB or USEC or USED) = '1' then
-				Data_Out <= (USEA and AA0) or (USEB and BB0) or (USEC and CC0) or (USED and DD0);
+--				Data_Out <= (USEA and AA0) or (USEB and BB0) or (USEC and CC0) or (USED and DD0);
+				Data_Out <= (USEA and AZ(3)) or (USEB and BZ(3)) or (USEC and CZ(3)) or (USED and DZ(3));
+--				Data_Out <= AZ(1);--(USEA and AA0) or (USEB and BB0) or (USEC and CC0) or (USED and DD0);
 			end if;
 		end if;
 	end process;

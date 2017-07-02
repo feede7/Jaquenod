@@ -50,7 +50,8 @@ ARCHITECTURE behavior OF Head_TB IS
     
 
    --Inputs
-   signal CLK : std_logic := '0';
+   signal CLKA : std_logic := '0';
+   signal CLKB : std_logic := '0';
    signal Data_In : std_logic := '0';
 
  	--Outputs
@@ -65,45 +66,60 @@ ARCHITECTURE behavior OF Head_TB IS
 	signal Data_Rec	: STD_LOGIC_VECTOR(Send'high downto 0) := (others => '0');
 	signal Found		: STD_LOGIC;
 	signal Reset		: STD_LOGIC;
+	signal Reset_bis	: STD_LOGIC;
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: En_Head PORT MAP (
-          CLK => CLK,
+          CLK => CLKA,
           Data_In => Data_In,
           Data_Out => Data_Out,
           Rdy => Rdy
         );
 
    -- Clock process definitions
-   CLK_process :process
+   CLKA_process :process
    begin
-		CLK <= '0';
+		CLKA <= '1';
+		wait for CLK_period/4;
+		CLKA <= '0';
+		wait for CLK_period/4;
+		CLKA <= '0';
+		wait for CLK_period/4;
+		CLKA <= '1';
+		wait for CLK_period/4;
+   end process;
+
+   -- Clock process definitions
+   CLKB_process :process
+   begin
+		CLKB <= '1';
 		wait for CLK_period/2;
-		CLK <= '1';
+		CLKB <= '0';
 		wait for CLK_period/2;
    end process;
  
    Data_In <= DataToSend(DataToSend'high);
 
- 	process(CLK,Reset)
+ 	process(CLKB,Reset_bis)
  	begin
- 		if Reset = '1' then
+ 		if Reset_bis = '1' then
  			DataToSend <= Send;
- 		elsif rising_edge(CLK) then
+ 		elsif rising_edge(CLKB) then
 			DataToSend 	<= DataToSend(DataToSend'high-1 downto 0) & '0';
  		end if;
  	end process;
 
-	process(CLK)
+	process(CLKA)
 	begin
-		if rising_edge(CLK) then
+		if rising_edge(CLKA) then
 			Data_Rec <= Data_Rec(DataToSend'high-1 downto 0) & Data_Out;
 		end if;
 	end process;
 
 	Found <= '1' when  Data_Rec = Send else '0';
 
-	Reset <= '1', '0' after 12500 ps;
+	Reset <= '1', '0' after 10000 ps;
+	Reset_bis <= '1', '0' after 400 ns;
 
 END;
