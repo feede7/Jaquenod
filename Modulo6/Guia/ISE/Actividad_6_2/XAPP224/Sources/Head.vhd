@@ -142,46 +142,51 @@ begin
 	CCN <= (not CZ(2)) and (CZ(2) XOR CZ(3));
 	DDN <= (not DZ(2)) and (DZ(2) XOR DZ(3));
 
-	-- Detección de flancos
-	process(CLK0,RST)
-	begin
-		if RST = '1' then
-			CTRL <= "10";
-			USEA <= '0';
-			USEB <= '0';
-			USEC <= '0';
-			USED <= '0';
-		elsif rising_edge(CLK0) then
-			USEA <= '0';
-			USEB <= '0';
-			USEC <= '0';
-			USED <= '0';
-			
-			if (AAP and BBP and CCP and DDP) = '1' or (AAN and BBN and CCN and DDN) = '1' then
-				USEC <= '1';
-			elsif (AAP and (not BBP) and (not CCP) and (not DDP)) = '1' or (AAN and (not BBN) and (not CCN) and (not DDN)) = '1' then
-				USED <= '1';
-				if USEA = '1' then
-					if CTRL = "01" then
-						CTRL <= "10";
-					else
-						CTRL <= "11";
-					end if;
-				end if;
-			elsif (AAP and BBP and (not CCP) and (not DDP)) = '1' or (AAN and BBN and (not CCN) and (not DDN)) = '1' then
-				USEA <= '1';
-				if USED = '1' then
-					if CTRL = "11" then
-						CTRL <= "10";
-					else
-						CTRL <= "01";
-					end if;
-				end if;
-			elsif (AAP and BBP and CCP and (not DDP)) = '1' or (AAN and BBN and CCN and (not DDN)) = '1' then
-				USEB <= '1';
-			end if;
-		end if;
-	end process;
+	USEC <= '1' when (AAP and BBP and CCP and DDP) = '1' or (AAN and BBN and CCN and DDN) = '1' else '0';
+	USED <= '1' when (AAP and (not BBP) and (not CCP) and (not DDP)) = '1' or (AAN and (not BBN) and (not CCN) and (not DDN)) = '1' else '0';
+	USEA <= '1' when (AAP and BBP and (not CCP) and (not DDP)) = '1' or (AAN and BBN and (not CCN) and (not DDN)) = '1' else '0';
+	USEB <= '1' when (AAP and BBP and CCP and (not DDP)) = '1' or (AAN and BBN and CCN and (not DDN)) = '1' else '0';
+
+--	-- Detección de flancos
+--	process(CLK0,RST)
+--	begin
+--		if RST = '1' then
+--			CTRL <= "10";
+--			USEA <= '0';
+--			USEB <= '0';
+--			USEC <= '0';
+--			USED <= '0';
+--		elsif rising_edge(CLK0) then
+--			USEA <= '0';
+--			USEB <= '0';
+--			USEC <= '0';
+--			USED <= '0';
+--			
+--			if (AAP and BBP and CCP and DDP) = '1' or (AAN and BBN and CCN and DDN) = '1' then
+--				USEC <= '1';
+--			elsif (AAP and (not BBP) and (not CCP) and (not DDP)) = '1' or (AAN and (not BBN) and (not CCN) and (not DDN)) = '1' then
+--				USED <= '1';
+--				if USEA = '1' then
+--					if CTRL = "01" then
+--						CTRL <= "10";
+--					else
+--						CTRL <= "11";
+--					end if;
+--				end if;
+--			elsif (AAP and BBP and (not CCP) and (not DDP)) = '1' or (AAN and BBN and (not CCN) and (not DDN)) = '1' then
+--				USEA <= '1';
+--				if USED = '1' then
+--					if CTRL = "11" then
+--						CTRL <= "10";
+--					else
+--						CTRL <= "01";
+--					end if;
+--				end if;
+--			elsif (AAP and BBP and CCP and (not DDP)) = '1' or (AAN and BBN and CCN and (not DDN)) = '1' then
+--				USEB <= '1';
+--			end if;
+--		end if;
+--	end process;
 
 --	-- Implementación basada en XAPP225
 --   SRL16_A : SRL16
@@ -246,7 +251,8 @@ begin
 		elsif rising_edge(CLK0) then		
 			if (USEA or USEB or USEC or USED) = '1' then
 --				Data_Out <= (USEA and AA0) or (USEB and BB0) or (USEC and CC0) or (USED and DD0);
-				Data_Out <= (USEA and AZ(3)) or (USEB and BZ(3)) or (USEC and CZ(3)) or (USED and DZ(3));
+				Data_Out <= (USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
+--				Data_Out <= (USEA and AZ(3)) or (USEB and BZ(3)) or (USEC and CZ(3)) or (USED and DZ(3));
 --				Data_Out <= AZ(1);--(USEA and AA0) or (USEB and BB0) or (USEC and CC0) or (USED and DD0);
 			end if;
 		end if;

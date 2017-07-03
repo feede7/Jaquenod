@@ -59,7 +59,8 @@ ARCHITECTURE behavior OF Head_TB IS
    signal Rdy : std_logic;
 
    -- Clock period definitions
-   constant CLK_period : time := 25000 ps;
+   constant CLKA_period : time := 25000 ps;
+   constant CLKB_period : time := 26000 ps;
  
  	constant Send: STD_LOGIC_VECTOR(59 downto 0) := "010111111010010010111111010010010111111010010011111111010110";
 	signal DataToSend : STD_LOGIC_VECTOR(Send'high downto 0) := Send;--"0000000000000000000100111111000000011111111111111100000000000111110000000000000001110111111100000000";
@@ -80,23 +81,19 @@ BEGIN
    -- Clock process definitions
    CLKA_process :process
    begin
-		CLKA <= '1';
-		wait for CLK_period/4;
 		CLKA <= '0';
-		wait for CLK_period/4;
-		CLKA <= '0';
-		wait for CLK_period/4;
+		wait for CLKA_period/2;
 		CLKA <= '1';
-		wait for CLK_period/4;
+		wait for CLKA_period/2;
    end process;
 
    -- Clock process definitions
    CLKB_process :process
    begin
-		CLKB <= '1';
-		wait for CLK_period/2;
 		CLKB <= '0';
-		wait for CLK_period/2;
+		wait for CLKB_period/2;
+		CLKB <= '1';
+		wait for CLKB_period/2;
    end process;
  
    Data_In <= DataToSend(DataToSend'high);
