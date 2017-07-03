@@ -13,7 +13,7 @@ use UNISIM.VComponents.all;
 entity En_Head is
     Port ( CLK : in  STD_LOGIC;
            Data_In : in  STD_LOGIC;
-           Data_Out : out  STD_LOGIC;
+           Data_Out : out  STD_LOGIC_VECTOR(7 downto 0);
            Rdy : out  STD_LOGIC);
 end En_Head;
 
@@ -32,10 +32,15 @@ architecture Arq_Head of En_Head is
 	
 	signal AAP,BBP,CCP,DDP : STD_LOGIC;
 	signal AAN,BBN,CCN,DDN : STD_LOGIC;
-	signal falta : STD_LOGIC;
-	signal sobra : STD_LOGIC;
+	signal data_temp : STD_LOGIC_VECTOR(8 downto 0);
 --	signal dato_aux : STD_LOGIC;
 
+	signal aux1 : STD_LOGIC_VECTOR(1 downto 0);
+	signal aux2 : STD_LOGIC;
+	signal aux3 : STD_LOGIC;
+	
+	signal falta : STD_LOGIC;
+	signal sobra : STD_LOGIC;
 begin
 
    DCM_SP_inst : DCM_SP
@@ -152,59 +157,59 @@ begin
 	USEA <= '1' when (AAP and BBP and (not CCP) and (not DDP)) = '1' or (AAN and BBN and (not CCN) and (not DDN)) = '1' else '0';
 	USEB <= '1' when (AAP and BBP and CCP and (not DDP)) = '1' or (AAN and BBN and CCN and (not DDN)) = '1' else '0';
 
-	-- Detección de flancos
-	process(CLK0,RST)
-	begin
-		if RST = '1' then
-			CTRL <= "10";
---			USEA <= '0';
---			USEB <= '0';
---			USEC <= '0';
---			USED <= '0';
-		elsif rising_edge(CLK0) then
-			if (USEA or USEB or USEC or USED) = '1' then
-				USEA_Ant <= USEA;--'0';
-				USEB_Ant <= USEB;--'0';
-				USEC_Ant <= USEC;--'0';
-				USED_Ant <= USED;--'0';
-			end if;
-			
-			falta <= '0';
-			sobra <= '0';
-			
-			if (AAP and BBP and CCP and DDP) = '1' or (AAN and BBN and CCN and DDN) = '1' then
---				USEC <= '1';
-				if USED_Ant = '1' then
-					falta <= '1'; -- Avisa que se perdió un dato. CZ(3) es el que hay que meter en el diome
---					dato_aux <= dz(3);
-				end if;
-			elsif (AAP and (not BBP) and (not CCP) and (not DDP)) = '1' or (AAN and (not BBN) and (not CCN) and (not DDN)) = '1' then
---				USED <= '1';
-				if USEC_Ant = '1' then
-					sobra <= '1';
---					dato_aux <= dz(3);
-				end if;
---				if USEA = '1' then
---					if CTRL = "01" then
---						CTRL <= "10";
---					else
---						CTRL <= "11";
---					end if;
+--	-- Detección de flancos
+--	process(CLK0,RST)
+--	begin
+--		if RST = '1' then
+--			CTRL <= "10";
+----			USEA <= '0';
+----			USEB <= '0';
+----			USEC <= '0';
+----			USED <= '0';
+--		elsif rising_edge(CLK0) then
+--			if (USEA or USEB or USEC or USED) = '1' then
+--				USEA_Ant <= USEA;--'0';
+--				USEB_Ant <= USEB;--'0';
+--				USEC_Ant <= USEC;--'0';
+--				USED_Ant <= USED;--'0';
+--			end if;
+--			
+--			falta <= '0';
+--			sobra <= '0';
+--			
+--			if (AAP and BBP and CCP and DDP) = '1' or (AAN and BBN and CCN and DDN) = '1' then
+----				USEC <= '1';
+--				if USED_Ant = '1' then
+--					falta <= '1'; -- Avisa que se perdió un dato. CZ(3) es el que hay que meter en el diome
+----					dato_aux <= dz(3);
 --				end if;
---			elsif (AAP and BBP and (not CCP) and (not DDP)) = '1' or (AAN and BBN and (not CCN) and (not DDN)) = '1' then
---				USEA <= '1';
---				if USED = '1' then
---					if CTRL = "11" then
---						CTRL <= "10";
---					else
---						CTRL <= "01";
---					end if;
+--			elsif (AAP and (not BBP) and (not CCP) and (not DDP)) = '1' or (AAN and (not BBN) and (not CCN) and (not DDN)) = '1' then
+----				USED <= '1';
+--				if USEC_Ant = '1' then
+--					sobra <= '1';
+----					dato_aux <= dz(3);
 --				end if;
---			elsif (AAP and BBP and CCP and (not DDP)) = '1' or (AAN and BBN and CCN and (not DDN)) = '1' then
---				USEB <= '1';
-			end if;
-		end if;
-	end process;
+----				if USEA = '1' then
+----					if CTRL = "01" then
+----						CTRL <= "10";
+----					else
+----						CTRL <= "11";
+----					end if;
+----				end if;
+----			elsif (AAP and BBP and (not CCP) and (not DDP)) = '1' or (AAN and BBN and (not CCN) and (not DDN)) = '1' then
+----				USEA <= '1';
+----				if USED = '1' then
+----					if CTRL = "11" then
+----						CTRL <= "10";
+----					else
+----						CTRL <= "01";
+----					end if;
+----				end if;
+----			elsif (AAP and BBP and CCP and (not DDP)) = '1' or (AAN and BBN and CCN and (not DDN)) = '1' then
+----				USEB <= '1';
+--			end if;
+--		end if;
+--	end process;
 
 --	-- Implementación basada en XAPP225
 --   SRL16_A : SRL16
@@ -261,18 +266,64 @@ begin
 	
 --	Data_Out <= CZ(3) when (USEA or USEB or USEC or USED) = '1' else '0' when RST = '1';
 
+	aux3 <=(USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
+
 	-- Acción según dominio detectado
 	process(CLK0,RST)
+		variable bit_count : NATURAL := 0;
+--		variable aux1 : STD_LOGIC_VECTOR(1 downto 0);
+--		variable aux2 : STD_LOGIC;
 	begin
 		if RST = '1' then
-			Data_Out <= '0';
-		elsif rising_edge(CLK0) then		
+			Data_Out <= (others=>'0');
+			bit_count := 0;
+			data_temp <= (others=>'0');
+			Rdy <= '0';
+			aux1 <= "00";
+			aux2 <= '0';
+			falta <= '0';
+			sobra <= '0';
+		elsif rising_edge(CLK0) then
+			Rdy <= '0';
+
+			if bit_count = 8 then
+				Rdy <= '1';
+				bit_count := 0;
+				Data_Out <= data_temp(7 downto 0);
+			elsif bit_count = 9 then
+				Rdy <= '1';
+				bit_count := 1;
+				Data_Out <= data_temp(8 downto 1);
+			end if;
+
+			if USEC = '1' and USED_Ant = '1' then
+				falta <= '1'; -- Avisa que se perdió un dato. CZ(3) es el que hay que meter en el diome
+				bit_count := bit_count + 2;
+				data_temp <= data_temp(6 downto 0) & aux1;-- CZ(3 downto 3) & (USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
+			elsif USED = '1' and USEC_Ant = '1' then
+				sobra <= '1';
+				bit_count := bit_count + 0;
+				data_temp <= data_temp;
+			else
+				bit_count := bit_count + 1;
+				data_temp <= data_temp(7 downto 0) & aux2;--(USEA and AZ(2 downto 2));--& (USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));					
+			end if;
+			
 			if (USEA or USEB or USEC or USED) = '1' then
+				aux1 <= CZ(3) & aux3;--(USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
+				aux2 <= aux3;--(USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
+				
+				USEA_Ant <= USEA;--'0';
+				USEB_Ant <= USEB;--'0';
+				USEC_Ant <= USEC;--'0';
+				USED_Ant <= USED;--'0';				
+				
 --				Data_Out <= (USEA and AA0) or (USEB and BB0) or (USEC and CC0) or (USED and DD0);
-				Data_Out <= (USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
+--				Data_Out <= (USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
 --				Data_Out <= (USEA and AZ(3)) or (USEB and BZ(3)) or (USEC and CZ(3)) or (USED and DZ(3));
 --				Data_Out <= AZ(1);--(USEA and AA0) or (USEB and BB0) or (USEC and CC0) or (USED and DD0);
 			end if;
+				
 		end if;
 	end process;
 	

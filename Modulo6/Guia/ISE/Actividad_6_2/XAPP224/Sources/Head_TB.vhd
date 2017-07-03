@@ -43,7 +43,7 @@ ARCHITECTURE behavior OF Head_TB IS
     PORT(
          CLK : IN  std_logic;
          Data_In : IN  std_logic;
-         Data_Out : OUT  std_logic;
+         Data_Out : OUT  std_logic_vector(7 downto 0);
          Rdy : OUT  std_logic
         );
     END COMPONENT;
@@ -55,7 +55,7 @@ ARCHITECTURE behavior OF Head_TB IS
    signal Data_In : std_logic := '0';
 
  	--Outputs
-   signal Data_Out : std_logic;
+   signal Data_Out : std_logic_vector(7 downto 0);
    signal Rdy : std_logic;
 
    -- Clock period definitions
@@ -110,13 +110,15 @@ BEGIN
 	process(CLKA)
 	begin
 		if rising_edge(CLKA) then
-			Data_Rec <= Data_Rec(DataToSend'high-1 downto 0) & Data_Out;
+			if Rdy = '1' then
+				Data_Rec <= Data_Rec(Data_Rec'high-8 downto 0) & Data_Out;
+			end if;
 		end if;
 	end process;
 
-	Found <= '1' when  Data_Rec = Send else '0';
+	Found <= '1' when Data_Rec = Send else '0';
 
 	Reset <= '1', '0' after 10000 ps;
-	Reset_bis <= '1', '0' after 400 ns;
+	Reset_bis <= '1', '0' after 325 ns;
 
 END;
