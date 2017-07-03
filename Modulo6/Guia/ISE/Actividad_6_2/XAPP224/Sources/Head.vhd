@@ -26,11 +26,16 @@ architecture Arq_Head of En_Head is
 	signal AZ,BZ,CZ,DZ : STD_LOGIC_VECTOR(3 downto 0);
 	signal CTRL : STD_LOGIC_VECTOR(1 downto 0);
 	signal USEA,USEB,USEC,USED : STD_LOGIC;
+	signal USEA_Ant,USEB_Ant,USEC_Ant,USED_Ant : STD_LOGIC;
 	signal AA0,BB0,CC0,DD0 : STD_LOGIC;
 	signal Data : STD_LOGIC;
 	
 	signal AAP,BBP,CCP,DDP : STD_LOGIC;
 	signal AAN,BBN,CCN,DDN : STD_LOGIC;
+	signal falta : STD_LOGIC;
+	signal sobra : STD_LOGIC;
+--	signal dato_aux : STD_LOGIC;
+
 begin
 
    DCM_SP_inst : DCM_SP
@@ -147,25 +152,38 @@ begin
 	USEA <= '1' when (AAP and BBP and (not CCP) and (not DDP)) = '1' or (AAN and BBN and (not CCN) and (not DDN)) = '1' else '0';
 	USEB <= '1' when (AAP and BBP and CCP and (not DDP)) = '1' or (AAN and BBN and CCN and (not DDN)) = '1' else '0';
 
---	-- Detección de flancos
---	process(CLK0,RST)
---	begin
---		if RST = '1' then
---			CTRL <= "10";
+	-- Detección de flancos
+	process(CLK0,RST)
+	begin
+		if RST = '1' then
+			CTRL <= "10";
 --			USEA <= '0';
 --			USEB <= '0';
 --			USEC <= '0';
 --			USED <= '0';
---		elsif rising_edge(CLK0) then
---			USEA <= '0';
---			USEB <= '0';
---			USEC <= '0';
---			USED <= '0';
---			
---			if (AAP and BBP and CCP and DDP) = '1' or (AAN and BBN and CCN and DDN) = '1' then
+		elsif rising_edge(CLK0) then
+			if (USEA or USEB or USEC or USED) = '1' then
+				USEA_Ant <= USEA;--'0';
+				USEB_Ant <= USEB;--'0';
+				USEC_Ant <= USEC;--'0';
+				USED_Ant <= USED;--'0';
+			end if;
+			
+			falta <= '0';
+			sobra <= '0';
+			
+			if (AAP and BBP and CCP and DDP) = '1' or (AAN and BBN and CCN and DDN) = '1' then
 --				USEC <= '1';
---			elsif (AAP and (not BBP) and (not CCP) and (not DDP)) = '1' or (AAN and (not BBN) and (not CCN) and (not DDN)) = '1' then
+				if USED_Ant = '1' then
+					falta <= '1'; -- Avisa que se perdió un dato. CZ(3) es el que hay que meter en el diome
+--					dato_aux <= dz(3);
+				end if;
+			elsif (AAP and (not BBP) and (not CCP) and (not DDP)) = '1' or (AAN and (not BBN) and (not CCN) and (not DDN)) = '1' then
 --				USED <= '1';
+				if USEC_Ant = '1' then
+					sobra <= '1';
+--					dato_aux <= dz(3);
+				end if;
 --				if USEA = '1' then
 --					if CTRL = "01" then
 --						CTRL <= "10";
@@ -184,9 +202,9 @@ begin
 --				end if;
 --			elsif (AAP and BBP and CCP and (not DDP)) = '1' or (AAN and BBN and CCN and (not DDN)) = '1' then
 --				USEB <= '1';
---			end if;
---		end if;
---	end process;
+			end if;
+		end if;
+	end process;
 
 --	-- Implementación basada en XAPP225
 --   SRL16_A : SRL16
