@@ -300,6 +300,10 @@ begin
 				falta <= '1'; -- Avisa que se perdió un dato. CZ(3) es el que hay que meter en el diome
 				bit_count := bit_count + 2;
 				data_temp <= data_temp(6 downto 0) & aux1;-- CZ(3 downto 3) & (USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
+			elsif USED = '1' and USEA_Ant = '1' then
+				sobra <= '1';
+				bit_count := bit_count + 0;
+				data_temp <= data_temp;
 			elsif USED = '1' and USEC_Ant = '1' then
 				sobra <= '1';
 				bit_count := bit_count + 0;

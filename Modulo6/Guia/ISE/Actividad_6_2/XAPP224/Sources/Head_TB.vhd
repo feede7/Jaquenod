@@ -119,6 +119,6 @@ BEGIN
 	Found <= '1' when Data_Rec = Send else '0';
 
 	Reset <= '1', '0' after 10000 ps;
-	Reset_bis <= '1', '0' after 325 ns;
+	Reset_bis <= '1', '0' after 322 ns;
 
 END;
