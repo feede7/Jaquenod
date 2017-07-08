@@ -45,6 +45,7 @@ ARCHITECTURE behavior OF Head_TB IS
          Data_In : IN  std_logic;
 			Data_Out_Instant: OUT  std_logic;
          Data_Out : OUT  std_logic_vector(7 downto 0);
+         Start : OUT  std_logic;
          Rdy : OUT  std_logic
         );
     END COMPONENT;
@@ -60,17 +61,16 @@ ARCHITECTURE behavior OF Head_TB IS
    signal Rdy : std_logic;
 
    -- Clock period definitions
-   constant CLKA_period : time := 25000 ps;
-   constant CLKB_period : time := 26000 ps;
+   constant CLKA_period : time := 26000 ps;
+   constant CLKB_period : time := 25000 ps;
  
  	constant Send: STD_LOGIC_VECTOR(59 downto 0) := "010111111011010010111111010010010111111010010011111111010110";
--- 	constant Send: STD_LOGIC_VECTOR(23 downto 0) := "010111111011010010111111";--010010010111111010010011111111010110";
 	signal DataToSend : STD_LOGIC_VECTOR(Send'high downto 0) := Send;--"0000000000000000000100111111000000011111111111111100000000000111110000000000000001110111111100000000";
 	signal Data_Rec	: STD_LOGIC_VECTOR(Send'high downto 0) := (others => '0');
 	signal Found		: STD_LOGIC;
 	signal Reset		: STD_LOGIC;
-	signal Reset_bis	: STD_LOGIC;
 	signal Data_Out_Instant	: STD_LOGIC;
+	signal Start	: STD_LOGIC;
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
@@ -79,6 +79,7 @@ BEGIN
           Data_In => Data_In,
 			 Data_Out_Instant => Data_Out_Instant,
           Data_Out => Data_Out,
+			 Start => Start,
           Rdy => Rdy
         );
 
@@ -102,9 +103,9 @@ BEGIN
  
    Data_In <= DataToSend(DataToSend'high);
 
- 	process(CLKB,Reset_bis)
+ 	process(CLKB,Start)
  	begin
- 		if Reset_bis = '1' then
+ 		if Start = '0' then
  			DataToSend <= Send;
  		elsif rising_edge(CLKB) then
 			DataToSend 	<= DataToSend(DataToSend'high-1 downto 0) & '0';
@@ -120,9 +121,8 @@ BEGIN
 		end if;
 	end process;
 
-	Found <= '1' when Data_Rec & "0" = "0" & Send else '0';
+	Found <= '1' when Data_Rec = Send else '0';
 
 	Reset <= '1', '0' after 10000 ps;
-	Reset_bis <= '1', '0' after 322 ns;
 
 END;

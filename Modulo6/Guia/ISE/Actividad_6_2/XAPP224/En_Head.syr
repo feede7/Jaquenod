@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.24 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.25 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> 
 Reading design: En_Head.prj
@@ -109,13 +109,99 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Compiling vhdl file "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/Sources/Head.vhd" in Library work.
 Entity <en_head> compiled.
-ERROR:HDLParsers:164 - "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/Sources/Head.vhd" Line 354. parse error, unexpected IF, expecting PROCESS
---> 
+Entity <en_head> (Architecture <arq_head>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <En_Head> in library <work> (architecture <arq_head>).
 
 
-Total memory usage is 164132 kilobytes
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <En_Head> in library <work> (Architecture <arq_head>).
+    Set user-defined property "CLKDV_DIVIDE =  2.0000000000000000" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "CLKFX_DIVIDE =  1" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "CLKFX_MULTIPLY =  4" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "CLKIN_DIVIDE_BY_2 =  FALSE" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "CLKIN_PERIOD =  25.0000000000000000" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "CLKOUT_PHASE_SHIFT =  NONE" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "CLK_FEEDBACK =  1X" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "DESKEW_ADJUST =  SYSTEM_SYNCHRONOUS" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "DFS_FREQUENCY_MODE =  LOW" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "DLL_FREQUENCY_MODE =  LOW" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "DSS_MODE =  NONE" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "DUTY_CYCLE_CORRECTION =  TRUE" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "FACTORY_JF =  C080" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "PHASE_SHIFT =  0" for instance <DCM_SP_inst> in unit <En_Head>.
+    Set user-defined property "STARTUP_WAIT =  FALSE" for instance <DCM_SP_inst> in unit <En_Head>.
+Entity <En_Head> analyzed. Unit <En_Head> generated.
 
-Number of errors   :    1 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <En_Head>.
+    Related source file is "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/Sources/Head.vhd".
+WARNING:Xst:646 - Signal <sobra> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <falta> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <delay> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <aux4> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <USEB_Ant> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <Data> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <DZ_delayed> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <DZ<4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <DD0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <CTRL> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <CC0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <BZ<4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <BB0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <AZ<4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <AA0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <Data_Out_Instant>.
+    Found 8-bit register for signal <Data_Out>.
+    Found 1-bit register for signal <Rdy>.
+    Found 3-bit register for signal <aux1>.
+    Found 1-bit register for signal <aux2>.
+    Found 2-bit register for signal <aux5>.
+    Found 4-bit register for signal <AZ<3:0>>.
+    Found 31-bit register for signal <bit_count>.
+    Found 31-bit adder for signal <bit_count$share0000>.
+    Found 4-bit register for signal <BZ<3:0>>.
+    Found 5-bit register for signal <CZ>.
+    Found 10-bit register for signal <data_temp>.
+    Found 4-bit register for signal <DZ<3:0>>.
+    Found 1-bit register for signal <USEA_Ant>.
+    Found 1-bit register for signal <USEC_Ant>.
+    Found 1-bit register for signal <USED_Ant>.
+    Summary:
+	inferred  77 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <En_Head> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 31-bit adder                                          : 1
+# Registers                                            : 28
+ 1-bit register                                        : 23
+ 10-bit register                                       : 1
+ 2-bit register                                        : 1
+ 3-bit register                                        : 1
+ 31-bit register                                       : 1
+ 8-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
 

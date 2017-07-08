@@ -1,8 +1,8 @@
 V3 5
-FL /home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/Sources/Head.vhd 2017/07/08.15:31:29 P.20131013
-EN work/En_Head 1499538798 \
+FL /home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/Sources/Head.vhd 2017/07/08.18:21:23 P.20131013
+EN work/En_Head 1499549012 \
       FL /home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/Sources/Head.vhd \
       PB ieee/std_logic_1164 1381692176 LB UNISIM PH unisim/VCOMPONENTS 1381692182
-AR work/En_Head/Arq_Head 1499538799 \
+AR work/En_Head/Arq_Head 1499549013 \
       FL /home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/Sources/Head.vhd \
-      EN work/En_Head 1499538798 CP DCM_SP
+      EN work/En_Head 1499549012 CP DCM_SP

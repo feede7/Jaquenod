@@ -15,6 +15,7 @@ entity En_Head is
            Data_In : in  STD_LOGIC;
 			  Data_Out_Instant : out  STD_LOGIC;
            Data_Out : out  STD_LOGIC_VECTOR(7 downto 0);
+			  Start : out STD_LOGIC;
            Rdy : out  STD_LOGIC);
 end En_Head;
 
@@ -40,7 +41,8 @@ architecture Arq_Head of En_Head is
 	signal aux2 : STD_LOGIC;
 	signal aux3 : STD_LOGIC;
 	signal aux4 : STD_LOGIC;
-	signal aux5 : STD_LOGIC_VECTOR(1 downto 0);
+	signal aux5_C : STD_LOGIC_VECTOR(1 downto 0);
+	signal aux5_D : STD_LOGIC_VECTOR(1 downto 0);
 	signal DZ_delayed : STD_LOGIC;
 	
 	signal falta : STD_LOGIC;
@@ -85,6 +87,7 @@ begin
       RST => '0'--RST        -- DCM asynchronous reset input
    );
 	
+	Start <= LOCKED;
 	RST <= not LOCKED;
 	
 	-- Registro de la entrada con los 4 posibles dominios de reloj
@@ -290,7 +293,8 @@ begin
 			data_temp <= (others=>'0');
 			Rdy <= '0';
 			aux1 <= (others=>'0');
-			aux5 <= (others=>'0');
+			aux5_C <= (others=>'0');
+			aux5_D <= (others=>'0');
 			aux2 <= '0';
 			falta <= '0';
 			sobra <= '0';
@@ -324,11 +328,11 @@ begin
 			elsif USED = '1' and USEA_Ant = '1' then
 				delay <= '1';
 				bit_count := bit_count + 1;
-				data_temp <= data_temp(8 downto 0) & aux2;
+				data_temp <= data_temp(8 downto 0) & aux5_D(1);
 			elsif USEC = '1' and USEA_Ant = '1' then
 				falta <= '1';
 				bit_count := bit_count + 2;
-				data_temp <= data_temp(7 downto 0) & aux5;
+				data_temp <= data_temp(7 downto 0) & aux5_C;
 			elsif USED = '1' and USEC_Ant = '1' then
 				sobra <= '1';
 				bit_count := bit_count + 0;
@@ -338,10 +342,12 @@ begin
 				data_temp <= data_temp(8 downto 0) & aux2;--(USEA and AZ(2 downto 2));--& (USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));					
 			end if;
 			
-			aux5 <= CZ(3 downto 2);
+			aux1 <= CZ(4 downto 2);
+			aux5_C <= CZ(3 downto 2);
+			aux5_D <= DZ(4 downto 3);
 			
 			if (USEA or USEB or USEC or USED) = '1' then
-				aux1 <= CZ(4) & CZ(3) & aux3;--(USEA and AZ(2)) o(USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));r (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
+--				aux1 <= CZ(4) & CZ(3) & aux3;--(USEA and AZ(2)) o(USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));r (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
 				aux2 <= aux3;--(USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
 				Data_Out_Instant <= (USEA and AZ(2)) or (USEB and BZ(2)) or (USEC and CZ(2)) or (USED and DZ(3));
 	
