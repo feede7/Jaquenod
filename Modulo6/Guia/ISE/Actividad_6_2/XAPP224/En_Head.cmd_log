@@ -15,3 +15,5 @@ xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Activ
 xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.xst" -ofn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.syr" 
 xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.xst" -ofn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.syr" 
 xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.xst" -ofn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.syr" 
+xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.xst" -ofn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.syr" 
+xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.xst" -ofn "/home/fede/Documents/Jaquenod/GIT/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/En_Head.syr" 

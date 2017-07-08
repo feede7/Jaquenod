@@ -18,8 +18,8 @@ char *IEEE_P_2592010699;
 char *STD_STANDARD;
 char *UNISIM_P_0947159679;
 char *STD_TEXTIO;
-char *UNISIM_P_3222816464;
 char *IEEE_P_2717149903;
+char *UNISIM_P_3222816464;
 char *IEEE_P_1367372525;
 
 
@@ -40,7 +40,6 @@ int main(int argc, char **argv)
     unisim_a_0018426790_2768510774_init();
     unisim_a_1297477671_0429821216_init();
     unisim_a_0596154857_2584565154_init();
-    unisim_a_3213974906_3996864970_init();
     work_a_2395906489_1222235500_init();
     work_a_3135129927_2372691052_init();
 
@@ -52,8 +51,8 @@ int main(int argc, char **argv)
     STD_STANDARD = xsi_get_engine_memory("std_standard");
     UNISIM_P_0947159679 = xsi_get_engine_memory("unisim_p_0947159679");
     STD_TEXTIO = xsi_get_engine_memory("std_textio");
-    UNISIM_P_3222816464 = xsi_get_engine_memory("unisim_p_3222816464");
     IEEE_P_2717149903 = xsi_get_engine_memory("ieee_p_2717149903");
+    UNISIM_P_3222816464 = xsi_get_engine_memory("unisim_p_3222816464");
     IEEE_P_1367372525 = xsi_get_engine_memory("ieee_p_1367372525");
 
     return xsi_run_simulation(argc, argv);
