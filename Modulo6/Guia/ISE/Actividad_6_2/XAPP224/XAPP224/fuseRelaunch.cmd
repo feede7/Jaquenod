@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/media/storage/Documents/GIT/Jaquenod/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/XAPP224/Head_TB_isim_beh.exe" -prj "/media/storage/Documents/GIT/Jaquenod/Modulo6/Guia/ISE/Actividad_6_2/XAPP224/XAPP224/Head_TB_beh.prj" "work.Head_TB" 

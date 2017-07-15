@@ -1,0 +1,2 @@
+vhdl work "../Sources/Head.vhd"
+vhdl work "../Sources/Head_TB.vhd"
