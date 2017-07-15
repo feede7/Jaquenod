@@ -1,0 +1,2 @@
+vhdl work "Sources/PRNG.vhd"
+vhdl work "Sources/PRNG_TB.vhd"
