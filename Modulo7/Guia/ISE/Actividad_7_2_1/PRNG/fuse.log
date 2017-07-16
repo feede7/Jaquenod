@@ -1,0 +1,25 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/media/fede/Datos/Documents/GIT/Jaquenod/Modulo7/Guia/ISE/Actividad_7_2_1/PRNG_Ise/PRNG_TB_isim_beh.exe" -prj "/media/fede/Datos/Documents/GIT/Jaquenod/Modulo7/Guia/ISE/Actividad_7_2_1/PRNG_Ise/PRNG_TB_beh.prj" "work.PRNG_TB" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/media/fede/Datos/Documents/GIT/Jaquenod/Modulo7/Guia/ISE/Actividad_7_2_1/PRNG_Ise/Sources/PRNG.vhd" into library work
+Parsing VHDL file "/media/fede/Datos/Documents/GIT/Jaquenod/Modulo7/Guia/ISE/Actividad_7_2_1/PRNG_Ise/Sources/PRNG_TB.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 96712 KB
+Fuse CPU Usage: 1220 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package textio
+Compiling architecture arq_prng_150 of entity En_PRNG_150 [\En_PRNG_150(31)\]
+Compiling architecture behavior of entity prng_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable /media/fede/Datos/Documents/GIT/Jaquenod/Modulo7/Guia/ISE/Actividad_7_2_1/PRNG_Ise/PRNG_TB_isim_beh.exe
+Fuse Memory Usage: 671100 KB
+Fuse CPU Usage: 1300 ms
+GCC CPU Usage: 240 ms

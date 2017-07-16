@@ -1,0 +1,2 @@
+vhdl isim_temp "Sources/PRNG.vhd"
+vhdl isim_temp "Sources/PRNG_TB.vhd"

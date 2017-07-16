@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  "../../../PRNG.srcs/sources_1/new/PRNG.vhd"
-vhdl xil_defaultlib  "../../../PRNG.srcs/sim_1/new/PRNG_TB.vhd"
-
-# Do not sort compile order
-nosort
