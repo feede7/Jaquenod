@@ -31,21 +31,25 @@ library UNISIM;
 use UNISIM.VComponents.all;
 
 entity En_Head is
-    Port ( CLK : in STD_LOGIC;
-           RST : in STD_LOGIC;
-           X0  : in STD_LOGIC_VECTOR(19 downto 0);
-           Y0  : in STD_LOGIC_VECTOR(19 downto 0);
-           Z0  : in STD_LOGIC_VECTOR(19 downto 0);
-           Z1  : in STD_LOGIC_VECTOR(19 downto 0);
+	 Generic(Niter : NATURAL := 10);
+    Port ( CLK : in  STD_LOGIC;
+           RST : in  STD_LOGIC;
+			  ENA	: in  STD_LOGIC;
+           X0  : in  STD_LOGIC_VECTOR(19 downto 0);
+           Y0  : in  STD_LOGIC_VECTOR(19 downto 0);
+           Z0  : in  STD_LOGIC_VECTOR(19 downto 0);
+           Z1  : in  STD_LOGIC_VECTOR(19 downto 0);
            X1  : out STD_LOGIC_VECTOR(19 downto 0);
            Y1  : out STD_LOGIC_VECTOR(19 downto 0);
-           salida : out STD_LOGIC_VECTOR(19 DOWNTO 0)
+           RDY	: out STD_LOGIC;
+			  RUN : out NATURAL
     );
 end En_Head;
 
-architecture Arq_Behavioral of En_Head is
+architecture Arq_Head of En_Head is
 
-component dist_mem_gen_0 IS
+--component dist_mem_gen_0 IS
+component arctan IS
   PORT (
     a : IN STD_LOGIC_VECTOR(4 downto 0);
     spo : OUT STD_LOGIC_VECTOR(19 downto 0)
@@ -53,28 +57,104 @@ component dist_mem_gen_0 IS
   end component;
   
   signal ang : STD_LOGIC_VECTOR(4 downto 0);
+  signal State : STD_LOGIC_VECTOR(1 downto 0);
+  signal atan_std_logic : STD_LOGIC_VECTOR(19 downto 0);
+  signal atan : signed(19 downto 0);
+  signal sZdiff : signed(19 downto 0);
+  signal sX1 : signed(19 downto 0);
+  signal sY1 : signed(19 downto 0);
+  signal iter : NATURAL;
+  signal sRUN : NATURAL;
 begin
 
     -- ROM con valores de arctan(2^-i)
-    -- Lo generé con los siguientes comandos en Matlab
-    -- ang = 0:1:19;
-    -- ang = 2.^(-ang)
-    -- dec2hex(round(atan(ang)*500000))
-    --5FDFB,38990,1DE79,0F2E1,079E9,03D04,01E84,00F42,007A1,003D1,001E8,000F4,0007A,0003D,0001F,0000F,00008,00004,00002,00001
-    arctan : dist_mem_gen_0
+	 -- Los arctan tienen que ser lo ángulos que voy a ir restamndo, empezando desde 45°
+	 -- 45			
+	 -- 26.56505
+	 -- 14.03624
+	 --  7.12501
+	 --  3.57633
+	 --  1.78991
+	 --  0.89517
+	 --  0.44761
+	 --  0.22381
+	 --  0.11191
+	 
+	 -- Si los escalo en 10 puedo trabajarlos en manera entera con una precisión aceptable, es decir:
+	 -- 450			
+	 -- 266
+	 -- 140
+	 --  71
+	 --  36
+	 --  18
+	 --   9
+	 --   4
+	 --   2
+	 --   1
+	 
+	 -- Estos son los números que voy a llamar para ir llegando al ángulo deseado
+	 
+	 -- El nombre de la instanciación depende si estamos corriendo en ISE o Vivado
+    Ins_arctan : arctan--dist_mem_gen_0
       PORT MAP(
         a   => ang,
-        spo => salida
+        spo => atan_std_logic
       );
 
+	atan <= signed(atan_std_logic);
+	
     -- Z0 = arctan(Y0/X0)
     process(CLK,RST)
     begin
         if RST = '1' then
-            ang <= (others=>'1');
+            ang <= (others=>'0');
+				RDY <= '0';
+				X1  <= (others=>'0');
+				Y1  <= (others=>'0');
+				State <= "00";
         elsif rising_edge(CLK) then
-            ang <= STD_LOGIC_VECTOR(unsigned(ang) + to_unsigned(1,ang'length));
+				case State is
+					when "00"  => -- Espero ENA
+						RDY <= '1';
+						if ENA = '1' then
+							sX1	<= signed(X0);
+							sY1	<= signed(Y0);
+							sZdiff<= signed(Z1) - signed(Z0); -- se toma como diferencia positiva aquella que conlleva un giro antihorario
+							iter	<= 0;
+							sRUN	<= 0;
+							ang	<= (others => '0');
+							RDY 	<= '0';
+							State <= "01";
+						end if;
+						
+					when "01" =>
+						if iter < Niter then
+							if sZdiff > 0 then
+								sX1 <= sX1 - sY1(sY1'high downto iter);
+								sY1 <= sY1 + sX1(sX1'high downto iter);
+								sZdiff <= sZdiff - signed(atan);
+								sRUN <= sRUN + 1;
+							elsif sZdiff < 0 then
+								sX1 <= sX1 + sY1(sY1'high downto iter);
+								sY1 <= sY1 - sX1(sX1'high downto iter);
+								sZdiff <= sZdiff + signed(atan);
+								sRUN <= sRUN + 1;
+							end if;
+							iter	<= iter + 1;
+							ang 	<= STD_LOGIC_VECTOR(unsigned(ang) + to_unsigned(1,ang'length));
+						else
+							RDY 	<= '1';
+							X1		<= std_logic_vector(sX1);
+							Y1		<= std_logic_vector(sY1);
+							RUN	<= sRUN;
+							State <= "00";
+						end if;
+						
+					when others =>
+						State <= "00";
+						
+				end case;
         end if;
     end process;
     
-end Arq_Behavioral;
+end Arq_Head;
