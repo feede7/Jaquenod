@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/media/fede/Datos/Documents/GIT/Jaquenod/Modulo7/Guia/ISE/Actividad_7_2_1/PRNG_Ise/PRNG_TB_isim_beh.exe" -prj "/media/fede/Datos/Documents/GIT/Jaquenod/Modulo7/Guia/ISE/Actividad_7_2_1/PRNG_Ise/PRNG_TB_beh.prj" "work.PRNG_TB" 

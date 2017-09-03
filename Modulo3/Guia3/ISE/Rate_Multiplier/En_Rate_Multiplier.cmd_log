@@ -1,3 +1,0 @@
-xst -intstyle ise -ifn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Rate_Multiplier/En_Rate_Multiplier.xst" -ofn "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Rate_Multiplier/En_Rate_Multiplier.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-fgg484-2 En_Rate_Multiplier.ngc En_Rate_Multiplier.ngd  
-map -intstyle ise -p xc7a100t-fgg484-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o En_Rate_Multiplier_map.ncd En_Rate_Multiplier.ngd En_Rate_Multiplier.pcf 

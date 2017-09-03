@@ -1,5 +1,0 @@
-work	"Sources/ClockE.vhd"
-work	"Sources/Head.vhd"
-work	"Sources/System.vhd"
-work	"Sources/UART_RX.vhd"
-work	"Sources/UART_TX.vhd"

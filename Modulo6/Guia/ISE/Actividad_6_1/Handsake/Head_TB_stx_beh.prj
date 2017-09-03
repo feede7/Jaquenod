@@ -1,6 +1,0 @@
-vhdl isim_temp "Sources/ClockE.vhd"
-vhdl isim_temp "Sources/UART_TX.vhd"
-vhdl isim_temp "Sources/UART_RX.vhd"
-vhdl isim_temp "Sources/System.vhd"
-vhdl isim_temp "Sources/Head.vhd"
-vhdl isim_temp "Sources/Head_TB.vhd"

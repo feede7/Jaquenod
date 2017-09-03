@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/fede/GIT/Jaquenod/Modulo1/ISE/Actividad_1_1_3/TB_SincroAndEdge_isim_beh.exe" -prj "/home/fede/GIT/Jaquenod/Modulo1/ISE/Actividad_1_1_3/TB_SincroAndEdge_beh.prj" "work.TB_SincroAndEdge" 

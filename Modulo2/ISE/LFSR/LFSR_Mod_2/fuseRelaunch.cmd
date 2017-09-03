@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/Jaquenod/Modulo2/ISE/LFSR/LFSR_Mod_2/TB_LFSR_Mod_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/Jaquenod/Modulo2/ISE/LFSR/LFSR_Mod_2/TB_LFSR_Mod_beh.prj" "work.TB_LFSR_Mod" 

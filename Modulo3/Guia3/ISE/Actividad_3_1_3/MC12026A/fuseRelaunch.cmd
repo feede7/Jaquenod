@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad_3_1_3/MC12026A/TB_Head_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/Jaquenod/Modulo3/Guia3/ISE/Actividad_3_1_3/MC12026A/TB_Head_beh.prj" "work.TB_Head" 

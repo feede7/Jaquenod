@@ -1,2 +1,0 @@
-vhdl isim_temp "Sources/MC4044.vhd"
-vhdl isim_temp "Sources/TB_MC4044.vhd"

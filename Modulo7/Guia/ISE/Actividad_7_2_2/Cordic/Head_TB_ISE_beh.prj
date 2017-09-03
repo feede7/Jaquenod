@@ -1,3 +1,0 @@
-vhdl work "ipcore_dir/arctan.vhd"
-vhdl work "Cordic.srcs/sources_1/new/Head.vhd"
-vhdl work "Cordic.srcs/sim_1/new/Head_TB_ISE.vhd"

@@ -1,2 +1,0 @@
-vhdl isim_temp "Sources/Head.vhd"
-vhdl isim_temp "Sources/Head_TB.vhd"

@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_1_2/Recuperador_PLL/TB_Receptor_isim_beh.exe" -prj "/home/fede/Documents/Jaquenod/Jaquenod/Modulo4/Guia4/ISE/Actividad 4_1_2/Recuperador_PLL/TB_Receptor_beh.prj" "work.TB_Receptor" 
