@@ -1,0 +1,3 @@
+vhdl isim_temp "Sources/Decodificador.vhd"
+vhdl isim_temp "Sources/Codificador.vhd"
+vhdl isim_temp "Sources/System_TB.vhd"

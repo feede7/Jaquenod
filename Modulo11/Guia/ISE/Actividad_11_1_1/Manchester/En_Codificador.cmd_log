@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_1/Manchester/Codificador/En_Codificador.xst" -ofn "/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_1/Manchester/Codificador/En_Codificador.syr" 
+xst -intstyle ise -ifn "/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_1/Manchester/Codificador/En_Codificador.xst" -ofn "/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_1/Manchester/Codificador/En_Codificador.syr" 

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_1/Manchester/Codificador/System_TB_isim_beh.exe" -prj "/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_1/Manchester/Codificador/System_TB_beh.prj" "work.System_TB" 
