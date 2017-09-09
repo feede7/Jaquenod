@@ -1,0 +1,28 @@
+Command line:
+   En_Codificador_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58859
+
+Sat Sep  9 17:40:39 2017
+
+
+ Elaboration Time: 0.04 sec
+
+ Current Memory Usage: 197.992 Meg
+
+ Total Signals          : 8
+ Total Nets             : 8
+ Total Signal Drivers   : 5
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 2
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 368
+
+ Total Simulation Time: 0.04 sec
+
+ Current Memory Usage: 273.494 Meg
+
+Sat Sep  9 17:40:47 2017
+

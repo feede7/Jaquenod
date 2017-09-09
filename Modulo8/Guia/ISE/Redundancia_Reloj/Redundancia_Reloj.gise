@@ -50,6 +50,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1504463789" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1504463789">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1504464096" xil_pn:in_ck="-7352834115230860513" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1504464096">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -92,25 +93,21 @@
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="Head_TB_beh.prj"/>
-      <outfile xil_pn:name="Head_TB_isim_beh.exe"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1504464098" xil_pn:in_ck="-8881840446817788106" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2613188152051782823" xil_pn:start_ts="1504464098">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="Head_TB_isim_beh.wdb"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1504463594" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1504463594">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1504463594" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-3463030685745062659" xil_pn:start_ts="1504463594">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -141,18 +138,14 @@
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="En_Head.lso"/>
       <outfile xil_pn:name="En_Head.ngc"/>
       <outfile xil_pn:name="En_Head.ngr"/>
-      <outfile xil_pn:name="En_Head.prj"/>
-      <outfile xil_pn:name="En_Head.stx"/>
       <outfile xil_pn:name="En_Head.syr"/>
-      <outfile xil_pn:name="En_Head.xst"/>
       <outfile xil_pn:name="En_Head_xst.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
     </transform>
   </transforms>
 

@@ -1,0 +1,4 @@
+vhdl work "Sources/Decodificador.vhd"
+vhdl work "Sources/Codificador.vhd"
+vhdl work "Sources/System.vhd"
+vhdl work "Sources/System_TB.vhd"
