@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-09-09T17:11:17</DateModified>
+  <DateModified>2017-09-10T16:20:03</DateModified>
   <ModuleName>System_TB</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_2/Manchester_Diferencial/iseconfig/System_TB.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_2/Manchester_Diferencial</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_2/Manchester_Diferencial/</ImplementationReportsDirectory>
   <DateInitialized>2017-09-09T17:11:17</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

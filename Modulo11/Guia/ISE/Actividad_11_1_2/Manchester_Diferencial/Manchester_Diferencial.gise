@@ -37,6 +37,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1504989371" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1504989371">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1504994860" xil_pn:in_ck="-4780345917243706686" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1504994860">
       <status xil_pn:value="SuccessfullyRun"/>

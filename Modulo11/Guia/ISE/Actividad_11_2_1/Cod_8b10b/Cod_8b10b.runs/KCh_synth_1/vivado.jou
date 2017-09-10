@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:10 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Sun Sep 10 17:58:31 2017
+# Process ID: 5926
+# Current directory: /home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_2_1/Cod_8b10b/Cod_8b10b.runs/KCh_synth_1
+# Command line: vivado -log KCh.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source KCh.tcl
+# Log file: /home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_2_1/Cod_8b10b/Cod_8b10b.runs/KCh_synth_1/KCh.vds
+# Journal file: /home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_2_1/Cod_8b10b/Cod_8b10b.runs/KCh_synth_1/vivado.jou
+#-----------------------------------------------------------
+source KCh.tcl -notrace

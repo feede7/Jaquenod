@@ -8,7 +8,16 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_2/Manchester_Diferencial/Sources/Codificador.vhd&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_2/Manchester_Diferencial/Sources/Decodificador.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_2/Manchester_Diferencial/Sources/System.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/fede/GIT/Jaquenod/Modulo11/Guia/ISE/Actividad_11_1_2/Manchester_Diferencial/Sources/System_TB.vhd&quot; into library work</arg>
 </msg>
 
 </messages>
