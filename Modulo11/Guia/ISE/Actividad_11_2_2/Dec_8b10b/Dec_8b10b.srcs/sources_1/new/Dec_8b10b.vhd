@@ -89,12 +89,9 @@ begin
                     Dato_Out_Aux_K = x"7F"    -- K.30.7
                   else '1';
 
-    Dato_Out <= Dato_Out_Aux_K when DnK_Aux = '0' else
-          "111" & Out_DatoD(Out_DatoD'high-1 downto 0) when Dato_Out_Aux_D = x"F1"
-          else Dato_Out_Aux_D;
+    Dato_Out <= Dato_Out_Aux_K when DnK_Aux = '0' else "111" & Out_DatoD(Out_DatoD'high-1 downto 0) when Dato_Out_Aux_D = x"F1" else Dato_Out_Aux_D;
 
     DnK <= DnK_Aux;
     nRD <= nRD_Aux;
-    Error <= '1' when Out_DatoD = "100011" or Out_PlusD = "1000"
-              or Out_PlusK = "1000" or Out_DatoD(Out_DatoD'high-1 downto 0) = "11100" and DnK = '1' else '0';
+    Error <= '1' when Out_DatoD = "100011" or Out_PlusD = "1000" or Out_PlusK = "1000" or Out_DatoD(Out_DatoD'high-1 downto 0) = "11100" and DnK = '1' else '0';
 end Arq_Dec_8b10b;
