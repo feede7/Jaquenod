@@ -2,3 +2,6 @@
 *.vdb
 *.didat
 Modulo7/Guia/ISE/Actividad_7_2_2/Cordic/isim/
+.~*
+vivado.*
+vivado_*
