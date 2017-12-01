@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../Carcasa.srcs/sources_1/new/Flash_SPI.vhd"
+vhdl xil_defaultlib  "../../../Carcasa.srcs/sources_1/new/Head.vhd"
+vhdl xil_defaultlib  "../../../Carcasa.srcs/sim_1/new/Head_TB.vhd"
+
+# Do not sort compile order
+nosort
