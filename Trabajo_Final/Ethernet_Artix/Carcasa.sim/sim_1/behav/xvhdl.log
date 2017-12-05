@@ -1,6 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/farbizu/GIT/Carcasa_Artix/Carcasa.srcs/sources_1/new/Flash_SPI.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity En_Flash_SPI
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/farbizu/GIT/Carcasa_Artix/Carcasa.srcs/sources_1/new/Head.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity En_Head
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/farbizu/GIT/Carcasa_Artix/Carcasa.srcs/sim_1/new/Head_TB.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity En_Head_TB

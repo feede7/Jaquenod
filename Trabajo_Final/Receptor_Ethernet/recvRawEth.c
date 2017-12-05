@@ -33,7 +33,7 @@
 
 #define ETHER_TYPE	0x0800
 
-#define DEFAULT_IF	"enp2s0"
+#define DEFAULT_IF	"enp4s0"
 #define BUF_SIZ		1024
 
 int main(int argc, char *argv[])
@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
 	}else{
 		ret = -1;
 		goto done;
-	}/* {
+	} {
 		printf("Wrong destination MAC: %x:%x:%x:%x:%x:%x\n",
 						eh->ether_dhost[0],
 						eh->ether_dhost[1],
@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
 						eh->ether_dhost[5]);
 		ret = -1;
 		goto done;
-	}*/
+	}
 
 	/* Get source IP */
 	((struct sockaddr_in *)&their_addr)->sin_addr.s_addr = iph->saddr;
