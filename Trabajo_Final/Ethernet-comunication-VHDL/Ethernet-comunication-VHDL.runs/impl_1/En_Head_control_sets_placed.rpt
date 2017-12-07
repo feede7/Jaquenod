@@ -1,0 +1,118 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
+| Date         : Thu Dec  7 08:15:17 2017
+| Host         : farbizu-78 running 64-bit Ubuntu 16.04.3 LTS
+| Command      : report_control_sets -verbose -file En_Head_control_sets_placed.rpt
+| Design       : En_Head
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    49 |
+| Unused register locations in slices containing registers |   143 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              59 |           28 |
+| No           | No                    | Yes                    |              24 |            9 |
+| No           | Yes                   | No                     |             131 |           43 |
+| Yes          | No                    | No                     |             335 |           83 |
+| Yes          | No                    | Yes                    |              14 |            4 |
+| Yes          | Yes                   | No                     |             366 |           94 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+
+|                                             Clock Signal                                             |                                              Enable Signal                                             |                                          Set/Reset Signal                                         | Slice Load Count | Bel Load Count |
++------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+
+|  clk125MHz90_BUFG                                                                                    |                                                                                                        |                                                                                                   |                1 |              1 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG |                                                                                                        |                                                                                                   |                1 |              1 |
+| ~Communication_In_ReplyValid                                                                         |                                                                                                        | Ins_ETH_100mbps/Instance_Communication/Reply_Picked                                               |                1 |              1 |
+|  CLK_50MHz_BUFG                                                                                      | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Out_PHY_TX_Enable_i_2_n_0                   | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Out_PHY_TX_Enable_i_1_n_0              |                1 |              1 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Out_PHY_MDIO_i_1_n_0                             |                                                                                                   |                1 |              1 |
+| ~CLKB                                                                                                |                                                                                                        |                                                                                                   |                1 |              1 |
+| ~Instance_Communication/UDP_Sender_CLK_12_Load                                                       |                                                                                                        |                                                                                                   |                2 |              2 |
+| ~CLK_50MHz_BUFG                                                                                      |                                                                                                        | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Out_PHY_TX[1]_i_1_n_0                  |                1 |              2 |
+| ~Instance_Communication/UDP_Sender_CLK_12_Load                                                       |                                                                                                        | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Data_Is_Sending2                       |                1 |              3 |
+|  CLK_50MHz_BUFG                                                                                      |                                                                                                        |                                                                                                   |                2 |              3 |
+| ~CLKB                                                                                                |                                                                                                        | Ins_Flash_SPI/CS_STOP_i_1_n_0                                                                     |                2 |              3 |
+|  Ins_ETH_100mbps/Instance_PHY_Manager/Instance_ClockMaker/generated_Clock                            | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command[13]_i_1_n_0                                        |                                                                                                   |                1 |              4 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/FSM_sequential_UDP_NextState_reg[3]_i_1_n_0 | Ins_ETH_100mbps/Instance_Communication/UDP_Sender_In_Load                                         |                1 |              4 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Counter_UDP_Version                         | Ins_ETH_100mbps/Instance_Communication/UDP_Sender_In_Load                                         |                1 |              4 |
+|  ETH_RXCK_IBUF_BUFG                                                                                  | Ins_ETH_1000mbps/i_rgmii_rx/link_10mb_i_1_n_0                                                          |                                                                                                   |                1 |              4 |
+|  Ins_ETH_100mbps/Instance_PHY_Manager/Instance_ClockMaker/generated_Clock                            |                                                                                                        |                                                                                                   |                1 |              4 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/FSM_sequential_CurrentState[3]_i_1_n_0           | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Load                                                  |                2 |              4 |
+|  clk125MHz_BUFG                                                                                      | Ins_ETH_1000mbps/i_add_preamble/data_enable_out                                                        |                                                                                                   |                2 |              7 |
+|  clk125MHz_BUFG                                                                                      | Ins_ETH_1000mbps/i_rgmii_tx/sel                                                                        | Ins_ETH_1000mbps/i_add_preamble/data_enable_out                                                   |                2 |              7 |
+| ~Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Index_Sending0                              | Ins_ETH_100mbps/Instance_Communication/Index_Sending[7]_i_1_n_0                                   |                2 |              7 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Counter_IDLE                                | Ins_ETH_100mbps/Instance_Communication/UDP_Sender_In_Load                                         |                3 |              7 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/CRCGen_In_Data[7]_i_1_n_0                   |                                                                                                   |                4 |              8 |
+| ~Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/E[0]                                        |                                                                                                   |                3 |              8 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Counter_IDLE                                     | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Load                                                  |                2 |              8 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Current_Byte[7]_i_1_n_0                     |                                                                                                   |                5 |              8 |
+| ~CLK_50MHz_BUFG                                                                                      |                                                                                                        |                                                                                                   |                4 |              9 |
+|  CLKB                                                                                                | Ins_Flash_SPI/WEB                                                                                      | Ins_Flash_SPI/CS_STOP_i_1_n_0                                                                     |                4 |             14 |
+| ~CLKB                                                                                                | Ins_Flash_SPI/len0                                                                                     |                                                                                                   |                4 |             15 |
+|  clk125MHz_BUFG                                                                                      |                                                                                                        |                                                                                                   |                8 |             16 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Counter_Data_Array[0]_i_1_n_0               |                                                                                                   |                4 |             16 |
+|  CLKB                                                                                                |                                                                                                        | Ins_Flash_SPI/CS_STOP_i_1_n_0                                                                     |                5 |             17 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       |                                                                                                        | Ins_ETH_100mbps/Instance_Communication/UDP_Sender_In_Load                                         |               15 |             21 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       |                                                                                                        |                                                                                                   |                8 |             22 |
+|  Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/CRCGenerator_In_Enabled_reg_n_0             | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Instance_CRC32_Block/crc_s[29]_i_1_n_0 |               11 |             29 |
+|  clk125MHz90_BUFG                                                                                    | count                                                                                                  | count[30]_i_1_n_0                                                                                 |                9 |             31 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Counter_PHYAddress                               | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Load                                                  |                8 |             32 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Counter_Data                                     | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Load                                                  |                8 |             32 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Counter_OpCode                                   | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Load                                                  |                8 |             32 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Counter_TurnAround                               | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Load                                                  |                8 |             32 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Counter_Preamble                                 | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Load                                                  |                8 |             32 |
+| ~Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/Counter_IDLE_reg[0]_BUFG | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Counter_RegisterAddress                          | Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Load                                                  |                8 |             32 |
+|  CLK_50MHz_BUFG                                                                                      |                                                                                                        | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/Instance_ClockMacker/clear                  |                9 |             36 |
+|  CLK_50MHz_BUFG                                                                                      |                                                                                                        | Ins_ETH_100mbps/Instance_PHY_Manager/Instance_ClockMaker/eqOp_carry__1_n_0                        |                9 |             36 |
+|  CLK_50MHz_BUFG                                                                                      |                                                                                                        | Ins_ETH_100mbps/Instance_Communication/Instance_UDP_Sender/Instance_ClockMacker/clear             |                9 |             36 |
+|  CLKB                                                                                                | Ins_Flash_SPI/header[46]_i_1_n_0                                                                       |                                                                                                   |               13 |             47 |
+| ~CLK_50MHz_BUFG                                                                                      | Ins_ETH_100mbps/Instance_Communication/Communication_In_Reply_reg[0]                                   | Ins_ETH_100mbps/Instance_Communication/Communication_In_Reply_reg[71]                             |               12 |             72 |
+| ~CLK_50MHz_BUFG                                                                                      | Ins_ETH_100mbps/Trama_Count[0]_i_1_n_0                                                                 |                                                                                                   |               18 |             72 |
+| ~Communication_In_ReplyValid                                                                         | Ins_ETH_100mbps/Instance_Communication/Buffer_Reply[71]_i_1_n_0                                        |                                                                                                   |               12 |             72 |
+| ~Instance_Communication/UDP_Sender_CLK_12_Load                                                       | Ins_ETH_100mbps/Instance_Communication/Data_Is_Sending0                                                |                                                                                                   |               15 |             73 |
++------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     6 |
+| 2      |                     2 |
+| 3      |                     3 |
+| 4      |                     6 |
+| 7      |                     4 |
+| 8      |                     4 |
+| 9      |                     1 |
+| 14     |                     1 |
+| 15     |                     1 |
+| 16+    |                    21 |
++--------+-----------------------+
+
+
