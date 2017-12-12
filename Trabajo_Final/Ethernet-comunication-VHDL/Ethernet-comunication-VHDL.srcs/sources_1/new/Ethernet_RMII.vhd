@@ -41,7 +41,9 @@ PORT (
         In_PHY_CRS_DV		: In  STD_LOGIC;
         Out_PHY_TX			: Out STD_LOGIC_VECTOR( 1 downto 0):=(Others=>'Z');
 		Out_PHY_TX_Enable	: Out STD_LOGIC:= 'Z';
-		Out_Is_Sending		: Out STD_LOGIC
+		Out_Is_Sending		: Out STD_LOGIC;
+		debug         		: Out STD_LOGIC;
+		data_debug     		: Out STD_LOGIC_VECTOR(7 downto 0)
 	);
 end En_Ethernet_RMII;
 
@@ -112,7 +114,9 @@ begin
               Out_PHY_TX_Enable	=> Out_PHY_TX_Enable,
               Out_NextByte_Req	=> UDP_Sender_Out_NextByte_Req,
               Out_IsActive		=> UDP_Sender_Out_IsActive,
-              Out_CLK_12_Load	=> UDP_Sender_CLK_12_Load
+              Out_CLK_12_Load	=> UDP_Sender_CLK_12_Load,
+              debug            	=> debug,
+              data_debug       	=> data_debug
         );
 								
     Instance_UDP_Receiver : entity work.En_UDP_Receiver(Arq_UDP_Receiver)

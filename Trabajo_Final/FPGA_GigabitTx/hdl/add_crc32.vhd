@@ -1,10 +1,10 @@
 ----------------------------------------------------------------------------------
--- Engineer: Mike Field <hamster@snap.net.nz> 
--- 
+-- Engineer: Mike Field <hamster@snap.net.nz>
+--
 -- Module Name: add_crc32 - Behavioral
 --
--- Description: Add the required 16 nibbles of preamble to the data packet. 
--- 
+-- Description: Add the required 16 nibbles of preamble to the data packet.
+--
 ----------------------------------------------------------------------------------
 
 
@@ -39,13 +39,13 @@ add_crc_proc: process(clk)
                     data_valid_out <= '1';
                     -- Flag that we need to output 8 bytes of CRC
                     trailer_left    <= (others => '1');
-                    
+
                     ----------------------------------------
                     -- Update the CRC
                     --
-                    -- This uses a variable to make the code 
+                    -- This uses a variable to make the code
                     -- simple to follow and more compact
-                    ---------------------------------------- 
+                    ----------------------------------------
                     v_crc := crc;
                     for i in 0 to 7 loop
                         if data_in(i) = v_crc(31) then
@@ -54,18 +54,18 @@ add_crc_proc: process(clk)
                            v_crc := (v_crc(30 downto 0)& '0') xor x"04C11DB7";
                         end if;
                     end loop;
-                    crc <= v_crc; 
-                    
+                    crc <= v_crc;
+
                 elsif trailer_left(trailer_left'high)= '1' then
                     -- append the CRC
                     data_out        <= not (crc(24) & crc(25) & crc(26) & crc(27) & crc(28) & crc(29) & crc(30) & crc(31));
                     crc             <= crc(23 downto 0) & "11111111";
                     trailer_left    <= trailer_left(trailer_left'high-1 downto 0) & '0';
-                    data_valid_out <= '1';        
+                    data_valid_out <= '1';
                 else
                     -- Idle
-                    data_out        <= "00000000"; 
-                    data_valid_out <= '0';                
+                    data_out        <= "00000000";
+                    data_valid_out <= '0';
                 end if;
             end if;
         end if;

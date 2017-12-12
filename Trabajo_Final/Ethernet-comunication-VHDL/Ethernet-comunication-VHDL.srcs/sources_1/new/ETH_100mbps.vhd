@@ -37,7 +37,8 @@ entity En_ETH_100mbps is
             ETH_RX_DV    : in  STD_LOGIC;
             ETH_RST      : out STD_LOGIC := '0';
             MDIO         : inout  STD_LOGIC;
-            MDC          : out STD_LOGIC
+            MDC          : out STD_LOGIC;
+            Serie_Tx     : out STD_LOGIC
     );
 end En_ETH_100mbps;
 
@@ -97,6 +98,21 @@ architecture Arq_ETH_100mbps of En_ETH_100mbps is
     SIGNAL TEMP:std_logic;
     
     signal Trama_Count  : STD_LOGIC_VECTOR(71 downto 0);
+    signal sETH_TX_D  : STD_LOGIC_VECTOR(1 downto 0);
+    
+    constant largo : NATURAL := 153;
+    
+    signal Data_Serie       : std_logic_vector (largo*8-1 downto 0);
+    signal Counter_Serie    : NATURAL := 0;
+    signal Serie_Start      : std_logic := '0';
+    signal Serie_Ready      : std_logic := '0';
+    
+        signal Toggle       : STD_LOGIC;
+        signal debug       : STD_LOGIC;
+        signal data_debug  : STD_LOGIC_VECTOR(7 downto 0);
+        signal syncro       : STD_LOGIC;
+    signal count        : NATURAL;
+    
 BEGIN
     MDC			<= PHY_Manager_Out_MDC;
     MDIO		<= PHY_Manager_Out_MDIO;
@@ -127,11 +143,60 @@ BEGIN
               
               In_PHY_RX			=> ETH_RX_D,
               In_PHY_CRS_DV		=> ETH_RX_DV,
-              Out_PHY_TX		=> ETH_TX_D,
+              Out_PHY_TX		=> sETH_TX_D,
               Out_PHY_TX_Enable	=> ETH_TX_D_Enable,
-              Out_Is_Sending	=> Communication_Out_Is_Sending
+              Out_Is_Sending	=> Communication_Out_Is_Sending,
+              debug         	=> debug,
+              data_debug       	=> data_debug
             ); 
-					 					
+
+    ETH_TX_D <= sETH_TX_D;
+    
+    process
+    begin
+        if rising_edge(CLK_50MHz) then
+            if debug = '1' then
+                Data_Serie      <= Data_Serie(Data_Serie'high-8 downto 0) & data_debug;
+                Counter_Serie   <= largo;--Data_Serie'length/8 + 1;
+            else
+                Serie_Start     <= '0';
+                if Serie_Ready = '1' and Serie_Start = '0' and Counter_Serie > 0 then
+                    Serie_Start     <= '1';
+                    Counter_Serie   <= Counter_Serie - 1;
+                    Data_Serie      <= Data_Serie(Data_Serie'high-8 downto 0) & x"13";
+                end if;
+            end if;
+        end if;
+    end process;
+
+i_UART: entity work.En_UART_TX(Arq_UART_TX)
+    generic map (	BaudRate => 921600,
+				    Frecuencia_ClkRecep => 50_000_000)
+	 Port map ( 
+	       Reset 	=> Reset,
+           Clk 	    => CLK_50MHz,
+           Data 	=> Data_Serie(Data_Serie'high downto Data_Serie'high-7),
+           Start	=> Serie_Start,
+		   SDout 	=> Serie_Tx,
+		   TxReady  => Serie_Ready
+		);
+
+    process
+    begin
+        if Reset = '1' then
+            count <= 0;
+        elsif rising_edge(CLK_50MHz) then
+            Toggle <= '0';
+            if count = 50000000 then
+                Toggle <= '1';
+            --    Toggle <= not Toggle;
+                count <= 0;
+            else
+                count <= count + 1;
+            end if;
+        end if;
+    end process;
+    
     -- Main Controller of the program
     PROCESS (CLK_50MHz)
     BEGIN
@@ -169,7 +234,8 @@ BEGIN
                             END Case;						
                     WHEN Server	=>								
     --                    IF Communication_Out_Command_Ready = '1' THEN
-                            IF Server_Time(Constant_Server_Index) = '1' THEN -- Wait to not receive a massage twice
+                            IF Toggle = '1' THEN -- Wait to not receive a massage twice
+--                            IF Server_Time(Constant_Server_Index) = '1' THEN -- Wait to not receive a massage twice
                                 
 --                                CASE Communication_Out_Data(67 downto 64) IS									
 --                                    WHEN "0001" =>		
@@ -195,7 +261,7 @@ BEGIN
 --                                        LED0 <= '0';
 --                                        LED1 <= '0';
 --                                        LED2 <= '0';
-                                        Communication_In_Reply		<= Trama_Count;--x"1E0000000005500000";
+                                        Communication_In_Reply		<= x"1E0000000005500000";--Trama_Count;--x"1E0000000005500000";
                                         Trama_Count <= Trama_Count + '1';
                                         Communication_In_ReplyValid	<=	'1';
 --                                END CASE;

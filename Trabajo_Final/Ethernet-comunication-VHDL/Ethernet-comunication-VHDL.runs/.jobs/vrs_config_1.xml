@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<Runs Version="1" Minor="0">
-	<Run Id="synth_1" LaunchDir="/home/farbizu/GIT/Jaquenod/Trabajo_Final/Documentacion/Ethernet-communication-VHDL/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
-</Runs>
-

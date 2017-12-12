@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/farbizu/GIT/Jaquenod/Trabajo_Final/Documentacion/Ethernet-communication-VHDL/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.runs/synth_1'
+HD_PWD='/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

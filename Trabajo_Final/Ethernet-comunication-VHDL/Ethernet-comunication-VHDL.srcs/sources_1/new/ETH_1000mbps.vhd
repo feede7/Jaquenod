@@ -17,6 +17,8 @@ entity En_ETH_1000mbps is
     Port ( CLK_50MHz : in    std_logic; -- system clock
            CLK125MHz   : in    std_logic; -- system clock
            CLK125MHz90 : in    std_logic; -- system clock
+           Reset       : in    std_logic;
+           Send       : in    std_logic;
            switches  : in    std_logic_vector(3 downto 0);
            leds      : out   std_logic_vector(3 downto 0);
            
@@ -32,7 +34,10 @@ entity En_ETH_1000mbps is
            -- Ethernet Transmit interface
            eth_txck  : out   std_logic := '0';
            eth_txctl : out   std_logic := '0';
-           eth_txd   : out   std_logic_vector(3 downto 0) := (others => '0')
+           eth_txd   : out   std_logic_vector(3 downto 0) := (others => '0');
+           
+           Serie_TX  : out   std_logic;
+           debug  : out   STD_LOGIC_VECTOR (4 downto 0)
     );
 end En_ETH_1000mbps;
 
@@ -46,7 +51,6 @@ architecture Arq_ETH_1000mbps of En_ETH_1000mbps is
     signal de_count      : unsigned(6 downto 0)          := (others => '0');
     signal start_sending : std_logic                     := '0';
     signal reset_counter : unsigned(24 downto 0)         := (others => '0');
-    signal debug         : STD_LOGIC_VECTOR (5 downto 0) := (others => '0');
     signal phy_ready     : std_logic                     := '0';
     signal user_data     : std_logic                     := '0';
 
@@ -54,7 +58,6 @@ architecture Arq_ETH_1000mbps of En_ETH_1000mbps is
         Port ( clk             : in STD_LOGIC;
                start           : in  STD_LOGIC;
                busy            : out STD_LOGIC;
-               new_frame   : out STD_LOGIC;
 
                advance         : in  STD_LOGIC;               
 
@@ -68,8 +71,6 @@ architecture Arq_ETH_1000mbps of En_ETH_1000mbps is
     signal raw_data_user   : std_logic                     := '0';
     signal raw_data_valid  : std_logic                     := '0';
     signal raw_data_enable : std_logic                     := '0';
-    signal raw_busy        : std_logic                     := '0';
-    signal raw_new_frame   : std_logic                     := '0';
 
     component add_crc32 is
         Port ( clk             : in  STD_LOGIC;
@@ -82,16 +83,6 @@ architecture Arq_ETH_1000mbps of En_ETH_1000mbps is
                data_valid_out  : out STD_LOGIC;
                data_enable_out : out STD_LOGIC);
     end component;
-
-    COMPONENT crc32_block IS
-    PORT(   clk 		: In STD_LOGIC;
-            rst 		: In STD_LOGIC;
-            enable_s 	: In STD_LOGIC;
-            newframe_s 	: In STD_LOGIC;
-            data_crc_s 	: In STD_LOGIC_VECTOR(7 downto 0);          
-            crc_s 		: Out STD_LOGIC_VECTOR(31 downto 0)
-            );
-    END COMPONENT;
 
     signal with_crc        : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
     signal with_crc_valid  : std_logic                     := '0';
@@ -151,6 +142,17 @@ architecture Arq_ETH_1000mbps of En_ETH_1000mbps is
     signal link_100mb       : std_logic;
     signal link_1000mb      : std_logic;
     signal link_full_duplex : std_logic;
+    
+    -- Agregados
+    constant largo : NATURAL := 153;
+
+    signal Sending          : std_logic := '0';
+    signal Data_Serie       : std_logic_vector (largo*8-1 downto 0);
+    signal Counter_Serie    : NATURAL := 0;
+    signal Serie_Start      : std_logic := '0';
+    signal Serie_Ready      : std_logic := '0';
+    signal seth_txd      : STD_LOGIC_VECTOR (3 downto 0) := (others => '0');
+    signal seth_txck      : STD_LOGIC;
 begin
    ---------------------------------------------------
     -- Strapping signals
@@ -162,12 +164,12 @@ begin
      --speed <= "11";
     eth_rst_b <= '1';
 
---    Instance_PHY_Manager : entity work.En_PHY_Manager(Arq_PHY_Manager)
---    PORT MAP( In_CLK_50			=> CLK_50MHz,	
---              Out_PHY_MDIO		=> ETH_MDIO,
---              Out_PHY_MDC		=> ETH_MDC,					
---              Out_IsActive		=> open
---       );
+    Instance_PHY_Manager : entity work.En_PHY_Manager(Arq_PHY_Manager)
+    PORT MAP( In_CLK_50			=> CLK_50MHz,	
+              Out_PHY_MDIO		=> ETH_MDIO,
+              Out_PHY_MDC		=> ETH_MDC,					
+              Out_IsActive		=> phy_ready
+       );
               
    ---------------------------------------------------
    -- Generate the timing signals for tri-mode
@@ -209,37 +211,27 @@ process(clk125Mhz)
    ----------------------------------------------------
 data: byte_data port map ( 
       clk        => clk125MHz,
-      start       => start_sending,
+      start       => Send,--start_sending,
       advance     => adv_data,
-      busy        => raw_busy,
-      new_frame   => raw_new_frame,
+      busy        => open,
       data        => raw_data,
       data_enable => raw_data_enable,
       Data_valid  => raw_data_valid);
 
---i_add_crc32: add_crc32 port map (
---      clk             => clk125MHz,
---      data_in         => raw_data,
---      data_valid_in   => raw_data_valid,
---      data_enable_in  => raw_data_enable,
---      data_out        => with_crc,
---      data_valid_out  => with_crc_valid,
---      data_enable_out => with_crc_enable);
+i_add_crc32: add_crc32 port map (
+      clk             => clk125MHz,
+      data_in         => raw_data,
+      data_valid_in   => raw_data_valid,
+      data_enable_in  => raw_data_enable,
+      data_out        => with_crc,
+      data_valid_out  => with_crc_valid,
+      data_enable_out => with_crc_enable);
 
-    Instance_CRC : crc32_block PORT MAP (   
-            clk 		=> '0',
-            rst 		=> raw_busy,
-            enable_s 	=> raw_data_enable,
-            newframe_s 	=> raw_new_frame,
-            data_crc_s 	=> with_crc,
-            crc_s 		=> Value_CRC
-        );
-               
 i_add_preamble: add_preamble port map (
       clk             => clk125MHz,
       data_in         => with_crc,
       data_valid_in   => with_crc_valid,
-      data_enable_in  => raw_data_enable,
+      data_enable_in  => with_crc_enable,
       data_out        => fully_framed,
       data_valid_out  => fully_framed_valid,
       data_enable_out => fully_framed_enable);
@@ -254,9 +246,42 @@ i_rgmii_tx:    rgmii_tx port map (
       data_enable => fully_framed_enable,
       data_error  => '0',
 
-      eth_txck    => eth_txck, 
+      eth_txck    => seth_txck, 
       eth_txctl   => eth_txctl,
-      eth_txd     => eth_txd);
+      eth_txd     => seth_txd);
+
+    eth_txd <= seth_txd;
+    eth_txck <= seth_txck;
+    debug <= "00" & fully_framed_valid &  with_crc_valid & raw_data_valid; 
+    
+    process
+    begin
+        if rising_edge(clk125MHz) then
+            if fully_framed_valid = '1' then
+                Data_Serie      <= Data_Serie(Data_Serie'high-8 downto 0) & fully_framed;
+                Counter_Serie   <= largo;--Data_Serie'length/8 + 1;
+            else
+                Serie_Start     <= '0';
+                if Serie_Ready = '1' and Serie_Start = '0' and Counter_Serie > 0 then
+                    Serie_Start     <= '1';
+                    Counter_Serie   <= Counter_Serie - 1;
+                    Data_Serie      <= Data_Serie(Data_Serie'high-8 downto 0) & x"13";
+                end if;
+            end if;
+        end if;
+    end process;
+
+i_UART: entity work.En_UART_TX(Arq_UART_TX)
+    generic map (	BaudRate => 921600,
+				    Frecuencia_ClkRecep => 125_000_000)
+	 Port map ( 
+	       Reset 	=> Reset,
+           Clk 	    => clk125MHz,
+           Data 	=> Data_Serie(Data_Serie'high downto Data_Serie'high-7),
+           Start	=> Serie_Start,
+		   SDout 	=> Serie_Tx,
+		   TxReady  => Serie_Ready
+		);
 
     ----------------------------------------
     -- Control reseting the PHY
@@ -268,7 +293,7 @@ control_reset: process(clk125MHz)
               reset_counter <= reset_counter + 1;
           end if; 
           --eth_rst_b <= reset_counter(reset_counter'high) or reset_counter(reset_counter'high-1);
-          phy_ready  <= reset_counter(reset_counter'high);
+          --phy_ready  <= reset_counter(reset_counter'high);
        end if;
     end process;
 ----------------------------------------------------------------------

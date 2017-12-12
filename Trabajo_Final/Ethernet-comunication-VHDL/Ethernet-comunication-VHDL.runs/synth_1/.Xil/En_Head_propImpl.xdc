@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/farbizu/GIT/Jaquenod/Trabajo_Final/Documentacion/Ethernet-communication-VHDL/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/constrs_1/new/top_level.xdc rfile:../../../Ethernet-comunication-VHDL.srcs/constrs_1/new/top_level.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/constrs_1/new/top_level.xdc rfile:../../../Ethernet-comunication-VHDL.srcs/constrs_1/new/top_level.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G4   [get_ports PLL_CLK_N];		set_property IOSTANDARD DIFF_SSTL15 [get_ports PLL_CLK_N]; 		# TE0712 = PLL_CLK_N	KIT ARTIX = Interna SOM
 set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
@@ -36,11 +36,23 @@ set_property PACKAGE_PIN N15  [get_ports LINK_LED];		    set_property IOSTANDARD
 set_property src_info {type:XDC file:1 line:59 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN C22 [get_ports {LEDS[1]}];                set_property IOSTANDARD LVCMOS25 [get_ports {LEDS[1]}];  # TE0712 = B16_L20_P - KIT ARTIX = JB1-50
 set_property src_info {type:XDC file:1 line:61 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN B22 [get_ports {LEDS[3]}];               set_property IOSTANDARD LVCMOS25 [get_ports {LEDS[3]}];  # TE0712 = B16_L20_N - KIT ARTIX = JB1-52
+set_property PACKAGE_PIN B22 [get_ports { Serie_TX_1Gbps }];               set_property IOSTANDARD LVCMOS25 [get_ports { Serie_TX_1Gbps }];  # TE0712 = B16_L20_N - KIT ARTIX = JB1-52
+set_property src_info {type:XDC file:1 line:65 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN A21 [get_ports {debug[0]}];   set_property IOSTANDARD LVCMOS25 [get_ports {debug[0]}];  # TE0712 = B16_L21_N - KIT ARTIX = JB1-58
+set_property src_info {type:XDC file:1 line:69 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C19 [get_ports {debug[1]}];   set_property IOSTANDARD LVCMOS25 [get_ports {debug[1]}];  # TE0712 = B16_L13_N - KIT ARTIX = JB1-62
+set_property src_info {type:XDC file:1 line:73 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN D19 [get_ports {debug[2]}];   set_property IOSTANDARD LVCMOS25 [get_ports {debug[2]}];  # TE0712 = B16_L14_N - KIT ARTIX = JB1-68
+set_property src_info {type:XDC file:1 line:77 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C14 [get_ports {debug[3]}];   set_property IOSTANDARD LVCMOS25 [get_ports {debug[3]}];  # TE0712 = B16_L3_P - KIT ARTIX = JB1-72
+set_property src_info {type:XDC file:1 line:81 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C17 [get_ports {debug[4]}];   set_property IOSTANDARD LVCMOS25 [get_ports {debug[4]}];  # TE0712 = B16_L12_N - KIT ARTIX = JB1-78
 set_property src_info {type:XDC file:1 line:112 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN U20 [get_ports {LEDS[0]}];   set_property IOSTANDARD LVCMOS25 [get_ports {LEDS[0]}];  # TE0712 = B14_L11_P - KIT ARTIX = JB2-25
 set_property src_info {type:XDC file:1 line:114 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN V20 [get_ports {LEDS[2]}];   set_property IOSTANDARD LVCMOS25 [get_ports {LEDS[2]}];  # TE0712 = B14_L11_N - KIT ARTIX = JB2-27
+set_property src_info {type:XDC file:1 line:132 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN L19 [get_ports ETH_CLK_REF];   set_property IOSTANDARD LVCMOS25 [get_ports ETH_CLK_REF];  # TE0712 = B15_L14_P - KIT ARTIX = JB2-51
 set_property src_info {type:XDC file:1 line:164 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN J16 [get_ports ETH_LED1];          set_property IOSTANDARD LVCMOS25 [get_ports ETH_LED1];  # TE0712 = B15_IO0 - KIT ARTIX = JB2-90
 set_property src_info {type:XDC file:1 line:169 export:INPUT save:INPUT read:READ} [current_design]

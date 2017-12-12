@@ -61,12 +61,14 @@ entity En_Head is
             ETH_RST_1G    : out STD_LOGIC := '1';
             ETH_MDC       : out STD_LOGIC;
             ETH_MDIO      : inout  STD_LOGIC;
+            ETH_CLK_REF   : out STD_LOGIC;
 --            PHY_INT       : in  STD_LOGIC;
 --            CONFIG        : out STD_LOGIC;
             
             -- Pines Debug
-            LEDS         : out STD_LOGIC_VECTOR(3 downto 0)--;
-            --LED          : out STD_LOGIC
+            LEDS            : out STD_LOGIC_VECTOR(2 downto 0);
+            Serie_TX_1Gbps  : out STD_LOGIC;
+            debug           : out STD_LOGIC_VECTOR(4 downto 0)
     );
 end En_Head;
 
@@ -86,6 +88,11 @@ architecture Arq_Head of En_Head is
     signal clk125MHz   : std_logic;
     signal clk125MHz90 : std_logic; -- for the TX clock
     signal clkfb       : std_logic;
+    
+    signal sLEDS       : std_logic_vector(3 downto 0);
+    signal Serie_Tx_100Mbps       : std_logic;
+    signal Send_1Gbps       : std_logic;
+
 BEGIN
 
     --------------------------------------- Configuración de Flash ------------------------------------------------
@@ -129,8 +136,8 @@ clocking : PLLE2_BASE
 
       -- CLKOUT0_PHASE - CLKOUT5_PHASE: Phase offset for each CLKOUT (-360.000-360.000).
       CLKOUT0_PHASE      =>    0.0, CLKOUT1_PHASE      => 0.0, CLKOUT2_PHASE      => 0.0,
-      --CLKOUT3_PHASE      => -270.0, CLKOUT4_PHASE      => 0.0, CLKOUT5_PHASE      => 0.0,
-      CLKOUT3_PHASE      => 90.0, CLKOUT4_PHASE      => 0.0, CLKOUT5_PHASE      => 0.0,
+      CLKOUT3_PHASE      => -270.0, CLKOUT4_PHASE      => 0.0, CLKOUT5_PHASE      => 0.0,
+      --CLKOUT3_PHASE      => 90.0, CLKOUT4_PHASE      => 0.0, CLKOUT5_PHASE      => 0.0,
 
       DIVCLK_DIVIDE      => 1,
       REF_JITTER1        => 0.0,
@@ -149,6 +156,8 @@ clocking : PLLE2_BASE
    
    Reset <= not Locked_50MHz;
    
+   ETH_CLK_REF <= CLK125MHz;
+   
     -- Instancio Ethernet 10/100Mbps
     Ins_ETH_100mbps: entity work.En_ETH_100mbps(Arq_ETH_100mbps)
     port map (
@@ -160,7 +169,8 @@ clocking : PLLE2_BASE
         ETH_RX_DV   => ETH_RX_DV,
         ETH_RST     => ETH_RST,
         MDIO        => MDIO,
-        MDC         => MDC
+        MDC         => MDC,
+        Serie_Tx    => Serie_Tx_100Mbps
     );
 
     -- Instancio Ethernet 1000Mbps
@@ -169,8 +179,10 @@ clocking : PLLE2_BASE
         CLK_50MHz   => CLK_50MHz,
         CLK125MHz   => CLK125MHz,
         CLK125MHz90 => CLK125MHz90,
-        switches    => "0010",
-        leds        => LEDS,
+        Reset       => Reset,
+        Send        => Send_1Gbps,
+        switches    => "0000",
+        leds        => sLEDS,
         eth_rst_b   => ETH_RST_1G,
         eth_mdc     => ETH_MDC,
         eth_mdio    => ETH_MDIO,
@@ -179,20 +191,24 @@ clocking : PLLE2_BASE
         eth_rxd     => ETH_RXD,
         eth_txck    => ETH_TXCK,
         eth_txctl   => ETH_TXCTL,
-        eth_txd     => ETH_TXD
-    );          
+        eth_txd     => ETH_TXD,
+        Serie_TX    => Serie_TX_1Gbps,
+        debug       => debug
+    );
 
     --CONFIG <= '0';
 
     process
     begin
---        if rising_edge(CLK_50MHz) then
-        if rising_edge(CLK125MHz90) then
+        if Reset = '1' then
+            count <= 0;
+        elsif rising_edge(CLK125MHz) then
+            Send_1Gbps <= '0';
             if count = 125000000 then
+                Send_1Gbps <= '1';
                 Toggle <= not Toggle;
                 count <= 0;
---            else
-            elsif CLK125MHz = '1' then
+            else
                 count <= count + 1;
             end if;
         end if;
@@ -200,5 +216,7 @@ clocking : PLLE2_BASE
     
     ETH_LED1    <= not LINK_LED;
     ETH_LED2    <= Toggle;--ETH_RX_DV;
+    
+    LEDS        <= sLEDS(2) & Serie_Tx_100Mbps & sLEDS(1);
 
 end Arq_Head;

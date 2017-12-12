@@ -31,7 +31,9 @@ PORT (
           Out_PHY_TX_Enable						:		 Out STD_LOGIC:= 'Z';							
           Out_NextByte_Req						:		 Out STD_LOGIC:= '0';					-- When component IS ready for reading next byte
 		  Out_IsActive							: 		 Out STD_LOGIC:= '0'; 						--	When component IS active this pin goes high
-		  Out_CLK_12_Load						: 		 Out STD_LOGIC:= '0' 						--	Clock of Mac state manager process
+		  Out_CLK_12_Load						: 		 Out STD_LOGIC:= '0'; 						--	Clock of Mac state manager process
+		  debug                                 : 		 Out STD_LOGIC:= '0';
+		  data_debug                              : 	out STD_LOGIC_VECTOR(7  downto 0)
 	);
 end En_UDP_Sender;
 
@@ -141,7 +143,8 @@ begin
                                                 
     ByteSender_PROCESS : PROCESS (In_CLK_50, Current_Byte)
 	BEGIN
-		IF falling_edge(In_CLK_50) THEN						
+		IF falling_edge(In_CLK_50) THEN
+			debug                <= '0';
 			IF(UDP_State_Old /= Off_1) AND (UDP_State_Old /= Idle_2) THEN
 				
 				Counter_CurrentBit<= Counter_CurrentBit+2;
@@ -170,6 +173,8 @@ begin
 							Out_PHY_TX(0)		<= Old_Byte(6);
 							Out_PHY_TX(1)		<= Old_Byte(7);				
 							BS_State_Current	<= BS_1_Pair;
+							debug                <= '1';
+							data_debug           <= Old_Byte;
 					--==**==--			
 				END CASE;
 			ELSE
@@ -221,7 +226,7 @@ begin
 					--==**==--
 					WHEN	Idle_2	=> 								
 						IF Counter_IDLE(6)= '0' THEN 				--Inter frame gap which IS 96 bit
-							UDP_NextState 					<= MAC_Preamble_3;		
+							UDP_NextState 					<= MAC_Preamble_3;
 						ELSE						
 							Counter_IDLE				<= Counter_IDLE - 1;	
 						END IF;
