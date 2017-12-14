@@ -59,6 +59,8 @@ architecture Behavioral of rgmii_tx is
     signal ok_to_send          : STD_LOGIC := '0';
     signal tx_ready            : STD_LOGIC;
     signal tx_ready_meta       : STD_LOGIC;
+    
+    signal eth_txck_bis        : STD_LOGIC;
 
     ATTRIBUTE IOB : STRING ;
     ATTRIBUTE IOB OF dout    : signal IS "TRUE";
@@ -78,7 +80,7 @@ process(clk)
             third_quarter  <= times_3(times_3'high downto 2);
             if data_enable = '1' then
                 enable_frequency <= enable_count+1;
-                enable_count <= (others => '0');                
+                enable_count <= (others => '0');
             elsif  enable_count /= "1111111" then
                 enable_count <= enable_count + 1;
             end if;
@@ -87,7 +89,7 @@ process(clk)
                 hold_data <= data;
                 hold_valid <= data_valid;
                 hold_error <= data_error;
-                if enable_frequency = 1 then
+                if enable_frequency = to_unsigned(1,enable_frequency'length) then
                     -- Double data rate transfer at full frequency
                     dout(3 downto 0) <= data(3 downto 0); 
                     dout(7 downto 4) <= data(7 downto 4); 
@@ -140,7 +142,7 @@ process(clk)
                 end if;
             elsif enable_count = third_quarter  then
                 doutclk(0) <= '0';        
-                doutclk(1) <= '0';        
+                doutclk(1) <= '0';
                 doutctl(0) <= ok_to_send and (hold_valid XOR hold_error);
                 doutctl(1) <= ok_to_send and (hold_valid XOR hold_error);
             end if;
@@ -163,7 +165,8 @@ tx_ctl : ODDR generic map( DDR_CLK_EDGE => "SAME_EDGE", INIT         => '0', SRT
 
 tx_c   : ODDR generic map( DDR_CLK_EDGE => "SAME_EDGE", INIT         => '0', SRTYPE       => "SYNC")
               port map (Q  => eth_txck,  C  => clk90, CE => '1', R  => '0', S  => '0', D1 => doutclk(0), D2 => doutclk(1));
-    
+              --port map (Q  => eth_txck,  C  => clk90, CE => '1', R  => '0', S  => '0', D1 => '1', D2 => '0');
+
 monitor_reset_state: process(clk)
     begin
        if rising_edge(clk) then

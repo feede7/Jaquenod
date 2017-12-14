@@ -14,15 +14,15 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-fgg484'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-fgg484'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 15988 
+INFO: Helper process launched with PID 21295 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1141.836 ; gain = 42.980 ; free physical = 1299 ; free virtual = 12603
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1141.840 ; gain = 42.980 ; free physical = 1322 ; free virtual = 11596
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/UART_TX.vhd:31]
 WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:257]
 WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:155]
 WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:184]
-WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:201]
+WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:230]
 INFO: [Synth 8-638] synthesizing module 'En_Head' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:75]
 INFO: [Synth 8-638] synthesizing module 'En_Flash_SPI' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Flash_SPI.vhd:43]
 	Parameter INIT_00 bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
@@ -111,7 +111,7 @@ INFO: [Synth 8-256] done synthesizing module 'En_Flash_SPI' (1#1) [/home/farbizu
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-113] binding component instance 'IBUFDS_inst' to cell 'IBUFDS' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:111]
+INFO: [Synth 8-113] binding component instance 'IBUFDS_inst' to cell 'IBUFDS' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:122]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT bound to: 20 - type: integer 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
@@ -127,7 +127,7 @@ INFO: [Synth 8-113] binding component instance 'IBUFDS_inst' to cell 'IBUFDS' [/
 	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT3_DIVIDE bound to: 8 - type: integer 
 	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
-	Parameter CLKOUT3_PHASE bound to: -270.000000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 90.000000 - type: float 
 	Parameter CLKOUT4_DIVIDE bound to: 16 - type: integer 
 	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
@@ -137,7 +137,8 @@ INFO: [Synth 8-113] binding component instance 'IBUFDS_inst' to cell 'IBUFDS' [/
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter REF_JITTER1 bound to: 0.000000 - type: float 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-113] binding component instance 'clocking' to cell 'PLLE2_BASE' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:122]
+INFO: [Synth 8-113] binding component instance 'clocking' to cell 'PLLE2_BASE' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:133]
+INFO: [Synth 8-113] binding component instance 'BUFG_inst' to cell 'BUFG' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:179]
 INFO: [Synth 8-638] synthesizing module 'En_ETH_100mbps' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:45]
 INFO: [Synth 8-638] synthesizing module 'En_PHY_Manager' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_Manager.vhd:34]
 INFO: [Synth 8-638] synthesizing module 'En_PHY_I2C' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_I2C.vhd:38]
@@ -207,42 +208,42 @@ INFO: [Synth 8-5534] Detected attribute (* iob = "TRUE" *) [/home/farbizu/GIT/Ja
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'tx_d0' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:153]
+INFO: [Synth 8-113] binding component instance 'tx_d0' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:155]
 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'tx_d1' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:155]
+INFO: [Synth 8-113] binding component instance 'tx_d1' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:157]
 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'tx_d2' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:157]
+INFO: [Synth 8-113] binding component instance 'tx_d2' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:159]
 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'tx_d3' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:159]
+INFO: [Synth 8-113] binding component instance 'tx_d3' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:161]
 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'tx_ctl' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:161]
+INFO: [Synth 8-113] binding component instance 'tx_ctl' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:163]
 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter IS_C_INVERTED bound to: 1'b0 
 	Parameter IS_D1_INVERTED bound to: 1'b0 
 	Parameter IS_D2_INVERTED bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'tx_c' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:164]
+INFO: [Synth 8-113] binding component instance 'tx_c' to cell 'ODDR' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:166]
 INFO: [Synth 8-256] done synthesizing module 'rgmii_tx' (15#1) [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:44]
 INFO: [Synth 8-638] synthesizing module 'En_UART_TX__parameterized0' [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/UART_TX.vhd:17]
 	Parameter BaudRate bound to: 921600 - type: integer 
@@ -294,18 +295,21 @@ INFO: [Synth 8-113] binding component instance 'ddr_rxd3' to cell 'IDDR' [/home/
 WARNING: [Synth 8-3848] Net data_enable in module/entity rgmii_rx does not have driver. [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_rx.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'rgmii_rx' (16#1) [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_rx.vhd:45]
 WARNING: [Synth 8-6014] Unused sequential element reset_counter_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:292]
-WARNING: [Synth 8-6014] Unused sequential element max_count_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:340]
-WARNING: [Synth 8-6014] Unused sequential element count_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:358]
-WARNING: [Synth 8-6014] Unused sequential element start_sending_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:360]
+WARNING: [Synth 8-6014] Unused sequential element max_count_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:338]
+WARNING: [Synth 8-6014] Unused sequential element count_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:356]
+WARNING: [Synth 8-6014] Unused sequential element start_sending_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:358]
 INFO: [Synth 8-256] done synthesizing module 'En_ETH_1000mbps' (17#1) [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:44]
 INFO: [Synth 8-256] done synthesizing module 'En_Head' (18#1) [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Head.vhd:75]
+WARNING: [Synth 8-3917] design En_Head has port CONFIG driven by constant 0
 WARNING: [Synth 8-3331] design rgmii_rx has unconnected port data_enable
+WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port eth_mdio
+WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port CLK_50MHz
 WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port switches[3]
 WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port switches[2]
 WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port switches[1]
 WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port switches[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1198.336 ; gain = 99.480 ; free physical = 1287 ; free virtual = 12592
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1198.340 ; gain = 99.480 ; free physical = 1308 ; free virtual = 11584
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -314,7 +318,7 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin Instance_PHY_I2C:In_IDLE_VAL to constant 0 [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_Manager.vhd:75]
+WARNING: [Synth 8-3295] tying undriven pin Instance_PHY_I2C:In_IDLE_VAL to constant 0 [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_Manager.vhd:76]
 WARNING: [Synth 8-3295] tying undriven pin Instance_Communication:In_Data[71] to constant 0 [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:133]
 WARNING: [Synth 8-3295] tying undriven pin Instance_Communication:In_Data[70] to constant 0 [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:133]
 WARNING: [Synth 8-3295] tying undriven pin Instance_Communication:In_Data[69] to constant 0 [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:133]
@@ -388,7 +392,7 @@ WARNING: [Synth 8-3295] tying undriven pin Instance_Communication:In_Data[2] to 
 WARNING: [Synth 8-3295] tying undriven pin Instance_Communication:In_Data[1] to constant 0 [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:133]
 WARNING: [Synth 8-3295] tying undriven pin Instance_Communication:In_Data[0] to constant 0 [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:133]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1198.336 ; gain = 99.480 ; free physical = 1293 ; free virtual = 12598
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1198.340 ; gain = 99.480 ; free physical = 1314 ; free virtual = 11589
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -408,22 +412,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   PLLE2_BASE => PLLE2_ADV: 1 instances
   RAMB16_S1_S1 => RAMB18E1: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1537.781 ; gain = 0.000 ; free physical = 998 ; free virtual = 12302
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1536.793 ; gain = 0.000 ; free physical = 1056 ; free virtual = 11331
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1537.781 ; gain = 438.926 ; free physical = 1111 ; free virtual = 12416
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1536.793 ; gain = 437.934 ; free physical = 1149 ; free virtual = 11423
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1537.781 ; gain = 438.926 ; free physical = 1111 ; free virtual = 12416
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1536.793 ; gain = 437.934 ; free physical = 1149 ; free virtual = 11423
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1537.781 ; gain = 438.926 ; free physical = 1113 ; free virtual = 12418
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1536.793 ; gain = 437.934 ; free physical = 1149 ; free virtual = 11423
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3936] Found unconnected internal register 'header_reg' and it is trimmed from '48' to '47' bits. [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Flash_SPI.vhd:166]
 WARNING: [Synth 8-6014] Unused sequential element RAM_RADDR_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Flash_SPI.vhd:83]
@@ -485,7 +489,7 @@ INFO: [Synth 8-5546] ROM "data_valid" won't be mapped to RAM because it is too s
 INFO: [Synth 8-5546] ROM "data_user" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "busy" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "doutclk" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element enable_count_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:80]
+WARNING: [Synth 8-6014] Unused sequential element enable_count_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_tx.vhd:82]
 INFO: [Synth 8-5546] ROM "doutclk" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "doutctl" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "ClkOut" won't be mapped to RAM because it is too sparse
@@ -568,7 +572,7 @@ WARNING: [Synth 8-6014] Unused sequential element sts_Init_reg was removed.  [/h
 INFO: [Synth 8-3354] encoded FSM with state register 'sts_Init_reg' using encoding 'sequential' in module 'En_ETH_100mbps'
 WARNING: [Synth 8-6014] Unused sequential element sts_Init_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_100mbps.vhd:210]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1537.781 ; gain = 438.926 ; free physical = 1090 ; free virtual = 12395
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1536.793 ; gain = 437.934 ; free physical = 1126 ; free virtual = 11401
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -583,7 +587,7 @@ INFO: [Synth 8-3538] Detected potentially large (wide) register Data_Serie_reg [
 INFO: [Synth 8-3538] Detected potentially large (wide) register Data_Serie_reg [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ETH_1000mbps.vhd:261]
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     36 Bit       Adders := 6     
+	   2 Input     36 Bit       Adders := 4     
 	   2 Input     32 Bit       Adders := 2     
 	   2 Input     31 Bit       Adders := 3     
 	   2 Input     16 Bit       Adders := 4     
@@ -591,7 +595,7 @@ Detailed RTL Component Info :
 	   2 Input     11 Bit       Adders := 2     
 	   2 Input     10 Bit       Adders := 4     
 	   2 Input      9 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 2     
 	   2 Input      7 Bit       Adders := 11    
 	   2 Input      6 Bit       Adders := 6     
 	   2 Input      5 Bit       Adders := 8     
@@ -604,19 +608,19 @@ Detailed RTL Component Info :
 	               72 Bit    Registers := 2     
 	               64 Bit    Registers := 2     
 	               47 Bit    Registers := 1     
-	               32 Bit    Registers := 21    
-	               31 Bit    Registers := 2     
-	               16 Bit    Registers := 2     
+	               32 Bit    Registers := 15    
+	               31 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
 	               15 Bit    Registers := 2     
 	               12 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 13    
+	                8 Bit    Registers := 12    
 	                7 Bit    Registers := 6     
 	                6 Bit    Registers := 5     
-	                5 Bit    Registers := 6     
+	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 10    
-	                2 Bit    Registers := 8     
-	                1 Bit    Registers := 62    
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 54    
 +---Muxes : 
 	   2 Input   1224 Bit        Muxes := 2     
 	   2 Input    792 Bit        Muxes := 5     
@@ -629,7 +633,7 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit        Muxes := 2     
 	  11 Input     16 Bit        Muxes := 2     
 	   2 Input     15 Bit        Muxes := 2     
-	   2 Input     14 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 1     
 	  65 Input     12 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 1     
@@ -643,17 +647,17 @@ Detailed RTL Component Info :
 	   4 Input      7 Bit        Muxes := 1     
 	   5 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
-	  10 Input      4 Bit        Muxes := 2     
+	  10 Input      4 Bit        Muxes := 1     
 	  16 Input      4 Bit        Muxes := 2     
 	  12 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 12    
-	   4 Input      2 Bit        Muxes := 9     
+	   2 Input      2 Bit        Muxes := 11    
+	   4 Input      2 Bit        Muxes := 8     
 	   3 Input      2 Bit        Muxes := 2     
 	   6 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 44    
-	   9 Input      1 Bit        Muxes := 22    
-	   4 Input      1 Bit        Muxes := 46    
+	   9 Input      1 Bit        Muxes := 11    
+	   4 Input      1 Bit        Muxes := 39    
 	  16 Input      1 Bit        Muxes := 24    
 	  11 Input      1 Bit        Muxes := 17    
 	  65 Input      1 Bit        Muxes := 4     
@@ -670,12 +674,9 @@ Module En_Head
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     31 Bit       Adders := 1     
-+---Registers : 
-	               31 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     31 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module En_Flash_SPI 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -712,7 +713,7 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 7     
 Module crc32_block 
@@ -951,8 +952,6 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element RAM_RADDR_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Flash_SPI.vhd:83]
-WARNING: [Synth 8-6014] Unused sequential element RAM_WADDR_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Flash_SPI.vhd:84]
 WARNING: [Synth 8-6014] Unused sequential element cntTmp_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/ClockMaker.vhd:47]
 WARNING: [Synth 8-6014] Unused sequential element Counter_Data_Array_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/UDP_Sender.vhd:206]
 WARNING: [Synth 8-6014] Unused sequential element Counter_MAC_Des_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/UDP_Sender.vhd:208]
@@ -981,25 +980,32 @@ INFO: [Synth 8-5546] ROM "Buffer_Data" won't be mapped to RAM because it is too 
 WARNING: [Synth 8-6014] Unused sequential element Counter_Packet_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Ethernet_RMII.vhd:181]
 WARNING: [Synth 8-6014] Unused sequential element Index_Data_Recieved_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Ethernet_RMII.vhd:136]
 WARNING: [Synth 8-6014] Unused sequential element Total_PACK_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/Ethernet_RMII.vhd:137]
-WARNING: [Synth 8-6014] Unused sequential element Instance_PHY_Manager/Out_IsActive_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_Manager.vhd:105]
-INFO: [Synth 8-5546] ROM "i_UART/CClockUart/ClkOut" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "Toggle" won't be mapped to RAM because address size (31) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element Instance_PHY_Manager/Instance_PHY_I2C/Counter_Preamble_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_I2C.vhd:89]
-WARNING: [Synth 8-6014] Unused sequential element Instance_PHY_Manager/Instance_PHY_I2C/Counter_OpCode_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_I2C.vhd:90]
-WARNING: [Synth 8-6014] Unused sequential element Instance_PHY_Manager/Instance_PHY_I2C/Counter_PHYAddress_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_I2C.vhd:91]
-WARNING: [Synth 8-6014] Unused sequential element Instance_PHY_Manager/Instance_PHY_I2C/Counter_RegisterAddress_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_I2C.vhd:92]
+WARNING: [Synth 8-6014] Unused sequential element Ins_ETH_100mbps/Instance_PHY_Manager/Out_IsActive_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/PHY_Manager.vhd:106]
+WARNING: [Synth 8-6014] Unused sequential element Ins_ETH_1000mbps/data/busy_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/byte_data.vhd:206]
+WARNING: [Synth 8-6014] Unused sequential element Ins_ETH_1000mbps/data/data_user_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/byte_data.vhd:184]
+WARNING: [Synth 8-6014] Unused sequential element Ins_ETH_1000mbps/i_rgmii_rx/link_full_duplex_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_rx.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element Ins_ETH_1000mbps/i_rgmii_rx/data_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_rx.vhd:65]
+WARNING: [Synth 8-6014] Unused sequential element Ins_ETH_1000mbps/i_rgmii_rx/data_valid_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_rx.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element Ins_ETH_1000mbps/i_rgmii_rx/data_error_reg was removed.  [/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.srcs/sources_1/new/rgmii_rx.vhd:64]
 INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-5546] ROM "data/busy" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "data/data" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "data/data_user" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "data/data_valid" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "i_UART/CClockUart/ClkOut" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "adv_data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Ins_ETH_100mbps/i_UART/CClockUart/ClkOut" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "Ins_ETH_100mbps/Toggle" won't be mapped to RAM because address size (31) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "Ins_ETH_1000mbps/data/busy" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Ins_ETH_1000mbps/data/data" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Ins_ETH_1000mbps/data/data_user" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Ins_ETH_1000mbps/data/data_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Ins_ETH_1000mbps/i_UART/CClockUart/ClkOut" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Ins_ETH_1000mbps/adv_data" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "Send_1Gbps" won't be mapped to RAM because address size (31) is larger than maximum supported(25)
-WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port switches[3]
-WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port switches[2]
-WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port switches[1]
-WARNING: [Synth 8-3331] design En_ETH_1000mbps has unconnected port switches[0]
+WARNING: [Synth 8-3917] design En_Head has port SPI_IO1 driven by constant 1
+WARNING: [Synth 8-3917] design En_Head has port SPI_IO2 driven by constant 1
+WARNING: [Synth 8-3917] design En_Head has port ETH_RST driven by constant 1
+WARNING: [Synth 8-3917] design En_Head has port ETH_RST_1G driven by constant 1
+WARNING: [Synth 8-3917] design En_Head has port ETH_MDC driven by constant 0
+WARNING: [Synth 8-3917] design En_Head has port CONFIG driven by constant 0
+WARNING: [Synth 8-3917] design En_Head has port debug[4] driven by constant 0
+WARNING: [Synth 8-3917] design En_Head has port debug[3] driven by constant 0
+WARNING: [Synth 8-3331] design En_Head has unconnected port ETH_MDIO
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Communication_In_Reply_reg[62]' (FDRE_1) to 'Ins_ETH_100mbps/Communication_In_Reply_reg[71]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Communication_In_Reply_reg[30]' (FDRE_1) to 'Ins_ETH_100mbps/Communication_In_Reply_reg[61]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Communication_In_Reply_reg[46]' (FDRE_1) to 'Ins_ETH_100mbps/Communication_In_Reply_reg[61]'
@@ -1174,39 +1180,39 @@ INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/i_rgmii_tx/second_quarte
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/i_rgmii_tx/second_quarter_reg[3]' (FD) to 'Ins_ETH_1000mbps/i_rgmii_tx/first_quarter_reg[2]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/i_rgmii_tx/second_quarter_reg[4]' (FD) to 'Ins_ETH_1000mbps/i_rgmii_tx/first_quarter_reg[3]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/i_rgmii_tx/second_quarter_reg[5]' (FD) to 'Ins_ETH_1000mbps/i_rgmii_tx/first_quarter_reg[4]'
-INFO: [Synth 8-3886] merging instance 'TurnAround_reg__0__0i_37' (FDSE_1) to 'TurnAround_reg__0__0i_38'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[15]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[14]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[12]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[11]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[10]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[7]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[9]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[6]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[5]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[4]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[3]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[2]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[1]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[3]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[2]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[1]' (FDE) to 'Ins_ETH_1000mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[0]'
-INFO: [Synth 8-3886] merging instance 'TurnAround_reg__0i_11' (FDSE_1) to 'TurnAround_reg__0i_12'
+INFO: [Synth 8-3886] merging instance 'TurnAround_reg__0i_12' (FDSE_1) to 'TurnAround_reg__0i_13'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[15]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[14]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[12]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[13]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[12]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[6]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[11]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[10]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[7]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[9]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[6]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[5]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[4]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
 INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[3]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[2]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[1]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_Command_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[3]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[2]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[1]' (FDE) to 'Ins_ETH_100mbps/Instance_PHY_Manager/I2C_In_RegisterAddr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[62]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[71]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[30]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[61]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[46]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[61]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[14]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[61]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[54]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[61]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[22]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[68]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[38]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[61]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[6]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[61]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[58]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[61]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[26]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[68]'
+INFO: [Synth 8-3886] merging instance 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[42]' (FDE_1) to 'Ins_ETH_100mbps/Instance_Communication/Buffer_Reply_reg[71]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/OpCode_reg[1]) is unused and will be removed from module En_Head.
 WARNING: [Synth 8-3332] Sequential element (Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/OpCode_reg[0]) is unused and will be removed from module En_Head.
 WARNING: [Synth 8-3332] Sequential element (Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/TurnAround_retimed_reg[1]) is unused and will be removed from module En_Head.
 WARNING: [Synth 8-3332] Sequential element (Ins_ETH_100mbps/Instance_PHY_Manager/Instance_PHY_I2C/TurnAround_retimed_reg[0]) is unused and will be removed from module En_Head.
-WARNING: [Synth 8-3332] Sequential element (TurnAround_reg__0i_12) is unused and will be removed from module En_Head.
+WARNING: [Synth 8-3332] Sequential element (TurnAround_reg__0i_13) is unused and will be removed from module En_Head.
 WARNING: [Synth 8-3332] Sequential element (Counter_MAC_Des_reg[2]) is unused and will be removed from module En_UDP_Sender.
 WARNING: [Synth 8-3332] Sequential element (Counter_MAC_Des_reg[1]) is unused and will be removed from module En_UDP_Sender.
 WARNING: [Synth 8-3332] Sequential element (Counter_MAC_Des_reg[0]) is unused and will be removed from module En_UDP_Sender.
@@ -1304,7 +1310,7 @@ WARNING: [Synth 8-3332] Sequential element (Instance_ClockMacker/cntTmp_reg[29])
 WARNING: [Synth 8-3332] Sequential element (Instance_ClockMacker/cntTmp_reg[30]) is unused and will be removed from module En_UDP_receiver.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1537.781 ; gain = 438.926 ; free physical = 1053 ; free virtual = 12358
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1536.793 ; gain = 437.934 ; free physical = 1091 ; free virtual = 11368
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1316,13 +1322,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1537.781 ; gain = 438.926 ; free physical = 928 ; free virtual = 12233
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1536.793 ; gain = 437.934 ; free physical = 969 ; free virtual = 11244
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1537.781 ; gain = 438.926 ; free physical = 927 ; free virtual = 12232
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1536.793 ; gain = 437.934 ; free physical = 967 ; free virtual = 11242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1334,7 +1340,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 1571.359 ; gain = 472.504 ; free physical = 914 ; free virtual = 12219
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1565.504 ; gain = 466.645 ; free physical = 963 ; free virtual = 11237
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1368,7 +1374,7 @@ INFO: [Synth 8-4163] Replicating register \Ins_ETH_1000mbps/i_rgmii_tx/dout_reg[
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1571.359 ; gain = 472.504 ; free physical = 913 ; free virtual = 12218
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1565.504 ; gain = 466.645 ; free physical = 942 ; free virtual = 11226
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1381,7 +1387,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1571.359 ; gain = 472.504 ; free physical = 913 ; free virtual = 12218
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1565.504 ; gain = 466.645 ; free physical = 942 ; free virtual = 11226
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1393,25 +1399,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1571.359 ; gain = 472.504 ; free physical = 914 ; free virtual = 12219
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1565.504 ; gain = 466.645 ; free physical = 942 ; free virtual = 11226
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1571.359 ; gain = 472.504 ; free physical = 914 ; free virtual = 12219
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1565.504 ; gain = 466.645 ; free physical = 942 ; free virtual = 11226
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1571.359 ; gain = 472.504 ; free physical = 914 ; free virtual = 12219
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1565.504 ; gain = 466.645 ; free physical = 942 ; free virtual = 11226
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1571.359 ; gain = 472.504 ; free physical = 914 ; free virtual = 12219
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1565.504 ; gain = 466.645 ; free physical = 942 ; free virtual = 11226
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1446,15 +1452,15 @@ Report Cell Usage:
 +------+-------------+------+
 |1     |BSCANE2      |     1|
 |2     |BUFG         |     5|
-|3     |CARRY4       |   379|
+|3     |CARRY4       |   280|
 |4     |IDDR         |     5|
-|5     |LUT1         |  1095|
-|6     |LUT2         |   708|
-|7     |LUT3         |   259|
-|8     |LUT4         |   289|
-|9     |LUT5         |   201|
-|10    |LUT6         |   515|
-|11    |MUXF7        |    11|
+|5     |LUT1         |   829|
+|6     |LUT2         |   542|
+|7     |LUT3         |   230|
+|8     |LUT4         |   284|
+|9     |LUT5         |   190|
+|10    |LUT6         |   475|
+|11    |MUXF7        |    10|
 |12    |ODDR         |     6|
 |13    |PLLE2_BASE   |     1|
 |14    |RAMB16_S1_S1 |     1|
@@ -1463,67 +1469,63 @@ Report Cell Usage:
 |17    |STARTUPE2    |     1|
 |18    |FDCE         |   100|
 |19    |FDPE         |     1|
-|20    |FDRE         |  1488|
-|21    |FDRE_1       |    12|
-|22    |FDSE         |   116|
+|20    |FDRE         |  1222|
+|21    |FDRE_1       |     8|
+|22    |FDSE         |    98|
 |23    |FD_1         |     2|
-|24    |IBUF         |    11|
+|24    |IBUF         |    12|
 |25    |IBUFDS       |     1|
-|26    |OBUF         |    31|
+|26    |OBUF         |    30|
 +------+-------------+------+
 
 Report Instance Areas: 
 +------+-----------------------------+---------------------------+------+
 |      |Instance                     |Module                     |Cells |
 +------+-----------------------------+---------------------------+------+
-|1     |top                          |                           |  5328|
-|2     |  Ins_ETH_1000mbps           |En_ETH_1000mbps            |  1471|
-|3     |    Instance_PHY_Manager     |En_PHY_Manager_2           |   909|
-|4     |      Instance_ClockMaker    |En_ClockMaker_3            |    98|
-|5     |      Instance_PHY_I2C       |En_PHY_I2C_4               |   798|
-|6     |        Instance_ClockMacker |En_ClockMaker_5            |    98|
-|7     |    data                     |byte_data                  |    95|
-|8     |    i_UART                   |En_UART_TX__parameterized0 |    55|
-|9     |      CClockUart             |En_ClockE__parameterized0  |    31|
-|10    |    i_add_crc32              |add_crc32                  |    77|
-|11    |    i_add_preamble           |add_preamble               |    54|
-|12    |    i_rgmii_rx               |rgmii_rx                   |    15|
-|13    |    i_rgmii_tx               |rgmii_tx                   |   106|
-|14    |  Ins_ETH_100mbps            |En_ETH_100mbps             |  3494|
-|15    |    Instance_Communication   |En_Ethernet_RMII           |  2271|
-|16    |      Instance_UDP_Receiver  |En_UDP_receiver            |  1103|
-|17    |      Instance_UDP_Sender    |En_UDP_Sender              |   501|
-|18    |        Instance_CRC32_Block |crc32_block                |   119|
-|19    |        Instance_ClockMacker |En_ClockMaker_1            |    98|
-|20    |    Instance_PHY_Manager     |En_PHY_Manager             |   909|
-|21    |      Instance_ClockMaker    |En_ClockMaker              |    98|
-|22    |      Instance_PHY_I2C       |En_PHY_I2C                 |   798|
-|23    |        Instance_ClockMacker |En_ClockMaker_0            |    98|
-|24    |    i_UART                   |En_UART_TX                 |    56|
-|25    |      CClockUart             |En_ClockE                  |    31|
-|26    |  Ins_Flash_SPI              |En_Flash_SPI               |   197|
+|1     |top                          |                           |  4423|
+|2     |  Ins_ETH_1000mbps           |En_ETH_1000mbps            |   566|
+|3     |    data                     |byte_data                  |    95|
+|4     |    i_UART                   |En_UART_TX__parameterized0 |    56|
+|5     |      CClockUart             |En_ClockE__parameterized0  |    31|
+|6     |    i_add_crc32              |add_crc32                  |    77|
+|7     |    i_add_preamble           |add_preamble               |    54|
+|8     |    i_rgmii_rx               |rgmii_rx                   |    13|
+|9     |    i_rgmii_tx               |rgmii_tx                   |   109|
+|10    |  Ins_ETH_100mbps            |En_ETH_100mbps             |  3494|
+|11    |    Instance_Communication   |En_Ethernet_RMII           |  2271|
+|12    |      Instance_UDP_Receiver  |En_UDP_receiver            |  1103|
+|13    |      Instance_UDP_Sender    |En_UDP_Sender              |   501|
+|14    |        Instance_CRC32_Block |crc32_block                |   119|
+|15    |        Instance_ClockMacker |En_ClockMaker_1            |    98|
+|16    |    Instance_PHY_Manager     |En_PHY_Manager             |   909|
+|17    |      Instance_ClockMaker    |En_ClockMaker              |    98|
+|18    |      Instance_PHY_I2C       |En_PHY_I2C                 |   798|
+|19    |        Instance_ClockMacker |En_ClockMaker_0            |    98|
+|20    |    i_UART                   |En_UART_TX                 |    56|
+|21    |      CClockUart             |En_ClockE                  |    31|
+|22    |  Ins_Flash_SPI              |En_Flash_SPI               |   197|
 +------+-----------------------------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1571.359 ; gain = 472.504 ; free physical = 914 ; free virtual = 12219
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1565.504 ; gain = 466.645 ; free physical = 942 ; free virtual = 11226
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1223 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1571.359 ; gain = 133.059 ; free physical = 967 ; free virtual = 12272
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1571.367 ; gain = 472.504 ; free physical = 967 ; free virtual = 12272
+Synthesis finished with 0 errors, 0 critical warnings and 1210 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1565.504 ; gain = 128.191 ; free physical = 993 ; free virtual = 11277
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1565.512 ; gain = 466.645 ; free physical = 995 ; free virtual = 11279
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 419 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 317 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 16 instances were transformed.
-  FDRE_1 => FDRE (inverted pins: C): 12 instances
+  A total of 12 instances were transformed.
+  FDRE_1 => FDRE (inverted pins: C): 8 instances
   FD_1 => FDRE (inverted pins: C): 2 instances
   PLLE2_BASE => PLLE2_ADV: 1 instances
   RAMB16_S1_S1 => RAMB18E1 (inverted pins: CLKARDCLK): 1 instances
 
-344 Infos, 296 Warnings, 0 Critical Warnings and 0 Errors encountered.
+345 Infos, 304 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1571.367 ; gain = 485.113 ; free physical = 950 ; free virtual = 12255
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1565.512 ; gain = 479.254 ; free physical = 970 ; free virtual = 11265
 INFO: [Common 17-1381] The checkpoint '/home/farbizu/GIT/Jaquenod/Trabajo_Final/Ethernet-comunication-VHDL/Ethernet-comunication-VHDL.runs/synth_1/En_Head.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1595.371 ; gain = 0.000 ; free physical = 948 ; free virtual = 12254
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 12 09:14:47 2017...
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1589.516 ; gain = 0.000 ; free physical = 968 ; free virtual = 11263
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 14 09:56:56 2017...

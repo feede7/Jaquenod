@@ -87,3 +87,5 @@ set_property src_info {type:XDC file:1 line:211 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN V13  [get_ports ETH_RXCK];		    set_property IOSTANDARD LVCMOS25 [get_ports ETH_RXCK]; 		# TE0712 = B13_L13_P	KIT ARTIX = JB3-58
 set_property src_info {type:XDC file:1 line:212 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W12  [get_ports ETH_TXCTL];		set_property IOSTANDARD LVCMOS25 [get_ports ETH_TXCTL]; 		# TE0712 = B13_L12_N	KIT ARTIX = JB3-59
+set_property src_info {type:XDC file:1 line:213 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V14  [get_ports CONFIG];		    set_property IOSTANDARD LVCMOS25 [get_ports CONFIG]; 		# TE0712 = B13_L13_N	KIT ARTIX = JB3-60

@@ -164,12 +164,12 @@ begin
      --speed <= "11";
     eth_rst_b <= '1';
 
-    Instance_PHY_Manager : entity work.En_PHY_Manager(Arq_PHY_Manager)
-    PORT MAP( In_CLK_50			=> CLK_50MHz,	
-              Out_PHY_MDIO		=> ETH_MDIO,
-              Out_PHY_MDC		=> ETH_MDC,					
-              Out_IsActive		=> phy_ready
-       );
+--    Instance_PHY_Manager : entity work.En_PHY_Manager(Arq_PHY_Manager)
+--    PORT MAP( In_CLK_50			=> clk125Mhz,--CLK_50MHz,	
+--              Out_PHY_MDIO		=> ETH_MDIO,
+--              Out_PHY_MDC		=> ETH_MDC,					
+--              Out_IsActive		=> phy_ready
+--       );
               
    ---------------------------------------------------
    -- Generate the timing signals for tri-mode
@@ -330,8 +330,6 @@ choose_tx_speed: process(clk125MHz)
             end if;
         end if;
     end process;    
-
-
 
  when_to_send: process(clk125MHz) 
     begin  

@@ -41,8 +41,9 @@ architecture Arq_PHY_Manager of En_PHY_Manager IS
 --====================================================================================
 TYPE 		Status IS (Init, Set_1, Wait_2, End_3); 
 SIGNAL 	CurrentState: Status:= Init;
-Constant PHY_Command_0 				: 		 STD_LOGIC_VECTOR (15 downto 0) := "0010000100000000"; 
-Constant PHY_Command_1 				: 		 STD_LOGIC_VECTOR (15 downto 0) := "0000010110000000"; 
+--Constant PHY_Command_0 				: 		 STD_LOGIC_VECTOR (15 downto 0) := "0010000100000000";--x"2100" 
+Constant PHY_Command_0 				: 		 STD_LOGIC_VECTOR (15 downto 0) := "0001000101000000";--x"2100" 
+Constant PHY_Command_1 				: 		 STD_LOGIC_VECTOR (15 downto 0) := "0000010110000000";--x"0580" 
 Constant PHY_RegisterAddr_0			: 		 STD_LOGIC_VECTOR(4 downto 0)   := "00000";
 Constant PHY_RegisterAddr_1			: 		 STD_LOGIC_VECTOR(4 downto 0)   := "10000";
 

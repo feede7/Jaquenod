@@ -210,4 +210,4 @@ set_property PACKAGE_PIN AB16 [get_ports ETH_RST_1G];	    set_property IOSTANDAR
 set_property PACKAGE_PIN W11  [get_ports ETH_TXCK];		    set_property IOSTANDARD LVCMOS25 [get_ports ETH_TXCK];	 	# TE0712 = B13_L12_P	KIT ARTIX = JB3-57
 set_property PACKAGE_PIN V13  [get_ports ETH_RXCK];		    set_property IOSTANDARD LVCMOS25 [get_ports ETH_RXCK]; 		# TE0712 = B13_L13_P	KIT ARTIX = JB3-58
 set_property PACKAGE_PIN W12  [get_ports ETH_TXCTL];		set_property IOSTANDARD LVCMOS25 [get_ports ETH_TXCTL]; 		# TE0712 = B13_L12_N	KIT ARTIX = JB3-59
-#set_property PACKAGE_PIN V14  [get_ports CONFIG];		    set_property IOSTANDARD LVCMOS25 [get_ports CONFIG]; 		# TE0712 = B13_L13_N	KIT ARTIX = JB3-60
+set_property PACKAGE_PIN V14  [get_ports CONFIG];		    set_property IOSTANDARD LVCMOS25 [get_ports CONFIG]; 		# TE0712 = B13_L13_N	KIT ARTIX = JB3-60

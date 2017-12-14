@@ -61,9 +61,9 @@ entity En_Head is
             ETH_RST_1G    : out STD_LOGIC := '1';
             ETH_MDC       : out STD_LOGIC;
             ETH_MDIO      : inout  STD_LOGIC;
-            ETH_CLK_REF   : out STD_LOGIC;
+            ETH_CLK_REF   : in STD_LOGIC;
 --            PHY_INT       : in  STD_LOGIC;
---            CONFIG        : out STD_LOGIC;
+            CONFIG        : out STD_LOGIC;
             
             -- Pines Debug
             LEDS            : out STD_LOGIC_VECTOR(2 downto 0);
@@ -74,8 +74,19 @@ end En_Head;
 
 architecture Arq_Head of En_Head is
 
+    COMPONENT Phasing_CLK_125MHz IS
+    PORT(
+            CLK_IN      : In  STD_LOGIC;
+            CLK_OUT1    : out STD_LOGIC;
+            CLK_OUT2    : out STD_LOGIC;
+            locked 		: out STD_LOGIC;
+            reset 		: In  STD_LOGIC
+            );
+    END COMPONENT;
+
     signal CLK_50MHz_IN : STD_LOGIC;
     signal Locked_50MHz : STD_LOGIC;
+    signal Locked_125MHz : STD_LOGIC;
     signal Reset        : STD_LOGIC;
     
     signal Toggle       : STD_LOGIC;
@@ -136,8 +147,8 @@ clocking : PLLE2_BASE
 
       -- CLKOUT0_PHASE - CLKOUT5_PHASE: Phase offset for each CLKOUT (-360.000-360.000).
       CLKOUT0_PHASE      =>    0.0, CLKOUT1_PHASE      => 0.0, CLKOUT2_PHASE      => 0.0,
-      CLKOUT3_PHASE      => -270.0, CLKOUT4_PHASE      => 0.0, CLKOUT5_PHASE      => 0.0,
-      --CLKOUT3_PHASE      => 90.0, CLKOUT4_PHASE      => 0.0, CLKOUT5_PHASE      => 0.0,
+      --CLKOUT3_PHASE      => -270.0, CLKOUT4_PHASE      => 0.0, CLKOUT5_PHASE      => 0.0,
+      CLKOUT3_PHASE      => 90.0, CLKOUT4_PHASE      => 0.0, CLKOUT5_PHASE      => 0.0,
 
       DIVCLK_DIVIDE      => 1,
       REF_JITTER1        => 0.0,
@@ -145,18 +156,36 @@ clocking : PLLE2_BASE
    )
    port map (
       CLKIN1   => CLK_50MHz_IN,
-      CLKOUT0 => CLK125MHz,   CLKOUT1 => CLK_50MHz,  CLKOUT2 => open,  
-      CLKOUT3 => CLK125MHz90, CLKOUT4 => open,       CLKOUT5 => open,
+      CLKOUT0 => open,--CLK125MHz,   
+      CLKOUT1 => CLK_50MHz,  CLKOUT2 => open,  
+      CLKOUT3 => open,--CLK125MHz90, 
+      CLKOUT4 => open,       CLKOUT5 => open,
       LOCKED   => Locked_50MHz,
       PWRDWN   => '0', 
       RST      => '0',
       CLKFBOUT => clkfb,
       CLKFBIN  => clkfb
    );
+
+--Ins_Phased_125MHz: Phasing_CLK_125MHz
+--   port map (
+--       CLK_IN   => ETH_CLK_REF,
+--       CLK_OUT1 => CLK125MHz,  
+--       CLK_OUT2 => CLK125MHz90,
+--       LOCKED   => Locked_125MHz, 
+--       Reset    => '0'
+--    );
+
+   BUFG_inst : BUFG
+   port map (
+      O => CLK125MHz, -- 1-bit output: Clock output
+      I => ETH_CLK_REF  -- 1-bit input: Clock input
+   );
+  CLK125MHz90 <= CLK125MHz;
+
+   Reset <= not Locked_50MHz;-- or not Locked_125MHz;
    
-   Reset <= not Locked_50MHz;
-   
-   ETH_CLK_REF <= CLK125MHz;
+   --ETH_CLK_REF <= CLK125MHz;
    
     -- Instancio Ethernet 10/100Mbps
     Ins_ETH_100mbps: entity work.En_ETH_100mbps(Arq_ETH_100mbps)
@@ -179,7 +208,7 @@ clocking : PLLE2_BASE
         CLK_50MHz   => CLK_50MHz,
         CLK125MHz   => CLK125MHz,
         CLK125MHz90 => CLK125MHz90,
-        Reset       => Reset,
+        Reset       => Reset, 
         Send        => Send_1Gbps,
         switches    => "0000",
         leds        => sLEDS,
@@ -196,19 +225,19 @@ clocking : PLLE2_BASE
         debug       => debug
     );
 
-    --CONFIG <= '0';
+    CONFIG <= '0';
 
     process
     begin
         if Reset = '1' then
             count <= 0;
-        elsif rising_edge(CLK125MHz) then
+        elsif falling_edge(CLK125MHz) then
             Send_1Gbps <= '0';
             if count = 125000000 then
                 Send_1Gbps <= '1';
                 Toggle <= not Toggle;
                 count <= 0;
-            else
+            elsif CLK125MHz90 = '1' then
                 count <= count + 1;
             end if;
         end if;
