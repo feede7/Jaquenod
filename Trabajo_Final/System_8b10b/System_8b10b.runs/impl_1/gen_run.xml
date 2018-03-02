@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1519916381">
+  <File Type="OPT-HWDEF" Name="En_Head.hwdef"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="En_Head_incremental_reuse_pre_placed.rpt"/>
+  <File Type="OPT-DRC" Name="En_Head_drc_opted.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="En_Head_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="En_Head_route_status.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="En_Head_postroute_physopt.dcp"/>
+  <File Type="PWROPT-DCP" Name="En_Head_pwropt.dcp"/>
+  <File Type="REPORTS-TCL" Name="En_Head_reports.tcl"/>
+  <File Type="BITSTR-LTX" Name="En_Head.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="En_Head.sysdef"/>
+  <File Type="BG-BGN" Name="En_Head.bgn"/>
+  <File Type="PLACE-UTIL" Name="En_Head_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="En_Head_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="En_Head_control_sets_placed.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="En_Head_routed_error.dcp"/>
+  <File Type="BG-DRC" Name="En_Head.drc"/>
+  <File Type="ROUTE-DCP" Name="En_Head_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="En_Head_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="En_Head_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="En_Head_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="En_Head_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="En_Head_power_summary_routed.pb"/>
+  <File Type="PHYSOPT-DCP" Name="En_Head_physopt.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="En_Head_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-PB" Name="En_Head_drc_routed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="En_Head_postplace_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="En_Head_power_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="En_Head_drc_routed.rpx"/>
+  <File Type="PLACE-DCP" Name="En_Head_placed.dcp"/>
+  <File Type="PA-TCL" Name="En_Head.tcl"/>
+  <File Type="BITSTR-MSK" Name="En_Head.msk"/>
+  <File Type="ROUTE-TIMING-PB" Name="En_Head_timing_summary_routed.pb"/>
+  <File Type="PLACE-IO" Name="En_Head_io_placed.rpt"/>
+  <File Type="BG-BIT" Name="En_Head.bit"/>
+  <File Type="ROUTE-STATUS-PB" Name="En_Head_route_status.pb"/>
+  <File Type="RDI-RDI" Name="En_Head.vdi"/>
+  <File Type="BG-BIN" Name="En_Head.bin"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="En_Head_timing_summary_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="En_Head.rbt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="En_Head_timing_summary_routed.rpx"/>
+  <File Type="BITSTR-NKY" Name="En_Head.nky"/>
+  <File Type="BITSTR-BMM" Name="En_Head_bd.bmm"/>
+  <File Type="ROUTE-CLK" Name="En_Head_clock_utilization_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="En_Head.mmi"/>
+  <File Type="OPT-DCP" Name="En_Head_opt.dcp"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="En_Head_postroute_physopt_bb.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd"/>
+        <Attr Name="ImportTime" Val="1519914580"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd"/>
+        <Attr Name="ImportTime" Val="1519913304"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Head.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.ip_user_files/mem_init_files/DCh.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Cod_8b10b/Cod_8b10b.ip_user_files/mem_init_files/DCh.coe"/>
+        <Attr Name="ImportTime" Val="1519908720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.ip_user_files/mem_init_files/Dplus.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Cod_8b10b/Cod_8b10b.ip_user_files/mem_init_files/Dplus.coe"/>
+        <Attr Name="ImportTime" Val="1519908720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.ip_user_files/mem_init_files/KCh.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Cod_8b10b/Cod_8b10b.ip_user_files/mem_init_files/KCh.coe"/>
+        <Attr Name="ImportTime" Val="1519908720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.ip_user_files/mem_init_files/Kplus.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Cod_8b10b/Cod_8b10b.ip_user_files/mem_init_files/Kplus.coe"/>
+        <Attr Name="ImportTime" Val="1519908720"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Dec_8b10b/Dec_8b10b.ip_user_files/mem_init_files/Inv_Ch.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Dec_8b10b/Dec_8b10b.ip_user_files/mem_init_files/Inv_Dplus.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Dec_8b10b/Dec_8b10b.ip_user_files/mem_init_files/Inv_Kplus.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="En_Head"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Inv_Ch"/>
+  <BlockFileSet Type="BlockSrcs" Name="Inv_Dplus"/>
+  <BlockFileSet Type="BlockSrcs" Name="Kplus"/>
+  <BlockFileSet Type="BlockSrcs" Name="Dplus"/>
+  <BlockFileSet Type="BlockSrcs" Name="Inv_Kplus"/>
+  <BlockFileSet Type="BlockSrcs" Name="DCh"/>
+  <BlockFileSet Type="BlockSrcs" Name="KCh"/>
+</GenRun>

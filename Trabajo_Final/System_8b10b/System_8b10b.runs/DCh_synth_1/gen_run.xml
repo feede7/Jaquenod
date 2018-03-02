@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="DCh_synth_1" LaunchPart="xc7a100tfgg484-2" LaunchTime="1519914828">
+  <File Type="RDS-UTIL-PB" Name="DCh_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="DCh_utilization_synth.rpt"/>
+  <File Type="RDS-RDS" Name="DCh.vds"/>
+  <File Type="RDS-DCP" Name="DCh.dcp"/>
+  <File Type="PA-TCL" Name="DCh.tcl"/>
+  <File Type="REPORTS-TCL" Name="DCh_reports.tcl"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DCh">
+    <File Path="$PSRCDIR/sources_1/ip/DCh/DCh.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="DCh"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/DCh">
+    <File Path="$PSRCDIR/sources_1/ip/DCh/DCh.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="DCh"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

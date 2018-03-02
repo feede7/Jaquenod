@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../System_8b10b.srcs/sources_1/ip/Inv_Ch/sim/Inv_Ch.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
