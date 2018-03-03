@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
--- Date        : Thu Mar  1 11:34:32 2018
--- Host        : farbizu running 64-bit Ubuntu 16.04.4 LTS
+-- Date        : Sat Mar  3 09:19:11 2018
+-- Host        : fede-Ubuntu running 64-bit Ubuntu 16.04.4 LTS
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/farbizu/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/DCh/DCh_stub.vhdl
+--               /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/DCh/DCh_stub.vhdl
 -- Design      : DCh
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tfgg484-2

@@ -1,21 +1,21 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
+-- Company:
+-- Engineer:
+--
 -- Create Date: 03/01/2018 12:40:38 PM
--- Design Name: 
+-- Design Name:
 -- Module Name: Head_TB - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
+-- Project Name:
+-- Target Devices:
+-- Tool Versions:
+-- Description:
+--
+-- Dependencies:
+--
 -- Revision:
 -- Revision 0.01 - File Created
 -- Additional Comments:
--- 
+--
 ----------------------------------------------------------------------------------
 
 
@@ -52,18 +52,18 @@ architecture Behavioral of Head_TB is
 
     signal Dato_In : unsigned(7 downto 0) := to_unsigned(0,8);
     signal Dato_Out : STD_LOGIC_VECTOR(7 downto 0);
-    
+
     signal clk_aux_1 : std_logic := '0';
     constant OSC1_Period : time := 1 ns;
-    
+
     signal equal : std_logic;
 begin
 
     Inst_Head: En_Head
     port map(
         Dato_In     => std_logic_vector(Dato_In),
-        DnK_Cod     => '0',
-        nRD_Cod     => '0',
+        DnK_Cod     => '1',
+        nRD_Cod     => '1',
         Error_Cod   => open,
         DnK_Dec     => open,
         nRD_Dec     => open,
@@ -79,9 +79,9 @@ begin
 		clk_aux_1 <= '1';
 		wait for OSC1_Period/2;
    end process;
-   
+
     Dato_In <= Dato_In + to_unsigned(1,Dato_In'length) when rising_edge(clk_aux_1);
-    
+
     equal <= '1' when unsigned(Dato_In) = unsigned(Dato_Out) else '0';
-    
+
 end Behavioral;

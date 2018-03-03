@@ -2,11 +2,11 @@
 # Webtalk v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Thu Mar  1 12:57:12 2018
-# Process ID: 12594
-# Current directory: /home/farbizu/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim
-# Command line: wbtcv -mode batch -source /home/farbizu/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/xsim.dir/Head_TB_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: /home/farbizu/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: /home/farbizu/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/webtalk.jou
+# Start of session at: Fri Mar  2 22:06:17 2018
+# Process ID: 5076
+# Current directory: /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/xsim.dir/Head_TB_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/webtalk.jou
 #-----------------------------------------------------------
-source /home/farbizu/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/xsim.dir/Head_TB_behav/webtalk/xsim_webtalk.tcl -notrace
+source /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/xsim.dir/Head_TB_behav/webtalk/xsim_webtalk.tcl -notrace

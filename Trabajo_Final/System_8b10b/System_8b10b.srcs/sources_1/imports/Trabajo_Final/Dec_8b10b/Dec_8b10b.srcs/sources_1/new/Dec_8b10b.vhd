@@ -52,7 +52,6 @@ component Inv_Kplus IS
   signal Dato_Out_Aux_K    : STD_LOGIC_VECTOR(7 downto 0);
   signal nRD_Aux    : STD_LOGIC;
   signal DnK_Aux    : STD_LOGIC;
-  signal K_case     : STD_LOGIC;
 
 begin
 
@@ -76,26 +75,19 @@ begin
     Dato_Out_Aux_D <= Out_PlusD(2 downto 0) & Out_DatoD(Out_DatoD'high-1 downto 0);
     Dato_Out_Aux_K <= Out_PlusK(2 downto 0) & Out_DatoD(Out_DatoD'high-1 downto 0);
 
-    K_case  <= '1' when Out_DatoD(Out_DatoD'high-1 downto 0) = "10111" or --K23
-                        Out_DatoD(Out_DatoD'high-1 downto 0) = "11011" or --K27
-                        Out_DatoD(Out_DatoD'high-1 downto 0) = "11100" or --K28
-                        Out_DatoD(Out_DatoD'high-1 downto 0) = "11101" or --K29
-                        Out_DatoD(Out_DatoD'high-1 downto 0) = "11110"    --K30
-                else '0';
-
-    DnK_Aux <= '0' when (Dato_Out_Aux_K = x"1C" or -- K.28.0
-                    Dato_Out_Aux_K = x"3C" or -- K.28.1
-                    Dato_Out_Aux_K = x"5C" or -- K.28.2
-                    Dato_Out_Aux_K = x"7C" or -- K.28.3
-                    Dato_Out_Aux_K = x"9C" or -- K.28.4
-                    Dato_Out_Aux_K = x"BC" or -- K.28.5
-                    Dato_Out_Aux_K = x"DC" or -- K.28.6
-                    Dato_Out_Aux_K = x"FC" or -- K.28.7
-                    Dato_Out_Aux_K = x"F7" or -- K.23.7
-                    Dato_Out_Aux_K = x"FB" or -- K.27.7
-                    Dato_Out_Aux_K = x"FD" or -- K.29.7
-                    Dato_Out_Aux_K = x"FE")   -- K.30.7
-                    and K_case = '1'
+    DnK_Aux <= '0' when
+                    (Dato_Out_Aux_K = x"1C" and (Dato_In = "00"&x"f4" or Dato_In = not ("00"&x"f4"))) or -- K.28.0
+                    (Dato_Out_Aux_K = x"3C" and (Dato_In = "00"&x"f9" or Dato_In = not ("00"&x"f9"))) or -- K.28.1
+                    (Dato_Out_Aux_K = x"5C" and (Dato_In = "00"&x"f5" or Dato_In = not ("00"&x"f5"))) or -- K.28.2
+                    (Dato_Out_Aux_K = x"7C" and (Dato_In = "00"&x"f3" or Dato_In = not ("00"&x"f3"))) or -- K.28.3
+                    (Dato_Out_Aux_K = x"9C" and (Dato_In = "00"&x"f2" or Dato_In = not ("00"&x"f2"))) or -- K.28.4
+                    (Dato_Out_Aux_K = x"BC" and (Dato_In = "00"&x"fa" or Dato_In = not ("00"&x"fa"))) or -- K.28.5
+                    (Dato_Out_Aux_K = x"DC" and (Dato_In = "00"&x"f6" or Dato_In = not ("00"&x"f6"))) or -- K.28.6
+                    (Dato_Out_Aux_K = x"FC" and (Dato_In = "00"&x"f8" or Dato_In = not ("00"&x"f8"))) or -- K.28.7
+                    (Dato_Out_Aux_K = x"F7" and (Dato_In = "11"&x"a8" or Dato_In = not ("11"&x"a8"))) or -- K.23.7
+                    (Dato_Out_Aux_K = x"FB" and (Dato_In = "11"&x"68" or Dato_In = not ("11"&x"68"))) or -- K.27.7
+                    (Dato_Out_Aux_K = x"FD" and (Dato_In = "10"&x"e8" or Dato_In = not ("10"&x"e8"))) or -- K.29.7
+                    (Dato_Out_Aux_K = x"FE" and (Dato_In = "01"&x"e8" or Dato_In = not ("01"&x"e8")))   -- K.30.7
                   else '1';
 
     Dato_Out <= Dato_Out_Aux_K when DnK_Aux = '0' else "111" & Out_DatoD(Out_DatoD'high-1 downto 0) when Dato_Out_Aux_D = x"F1" else Dato_Out_Aux_D;

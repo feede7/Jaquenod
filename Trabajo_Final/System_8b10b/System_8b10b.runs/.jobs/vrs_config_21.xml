@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="DCh_synth_1" LaunchDir="/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/DCh_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Dplus_synth_1" LaunchDir="/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/Dplus_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="KCh_synth_1" LaunchDir="/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/KCh_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Kplus_synth_1" LaunchDir="/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/Kplus_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Inv_Ch_synth_1" LaunchDir="/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/Inv_Ch_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Inv_Dplus_synth_1" LaunchDir="/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/Inv_Dplus_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Inv_Kplus_synth_1" LaunchDir="/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/Inv_Kplus_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="DCh_synth_1"/>
+		<Parent Id="Dplus_synth_1"/>
+		<Parent Id="KCh_synth_1"/>
+		<Parent Id="Kplus_synth_1"/>
+		<Parent Id="Inv_Ch_synth_1"/>
+		<Parent Id="Inv_Dplus_synth_1"/>
+		<Parent Id="Inv_Kplus_synth_1"/>
+	</Run>
+</Runs>
+
