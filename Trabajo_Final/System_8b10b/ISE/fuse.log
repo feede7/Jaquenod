@@ -1,4 +1,4 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/Head_TB_isim_beh.exe -prj /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/Head_TB_beh.prj work.Head_TB 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/Head_TB_isim_beh.exe" -prj "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/Head_TB_beh.prj" "work.Head_TB" 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
@@ -42,9 +42,9 @@ Compiling architecture arq_dec_8b10b of entity En_Dec_8b10b [en_dec_8b10b_defaul
 Compiling architecture arq_head of entity En_Head [en_head_default]
 Compiling architecture behavioral of entity head_tb
 Time Resolution for simulation is 1ps.
-Waiting for 16 sub-compilation(s) to finish...
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 40 VHDL Units
 Built simulation executable /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/Head_TB_isim_beh.exe
-Fuse Memory Usage: 428124 KB
-Fuse CPU Usage: 4960 ms
-GCC CPU Usage: 18790 ms
+Fuse Memory Usage: 428140 KB
+Fuse CPU Usage: 4830 ms
+GCC CPU Usage: 660 ms

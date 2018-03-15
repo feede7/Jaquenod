@@ -1,1 +1,2 @@
 xst -intstyle ise -ifn "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/En_Head.xst" -ofn "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/En_Head.syr" 
+xst -intstyle ise -ifn "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/En_Head.xst" -ofn "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/ISE/En_Head.syr" 

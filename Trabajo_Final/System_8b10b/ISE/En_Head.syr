@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.27 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.28 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.26 secs
  
 --> 
 Reading design: En_Head.prj
@@ -157,10 +157,6 @@ Elaborating entity <Dplus> (architecture <Dplus_a>) from library <work>.
 Elaborating entity <KCh> (architecture <KCh_a>) from library <work>.
 
 Elaborating entity <Kplus> (architecture <Kplus_a>) from library <work>.
-WARNING:HDLCompiler:321 - "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd" Line 123: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd" Line 124: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd" Line 125: Comparison between arrays of unequal length always returns FALSE.
-WARNING:HDLCompiler:321 - "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd" Line 126: Comparison between arrays of unequal length always returns FALSE.
 WARNING:HDLCompiler:321 - "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd" Line 137: Comparison between arrays of unequal length always returns FALSE.
 WARNING:HDLCompiler:321 - "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd" Line 138: Comparison between arrays of unequal length always returns FALSE.
 
@@ -185,7 +181,7 @@ Unit <En_Head> synthesized.
 Synthesizing Unit <En_Cod_8b10b>.
     Related source file is "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd".
     Summary:
-	inferred   2 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <En_Cod_8b10b> synthesized.
 
 Synthesizing Unit <En_Dec_8b10b>.
@@ -198,9 +194,9 @@ Unit <En_Dec_8b10b> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Multiplexers                                         : 5
+# Multiplexers                                         : 6
  10-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 2
  6-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 2
 # Xors                                                 : 5
@@ -235,9 +231,9 @@ Loading device for application Rf_Device from file '7a100t.nph' in environment /
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Multiplexers                                         : 5
+# Multiplexers                                         : 6
  10-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 2
  6-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 2
 # Xors                                                 : 5
@@ -287,11 +283,12 @@ Top Level Output File Name         : En_Head.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 89
+# BELS                             : 90
 #      GND                         : 1
-#      LUT3                        : 5
-#      LUT4                        : 23
-#      LUT5                        : 33
+#      LUT2                        : 5
+#      LUT3                        : 9
+#      LUT4                        : 19
+#      LUT5                        : 29
 #      LUT6                        : 26
 #      MUXF7                       : 1
 # IO Buffers                       : 22
@@ -305,14 +302,14 @@ Selected Device : xa7a100tfgg484-2i
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                   87  out of  63400     0%  
-    Number used as Logic:                87  out of  63400     0%  
+ Number of Slice LUTs:                   88  out of  63400     0%  
+    Number used as Logic:                88  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     87
-   Number with an unused Flip Flop:      87  out of     87   100%  
-   Number with an unused LUT:             0  out of     87     0%  
-   Number of fully used LUT-FF pairs:     0  out of     87     0%  
+ Number of LUT Flip Flop pairs used:     88
+   Number with an unused Flip Flop:      88  out of     88   100%  
+   Number with an unused LUT:             0  out of     88     0%  
+   Number of fully used LUT-FF pairs:     0  out of     88     0%  
    Number of unique control sets:         0
 
 IO Utilization: 
@@ -360,33 +357,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 151368 / 11
+  Total number of paths / destination ports: 154140 / 11
 -------------------------------------------------------------------------
 Delay:               8.516ns (Levels of Logic = 16)
-  Source:            Dato_In<3> (PAD)
+  Source:            Dato_In<1> (PAD)
   Destination:       Error_Dec (PAD)
 
-  Data Path: Dato_In<3> to Error_Dec
+  Data Path: Dato_In<1> to Error_Dec
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            13   0.001   0.811  Dato_In_3_IBUF (Dato_In_3_IBUF)
-     begin scope: 'Ins_Cod/Ins_DCh:a<3>'
-     LUT5:I0->O            1   0.097   0.571  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int21 (spo<2>)
-     end scope: 'Ins_Cod/Ins_DCh:spo<2>'
-     LUT5:I2->O           13   0.097   0.821  Ins_Cod/Dato_Out<6>1 (Dato_Out_Cod<6>)
-     begin scope: 'Ins_Dec/Ins_DCh:a<2>'
+     IBUF:I->O            13   0.001   0.811  Dato_In_1_IBUF (Dato_In_1_IBUF)
+     begin scope: 'Ins_Cod/Ins_DCh:a<1>'
+     LUT5:I0->O            1   0.097   0.571  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int51 (spo<5>)
+     end scope: 'Ins_Cod/Ins_DCh:spo<5>'
+     LUT5:I2->O           13   0.097   0.821  Ins_Cod/Dato_Out<9>1 (Dato_Out_Cod<9>)
+     begin scope: 'Ins_Dec/Ins_DCh:a<5>'
      LUT6:I0->O            3   0.097   0.351  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int51 (spo<5>)
      end scope: 'Ins_Dec/Ins_DCh:spo<5>'
-     MUXF7:S->O            8   0.335   0.394  Ins_Dec/nRD_Aux_Dual_D_AND_2_o2 (Ins_Dec/nRD_Aux_Dual_D_AND_2_o)
-     LUT5:I4->O            4   0.097   0.633  Ins_Dec/Mxor_Plus_K_0_xo<0>1 (Ins_Dec/Plus_K<0>)
+     MUXF7:S->O            8   0.335   0.394  Ins_Dec/nRD_Aux_Dual_D_AND_3_o2 (Ins_Dec/nRD_Aux_Dual_D_AND_3_o)
+     LUT2:I1->O            4   0.097   0.633  Ins_Dec/Mxor_Plus_K_0_xo<0>1 (Ins_Dec/Plus_K<0>)
      begin scope: 'Ins_Dec/Ins_Kplus:a<0>'
      LUT4:I0->O           11   0.097   0.411  U0/xst_options.dist_mem_inst/gen_rom.rom_inst/Mram_spo_int21 (spo<2>)
      end scope: 'Ins_Dec/Ins_Kplus:spo<2>'
-     LUT6:I5->O            1   0.097   0.743  Ins_Dec/GND_11_o_PWR_11_o_OR_88_o211 (Ins_Dec/GND_11_o_PWR_11_o_OR_88_o21)
-     LUT6:I1->O            1   0.097   0.743  Ins_Dec/GND_11_o_PWR_11_o_OR_88_o18 (Ins_Dec/GND_11_o_PWR_11_o_OR_88_o22)
-     LUT6:I1->O            2   0.097   0.621  Ins_Dec/GND_11_o_PWR_11_o_OR_88_o20 (Ins_Dec/GND_11_o_PWR_11_o_OR_88_o25)
-     LUT6:I2->O            4   0.097   0.770  Ins_Dec/GND_11_o_PWR_11_o_OR_88_o22 (Ins_Dec/GND_11_o_PWR_11_o_OR_88_o)
+     LUT3:I2->O            1   0.097   0.743  Ins_Dec/GND_11_o_PWR_11_o_OR_91_o211 (Ins_Dec/GND_11_o_PWR_11_o_OR_91_o21)
+     LUT6:I1->O            1   0.097   0.743  Ins_Dec/GND_11_o_PWR_11_o_OR_91_o18 (Ins_Dec/GND_11_o_PWR_11_o_OR_91_o22)
+     LUT6:I1->O            2   0.097   0.621  Ins_Dec/GND_11_o_PWR_11_o_OR_91_o20 (Ins_Dec/GND_11_o_PWR_11_o_OR_91_o25)
+     LUT6:I2->O            4   0.097   0.770  Ins_Dec/GND_11_o_PWR_11_o_OR_91_o22 (Ins_Dec/GND_11_o_PWR_11_o_OR_91_o)
      LUT6:I0->O            1   0.097   0.339  Ins_Dec/Error3 (Error_Dec_OBUF)
      OBUF:I->O                 0.000          Error_Dec_OBUF (Error_Dec)
     ----------------------------------------
@@ -401,15 +398,15 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 776.00 secs
-Total CPU time to Xst completion: 227.09 secs
+Total REAL time to Xst completion: 241.00 secs
+Total CPU time to Xst completion: 232.07 secs
  
 --> 
 
 
-Total memory usage is 861108 kilobytes
+Total memory usage is 861160 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

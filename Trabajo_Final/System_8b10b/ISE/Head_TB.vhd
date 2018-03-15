@@ -62,7 +62,7 @@ begin
     Inst_Head: En_Head
     port map(
         Dato_In     => std_logic_vector(Dato_In),
-        DnK_Cod     => '1',
+        DnK_Cod     => '0',
         nRD_Cod     => '1',
         Error_Cod   => open,
         DnK_Dec     => open,
