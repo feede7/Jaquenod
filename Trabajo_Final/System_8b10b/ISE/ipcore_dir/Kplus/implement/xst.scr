@@ -1,0 +1,14 @@
+
+run
+-ifmt VHDL
+-ent Kplus_exdes 
+-p xa7a100t-fgg484-2i
+-ifn xst.prj
+-write_timing_constraints No
+-iobuf YES
+-max_fanout 100
+-ofn Kplus_exdes 
+-ofmt NGC
+-bus_delimiter ()
+-hierarchy_separator /
+-case Maintain

@@ -44,33 +44,63 @@ component Inv_Kplus IS
 
   signal Dato       : STD_LOGIC_VECTOR(5 downto 0);
   signal Plus       : STD_LOGIC_VECTOR(3 downto 0);
+  signal Plus_D     : STD_LOGIC_VECTOR(3 downto 0);
+  signal Plus_K     : STD_LOGIC_VECTOR(3 downto 0);
   signal Out_DatoD  : STD_LOGIC_VECTOR(5 downto 0);
   signal Out_PlusD  : STD_LOGIC_VECTOR(3 downto 0);
   signal Out_PlusK  : STD_LOGIC_VECTOR(3 downto 0);
   signal Toggle4    : STD_LOGIC_VECTOR(3 downto 0);
   signal Dato_Out_Aux_D    : STD_LOGIC_VECTOR(7 downto 0);
   signal Dato_Out_Aux_K    : STD_LOGIC_VECTOR(7 downto 0);
+  signal Dual_D     : STD_LOGIC;
+  signal Dual_Plus  : STD_LOGIC;
   signal nRD_Aux    : STD_LOGIC;
   signal DnK_Aux    : STD_LOGIC;
 
 begin
 
-    Dato  <= Dato_In(9 downto 4);
+    Dato <= Dato_In(9 downto 4);
+	 Plus	<= Dato_In(3 downto 0);
+	
+	 Dual_D <= '1' when  Dato = "001011" or
+								Dato = "001101" or
+								Dato = "001110" or
+								Dato = "010011" or
+								Dato = "010101" or
+								Dato = "010110" or
+								Dato = "011001" or
+								Dato = "011010" or
+								Dato = "011100" or
+								Dato = "100011" or
+								Dato = "100101" or
+								Dato = "100110" or
+								Dato = "101001" or
+								Dato = "101010" or
+								Dato = "101100" or
+								Dato = "110001" or
+								Dato = "110010" or
+								Dato = "110100" else '0';
+	
+	 Dual_Plus <= '1' when	Plus = "0101" or
+									Plus = "0110" or
+									Plus = "1001" or
+									Plus = "1010" else '0';
 
     Ins_DCh : Inv_Ch
       PORT MAP(a => Dato, spo => Out_DatoD);
 
     nRD_Aux <= Out_DatoD(Out_DatoD'high);
 
-    Toggle4 <= "1111" when nRD_Aux = '1' else "0000";
+    Toggle4 <= "1111" when nRD_Aux = '1' and Dual_D = '0' else "0000";
 
-    Plus  <= Dato_In(3 downto 0) XOR Toggle4;
+    Plus_D  <= Plus XOR Toggle4 when Dual_Plus = '0' else Plus;
+    Plus_K  <= Plus XOR Toggle4;
 
     Ins_Dplus : Inv_Dplus
-      PORT MAP(a => Plus, spo => Out_PlusD);
+      PORT MAP(a => Plus_D, spo => Out_PlusD);
 
     Ins_Kplus : Inv_Kplus
-      PORT MAP(a => Plus, spo => Out_PlusK);
+      PORT MAP(a => Plus_K, spo => Out_PlusK);
 
     Dato_Out_Aux_D <= Out_PlusD(2 downto 0) & Out_DatoD(Out_DatoD'high-1 downto 0);
     Dato_Out_Aux_K <= Out_PlusK(2 downto 0) & Out_DatoD(Out_DatoD'high-1 downto 0);

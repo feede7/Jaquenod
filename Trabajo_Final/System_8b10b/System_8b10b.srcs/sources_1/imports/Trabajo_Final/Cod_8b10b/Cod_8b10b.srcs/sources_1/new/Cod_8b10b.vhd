@@ -104,7 +104,6 @@ begin
     Unique_DatoD  <= '1' when (Dato = "00011" or
                               Dato = "00101" or
                               Dato = "00110" or
-                              Dato = "00111" or
                               Dato = "01001" or
                               Dato = "01010" or
                               Dato = "01011" or
@@ -121,10 +120,10 @@ begin
                               Dato = "11010" or
                               Dato = "11100") and DnK = '1' else '0';
 
-    Unique_PlusD  <= '1' when (Plus = "001" or
-                              Plus = "010" or
-                              Plus = "101" or
-                              Plus = "110") and DnK = '1' else '0';
+    Unique_PlusD  <= '1' when (Plus = "0001" or
+                              Plus = "0010" or
+                              Plus = "0101" or
+                              Plus = "0110") and DnK = '1' else '0';
 
     Out_DatoD_Aux <= Out_DatoD XOR Toggle6 when Unique_DatoD = '0' else Out_DatoD;
     Out_PlusD_Aux <= Out_PlusD XOR Toggle4 when Unique_PlusD = '0' else Out_PlusD;
