@@ -61,7 +61,7 @@ component Kplus IS
   signal Out_PlusD_Aux  : STD_LOGIC_VECTOR(3 downto 0);
   signal Out_DatoK_Aux  : STD_LOGIC_VECTOR(5 downto 0);
   signal Out_PlusK_Aux  : STD_LOGIC_VECTOR(3 downto 0);
-  signal D17_7_Case     : STD_LOGIC;
+  signal Dxx_7_Case     : STD_LOGIC;
   signal Unique_DatoD   : STD_LOGIC;
   signal Unique_PlusD   : STD_LOGIC;
 
@@ -82,7 +82,7 @@ begin
     -- K.30.7  FEh
     
     Dato <= Dato_In(4 downto 0);
-    Plus <= D17_7_Case & Dato_In(7 downto 5); -- Con D17_7_Case se salvan los casos
+    Plus <= '0' & Dato_In(7 downto 5); -- Con D17_7_Case se salvan los casos
                                           -- tales como D17.7
 
     Ins_DCh : DCh
@@ -100,7 +100,19 @@ begin
     Toggle6 <= "111111" when nRD = '1' else "000000";
     Toggle4 <= "1111" when nRD = '1' else "0000";
 
-    D17_7_Case    <= '0';--'1' when Dato = "10001" and DnK = '1' else '0';
+    Dxx_7_Case    <= DnK when Dato_In = "11100000" or -- D.0.7 - y +
+										(Dato_In = "11101011" and nRD = '1') or -- D.11.7 solo +
+										(Dato_In = "11101101" and nRD = '1') or -- D.13.7 solo +
+										(Dato_In = "11101110" and nRD = '1') or -- D.14.7 solo +
+										Dato_In = "11101111" or -- D.15.7 - y +
+										Dato_In = "11110000" or -- D.16.7 - y +
+										(Dato_In = "11110001" and nRD = '0') or -- D.17.7 solo -
+										(Dato_In = "11110010" and nRD = '0') or -- D.18.7 solo -
+										(Dato_In = "11110100" and nRD = '0') or -- D.20.7 solo -
+										Dato_In = "11111000" or -- D.24.7 - y +
+										Dato_In = "11111111" 	-- D.31.7 - y +
+								 else '0';
+
     Unique_DatoD  <= '1' when (Dato = "00011" or
                               Dato = "00101" or
                               Dato = "00110" or
@@ -126,7 +138,7 @@ begin
                               Plus = "0110") and DnK = '1' else '0';
 
     Out_DatoD_Aux <= Out_DatoD XOR Toggle6 when Unique_DatoD = '0' else Out_DatoD;
-    Out_PlusD_Aux <= Out_PlusD XOR Toggle4 when Unique_PlusD = '0' else Out_PlusD;
+    Out_PlusD_Aux <= "0111" XOR Toggle4 when Dxx_7_Case = '1' else Out_PlusD XOR Toggle4 when Unique_PlusD = '0' else Out_PlusD;
 
     Out_DatoK_Aux <= Out_DatoK XOR Toggle6;
     Out_PlusK_Aux <= Out_PlusK XOR Toggle4;

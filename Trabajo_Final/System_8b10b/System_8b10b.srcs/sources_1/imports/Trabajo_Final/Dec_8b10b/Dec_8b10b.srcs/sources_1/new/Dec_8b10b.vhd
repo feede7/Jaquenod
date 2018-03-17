@@ -62,6 +62,9 @@ component Inv_Kplus IS
   signal Error_D2   : STD_LOGIC;
   signal Error_D3   : STD_LOGIC;
   signal Error_K    : STD_LOGIC;
+  
+  signal Dxx_7_Case : STD_LOGIC;
+  signal nRD_Aux_P  : STD_LOGIC;
 
 begin
 
@@ -108,7 +111,11 @@ begin
     Ins_Kplus : Inv_Kplus
       PORT MAP(a => Plus_K, spo => Out_PlusK);
 
-    Dato_Out_Aux_D <= Out_PlusD(2 downto 0) & Out_DatoD(Out_DatoD'high-1 downto 0);
+	 Dxx_7_Case <= '1' when Out_PlusD = "1101" or Out_PlusD = "1001" else '0';
+	 
+	 nRD_Aux_P <= '1' when Out_PlusD = "1001" else Out_PlusD(Out_PlusD'high);
+	 
+    Dato_Out_Aux_D <= "111" & Out_DatoD(Out_DatoD'high-1 downto 0) when Dxx_7_Case = '1' else Out_PlusD(2 downto 0) & Out_DatoD(Out_DatoD'high-1 downto 0);
     Dato_Out_Aux_K <= Out_PlusK(2 downto 0) & Out_DatoD(Out_DatoD'high-1 downto 0);
 
     DnK_Aux <= '0' when
@@ -126,10 +133,10 @@ begin
                     (Dato_Out_Aux_K = x"FE" and (Dato_In = "01"&x"e8" or Dato_In = not ("01"&x"e8")))    -- K.30.7 111 11110
                   else '1';
 
-    Dato_Out <= Dato_Out_Aux_K when DnK_Aux = '0' else "111" & Out_DatoD(Out_DatoD'high-1 downto 0) when Dato_Out_Aux_D = x"F1" else Dato_Out_Aux_D;
+    Dato_Out <= Dato_Out_Aux_K when DnK_Aux = '0' else Dato_Out_Aux_D;
 
     DnK <= DnK_Aux;
-    nRD <= nRD_Aux_D or Out_PlusD(Out_PlusD'high);
+    nRD <= nRD_Aux_D or nRD_Aux_P;
 	 Dual <= Dual_D and Dual_Plus and DnK_Aux;
     Error_D1 <= '1' when Out_DatoD = "010101" else '0';
     Error_D2 <= '1' when Out_PlusD = "1010" else '0';

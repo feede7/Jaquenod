@@ -36,6 +36,7 @@ Port (
     Dato_In     : in  STD_LOGIC_VECTOR(7 downto 0);
     DnK_Cod     : in  STD_LOGIC;
     nRD_Cod     : in  STD_LOGIC;
+    Dato_Coded  : out STD_LOGIC_VECTOR(9 downto 0);
     Error_Cod   : out STD_LOGIC;
     DnK_Dec     : out STD_LOGIC;
     nRD_Dec     : out STD_LOGIC;
@@ -50,6 +51,8 @@ architecture Arq_Head of En_Head is
     signal Dato_Out_Cod : STD_LOGIC_VECTOR(9 downto 0);
      
 begin
+
+     Dato_Coded <= Dato_Out_Cod;
 
     Ins_Cod: entity work.En_Cod_8b10b(Arq_Cod_8b10b)
     port map(

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="Inv_Dplus">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2018-3-15T9:43:46</timestamp>
+    <timestamp>2018-3-17T21:0:56</timestamp>
     <pin polarity="Input" x="0" y="80" name="a[3:0]" />
     <pin polarity="Output" x="288" y="80" name="spo[3:0]" />
     <graph>

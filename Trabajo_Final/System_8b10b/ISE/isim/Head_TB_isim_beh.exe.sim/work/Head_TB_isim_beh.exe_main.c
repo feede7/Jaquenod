@@ -29,8 +29,8 @@ int main(int argc, char **argv)
     xsi_register_min_prec_unit(-12);
     ieee_p_2592010699_init();
     ieee_p_1242562249_init();
-    unisim_p_0947159679_init();
     std_textio_init();
+    unisim_p_0947159679_init();
     xilinxcorelib_a_3810224123_3212880686_init();
     work_a_3967009018_3432221917_init();
     xilinxcorelib_a_3295946173_3212880686_init();
