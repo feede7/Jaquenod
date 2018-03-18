@@ -41,6 +41,7 @@ end Head_TB;
 architecture Behavioral of Head_TB is
 
     component En_Head is
+	 Generic (Error : STD_LOGIC);
     Port (
         Dato_In     : in  STD_LOGIC_VECTOR(7 downto 0);
         DnK_Cod     : in  STD_LOGIC;
@@ -67,10 +68,11 @@ architecture Behavioral of Head_TB is
 begin
 
     Inst_Head: En_Head
+	 generic map(Error => '0')
     port map(
         Dato_In     => std_logic_vector(Dato_In),
-        DnK_Cod     => '0',
-        nRD_Cod     => '0',
+        DnK_Cod     => '1',
+        nRD_Cod     => '1',
 		  Dato_Coded  => Dato_Coded,
         Error_Cod   => open,
         DnK_Dec     => DnK_Dec(0),

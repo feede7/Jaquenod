@@ -1,0 +1,328 @@
+
+*** Running vivado
+    with args -log En_Head.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source En_Head.tcl
+
+
+****** Vivado v2017.3 (64-bit)
+  **** SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+  **** IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source En_Head.tcl -notrace
+Command: synth_design -top En_Head -part xc7a100tfgg484-2
+Starting synth_design
+WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Ch/Inv_Ch.xci
+
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 7373 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1244.312 ; gain = 69.996 ; free physical = 11790 ; free virtual = 13628
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'En_Head' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/new/Head.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'En_Cod_8b10b' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd:22]
+INFO: [Synth 8-3491] module 'DCh' declared at '/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/DCh_stub.vhdl:5' bound to instance 'Ins_DCh' of component 'DCh' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'DCh' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/DCh_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'Dplus' declared at '/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Dplus_stub.vhdl:5' bound to instance 'Ins_Dplus' of component 'Dplus' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'Dplus' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Dplus_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'KCh' declared at '/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/KCh_stub.vhdl:5' bound to instance 'Ins_KCh' of component 'KCh' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'KCh' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/KCh_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'Kplus' declared at '/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Kplus_stub.vhdl:5' bound to instance 'Ins_Kplus' of component 'Kplus' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'Kplus' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Kplus_stub.vhdl:13]
+INFO: [Synth 8-256] done synthesizing module 'En_Cod_8b10b' (1#1) [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd:22]
+INFO: [Synth 8-638] synthesizing module 'En_Dec_8b10b' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd:22]
+INFO: [Synth 8-3491] module 'Inv_Ch' declared at '/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Inv_Ch_stub.vhdl:5' bound to instance 'Ins_DCh' of component 'Inv_Ch' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'Inv_Ch' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Inv_Ch_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'Inv_Dplus' declared at '/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Inv_Dplus_stub.vhdl:5' bound to instance 'Ins_Dplus' of component 'Inv_Dplus' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'Inv_Dplus' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Inv_Dplus_stub.vhdl:13]
+INFO: [Synth 8-3491] module 'Inv_Kplus' declared at '/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Inv_Kplus_stub.vhdl:5' bound to instance 'Ins_Kplus' of component 'Inv_Kplus' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'Inv_Kplus' [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/realtime/Inv_Kplus_stub.vhdl:13]
+INFO: [Synth 8-256] done synthesizing module 'En_Dec_8b10b' (2#1) [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'En_Head' (3#1) [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/new/Head.vhd:47]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1285.844 ; gain = 111.527 ; free physical = 11804 ; free virtual = 13643
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1285.844 ; gain = 111.527 ; free physical = 11804 ; free virtual = 13643
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp15/DCh_in_context.xdc] for cell 'Ins_Cod/Ins_DCh'
+Finished Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp15/DCh_in_context.xdc] for cell 'Ins_Cod/Ins_DCh'
+Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp17/Dplus_in_context.xdc] for cell 'Ins_Cod/Ins_Dplus'
+Finished Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp17/Dplus_in_context.xdc] for cell 'Ins_Cod/Ins_Dplus'
+Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp19/KCh_in_context.xdc] for cell 'Ins_Cod/Ins_KCh'
+Finished Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp19/KCh_in_context.xdc] for cell 'Ins_Cod/Ins_KCh'
+Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp21/Kplus_in_context.xdc] for cell 'Ins_Cod/Ins_Kplus'
+Finished Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp21/Kplus_in_context.xdc] for cell 'Ins_Cod/Ins_Kplus'
+Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp23/Inv_Ch_in_context.xdc] for cell 'Ins_Dec/Ins_DCh'
+Finished Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp23/Inv_Ch_in_context.xdc] for cell 'Ins_Dec/Ins_DCh'
+Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp25/Inv_Dplus_in_context.xdc] for cell 'Ins_Dec/Ins_Dplus'
+Finished Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp25/Inv_Dplus_in_context.xdc] for cell 'Ins_Dec/Ins_Dplus'
+Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp27/Inv_Kplus_in_context.xdc] for cell 'Ins_Dec/Ins_Kplus'
+Finished Parsing XDC File [/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/.Xil/Vivado-7356-fede-Ubuntu/dcp27/Inv_Kplus_in_context.xdc] for cell 'Ins_Dec/Ins_Kplus'
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1605.664 ; gain = 0.000 ; free physical = 11549 ; free virtual = 13388
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1605.664 ; gain = 431.348 ; free physical = 11616 ; free virtual = 13455
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1605.664 ; gain = 431.348 ; free physical = 11616 ; free virtual = 13455
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for Ins_Cod/Ins_DCh. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for Ins_Cod/Ins_Dplus. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for Ins_Cod/Ins_KCh. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for Ins_Cod/Ins_Kplus. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for Ins_Dec/Ins_DCh. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for Ins_Dec/Ins_Dplus. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for Ins_Dec/Ins_Kplus. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1605.664 ; gain = 431.348 ; free physical = 11617 ; free virtual = 13456
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1605.664 ; gain = 431.348 ; free physical = 11609 ; free virtual = 13448
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      6 Bit         XORs := 2     
+	   2 Input      4 Bit         XORs := 3     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module En_Cod_8b10b 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      6 Bit         XORs := 2     
+	   2 Input      4 Bit         XORs := 2     
++---Muxes : 
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+Module En_Dec_8b10b 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      4 Bit         XORs := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design En_Head has port Error_Cod driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1605.664 ; gain = 431.348 ; free physical = 11593 ; free virtual = 13433
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:53 . Memory (MB): peak = 1605.664 ; gain = 431.348 ; free physical = 11470 ; free virtual = 13309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:53 . Memory (MB): peak = 1605.664 ; gain = 431.348 ; free physical = 11470 ; free virtual = 13309
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:53 . Memory (MB): peak = 1607.680 ; gain = 433.363 ; free physical = 11468 ; free virtual = 13307
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:54 . Memory (MB): peak = 1607.680 ; gain = 433.363 ; free physical = 11469 ; free virtual = 13308
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:54 . Memory (MB): peak = 1607.680 ; gain = 433.363 ; free physical = 11469 ; free virtual = 13308
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:54 . Memory (MB): peak = 1607.680 ; gain = 433.363 ; free physical = 11469 ; free virtual = 13308
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:54 . Memory (MB): peak = 1607.680 ; gain = 433.363 ; free physical = 11469 ; free virtual = 13308
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:54 . Memory (MB): peak = 1607.680 ; gain = 433.363 ; free physical = 11468 ; free virtual = 13308
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:54 . Memory (MB): peak = 1607.680 ; gain = 433.363 ; free physical = 11468 ; free virtual = 13308
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |DCh           |         1|
+|2     |Dplus         |         1|
+|3     |KCh           |         1|
+|4     |Kplus         |         1|
+|5     |Inv_Ch        |         1|
+|6     |Inv_Dplus     |         1|
+|7     |Inv_Kplus     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |DCh_bbox_0       |     1|
+|2     |Dplus_bbox_1     |     1|
+|3     |Inv_Ch_bbox_4    |     1|
+|4     |Inv_Dplus_bbox_5 |     1|
+|5     |Inv_Kplus_bbox_6 |     1|
+|6     |KCh_bbox_2       |     1|
+|7     |Kplus_bbox_3     |     1|
+|8     |LUT2             |     1|
+|9     |LUT3             |     7|
+|10    |LUT4             |    12|
+|11    |LUT5             |    22|
+|12    |LUT6             |    45|
+|13    |IBUF             |    10|
+|14    |OBUF             |    12|
++------+-----------------+------+
+
+Report Instance Areas: 
++------+----------+-------------+------+
+|      |Instance  |Module       |Cells |
++------+----------+-------------+------+
+|1     |top       |             |   143|
+|2     |  Ins_Cod |En_Cod_8b10b |    88|
+|3     |  Ins_Dec |En_Dec_8b10b |    33|
++------+----------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:54 . Memory (MB): peak = 1607.680 ; gain = 433.363 ; free physical = 11468 ; free virtual = 13308
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1607.680 ; gain = 113.543 ; free physical = 11522 ; free virtual = 13362
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:54 . Memory (MB): peak = 1607.688 ; gain = 433.363 ; free physical = 11528 ; free virtual = 13368
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:55 . Memory (MB): peak = 1613.680 ; gain = 452.738 ; free physical = 11518 ; free virtual = 13358
+INFO: [Common 17-1381] The checkpoint '/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/synth_1/En_Head.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file En_Head_utilization_synth.rpt -pb En_Head_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1637.691 ; gain = 0.000 ; free physical = 11518 ; free virtual = 13358
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 11 18:20:28 2018...
