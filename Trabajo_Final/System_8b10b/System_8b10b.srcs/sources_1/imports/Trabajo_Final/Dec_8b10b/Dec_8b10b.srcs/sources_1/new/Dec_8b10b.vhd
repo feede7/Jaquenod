@@ -14,7 +14,6 @@ entity En_Dec_8b10b is
     Port ( Dato_In  : in  STD_LOGIC_VECTOR(9 downto 0);
            DnK      : out STD_LOGIC; -- '1' para D y '0' para K
            nRD      : out STD_LOGIC; -- '1' para RD- y '0' para RD+
-           Dual     : out STD_LOGIC; -- '1' para RD- y '0' para RD+
            Dato_Out : out STD_LOGIC_VECTOR(7 downto 0);
            Error    : out STD_LOGIC
     );
@@ -137,7 +136,6 @@ begin
 
     DnK <= DnK_Aux;
     nRD <= nRD_Aux_D or nRD_Aux_P;
-	 Dual <= Dual_D and Dual_Plus and DnK_Aux;
     Error_D1 <= '1' when Out_DatoD = "010101" else '0';
     Error_D2 <= '1' when Out_PlusD = "1010" else '0';
     Error_D3 <= '0';--'1' when Out_DatoD(Out_DatoD'high-1 downto 0) = "11100" else '0'; -- Esto es para filtrar K28 pero se me solapa con el 28 normal 
