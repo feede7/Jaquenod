@@ -35,7 +35,9 @@ entity En_Head is
            Dato_In 	: in  STD_LOGIC_VECTOR (63 downto 0);
            Dato_Out 	: out STD_LOGIC_VECTOR (63 downto 0);
 			  Next_Data	: out STD_LOGIC;
-			  Ready_Rx	: out STD_LOGIC);
+			  Ready_Rx	: out STD_LOGIC;
+			  SeisCeros	: out STD_LOGIC;
+			  SeisUnos	: out STD_LOGIC);
 end En_Head;
 
 architecture Arq_Head of En_Head is
@@ -60,7 +62,9 @@ begin
         RST		   => RST,
         LVDS_IN 	=> LVDS_PIN,
         Data_Out	=> Dato_Out,
-        Ready    	=> Ready_RX
+        Ready    	=> Ready_RX,
+		  SeisCeros	=> SeisCeros,
+		  SeisUnos 	=> SeisUnos
     );
 	 
 end Arq_Head;

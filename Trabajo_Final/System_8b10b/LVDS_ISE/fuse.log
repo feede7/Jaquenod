@@ -1,7 +1,7 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_isim_beh.exe" -prj "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_beh.prj" "work.Head_TB" 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_isim_beh.exe -prj /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_beh.prj work.Head_TB 
 ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 2
-Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
 Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/DCh.vhd" into library work
 Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Dplus.vhd" into library work
@@ -18,11 +18,12 @@ Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/S
 Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head_TB.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 113664 KB
-Fuse CPU Usage: 4120 ms
+Fuse Memory Usage: 114980 KB
+Fuse CPU Usage: 1250 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
+Compiling package std_logic_arith
 Compiling package vcomponents
 Compiling package textio
 Compiling architecture behavioral of entity dist_mem_gen_v7_2 [\dist_mem_gen_v7_2("artix7",5,"0...]
@@ -46,9 +47,9 @@ Compiling architecture arq_lvds_rx of entity En_LVDS_RX [en_lvds_rx_default]
 Compiling architecture arq_head of entity En_Head [en_head_default]
 Compiling architecture behavior of entity head_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 44 VHDL Units
+Waiting for 8 sub-compilation(s) to finish...
+Compiled 45 VHDL Units
 Built simulation executable /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_isim_beh.exe
-Fuse Memory Usage: 428296 KB
-Fuse CPU Usage: 5280 ms
-GCC CPU Usage: 1060 ms
+Fuse Memory Usage: 693944 KB
+Fuse CPU Usage: 1640 ms
+GCC CPU Usage: 3790 ms

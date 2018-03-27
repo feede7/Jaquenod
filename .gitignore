@@ -8,3 +8,4 @@ vivado_*
 Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/
 Trabajo_Final/System_8b10b/LVDS_ISE/isim/
 *.wdb
+*.exe

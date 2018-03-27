@@ -8,7 +8,9 @@ entity En_LVDS_RX is
 		RST		: in  STD_LOGIC;
 	 	LVDS_IN 	: in  STD_LOGIC;
       Data_Out	: out STD_LOGIC_VECTOR(63 downto 0);
-		Ready		: out STD_LOGIC
+		Ready		: out STD_LOGIC;
+		SeisCeros: out STD_LOGIC;
+		SeisUnos : out STD_LOGIC
 			 );        
 end En_LVDS_RX;
 
@@ -26,6 +28,9 @@ architecture Arq_LVDS_RX of En_LVDS_RX is
 begin
 
 	Dec_10b_In	<= Dec_10b_In(8 downto 0) & LVDS_IN when rising_edge(CLK);
+	
+	SeisCeros	<= '1' when Dec_10b_In(Dec_10b_In'high downto Dec_10b_In'high - 5) = "000000" else '0';
+	SeisUnos		<= '1' when Dec_10b_In(Dec_10b_In'high downto Dec_10b_In'high - 5) = "111111" else '0';
 	
     Ins_Dec: entity work.En_Dec_8b10b(Arq_Dec_8b10b)
     port map(
