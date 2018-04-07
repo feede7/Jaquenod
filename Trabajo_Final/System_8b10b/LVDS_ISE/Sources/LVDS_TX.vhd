@@ -34,22 +34,22 @@ begin
 -- más que nada para no andar dando vuelta con los flags y poder calcular el 
 -- sumcheck on the fly, creo que es la mejor opción
 
-    Ins_Cod_Mas: entity work.En_Cod_8b10b(Arq_Cod_8b10b)
-    port map(
-        Dato_In  => Cod_8b_In,
-        DnK      => DnK_Cod,
-        nRD      => '0',--nRD_Cod,
-        Dato_Out => Cod_10b_Out_Mas,
-        Error    => open--Error_Cod
-    );
-
     Ins_Cod_Menos: entity work.En_Cod_8b10b(Arq_Cod_8b10b)
     port map(
         Dato_In  => Cod_8b_In,
         DnK      => DnK_Cod,
-        nRD      => '1',--nRD_Cod,
+        nRD      => '0',
         Dato_Out => Cod_10b_Out_Menos,
-        Error    => open--Error_Cod
+        Error    => open
+    );
+
+    Ins_Cod_Mas: entity work.En_Cod_8b10b(Arq_Cod_8b10b)
+    port map(
+        Dato_In  => Cod_8b_In,
+        DnK      => DnK_Cod,
+        nRD      => '1',
+        Dato_Out => Cod_10b_Out_Mas,
+        Error    => open
     );
 	 
 	LVDS_Out: process (Clk)
@@ -58,7 +58,7 @@ begin
 			if ResetTX = '1' then
 				DnK_Cod		<= '0';
 				Cod_8b_In	<= "10111100"; -- K.28.5
-				Buff_10b		<= Cod_10b_Out_Mas; -- K.28.5 -- Con esta aranca dsp de cada reset, podría poner otra trama diferente
+				Buff_10b		<= Cod_10b_Out_Menos; -- K.28.5 -- Con esta aranca dsp de cada reset, podría poner otra trama diferente
 				Index			<= 9;
 				Count			<= 0;
 				Next_Data	<= '0';
@@ -87,7 +87,7 @@ begin
 						SumCheck		<= SumCheck + unsigned(Buff_Data(Buff_Data'high - (Count-1)*8 downto Buff_Data'high - (Count-1)*8 - 7));
 					end if;
 				elsif index = 0 then
-					if Polarity + (CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(9),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(8),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(7),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(6),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(5),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(4),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(3),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(2),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(1),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(0),1)))*2 - 10 > 0 then
+					if Polarity + (CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(9),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(8),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(7),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(6),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(5),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(4),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(3),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(2),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(1),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(0),1)))*2 - 10 < 0 then
 						if Buff_10b(2 downto 0) = Cod_10b_Out_Menos(Cod_10b_Out_Menos'high downto Cod_10b_Out_Menos'high - 2) then
 							Polarity <= Polarity + (CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(9),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(8),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(7),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(6),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(5),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(4),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(3),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(2),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(1),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(0),1)))*2 - 10;
 							Buff_10b <= Cod_10b_Out_Mas;
