@@ -3,20 +3,20 @@
 # 
 # Vivado(TM)
 # runme.sh: a Vivado-generated Runs Script for UNIX
-# Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+# Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/opt/Xilinx/Vivado/2017.3/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2017.3/bin
+  PATH=/opt/Xilinx/Vivado/2018.1/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2018.1/bin
 else
-  PATH=/opt/Xilinx/Vivado/2017.3/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2017.3/bin:$PATH
+  PATH=/opt/Xilinx/Vivado/2018.1/ids_lite/ISE/bin/lin64:/opt/Xilinx/Vivado/2018.1/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2017.3/ids_lite/ISE/lib/lin64
+  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2018.1/ids_lite/ISE/lib/lin64
 else
-  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2017.3/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2018.1/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 

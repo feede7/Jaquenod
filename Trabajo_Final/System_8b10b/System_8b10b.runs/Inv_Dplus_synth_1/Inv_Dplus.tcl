@@ -43,10 +43,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
+set_param ips.enableIPCacheLiteLoad 0
 
 set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/Inv_Dplus_synth_1 -new_name Inv_Dplus -ip [get_ips Inv_Dplus]]
 
 if { $cached_ip eq {} } {
+close [open __synthesis_is_running__ w]
 
 synth_design -top Inv_Dplus -part xc7a100tfgg484-2 -mode out_of_context
 
@@ -161,3 +163,5 @@ if {[file isdir /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.
     file copy -force /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Dplus/Inv_Dplus_stub.vhdl /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.ip_user_files/ip/Inv_Dplus
   }
 }
+file delete __synthesis_is_running__
+close [open __synthesis_is_complete__ w]

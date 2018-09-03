@@ -32,7 +32,7 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity En_Head is
-Generic (Error : STD_LOGIC := '0');
+--Generic (Error : STD_LOGIC := '0');
 Port (
     Dato_In     : in  STD_LOGIC_VECTOR(7 downto 0);
     DnK_Cod     : in  STD_LOGIC;
@@ -82,14 +82,15 @@ begin
 	    Index <= Index + to_unsigned(1,Index'length);
 	end process;
 
-	Data_IN_Dec <= Dato_Error when Error = '1' else Dato_Out_Cod;
+	--Data_IN_Dec <= Dato_Error when Error = '1' else Dato_Out_Cod;
+	Data_IN_Dec <= Dato_Out_Cod;
 	
     Ins_Dec: entity work.En_Dec_8b10b(Arq_Dec_8b10b)
     port map(
         Dato_In  => Data_IN_Dec,--STD_LOGIC_VECTOR(9 downto 0);
         DnK      => DnK_Dec,--STD_LOGIC; -- '1' para D y '0' para K
         nRD      => nRD_Dec,--STD_LOGIC; -- '1' para RD- y '0' para RD+
-        Dual     => Dual_Dec,--STD_LOGIC; -- '1' para RD- y '0' para RD+
+        --Dual     => Dual_Dec,--STD_LOGIC; -- '1' para RD- y '0' para RD+
         Dato_Out => Dato_Out,--STD_LOGIC_VECTOR(7 downto 0);
         Error    => Error_Dec--STD_LOGIC
     );

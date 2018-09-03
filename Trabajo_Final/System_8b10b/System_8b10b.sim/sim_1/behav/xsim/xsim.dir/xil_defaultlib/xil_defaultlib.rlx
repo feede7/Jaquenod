@@ -1,16 +1,16 @@
 0.6
-2017.3
-Oct  4 2017
-20:01:51
-/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/glbl.v,1520034798,verilog,,,,glbl,,,,,,,,
-/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sim_1/new/Head_TB.vhd,1520120619,vhdl,,,,head_tb,,,,,,,,
-/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd,1520034798,vhdl,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/new/Head.vhd,,,en_cod_8b10b,,,,,,,,
-/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd,1520079548,vhdl,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/new/Head.vhd,,,en_dec_8b10b,,,,,,,,
+2018.1
+Apr  4 2018
+18:43:17
+/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/behav/xsim/glbl.v,1520803972,verilog,,,,glbl,,,,,,,,
+/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sim_1/new/Head_TB.vhd,1520803972,vhdl,,,,head_tb,,,,,,,,
+/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd,1521390236,vhdl,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/new/Head.vhd,,,en_cod_8b10b,,,,,,,,
+/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd,1522245533,vhdl,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/new/Head.vhd,,,en_dec_8b10b,,,,,,,,
 /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/DCh/sim/DCh.v,1520038702,verilog,,,,DCh,,,,,,,,
 /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Dplus/sim/Dplus.v,1520038700,verilog,,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/DCh/sim/DCh.v,,Dplus,,,,,,,,
 /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Ch/sim/Inv_Ch.v,1520038696,verilog,,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Kplus/sim/Kplus.v,,Inv_Ch,,,,,,,,
 /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Dplus/sim/Inv_Dplus.v,1520038695,verilog,,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Ch/sim/Inv_Ch.v,,Inv_Dplus,,,,,,,,
-/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Kplus/sim/Inv_Kplus.v,1520038693,verilog,,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Dplus/sim/Inv_Dplus.v,,Inv_Kplus,,,,,,,,
+/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Kplus/sim/Inv_Kplus.v,1520803972,verilog,,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Inv_Dplus/sim/Inv_Dplus.v,,Inv_Kplus,,,,,,,,
 /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/KCh/sim/KCh.v,1520038699,verilog,,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Dplus/sim/Dplus.v,,KCh,,,,,,,,
 /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Kplus/sim/Kplus.v,1520038697,verilog,,/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/KCh/sim/KCh.v,,Kplus,,,,,,,,
 /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/new/Head.vhd,1520034798,vhdl,,,,en_head,,,,,,,,

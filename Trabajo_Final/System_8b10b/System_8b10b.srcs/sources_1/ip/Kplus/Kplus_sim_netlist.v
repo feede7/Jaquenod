@@ -1,10 +1,10 @@
-// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
-// Date        : Fri Mar  2 09:22:48 2018
-// Host        : farbizu running 64-bit Ubuntu 16.04.4 LTS
-// Command     : write_verilog -force -mode funcsim -rename_top Kplus -prefix
-//               Kplus_ Kplus_sim_netlist.v
+// Tool Version: Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+// Date        : Mon Sep  3 18:23:53 2018
+// Host        : fede-Toshiba running 64-bit Ubuntu 18.04.1 LTS
+// Command     : write_verilog -force -mode funcsim
+//               /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.srcs/sources_1/ip/Kplus/Kplus_sim_netlist.v
 // Design      : Kplus
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -88,7 +88,7 @@ endmodule
 (* C_MEM_INIT_FILE = "Kplus.mif" *) (* C_MEM_TYPE = "0" *) (* C_PARSER_TYPE = "1" *) 
 (* C_PIPELINE_STAGES = "0" *) (* C_QCE_JOINED = "0" *) (* C_QUALIFY_WE = "0" *) 
 (* C_READ_MIF = "1" *) (* C_REG_A_D_INPUTS = "0" *) (* C_REG_DPRA_INPUT = "0" *) 
-(* C_SYNC_ENABLE = "1" *) (* C_WIDTH = "4" *) 
+(* C_SYNC_ENABLE = "1" *) (* C_WIDTH = "4" *) (* ORIG_REF_NAME = "dist_mem_gen_v8_0_12" *) 
 module Kplus_dist_mem_gen_v8_0_12
    (a,
     d,

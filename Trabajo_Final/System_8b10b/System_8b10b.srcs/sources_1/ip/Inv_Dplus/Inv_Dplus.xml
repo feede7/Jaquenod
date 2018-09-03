@@ -129,8 +129,12 @@
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Mon Sep 03 21:25:44 UTC 2018</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:f86eebd9</spirit:value>
+            <spirit:value>8:f86eebd9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

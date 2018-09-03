@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sun Mar 11 18:17:59 2018
+# Process ID: 7035
+# Current directory: /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/KCh_synth_1
+# Command line: vivado -log KCh.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source KCh.tcl
+# Log file: /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/KCh_synth_1/KCh.vds
+# Journal file: /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.runs/KCh_synth_1/vivado.jou
+#-----------------------------------------------------------
+source KCh.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP KCh, cache-ID = 079cdbbce0f6b8c9.
