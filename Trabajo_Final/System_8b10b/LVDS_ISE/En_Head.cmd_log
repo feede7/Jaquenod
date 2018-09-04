@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/En_Head.xst" -ofn "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/En_Head.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd IpCores -nt timestamp -i -p xa7a100t-fgg484-2I En_Head.ngc En_Head.ngd  
+map -intstyle ise -p xa7a100t-fgg484-2I -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o En_Head_map.ncd En_Head.ngd En_Head.pcf 
+par -w -intstyle ise -ol high -mt off En_Head_map.ncd En_Head.ncd En_Head.pcf 
+trce -intstyle ise -v 3 -s 2I -n 3 -fastpaths -xml En_Head.twx En_Head.ncd -o En_Head.twr En_Head.pcf 

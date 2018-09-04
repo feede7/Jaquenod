@@ -33,7 +33,7 @@
     signal Next_data : std_logic;     
 
 	 signal Counter_Reset : Natural := 0;
-    signal equal : std_logic;    
+    signal notEqual : std_logic;    
 	 
     signal Ready_Rx : std_logic;  
 	 
@@ -56,19 +56,19 @@
   -- Component Instantiation
     Ins_Head: En_Head
     port map(
-        CLK  		=> clk_aux_1,
-        RST    	=> RST,--Data_In,
-        Dato_In   => STD_LOGIC_VECTOR(Dato_In),
-        Dato_Out  => Dato_Out,
-        Next_data	=> Next_data,
-		  Ready_Rx	=> Ready_Rx,
-		  SeisCeros	=> SeisCeros,
-		  SeisUnos 	=> SeisUnos
+		CLK  			=> clk_aux_1,
+		RST    			=> RST,
+		Dato_In   	=> STD_LOGIC_VECTOR(Dato_In),
+		Dato_Out  	=> Dato_Out,
+		Next_data	=> Next_data,
+		Ready_Rx	=> Ready_Rx,
+		SeisCeros	=> SeisCeros,
+		SeisUnos 	=> SeisUnos
     );
 
-	Dato_In <= Dato_In + unsigned(STD_LOGIC_VECTOR(SUMA(SUMA'high-16 downto 0)) & x"0000") when rising_edge(Next_data);
+	Dato_In 			<= Dato_In + unsigned(STD_LOGIC_VECTOR(SUMA(SUMA'high-16 downto 0)) & x"0000") when rising_edge(Next_data);
 	Counter_Reset <= Counter_Reset + 1 when rising_edge(clk_aux_1);
-	RST <= '1' when Counter_Reset < 10 and RST = '1' else '0';
+	RST 					<= '1' when Counter_Reset < 10 and RST = '1' else '0';
 
-	equal <= '1' when signed('0' & STD_LOGIC_VECTOR(Dato_In)) - signed('0' & Dato_Out) /= signed('0' & STD_LOGIC_VECTOR(SUMA(SUMA'high-16 downto 0)) & x"0000") and Ready_Rx = '1' else '0';
+	notEqual <= '1' when signed('0' & STD_LOGIC_VECTOR(Dato_In)) - signed('0' & Dato_Out) /= signed('0' & STD_LOGIC_VECTOR(SUMA(SUMA'high-16 downto 0)) & x"0000") and Ready_Rx = '1' else '0';
   END;

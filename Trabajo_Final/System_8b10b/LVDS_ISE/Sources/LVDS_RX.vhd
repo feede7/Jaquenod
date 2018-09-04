@@ -4,10 +4,10 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity En_LVDS_RX is
 	 Port ( 
-		Clk 		: in  STD_LOGIC;
-		RST		: in  STD_LOGIC;
+		Clk 			: in  STD_LOGIC;
+		RST			: in  STD_LOGIC;
 	 	LVDS_IN 	: in  STD_LOGIC;
-      Data_Out	: out STD_LOGIC_VECTOR(63 downto 0);
+		Data_Out	: out STD_LOGIC_VECTOR(63 downto 0);
 		Ready		: out STD_LOGIC;
 		SeisCeros: out STD_LOGIC;
 		SeisUnos : out STD_LOGIC
@@ -20,11 +20,11 @@ architecture Arq_LVDS_RX of En_LVDS_RX is
 	signal Dec_10b_In	: STD_LOGIC_VECTOR( 9 downto 0);
 	signal Dec_8b_Out	: STD_LOGIC_VECTOR( 7 downto 0);
 	signal sData_Out	: STD_LOGIC_VECTOR(63 downto 0);
-	signal Count_bit	: NATURAL;
+	signal Count_bit		: NATURAL;
 	signal Count_byte	: NATURAL;
 	signal DnK_Dec		: STD_LOGIC;
-	signal Error_Dec	: STD_LOGIC;
-	signal Init			: STD_LOGIC;
+	signal Error_Dec		: STD_LOGIC;
+	signal Init				: STD_LOGIC;
 begin
 
 	Dec_10b_In	<= Dec_10b_In(8 downto 0) & LVDS_IN when rising_edge(CLK);
@@ -37,7 +37,7 @@ begin
         Dato_In  	=> Dec_10b_In,
         DnK      	=> DnK_Dec,
         nRD      	=> open,--nRD_Dec,
-        Dato_Out 	=> Dec_8b_Out,
+        Dato_Out => Dec_8b_Out,
         Error    	=> Error_Dec
     );
 			  
@@ -45,41 +45,42 @@ begin
 	begin
 		if rising_edge (Clk) then
 			if RST = '1' then
-				Init 			<= '0';
+				Init 				<= '0';
 				Count_bit	<= 1;
 				Count_byte	<= 1;
-				SumCheck		<= to_unsigned(0,SumCheck'length);
+				SumCheck	<= to_unsigned(0,SumCheck'length);
+				Data_Out		<= (others=>'0');
 			else 
 				Ready <= '0';
 				
-				if Init = '0' and Dec_8b_Out = "10111100" and DnK_Dec = '0' and Error_Dec = '0' then
-					Init <= '1';
+				if Init = '0' and (Dec_8b_Out = "10111100" or Dec_8b_Out = "01011100") and DnK_Dec = '0' and Error_Dec = '0' then
+					Init 				<= '1';
 					Count_bit 	<= 1;
 					Count_byte	<= 1;
-					SumCheck		<= to_unsigned(0,SumCheck'length);
+					SumCheck	<= to_unsigned(0,SumCheck'length);
 				end if;
 				
 				if Init = '1' then
 					if Count_bit = 8 and Count_Byte = 10 then
 						Init	<= '0';
 					elsif Count_bit = 10 then
-						Count_bit <= 1;
+						Count_bit 	<= 1;
 						Count_byte	<= Count_byte + 1;
 						if Count_byte = 9  then
 							if SumCheck = unsigned(Dec_8b_Out) then
 								Data_Out	<= sData_Out;
-								Ready 	<= '1';
+								Ready 		<= '1';
 							end if;
 						else
 							if DnK_Dec = '1' and Error_Dec = '0' then 
 								sData_Out 	<= sData_Out(sData_Out'high - 8 downto 0) & Dec_8b_Out;
 							else
-								Init <= '0';
+								Init 				<= '0';
 							end if;
 							SumCheck		<= SumCheck + unsigned(Dec_8b_Out);
 						end if;
 					else
-						Count_bit <= Count_bit + 1;
+						Count_bit 	<= Count_bit + 1;
 					end if;
 				end if;
 					-- La trama queda como : Start[3] + Dato[65] + Unused[9] + Paridad[1] + Stop[2] = 80 bits

@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL; -- Para pasar de std_Ulogic a unsigned
+use IEEE.STD_LOGIC_ARITH.ALL; -- Para pasar de std_Ulogic (un bit de un STD_LOGIC_VECTOR) a unsigned
 --use IEEE.NUMERIC_STD.ALL;
 
 entity En_LVDS_TX is
@@ -26,21 +26,21 @@ architecture Arq_LVDS_TX of En_LVDS_TX is
 	signal Count		: NATURAL;
 	signal Buff_Data	: STD_LOGIC_VECTOR(63 downto 0);
 	signal SumCheck	: unsigned(7 downto 0);
-	
+
 	signal Polarity	: integer range -20 to 20;
 	
 begin
--- Creo que debería recibir el dato comop siempre acá y manejar todo acá adentro,
+-- Creo que debería recibir el dato como siempre acá y manejar todo acá adentro,
 -- más que nada para no andar dando vuelta con los flags y poder calcular el 
 -- sumcheck on the fly, creo que es la mejor opción
 
     Ins_Cod_Menos: entity work.En_Cod_8b10b(Arq_Cod_8b10b)
     port map(
-        Dato_In  => Cod_8b_In,
-        DnK      => DnK_Cod,
-        nRD      => '0',
+        Dato_In 	=> Cod_8b_In,
+        DnK      	=> DnK_Cod,
+        nRD     	=> '0',
         Dato_Out => Cod_10b_Out_Menos,
-        Error    => open
+        Error    	=> open
     );
 
     Ins_Cod_Mas: entity work.En_Cod_8b10b(Arq_Cod_8b10b)
@@ -57,13 +57,13 @@ begin
 		if rising_edge (Clk) then
 			if ResetTX = '1' then
 				DnK_Cod		<= '0';
-				Cod_8b_In	<= "10111100"; -- K.28.5
-				Buff_10b		<= Cod_10b_Out_Menos; -- K.28.5 -- Con esta aranca dsp de cada reset, podría poner otra trama diferente
+				Cod_8b_In	<= "01011100"; -- K.28.2 -- Indicación de que se recibió el Reset general 
+				Buff_10b		<= Cod_10b_Out_Menos;
 				Index			<= 9;
 				Count			<= 0;
 				Next_Data	<= '0';
 				SumCheck		<= CONV_UNSIGNED(0,SumCheck'length);
-				Polarity		<= 2; -- K.28.5 5 unos - 3 ceros
+				Polarity		<= 0; -- K.28.2 4 unos - 4 ceros
 			else 
 				Next_Data	<= '0';
 				LVDSout 	<= Buff_10b(Index);
@@ -123,9 +123,10 @@ begin
 					-- 1 paridad
 					-- 2 stop -> son dos '0'
 					-- 80 bits
--- K.28.5 creo que lo voy a usar para iniciar
--- 10111100
 
+-- K.28.5 creo que lo voy a usar para iniciar
+-- "10111100"
+-- A no ser que venga de un Reset, con lo cual arranco con K.28.2 ("01011100")
 -- Si arranco con eso después tendŕe que recibir 90 bits más, los cuales
 -- podrían ir con algún checksum en los últimos 10 bits, con lo que me quedan
 -- para datos 80 bits, es decir, 64 bits de datos, osea que definitivamente

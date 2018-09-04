@@ -30,14 +30,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity En_Head is
-    Port ( CLK 		: in  STD_LOGIC;
-           RST 		: in  STD_LOGIC;
-           Dato_In 	: in  STD_LOGIC_VECTOR (63 downto 0);
-           Dato_Out 	: out STD_LOGIC_VECTOR (63 downto 0);
-			  Next_Data	: out STD_LOGIC;
-			  Ready_Rx	: out STD_LOGIC;
-			  SeisCeros	: out STD_LOGIC;
-			  SeisUnos	: out STD_LOGIC);
+    Port ( 
+		CLK 				: in   STD_LOGIC;
+		RST 				: in   STD_LOGIC;
+		Dato_In 		: in   STD_LOGIC_VECTOR (63 downto 0);
+		Dato_Out 	: out STD_LOGIC_VECTOR (63 downto 0);
+		Next_Data	: out STD_LOGIC;
+		Ready_Rx	: out STD_LOGIC;
+		SeisCeros	: out STD_LOGIC;
+		SeisUnos		: out STD_LOGIC);
 end En_Head;
 
 architecture Arq_Head of En_Head is
@@ -49,22 +50,22 @@ begin
 
     Ins_LVDS_TX: entity work.En_LVDS_TX(Arq_LVDS_TX)
     port map(
-        CLK  		=> CLK,
-        Data_A    => Dato_In,
-        ResetTX   => RST,
-        LVDSout 	=> LVDS_PIN,
-        Next_Data => Next_Data
+		CLK  			=> CLK,
+		Data_A    	=> Dato_In,
+		ResetTX   	=> RST,
+		LVDSout 		=> LVDS_PIN,
+		Next_Data 	=> Next_Data
     );
 
     Ins_LVDS_RX: entity work.En_LVDS_RX(Arq_LVDS_RX)
     port map(
-        CLK  		=> CLK,
-        RST		   => RST,
-        LVDS_IN 	=> LVDS_PIN,
-        Data_Out	=> Dato_Out,
-        Ready    	=> Ready_RX,
-		  SeisCeros	=> SeisCeros,
-		  SeisUnos 	=> SeisUnos
+		CLK  			=> CLK,
+		RST		   		=> RST,
+		LVDS_IN 		=> LVDS_PIN,
+		Data_Out		=> Dato_Out,
+		Ready    		=> Ready_RX,
+		SeisCeros	=> SeisCeros,
+		SeisUnos 	=> SeisUnos
     );
 	 
 end Arq_Head;
