@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL; -- Para pasar de std_Ulogic (un bit de un STD_LOGIC_VECTOR) a unsigned
 --use IEEE.NUMERIC_STD.ALL;
 
-entity En_LVDS_TX is
+entity En_LVDS_TX_Coded is
 	 Port ( 
 		Clk 		: in  STD_LOGIC;
       Data_A 	: in  STD_LOGIC_VECTOR(63 downto 0);
@@ -11,9 +11,9 @@ entity En_LVDS_TX is
 	 	LVDSout 	: out STD_LOGIC;
 		Next_Data: out STD_LOGIC := '0'
 			 );        
-end En_LVDS_TX;
+end En_LVDS_TX_Coded;
 
-architecture Arq_LVDS_TX of En_LVDS_TX is
+architecture Arq_LVDS_TX_Coded of En_LVDS_TX_Coded is
 
 	signal DnK_Cod		: STD_LOGIC;
 	signal nRD_Cod		: STD_LOGIC;
@@ -28,6 +28,7 @@ architecture Arq_LVDS_TX of En_LVDS_TX is
 	signal SumCheck	: unsigned(7 downto 0);
 
 	signal Polarity	: integer range -20 to 20;
+	signal Polarity_sign : std_logic;
 	
 begin
 -- Creo que debería recibir el dato como siempre acá y manejar todo acá adentro,
@@ -91,17 +92,21 @@ begin
 						if Buff_10b(2 downto 0) = Cod_10b_Out_Menos(Cod_10b_Out_Menos'high downto Cod_10b_Out_Menos'high - 2) then
 							Polarity <= Polarity + (CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(9),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(8),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(7),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(6),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(5),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(4),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(3),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(2),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(1),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(0),1)))*2 - 10;
 							Buff_10b <= Cod_10b_Out_Mas;
+							Polarity_sign <= '1';
 						else
 							Polarity <= Polarity + (CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(9),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(8),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(7),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(6),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(5),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(4),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(3),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(2),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(1),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(0),1)))*2 - 10;
 							Buff_10b <= Cod_10b_Out_Menos;
+							Polarity_sign <= '0';
 						end if;
 					else
 						if Buff_10b(2 downto 0) = Cod_10b_Out_Mas(Cod_10b_Out_Mas'high downto Cod_10b_Out_Mas'high - 2) then					
 							Polarity <= Polarity + (CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(9),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(8),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(7),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(6),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(5),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(4),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(3),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(2),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(1),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Menos(0),1)))*2 - 10;
 							Buff_10b <= Cod_10b_Out_Menos;
+							Polarity_sign <= '0';
 						else
 							Polarity <= Polarity + (CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(9),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(8),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(7),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(6),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(5),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(4),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(3),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(2),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(1),1)) + CONV_INTEGER(CONV_UNSIGNED(Cod_10b_Out_Mas(0),1)))*2 - 10;
 							Buff_10b <= Cod_10b_Out_Mas;
+							Polarity_sign <= '1';
 						end if;
 					end if;
 
@@ -136,4 +141,4 @@ begin
 			end if;
 		end if;
 	end process;	
-end Arq_LVDS_TX;
+end Arq_LVDS_TX_Coded;

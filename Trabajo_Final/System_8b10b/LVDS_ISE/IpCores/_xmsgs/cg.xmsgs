@@ -8,16 +8,46 @@
 <msg type="info" file="sim" num="172" delta="old" >Generating IP...
 </msg>
 
-<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Pre-processing HDL files for &apos;Inv_Kplus&apos;...</arg>
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Unable to find</arg>
 </msg>
 
-<msg type="warning" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Overwriting existing file /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/tmp/_cg/Inv_Kplus/doc/dist_mem_gen_v7_2_vinfo.html with file from view xilinx_documentation</arg>
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.ip_user_files</arg>
 </msg>
 
-<msg type="info" file="sim" num="949" delta="old" >Finished generation of ASY schematic symbol.
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   /mem_init_files/KCh.coe</arg>
 </msg>
 
-<msg type="info" file="sim" num="948" delta="old" >Finished FLIST file generation.
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   Coregen is looking for</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.ip_user_files</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   /mem_init_files/KCh.coe</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Unable to find</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.ip_user_files</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   /mem_init_files/KCh.coe</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   Coregen is looking for</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/System_8b10b.ip_user_files</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   /mem_init_files/KCh.coe</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">An invalid core configuration has been detected during</arg>
+</msg>
+
+<msg type="error" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">   Customization. Core parameters will be reset to their default values.</arg>
 </msg>
 
 </messages>

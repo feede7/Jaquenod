@@ -2,19 +2,19 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity En_LVDS_RX is
+entity En_LVDS_RX_Decod is
 	 Port ( 
-		Clk 			: in  STD_LOGIC;
-		RST			: in  STD_LOGIC;
+		Clk 		: in  STD_LOGIC;
+		RST		: in  STD_LOGIC;
 	 	LVDS_IN 	: in  STD_LOGIC;
 		Data_Out	: out STD_LOGIC_VECTOR(63 downto 0);
 		Ready		: out STD_LOGIC;
 		SeisCeros: out STD_LOGIC;
 		SeisUnos : out STD_LOGIC
 			 );        
-end En_LVDS_RX;
+end En_LVDS_RX_Decod;
 
-architecture Arq_LVDS_RX of En_LVDS_RX is
+architecture Arq_LVDS_RX_Decod of En_LVDS_RX_Decod is
 
 	signal SumCheck	: unsigned(7 downto 0);
 	signal Dec_10b_In	: STD_LOGIC_VECTOR( 9 downto 0);
@@ -23,7 +23,10 @@ architecture Arq_LVDS_RX of En_LVDS_RX is
 	signal Count_bit		: NATURAL;
 	signal Count_byte	: NATURAL;
 	signal DnK_Dec		: STD_LOGIC;
+	signal snRD_Dec		: STD_LOGIC;
+	signal nRD_Dec		: STD_LOGIC;
 	signal Error_Dec		: STD_LOGIC;
+	signal Error			: STD_LOGIC;
 	signal Init				: STD_LOGIC;
 begin
 
@@ -36,7 +39,7 @@ begin
     port map(
         Dato_In  	=> Dec_10b_In,
         DnK      	=> DnK_Dec,
-        nRD      	=> open,--nRD_Dec,
+        nRD      	=> snRD_Dec,
         Dato_Out => Dec_8b_Out,
         Error    	=> Error_Dec
     );
@@ -45,7 +48,8 @@ begin
 	begin
 		if rising_edge (Clk) then
 			if RST = '1' then
-				Init 				<= '0';
+				Init 			<= '0';
+				nRD_Dec		<= '0';
 				Count_bit	<= 1;
 				Count_byte	<= 1;
 				SumCheck	<= to_unsigned(0,SumCheck'length);
@@ -72,6 +76,8 @@ begin
 								Ready 		<= '1';
 							end if;
 						else
+							Error <= Error_Dec;
+							nRD_Dec <= snRD_Dec;
 							if DnK_Dec = '1' and Error_Dec = '0' then 
 								sData_Out 	<= sData_Out(sData_Out'high - 8 downto 0) & Dec_8b_Out;
 							else
@@ -103,4 +109,4 @@ begin
 			end if;
 		end if;
 	end process;	
-end Arq_LVDS_RX;
+end Arq_LVDS_RX_Decod;

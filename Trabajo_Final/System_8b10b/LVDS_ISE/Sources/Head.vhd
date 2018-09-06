@@ -31,24 +31,24 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity En_Head is
     Port ( 
-		CLK 				: in   STD_LOGIC;
-		RST 				: in   STD_LOGIC;
-		Dato_In 		: in   STD_LOGIC_VECTOR (63 downto 0);
-		Dato_Out 	: out STD_LOGIC_VECTOR (63 downto 0);
+		CLK 			: in  STD_LOGIC;
+		RST 			: in  STD_LOGIC;
+		Dato_In 		: in  STD_LOGIC_VECTOR(63 downto 0);
+		Dato_Out 	: out STD_LOGIC_VECTOR(63 downto 0);
 		Next_Data	: out STD_LOGIC;
-		Ready_Rx	: out STD_LOGIC;
+		Ready_Rx		: out STD_LOGIC;
 		SeisCeros	: out STD_LOGIC;
 		SeisUnos		: out STD_LOGIC);
 end En_Head;
 
 architecture Arq_Head of En_Head is
 
-	signal LVDS_PIN : STD_LOGIC;
+	signal LVDS_PIN 	: STD_LOGIC;
 	signal LVDS_Ready : STD_LOGIC;
 
 begin
 
-    Ins_LVDS_TX: entity work.En_LVDS_TX(Arq_LVDS_TX)
+    Ins_LVDS_TX: entity work.En_LVDS_TX_Coded(Arq_LVDS_TX_Coded)
     port map(
 		CLK  			=> CLK,
 		Data_A    	=> Dato_In,
@@ -57,13 +57,13 @@ begin
 		Next_Data 	=> Next_Data
     );
 
-    Ins_LVDS_RX: entity work.En_LVDS_RX(Arq_LVDS_RX)
+    Ins_LVDS_RX: entity work.En_LVDS_RX_Decod(Arq_LVDS_RX_Decod)
     port map(
 		CLK  			=> CLK,
-		RST		   		=> RST,
+		RST		   => RST,
 		LVDS_IN 		=> LVDS_PIN,
 		Data_Out		=> Dato_Out,
-		Ready    		=> Ready_RX,
+		Ready    	=> Ready_RX,
 		SeisCeros	=> SeisCeros,
 		SeisUnos 	=> SeisUnos
     );
