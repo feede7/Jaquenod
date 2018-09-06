@@ -1,0 +1,12 @@
+*.o
+*.vdb
+*.didat
+Modulo7/Guia/ISE/Actividad_7_2_2/Cordic/isim/
+.~*
+vivado.*
+vivado_*
+Trabajo_Final/System_8b10b/System_8b10b.sim/sim_1/
+Trabajo_Final/System_8b10b/LVDS_ISE/isim/
+*.wdb
+*.exe
+Trabajo_Final/System_8b10b/System_8b10b.runs/.jobs/
