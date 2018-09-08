@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-09-04T15:34:33</DateModified>
+  <DateModified>2018-09-07T20:58:29</DateModified>
   <ModuleName>En_Head</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/iseconfig/En_Head.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/</ImplementationReportsDirectory>
+  <SavedFilePath>/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/iseconfig/En_Head.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/</ImplementationReportsDirectory>
   <DateInitialized>2018-03-21T06:07:18</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

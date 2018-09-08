@@ -1,25 +1,25 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_isim_beh.exe" -prj "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_beh.prj" "work.Head_TB" 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_isim_beh.exe -prj /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_beh.prj work.Head_TB 
 ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 12
-Turning on mult-threading, number of parallel sub-compilation jobs: 24 
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/DCh.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Dplus.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/KCh.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Kplus.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Inv_Ch.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Inv_Dplus.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Inv_Kplus.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/../System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/../System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/LVDS_TX.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/LVDS_RX.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head.vhd" into library work
-Parsing VHDL file "/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head_TB.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/DCh.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Dplus.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/KCh.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Kplus.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Inv_Ch.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Inv_Dplus.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/Inv_Kplus.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/../System_8b10b.srcs/sources_1/imports/Trabajo_Final/Dec_8b10b/Dec_8b10b.srcs/sources_1/new/Dec_8b10b.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/../System_8b10b.srcs/sources_1/imports/Trabajo_Final/Cod_8b10b/Cod_8b10b.srcs/sources_1/new/Cod_8b10b.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/LVDS_TX.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/LVDS_RX.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head.vhd" into library work
+Parsing VHDL file "/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head_TB.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 115744 KB
-Fuse CPU Usage: 910 ms
+Fuse Memory Usage: 114780 KB
+Fuse CPU Usage: 3710 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -47,9 +47,9 @@ Compiling architecture arq_lvds_rx_decod of entity En_LVDS_RX_Decod [en_lvds_rx_
 Compiling architecture arq_head of entity En_Head [en_head_default]
 Compiling architecture behavior of entity head_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
+Waiting for 14 sub-compilation(s) to finish...
 Compiled 45 VHDL Units
-Built simulation executable /home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_isim_beh.exe
-Fuse Memory Usage: 1743328 KB
-Fuse CPU Usage: 1060 ms
-GCC CPU Usage: 90 ms
+Built simulation executable /home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Head_TB_isim_beh.exe
+Fuse Memory Usage: 431636 KB
+Fuse CPU Usage: 5560 ms
+GCC CPU Usage: 20710 ms

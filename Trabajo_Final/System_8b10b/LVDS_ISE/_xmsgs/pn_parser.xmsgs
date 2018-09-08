@@ -8,7 +8,7 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/LVDS_RX.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head_TB.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

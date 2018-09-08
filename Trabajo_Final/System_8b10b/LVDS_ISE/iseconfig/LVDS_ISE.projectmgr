@@ -10,13 +10,13 @@
          <ClosedNode>/En_Head - Arq_Head |home|fede|GIT|Jaquenod|Trabajo_Final|System_8b10b|LVDS_ISE|Sources|Head.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Ins_KCh - KCh (/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/KCh.xco)</SelectedItem>
+         <SelectedItem>En_Head - Arq_Head (/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000232000000020000000000000000000000000200000064ffffffff000000810000000300000002000002320000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000011c000000020000000000000000000000000200000064ffffffff0000008100000003000000020000011c0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>Ins_KCh - KCh (/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/IpCores/KCh.xco)</CurrentItem>
+      <CurrentItem>En_Head - Arq_Head (/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -31,7 +31,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000df000000010000000100000000000000000000000064ffffffff000000810000000000000001000000df0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -54,7 +54,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000039f000000010001000100000000000000000000000064ffffffff0000008100000000000000010000039f0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000011e000000010001000100000000000000000000000064ffffffff0000008100000000000000010000011e0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>work</CurrentItem>
    </ItemView>
@@ -68,13 +68,13 @@
          <ClosedNode>/Head_TB - behavior |home|fede|GIT|Jaquenod|Trabajo_Final|System_8b10b|LVDS_ISE|Sources|Head_TB.vhd/Ins_Head - En_Head - Arq_Head/Ins_LVDS_TX - En_LVDS_TX - Arq_LVDS_TX/Ins_Cod_Menos - En_Cod_8b10b - Arq_Cod_8b10b</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Head_TB - behavior (/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head_TB.vhd)</SelectedItem>
+         <SelectedItem>Head_TB - behavior (/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head_TB.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000246000000020000000000000000000000000200000064ffffffff000000810000000300000002000002460000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000011a000000020000000000000000000000000200000064ffffffff0000008100000003000000020000011a0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>Head_TB - behavior (/home/ar-pet/Fede/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head_TB.vhd)</CurrentItem>
+      <CurrentItem>Head_TB - behavior (/home/fede/GIT/Jaquenod/Trabajo_Final/System_8b10b/LVDS_ISE/Sources/Head_TB.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -86,7 +86,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000000ef0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -99,7 +99,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000ef000000010000000100000000000000000000000064ffffffff000000810000000000000001000000ef0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
@@ -111,12 +111,12 @@
          <ClosedNode>CORE Generator</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
 </Project>

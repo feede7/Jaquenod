@@ -1,0 +1,7 @@
+for i in *.otf; do fontforge -script otf2ttf.sh $i; done
+sudo mv *ttf /usr/share/fonts/truetype/myfonts/
+sudo mkdir /usr/share/fonts/truetype/myfonts/
+sudo mv *ttf /usr/share/fonts/truetype/myfonts/
+sudo chmod go+rx /usr/share/fonts/truetype/myfonts/
+sudo chmod go+rx /usr/share/fonts/truetype/myfonts/*.ttf
+sudo fc-cache -f -v

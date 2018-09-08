@@ -23,24 +23,25 @@
     );
     end component;
 
-    signal Dato_In : unsigned(63 downto 0) := to_unsigned((16**7),64);
-    signal Dato_Out : STD_LOGIC_VECTOR(63 downto 0);
+    signal Dato_In 	: unsigned(63 downto 0) := to_unsigned((16**7),64);
+    signal Dato_Out 	: STD_LOGIC_VECTOR(63 downto 0);
 
     signal clk_aux_1 : std_logic := '0';
     constant OSC1_Period : time := 2 ps;
 
-    signal RST : std_logic := '1';
+    signal RST 		: std_logic := '1';
     signal Next_data : std_logic;     
 
 	 signal Counter_Reset : Natural := 0;
-    signal notEqual : std_logic;    
+    signal notEqual 	: std_logic;    
+    signal Equal 		: std_logic;    
 	 
-    signal Ready_Rx : std_logic;  
+    signal Ready_Rx 	: std_logic;  
 	 
     signal SeisCeros : std_logic;  
-    signal SeisUnos : std_logic;  
+    signal SeisUnos 	: std_logic;  
 
-	constant SUMA : unsigned := to_unsigned(16**7+443535,64);
+	constant SUMA 		: unsigned := to_unsigned(16**7+443535,64);
 
   BEGIN
 
@@ -57,7 +58,7 @@
     Ins_Head: En_Head
     port map(
 		CLK  			=> clk_aux_1,
-		RST    			=> RST,
+		RST    		=> RST,
 		Dato_In   	=> STD_LOGIC_VECTOR(Dato_In),
 		Dato_Out  	=> Dato_Out,
 		Next_data	=> Next_data,
@@ -67,8 +68,9 @@
     );
 
 	Dato_In 			<= Dato_In + unsigned(STD_LOGIC_VECTOR(SUMA(SUMA'high-16 downto 0)) & x"0000") when rising_edge(Next_data);
-	Counter_Reset <= Counter_Reset + 1 when rising_edge(clk_aux_1);
-	RST 					<= '1' when Counter_Reset < 10 and RST = '1' else '0';
+	Counter_Reset 	<= Counter_Reset + 1 when rising_edge(clk_aux_1);
+	RST 				<= '1' when Counter_Reset < 10 and RST = '1' else '0';
 
+	Equal 	<= '1' when signed('0' & STD_LOGIC_VECTOR(Dato_In)) - signed('0' & Dato_Out) = signed('0' & STD_LOGIC_VECTOR(SUMA(SUMA'high-16 downto 0)) & x"0000") and Ready_Rx = '1' else '0';
 	notEqual <= '1' when signed('0' & STD_LOGIC_VECTOR(Dato_In)) - signed('0' & Dato_Out) /= signed('0' & STD_LOGIC_VECTOR(SUMA(SUMA'high-16 downto 0)) & x"0000") and Ready_Rx = '1' else '0';
   END;
